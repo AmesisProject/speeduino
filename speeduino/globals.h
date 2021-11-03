@@ -1384,9 +1384,9 @@ struct config13 {
  
  //Amesis Project Throttle & ThrottleBody
   byte APthrottleBodyEnable : 1; //106
-  byte APPedalePositionPin1 : 5; //106
+  byte PedalPositionPin1 : 5; //106
   byte unused13_106 : 2;         //106
-  byte APPedalePositionPin2 : 5; //107
+  byte PedalPositionPin2 : 5; //107
   byte unused13_107 : 3;         //107
   byte APpedal1Min;              //108 ;je croi que cette variable n'est plus utilisée déclaré egalement dans le fichier .ini ligne 1303
   byte APpedal1Max;              //109 ;je croi que cette variable n'est plus utilisée déclaré egalement dans le fichier .ini ligne 1304
