@@ -863,7 +863,7 @@ void readPPS(bool useFilter)
 //PPS Total
 //si ((V1+V2)/2 == V1 "-+x%") && ((V1+V2)/2 == V2 "-+x%" 
 //Alors V3 = (V1+V2) /2
-//PPSTotal = (currentStatus.PPS1 + currentStatus.PPS2)/2; 
+PPSTotal = (currentStatus.PPS1 + currentStatus.PPS2)/2; 
 //Sinon V3 = 0
 
 }
