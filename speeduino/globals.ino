@@ -249,6 +249,10 @@ byte pinMC33810_2_CS;
 #endif
 byte pinPPS1;      //Amesis Project PPS input pin
 byte pinPPS2;
+byte pinTBSensor;
+byte pinTBMotor1;
+byte pinTBMotor2;
+byte pinTBMotorENA;
 
 
 struct statuses currentStatus; /**< The master global "live" status struct. Contains all values that are updated frequently and used across modules */

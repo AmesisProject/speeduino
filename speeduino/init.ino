@@ -2543,7 +2543,10 @@ void setPinMapping(byte boardID)
   if ( (configPage10.vvt2Pin != 0) && (configPage10.vvt2Pin < BOARD_MAX_IO_PINS) ) { pinVVT_2 = pinTranslate(configPage10.vvt2Pin); }
   if ( (configPage13.APthrottleBodyEnable != 0) && (configPage13.PedalPositionPin1 < BOARD_MAX_IO_PINS) ) { pinPPS1 = pinTranslateAnalog(configPage13.PedalPositionPin1); }// Amesis Project
   if ( (configPage13.APthrottleBodyEnable != 0) && (configPage13.PedalPositionPin2 < BOARD_MAX_IO_PINS) ) { pinPPS2 = pinTranslateAnalog(configPage13.PedalPositionPin2); }// Amesis Project
-  //if ( (configPage13.APthrottleBodyEnable != 0) && (configPage13.APThottleBodyPin1 < BOARD_MAX_IO_PINS) ) {}
+  if ( (configPage13.APthrottleBodyEnable != 0) && (configPage13.TBPositionPin1 < BOARD_MAX_IO_PINS) ) { pinTBSensor = pinTranslateAnalog(configPage13.TBPositionPin1); }// Amesis Project
+  if ( (configPage13.APthrottleBodyEnable != 0) && (configPage13.TBMotorPin1 < BOARD_MAX_IO_PINS) ) { pinTBMotor1 = pinTranslate(configPage13.TBMotorPin1); }// Amesis Project
+  if ( (configPage13.APthrottleBodyEnable != 0) && (configPage13.TBMotorPin2 < BOARD_MAX_IO_PINS) ) { pinTBMotor2 = pinTranslate(configPage13.TBMotorPin2); }// Amesis Project
+  if ( (configPage13.APthrottleBodyEnable != 0) && (configPage13.TBMotorPinENA <  BOARD_MAX_IO_PINS) ) { pinTBMotorENA = pinTranslateAnalog(configPage13.TBMotorPinENA); }// Amesis Project
 
   //Currently there's no default pin for Idle Up
   pinIdleUp = pinTranslate(configPage2.idleUpPin);
@@ -2765,7 +2768,10 @@ void setPinMapping(byte boardID)
   {
     pinMode(pinPPS1,INPUT);
     pinMode(pinPPS2,INPUT);
-    //Amesis Project Output Throttle body
+    pinMode(pinTBSensor,INPUT);
+    pinMode(pinTBMotor1,OUTPUT);
+    pinMode(pinTBMotor2,OUTPUT);
+    pinMode(pinTBMotorENA,OUTPUT);
   } 
 
   //These must come after the above pinMode statements

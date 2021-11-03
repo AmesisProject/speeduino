@@ -860,10 +860,62 @@ void readPPS(bool useFilter)
   PPS2_time = micros(); 
   
 
-//PPS Total
-//si ((V1+V2)/2 == V1 "-+x%") && ((V1+V2)/2 == V2 "-+x%" 
-//Alors V3 = (V1+V2) /2
-//PPSTotal = (currentStatus.PPS1 + currentStatus.PPS2)/2; 
-//Sinon V3 = 0
+  //PPS Total
+  //si ((V1+V2)/2 == V1 "-+x%") && ((V1+V2)/2 == V2 "-+x%" 
+  //Alors V3 = (V1+V2) /2
+  //PPSTotal = (currentStatus.PPS1 + currentStatus.PPS2)/2; 
+  //Sinon V3 = 0
+
+
+
+  //TBSensor
+  TBSensorlast = currentStatus.TBSensor; //currentStatus.TBSensor
+  TBSensorlast_time = TBSensor_time;
+  #if defined(ANALOG_ISR)
+    byte tempTBSensor = fastMap1023toX(AnChannel[pinTBSensor-A0], 255); //Get the current raw TBSensor ADC value and map it into a byte
+  #else
+    analogRead(pinTBSensor);
+    byte tempTBSensor = fastMap1023toX(analogRead(pinTBSensor), 255); //Get the current raw TBSensor value and map it into a byte
+  #endif
+  //The use of the filter can be overridden if required. This is used on startup to disable priming pulse if flood clear is wanted
+  if(useFilter == true) { currentStatus.TBSensorADC = ADC_FILTER(tempTBSensor, configPage13.ADCFILTER_TBS1, currentStatus.TBSensorADC); }
+  else { currentStatus.TBSensorADC = tempTBSensor; }
+  //currentStatus.TBSensorADC = ADC_FILTER(tempTBSensor, 128, currentStatus.TBSensorADC);
+  byte temp3ADC = currentStatus.TBSensorADC; //The temp3ADC value is used in order to allow TunerStudio to recover and redo the TBSensor calibration if this somehow gets corrupted
+
+  if(configPage13.tbs1Max > configPage13.tbs1Min) 
+  {
+    //Check that the ADC values fall within the min and max ranges (Should always be the case, but noise can cause these to fluctuate outside the defined range).
+    if (currentStatus.TBSensorADC < configPage13.tbs1Min) { temp3ADC = configPage13.tbs1Min; }
+    else if(currentStatus.TBSensorADC > configPage13.tbs1Max) { temp3ADC = configPage13.tbs1Max; }
+    currentStatus.TBSensor = map(temp3ADC, configPage13.tbs1Min, configPage13.tbs1Max, 0, 100); //Take the raw TBSensor ADC value and convert it into a TBSensor% based on the calibrated values
+  }
+  else
+  {
+    //This case occurs when the TBSensor +5v and gnd are wired backwards, but the user wishes to retain this configuration.
+    //In such a case, tbsMin will be greater then tbs1Max and hence checks and mapping needs to be reversed
+
+    temp3ADC = 255 - currentStatus.TBSensorADC; //Reverse the ADC values
+    uint16_t tempTBS1Max = 255 - configPage13.tbs1Max;
+    uint16_t tempTBS1Min = 255 - configPage13.tbs1Min;
+
+    //All checks below are reversed from the standard case above
+    if (temp3ADC > tempTBS1Max) { temp3ADC = tempTBS1Max; }
+    else if(temp3ADC < tempTBS1Min) { temp3ADC = tempTBS1Min; }
+    currentStatus.TBSensor = map(temp3ADC, tempTBS1Min, tempTBS1Max, 0, 100);
+  }
+
+  /* //Check whether the closed throttle position sensor is active
+  if(configPage13.CPPSEnabled == true)
+  {
+    if(configPage13.CTPSPolarity == 0) { currentStatus.CTPSActive = !digitalRead(pinCTPS); } //Normal mode (ground switched)
+    else { currentStatus.CPPSActive = digitalRead(pinCTPS); } //Inverted mode (5v activates closed throttle position sensor)
+  }
+  else { currentStatus.CTPSActive = 0; }
+  */
+  TBSensor_time = micros(); 
+  
+
+
 
 }

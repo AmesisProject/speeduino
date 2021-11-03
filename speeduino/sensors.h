@@ -96,6 +96,10 @@ unsigned long PPS1last_time; //The time the previous PPS sample was taken
 byte PPS2last;               /**< The previous PPS2 reading */
 unsigned long PPS2_time;     //The time the PPS2 sample was taken
 unsigned long PPS2last_time; //The time the previous PPS sample was taken
+byte TBSensorlast;           /**< The previous TBSensor reading */
+unsigned long TBSensor_time;     //The time the PPS1 sample was taken
+unsigned long TBSensorlast_time; //The time the previous PPS sample was taken
+
 
 void readCLT(bool=true); //Allows the option to override the use of the filter
 void readIAT();

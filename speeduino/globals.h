@@ -716,6 +716,8 @@ struct statuses {
   byte PPS2;
   byte pps2ADC; /**< byte (valued: 0-255) representation of the TPS. Downsampled from the original 10-bit (0-1023) reading, but before any calibration is applied */
   byte PPSTotal;
+  byte TBSensor;
+  byte TBSensorADC;
 
   };
 
@@ -1384,9 +1386,9 @@ struct config13 {
  
  //Amesis Project Throttle & ThrottleBody
   byte APthrottleBodyEnable : 1; //106
-  byte PedalPositionPin1 : 5; //106
+  byte PedalPositionPin1 : 5;    //106
   byte unused13_106 : 2;         //106
-  byte PedalPositionPin2 : 5; //107
+  byte PedalPositionPin2 : 5;    //107
   byte unused13_107 : 3;         //107
   byte APpedal1Min;              //108 ;je croi que cette variable n'est plus utilisée déclaré egalement dans le fichier .ini ligne 1303
   byte APpedal1Max;              //109 ;je croi que cette variable n'est plus utilisée déclaré egalement dans le fichier .ini ligne 1304
@@ -1398,9 +1400,18 @@ struct config13 {
   byte pps2Min;                  //115
   byte pps2Max;                  //116
   byte ADCFILTER_PPS2;           //117 
+  byte TBPositionPin1 : 5;       //118
+  byte tbs1Min;                  //119
+  byte tbs1Max;                  //120
+  byte ADCFILTER_TBS1;           //121
+  byte TBMotorPin1 : 5;          //122
+  byte TBMotorPin2 : 5;          //123
+  byte TBMotorPinENA : 5;        //124
+ 
+
 
   //byte unused12_106_127[22]; // Unused
-  byte unused12_118_127[10];   //Unused
+  byte unused12_125_127[2];    //Unused
 
 #if defined(CORE_AVR)
   };
@@ -1485,6 +1496,10 @@ extern byte pinMC33810_1_CS;
 extern byte pinMC33810_2_CS;
 extern byte pinPPS1;//Amesis Project PPS input pin
 extern byte pinPPS2;
+extern byte pinTBSensor;
+extern byte pinTBMotor1;
+extern byte pinTBMotor2;
+extern byte pinTBMotorENA;
 #ifdef USE_SPI_EEPROM
   extern byte pinSPIFlash_CS;
 #endif
