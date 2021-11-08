@@ -1404,9 +1404,11 @@ struct config13 {
   byte tbs1Min;                  //119
   byte tbs1Max;                  //120
   byte ADCFILTER_TBS1;           //121
-  byte TBMotorPin1 : 5;          //122
-  byte TBMotorPin2 : 5;          //123
-  byte TBMotorPinENA : 5;        //124
+  byte TBMotorPin1 : 6;          //122
+  byte unused13_122 : 2;         //FRee
+  byte TBMotorPin2 : 6;          //123
+  byte unused13_123 : 2;         // FRee
+  byte TBMotorPinENA : 6;        //124
  
 
 

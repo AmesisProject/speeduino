@@ -341,7 +341,7 @@ void loop()
     currentStatus.fuelPressure = getFuelPressure();
     currentStatus.oilPressure = getOilPressure();
     readPPS (); //Amesis Project
-
+  
     if (auxIsEnabled == true)
     {
       //TODO dazq to clean this right up :)

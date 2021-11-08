@@ -100,6 +100,10 @@ byte TBSensorlast;           /**< The previous TBSensor reading */
 unsigned long TBSensor_time;     //The time the PPS1 sample was taken
 unsigned long TBSensorlast_time; //The time the previous PPS sample was taken
 
+volatile PORT_TYPE *tbMotor1_pin_port;
+volatile PINMASK_TYPE tbMotor1_pin_mask;
+volatile PORT_TYPE *tbMotor2_pin_port;
+volatile PINMASK_TYPE tbMotor2_pin_mask;
 
 void readCLT(bool=true); //Allows the option to override the use of the filter
 void readIAT();

@@ -893,7 +893,7 @@ void readPPS(bool useFilter)
   else
   {
     //This case occurs when the TBSensor +5v and gnd are wired backwards, but the user wishes to retain this configuration.
-    //In such a case, tbsMin will be greater then tbs1Max and hence checks and mapping needs to be reversed
+    //In such a case, tbs1Min will be greater then tbs1Max and hence checks and mapping needs to be reversed
 
     temp3ADC = 255 - currentStatus.TBSensorADC; //Reverse the ADC values
     uint16_t tempTBS1Max = 255 - configPage13.tbs1Max;
@@ -915,7 +915,26 @@ void readPPS(bool useFilter)
   */
   TBSensor_time = micros(); 
   
+   //Amesis Project TESTE LED
+  tbMotor1_pin_port = portOutputRegister(digitalPinToPort(pinTBMotor1));
+  tbMotor1_pin_mask = digitalPinToBitMask(pinTBMotor1);
+  tbMotor2_pin_port = portOutputRegister(digitalPinToPort(pinTBMotor2));
+  tbMotor2_pin_mask = digitalPinToBitMask(pinTBMotor2);
 
-
-
+ if(currentStatus.TBSensor > 0) 
+ {
+   digitalWrite(pinTBMotor1, HIGH);
+   digitalWrite(pinTBMotor2, HIGH);
+   //digitalWrite(pinTBMotorENA, HIGH);
+   
+   }
+ else 
+ {
+   digitalWrite(pinTBMotor1, LOW); 
+   digitalWrite(pinTBMotor2, LOW);
+   //digitalWrite(pinTBMotorENA, LOW);
+   }
+  
+ 
 }
+
