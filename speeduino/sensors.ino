@@ -923,15 +923,15 @@ void readPPS(bool useFilter)
 
  if(currentStatus.TBSensor > 0) 
  {
-   digitalWrite(pinTBMotor1, HIGH);
-   digitalWrite(pinTBMotor2, HIGH);
+   digitalWrite(pinTBMotor1, LOW);
+   digitalWrite(pinTBMotor2, LOW);
    //digitalWrite(pinTBMotorENA, HIGH);
    
    }
  else 
  {
-   digitalWrite(pinTBMotor1, LOW); 
-   digitalWrite(pinTBMotor2, LOW);
+   digitalWrite(pinTBMotor1, HIGH); 
+   digitalWrite(pinTBMotor2, HIGH);
    //digitalWrite(pinTBMotorENA, LOW);
    }
   
