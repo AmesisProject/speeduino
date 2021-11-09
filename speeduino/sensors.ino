@@ -921,20 +921,20 @@ void readPPS(bool useFilter)
   tbMotor2_pin_port = portOutputRegister(digitalPinToPort(pinTBMotor2));
   tbMotor2_pin_mask = digitalPinToBitMask(pinTBMotor2);
 
- if(currentStatus.TBSensor > 0) 
+ //if(currentStatus.TBSensor > 0) 
+ if (currentStatus.PPS1 >= currentStatus.TBSensor) 
  {
    digitalWrite(pinTBMotor1, LOW);
-   digitalWrite(pinTBMotor2, LOW);
+   digitalWrite(pinTBMotor2, HIGH);
    //digitalWrite(pinTBMotorENA, HIGH);
    
    }
  else 
  {
    digitalWrite(pinTBMotor1, HIGH); 
-   digitalWrite(pinTBMotor2, HIGH);
+   digitalWrite(pinTBMotor2, LOW);
    //digitalWrite(pinTBMotorENA, LOW);
    }
   
  
 }
-
