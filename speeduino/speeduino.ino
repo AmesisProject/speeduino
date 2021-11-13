@@ -41,6 +41,7 @@
 #include "engineProtection.h"
 #include "secondaryTables.h"
 #include BOARD_H //Note that this is not a real file, it is defined in globals.h. 
+#include "ThrottleBody.h" // Amesis Project
 
 int ignition1StartAngle = 0;
 int ignition2StartAngle = 0;
@@ -239,6 +240,7 @@ void loop()
   //***Perform sensor reads***
   //-----------------------------------------------------------------------------------------------------
   readMAP();
+  readPPS (); //Amesis Project
 
   if (BIT_CHECK(LOOP_TIMER, BIT_TIMER_15HZ)) //Every 32 loops
   {
@@ -340,7 +342,7 @@ void loop()
 
     currentStatus.fuelPressure = getFuelPressure();
     currentStatus.oilPressure = getOilPressure();
-    readPPS (); //Amesis Project
+
   
     if (auxIsEnabled == true)
     {
