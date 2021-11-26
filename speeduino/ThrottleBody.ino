@@ -1,6 +1,7 @@
 #include "pages.h"
 
 
+//Amesis Project
 void readPPS(bool useFilter)
 {
   //PPS1
@@ -102,10 +103,17 @@ void readPPS(bool useFilter)
   
 
   //PPS Total
-  //si ((V1+V2)/2 == V1 "-+x%") && ((V1+V2)/2 == V2 "-+x%" 
-  //Alors V3 = (V1+V2) /2
-  //PPSTotal = (currentStatus.PPS1 + currentStatus.PPS2)/2; 
-  //Sinon V3 = 0
+currentStatus.PPSTotal = (currentStatus.PPS1+currentStatus.PPS2) / 2 ;
+
+  if((currentStatus.PPS1+currentStatus.PPS2) / 2 > currentStatus.PPS1*1.1) && ((currentStatus.PPS1+currentStatus.PPS2) / 2 < currentStatus.PPS1*0.9) //si PPS1 ou PPS2 depasse la moyenne de PPS1+PPS2 alors defaut 
+  { currentStatus.PPSTotal = 0 ; } //alors mettre la valeur PPSTotal a 0
+   // erreur PPS1 
+   
+  else if ((currentStatus.PPS1+currentStatus.PPS2) / 2 > currentStatus.PPS2*1.1) && ((currentStatus.PPS1+currentStatus.PPS2) / 2 < currentStatus.PPS2*0.9) //si PPS1 ou PPS2 depasse la moyenne de PPS1+PPS2 alors defaut 
+  { currentStatus.PPSTotal = 0 ; //alors mettre la valeur PPSTotal a 0
+   // erreur PPS2
+  
+  
 
 
 
