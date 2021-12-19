@@ -103,14 +103,14 @@ void readPPS(bool useFilter)
   
 
   //PPS Total
-currentStatus.PPSTotal = (currentStatus.PPS1+currentStatus.PPS2) / 2 ;
+  currentStatus.PPSTotal = (currentStatus.PPS1+currentStatus.PPS2) / 2 ;
 
-  if((currentStatus.PPS1+currentStatus.PPS2) / 2 > currentStatus.PPS1*1.1) && ((currentStatus.PPS1+currentStatus.PPS2) / 2 < currentStatus.PPS1*0.9) //si PPS1 ou PPS2 depasse la moyenne de PPS1+PPS2 alors defaut 
+  if(currentStatus.PPSTotal > currentStatus.PPS1*1.1 || currentStatus.PPSTotal < currentStatus.PPS1*0.9) //si PPS1 ou PPS2 depasse la moyenne de PPS1+PPS2 alors defaut 
   { currentStatus.PPSTotal = 0 ; } //alors mettre la valeur PPSTotal a 0
    // erreur PPS1 
    
-  else if ((currentStatus.PPS1+currentStatus.PPS2) / 2 > currentStatus.PPS2*1.1) && ((currentStatus.PPS1+currentStatus.PPS2) / 2 < currentStatus.PPS2*0.9) //si PPS1 ou PPS2 depasse la moyenne de PPS1+PPS2 alors defaut 
-  { currentStatus.PPSTotal = 0 ; //alors mettre la valeur PPSTotal a 0
+  else if (currentStatus.PPSTotal > currentStatus.PPS2*1.1 || currentStatus.PPSTotal < currentStatus.PPS2*0.9) //si PPS1 ou PPS2 depasse la moyenne de PPS1+PPS2 alors defaut 
+  { currentStatus.PPSTotal = 0 ; }//alors mettre la valeur PPSTotal a 0
    // erreur PPS2
   
   
