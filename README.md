@@ -1,5 +1,12 @@
+AmesisProject Version Mod for TrottleBody VAG
 <div align="center">
-
+<img src="https://github.com/AmesisProject/speeduino/blob/master/Save%20Rev/Rev%201.0%20DO%20NOT%20USE/Pics/AmesisProject%20Thottle%20Body%20.jpg" alt="Speeduino" width="600" />
+ 
+You can see Rev1.0 here https://www.instagram.com/p/CWWm2S4oEU1/
+ 
+ You can follow my project here https://www.youtube.com/watch?v=GH1-DV4onDg&list=PLcTQwPiio2_Nbu8X9_lO5LS0OjIScwXXp&index=1&t=3s
+ 
+<div align="center">
 <img src="https://github.com/speeduino/wiki.js/raw/master/img/Speeduino%20logo_med.png" alt="Speeduino" width="600" />
 
 [![Release](https://img.shields.io/github/release/noisymime/speeduino.svg)](https://github.com/noisymime/speeduino/releases/latest)
