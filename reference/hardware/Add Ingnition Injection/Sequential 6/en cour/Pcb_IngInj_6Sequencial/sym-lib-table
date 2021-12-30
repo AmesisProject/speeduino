@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name "TC4424EPA")(type "Legacy")(uri "${SPEEDUINO}/TC4424EPA.lib")(options "")(descr ""))
+)
