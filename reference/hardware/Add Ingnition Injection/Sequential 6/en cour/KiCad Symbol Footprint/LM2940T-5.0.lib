@@ -1,0 +1,27 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# LM2940T-5.0
+#
+DEF LM2940T-5.0 U 0 40 Y Y 1 L N
+F0 "U" -500 239 50 H V L BNN
+F1 "LM2940T-5.0" -500 -357 50 H V L BNN
+F2 "TO254P1054X470X1955-3" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "LM2940T-5.0/NOPB" 0 0 50 H I L BNN "MP"
+F5 "\n1-A, 26-V, high-PSRR, low-dropout voltage regulator 3-TO-220 -40 to 125\n" 0 0 50 H I L BNN "Description"
+F6 "TO-220-3 Texas Instruments" 0 0 50 H I L BNN "Package"
+F7 "https://pricing.snapeda.com/search/part/LM2940T-5.0/NOPB/?ref=eda" 0 0 50 H I L BNN "Purchase-URL"
+F8 "LM2940T-5.0/NOPB-ND" 0 0 50 H I L BNN "Digi-Key_Part_Number"
+F9 "Texas Instruments" 0 0 50 H I L BNN "MF"
+DRAW
+S -500 -200 500 200 0 0 16 f
+X IN 1 -700 100 200 R 40 40 0 0 I 
+X OUT 3 700 100 200 L 40 40 0 0 O 
+X GND 2 700 -100 200 L 40 40 0 0 W 
+ENDDRAW
+ENDDEF
+#
+# End Library
