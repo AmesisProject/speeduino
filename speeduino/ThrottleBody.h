@@ -17,4 +17,4 @@ unsigned long TBSensorlast_time; //The time the previous PPS sample was taken
 volatile PORT_TYPE *tbMotor1_pin_port;
 volatile PINMASK_TYPE tbMotor1_pin_mask;
 volatile PORT_TYPE *tbMotor2_pin_port;
-volatile PINMASK_TYPE tbMotor2_pin_mask;
+volatile PINMASK_TYPE tbMotor2_pin_mask; 
