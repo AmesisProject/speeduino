@@ -54,7 +54,7 @@ void readPPS(bool useFilter)
 
 
  // PPS2
-  PPS2last = currentStatus.PPS2; //currentStatus.PPS2
+  PPS2last = currentStatus.PPS2; //currentStatus.PPS20
   PPS2last_time = PPS2_time;
   #if defined(ANALOG_ISR)
     byte tempPPS2 = fastMap1023toX(AnChannel[pinPPS2-A0], 255); //Get the current raw PPS ADC value and map it into a byte
