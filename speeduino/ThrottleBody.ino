@@ -2,6 +2,10 @@
 
 
 //Amesis Project
+// TO DO 
+//-Ajouter le code pour l'invetion de polarité je mets en expemple en bas de page en commantaires
+//-Ajouter le ralantis, voire dans le fichier idle.ino j'ai deja crer un commantaire pour une idé de départ pour savoir comme faire avec ou sans pid
+
 void readPPS(bool useFilter)
 {
   //PPS1
@@ -102,7 +106,7 @@ void readPPS(bool useFilter)
   PPS2_time = micros(); 
   
 
-  //PPS Total
+  //PPS Total not tested
   currentStatus.PPSTotal = (currentStatus.PPS1+currentStatus.PPS2) / 2 ;
 
   if(currentStatus.PPSTotal > currentStatus.PPS1*1.1 || currentStatus.PPSTotal < currentStatus.PPS1*0.9) //si PPS1 ou PPS2 depasse la moyenne de PPS1+PPS2 alors defaut 
@@ -187,3 +191,17 @@ void readPPS(bool useFilter)
   
  
 }
+
+/* Amesis project Voici un expemple de code pour gérer l'invertion de polarité dans le code plutot que sur le hardware
+
+  void initialiseIdleUpOutput()
+ {
+  if (configPage2.idleUpOutputInv == 1) { idleUpOutputHIGH = LOW; idleUpOutputLOW = HIGH; }
+  else { idleUpOutputHIGH = HIGH; idleUpOutputLOW = LOW; }
+
+  digitalWrite(pinIdleUpOutput, idleUpOutputLOW); //Initiallise program with the idle up output in the off state
+  currentStatus.idleUpOutputActive = false;
+
+  idleUpOutput_pin_port = portOutputRegister(digitalPinToPort(pinIdleUpOutput));
+  idleUpOutput_pin_mask = digitalPinToBitMask(pinIdleUpOutput);
+ */
