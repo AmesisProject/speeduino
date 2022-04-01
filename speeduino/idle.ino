@@ -2,6 +2,10 @@
 Speeduino - Simple engine management for the Arduino Mega 2560 platform
 Copyright (C) Josh Stewart
 A full copy of the license may be found in the projects root directory
+
+Speeduino - Gestion simple du moteur pour la plate-forme Arduino Mega 2560 
+Copyright (C) Josh Stewart 
+Une copie complète de la licence se trouve dans le répertoire racine des projets
 */
 #include "idle.h"
 #include "maths.h"
@@ -10,16 +14,23 @@ A full copy of the license may be found in the projects root directory
 
 /*
 These functions cover the PWM and stepper idle control
+Ces fonctions couvrent le PWM et le contrôle du ralenti pas à pas
 */
 
 /*
 Idle Control
 Currently limited to on/off control and open loop PWM and stepper drive
+Contrôle du ralenti 
+Actuellement limité au contrôle marche/arrêt et à la commande PWM et pas à pas en boucle ouverte
 */
-integerPID idlePID(&currentStatus.longRPM, &idle_pid_target_value, &idle_cl_target_rpm, configPage6.idleKP, configPage6.idleKI, configPage6.idleKD, DIRECT); //This is the PID object if that algorithm is used. Needs to be global as it maintains state outside of each function call
+integerPID idlePID(&currentStatus.longRPM, &idle_pid_target_value, &idle_cl_target_rpm, configPage6.idleKP, configPage6.idleKI, configPage6.idleKD, DIRECT); //This is the PID object if that algorithm is used. Needs to be global as it maintains state outside of each function call. 
 
 //Any common functions associated with starting the Idle
 //Typically this is enabling the PWM interrupt
+
+//Toutes les fonctions communes associées au démarrage de l'inactivité
+// Typiquement, cela active l'interruption PWM
+
 static inline void enableIdle()
 {
   if( (configPage6.iacAlgorithm == IAC_ALGORITHM_PWM_CL) || (configPage6.iacAlgorithm == IAC_ALGORITHM_PWM_OL) || (configPage6.iacAlgorithm == IAC_ALGORITHM_PWM_OLCL) )
@@ -42,6 +53,12 @@ void initialiseIdle()
   idle_pin_mask = digitalPinToBitMask(pinIdle1);
   idle2_pin_port = portOutputRegister(digitalPinToPort(pinIdle2));
   idle2_pin_mask = digitalPinToBitMask(pinIdle2);
+  // Amesis Project TO DO 
+  // Es-ce qu'on pourait utiliser les memes pins notés ci-dessus pour le Throttle Boddy Electronic ? 
+  // Dans ce cas là, pas besoin de faire une fenetre pour déclarer les pin de sortie mais nous devons preconiser le branchement du moteur TB sur le idle du speeduino.
+  // Mais il faut verifier que le passage par le mosfet du speeduino et ok 
+  // Sinon nous devons rajouter un if (TB activer) alors on utilise les pins déclarés au TB dans ThrottleBody.ini (pinTBSensor) 
+  // Je sucgère d'utilisert la base du code de l'algorithm PWS du speeduino car les module pont en H que nous utiliserons, auront une commande PWM pour les PID.  
 
   //Initialising comprises of setting the 2D tables with the relevant values from the config pages
   switch(configPage6.iacAlgorithm)
@@ -246,6 +263,10 @@ Returns:
 True: If a step is underway or motor is 'cooling'
 False: If the motor is ready for another step
 */
+/* Vérifie si une étape est en cours ou si le moteur est en état de « refroidissement » (c'est-à-dire s'il est prêt à commencer une autre étape ou non)
+ Renvoie : Vrai : si une étape est en cours ou si le moteur est en « refroidissement » est prêt pour une autre étape 
+*/
+
 static inline byte checkForStepping()
 {
   bool isStepping = false;
