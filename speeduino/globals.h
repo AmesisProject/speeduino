@@ -1414,7 +1414,7 @@ struct config13 {
 
   //byte unused12_106_127[22]; // Unused
   byte unused12_125_127[2];    //Unused
-
+ // byte unused13_128_191[1];    //Teste d'agrandissement de page, la verif du televersement passe mais on ne sait pas s'il y a dépassement ou pas. a voir
 #if defined(CORE_AVR)
   };
 #else
