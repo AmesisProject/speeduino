@@ -1,0 +1,247 @@
+\hypertarget{scheduler_8h_source}{}\doxysection{scheduler.\+h}
+\mbox{\hyperlink{scheduler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{This scheduler is designed to maintain 2 schedules for use by the fuel and ignition systems. }}
+\DoxyCodeLine{3 \textcolor{comment}{It functions by waiting for the overflow vectors from each of the timers in use to overflow, which triggers an interrupt}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{//Technical}}
+\DoxyCodeLine{6 \textcolor{comment}{Currently I am prescaling the 16-\/bit timers to 256 for injection and 64 for ignition. This means that the counter increments every 16us (injection) / 4uS (ignition) and will overflow every 1048576uS}}
+\DoxyCodeLine{7 \textcolor{comment}{Max Period = (Prescale)*(1/Frequency)*(2\string^17)}}
+\DoxyCodeLine{8 \textcolor{comment}{(See http://playground.arduino.cc/code/timer1)}}
+\DoxyCodeLine{9 \textcolor{comment}{This means that the precision of the scheduler is 16uS (+/-\/ 8uS of target) for fuel and 4uS (+/-\/ 2uS) for ignition}}
+\DoxyCodeLine{10 \textcolor{comment}{}}
+\DoxyCodeLine{11 \textcolor{comment}{/Features}}
+\DoxyCodeLine{12 \textcolor{comment}{This differs from most other schedulers in that its calls are non-\/recurring (IE You schedule an event at a certain time and once it has occurred, it will not reoccur unless you explicitely ask for it)}}
+\DoxyCodeLine{13 \textcolor{comment}{Each timer can have only 1 callback associated with it at any given time. If you call the setCallback function a 2nd time, the original schedule will be overwritten and not occur}}
+\DoxyCodeLine{14 \textcolor{comment}{}}
+\DoxyCodeLine{15 \textcolor{comment}{Timer identification}}
+\DoxyCodeLine{16 \textcolor{comment}{The Arduino timer3 is used for schedule 1}}
+\DoxyCodeLine{17 \textcolor{comment}{The Arduino timer4 is used for schedule 2}}
+\DoxyCodeLine{18 \textcolor{comment}{Both of these are 16-\/bit timers (ie count to 65536)}}
+\DoxyCodeLine{19 \textcolor{comment}{See page 136 of the processors datasheet: http://www.atmel.com/Images/doc2549.pdf}}
+\DoxyCodeLine{20 \textcolor{comment}{}}
+\DoxyCodeLine{21 \textcolor{comment}{256 prescale gives tick every 16uS}}
+\DoxyCodeLine{22 \textcolor{comment}{256 prescale gives overflow every 1048576uS (This means maximum wait time is 1.0485 seconds)}}
+\DoxyCodeLine{23 \textcolor{comment}{}}
+\DoxyCodeLine{24 \textcolor{comment}{*/}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#ifndef SCHEDULER\_H}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define SCHEDULER\_H}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#ifdef \_\_SAM3X8E\_\_}}
+\DoxyCodeLine{29  \textcolor{comment}{//Do stuff for ARM based CPUs }}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{  \#include <avr/interrupt.h>} }
+\DoxyCodeLine{32 \textcolor{preprocessor}{  \#include <avr/io.h>}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#if defined(\_\_AVR\_ATmega1280\_\_) || defined(\_\_AVR\_ATmega2560\_\_) || defined(\_\_AVR\_ATmega2561\_\_)}}
+\DoxyCodeLine{36   \textcolor{comment}{//Refer to http://svn.savannah.nongnu.org/viewvc/trunk/avr-\/libc/include/avr/iomxx0\_1.h?root=avr-\/libc\&view=markup}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{  \#define FUEL1\_COUNTER TCNT3}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{  \#define FUEL2\_COUNTER TCNT3}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{  \#define FUEL3\_COUNTER TCNT3}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{  \#define FUEL4\_COUNTER TCNT4}}
+\DoxyCodeLine{41   }
+\DoxyCodeLine{42 \textcolor{preprocessor}{  \#define IGN1\_COUNTER  TCNT5}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{  \#define IGN2\_COUNTER  TCNT5}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  \#define IGN3\_COUNTER  TCNT5}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{  \#define IGN4\_COUNTER  TCNT4}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{  \#define FUEL1\_COMPARE OCR3A}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{  \#define FUEL2\_COMPARE OCR3B}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{  \#define FUEL3\_COMPARE OCR3C}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{  \#define FUEL4\_COMPARE OCR4B}}
+\DoxyCodeLine{51   }
+\DoxyCodeLine{52 \textcolor{preprocessor}{  \#define IGN1\_COMPARE  OCR5A}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{  \#define IGN2\_COMPARE  OCR5B}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{  \#define IGN3\_COMPARE  OCR5C}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{  \#define IGN4\_COMPARE  OCR4A}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{  \#define FUEL1\_TIMER\_ENABLE() TIMSK3 |= (1 << OCIE3A) }\textcolor{comment}{//Turn on the A compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{  \#define FUEL2\_TIMER\_ENABLE() TIMSK3 |= (1 << OCIE3B) }\textcolor{comment}{//Turn on the B compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{  \#define FUEL3\_TIMER\_ENABLE() TIMSK3 |= (1 << OCIE3C) }\textcolor{comment}{//Turn on the C compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{  \#define FUEL4\_TIMER\_ENABLE() TIMSK4 |= (1 << OCIE4B) }\textcolor{comment}{//Turn on the B compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{  \#define FUEL1\_TIMER\_DISABLE() TIMSK3 \&= \string~(1 << OCIE3A); }\textcolor{comment}{//Turn off this output compare unit}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{  \#define FUEL2\_TIMER\_DISABLE() TIMSK3 \&= \string~(1 << OCIE3B); }\textcolor{comment}{//Turn off this output compare unit}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{  \#define FUEL3\_TIMER\_DISABLE() TIMSK3 \&= \string~(1 << OCIE3C); }\textcolor{comment}{//Turn off this output compare unit}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{  \#define FUEL4\_TIMER\_DISABLE() TIMSK4 \&= \string~(1 << OCIE4B); }\textcolor{comment}{//Turn off this output compare unit}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{  \#define IGN1\_TIMER\_ENABLE() TIMSK5 |= (1 << OCIE5A) }\textcolor{comment}{//Turn on the A compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{  \#define IGN2\_TIMER\_ENABLE() TIMSK5 |= (1 << OCIE5B) }\textcolor{comment}{//Turn on the B compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{  \#define IGN3\_TIMER\_ENABLE() TIMSK5 |= (1 << OCIE5C) }\textcolor{comment}{//Turn on the C compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{  \#define IGN4\_TIMER\_ENABLE() TIMSK4 |= (1 << OCIE4A) }\textcolor{comment}{//Turn on the A compare unit (ie turn on the interrupt)}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{  \#define IGN1\_TIMER\_DISABLE() TIMSK5 \&= \string~(1 << OCIE5A) }\textcolor{comment}{//Turn off this output compare unit }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{  \#define IGN2\_TIMER\_DISABLE() TIMSK5 \&= \string~(1 << OCIE5B) }\textcolor{comment}{//Turn off this output compare unit}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{  \#define IGN3\_TIMER\_DISABLE() TIMSK5 \&= \string~(1 << OCIE5C) }\textcolor{comment}{//Turn off this output compare unit}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{  \#define IGN4\_TIMER\_DISABLE() TIMSK4 \&= \string~(1 << OCIE4A) }\textcolor{comment}{//Turn off this output compare unit}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#elif defined(CORE\_TEENSY) }}
+\DoxyCodeLine{78   \textcolor{comment}{//http://shawnhymel.com/661/learning-\/the-\/teensy-\/lc-\/interrupt-\/service-\/routines/}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{  \#define FUEL1\_COUNTER FTM0\_CNT}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{  \#define FUEL2\_COUNTER FTM0\_CNT}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{  \#define FUEL3\_COUNTER FTM0\_CNT}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{  \#define FUEL4\_COUNTER FTM0\_CNT}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{  \#define IGN1\_COUNTER  FTM0\_CNT}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{  \#define IGN2\_COUNTER  FTM0\_CNT}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{  \#define IGN3\_COUNTER  FTM0\_CNT}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{  \#define IGN4\_COUNTER  FTM0\_CNT}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{  \#define FUEL1\_COMPARE FTM0\_C0V}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{  \#define FUEL2\_COMPARE FTM0\_C1V}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{  \#define FUEL3\_COMPARE FTM0\_C2V}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{  \#define FUEL4\_COMPARE FTM0\_C3V}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{  \#define IGN1\_COMPARE  FTM0\_C4V}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{  \#define IGN2\_COMPARE  FTM0\_C5V}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{  \#define IGN3\_COMPARE  FTM0\_C6V}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{  \#define IGN4\_COMPARE  FTM0\_C7V}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{  \#define FUEL1\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{  \#define FUEL2\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{  \#define FUEL3\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{  \#define FUEL4\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{  \#define FUEL1\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{  \#define FUEL2\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{  \#define FUEL3\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{  \#define FUEL4\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{  \#define IGN1\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{  \#define IGN2\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{  \#define IGN3\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{  \#define IGN4\_TIMER\_ENABLE() NVIC\_ENABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{  \#define IGN1\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{  \#define IGN2\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{  \#define IGN3\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{  \#define IGN4\_TIMER\_DISABLE() NVIC\_DISABLE\_IRQ(IRQ\_FTM1) }\textcolor{comment}{//THIS IS NOT RIGHT! PLACEHOLDER ONLY!}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a96b6832dde269a23d3ca231c2e7e2e08}{initialiseSchedulers}}();}
+\DoxyCodeLine{121 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a2188fd69449a54c2aff05d689519acb1}{setFuelSchedule1}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{122 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_af59456d38dce75bd5922475b470d9d3c}{setFuelSchedule2}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_aa366caabda024ce4fe67b3ceae06fe16}{setFuelSchedule3}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{124 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_ae6463248e441df8e8e0ed79eac8b0dfa}{setFuelSchedule4}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_aa9935ae3b92c4c3dd743d11e27bb891a}{setFuelSchedule5}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{126 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_afe5d18c865a9bc446a11c21c53282e00}{setFuelSchedule6}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a2d20f94fc98ac7a777f28fa744c6682d}{setFuelSchedule7}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{128 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_ae5e4ae2b537af3cde5d465a34d23c3e2}{setFuelSchedule8}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{129 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_acbabd47ae98c2c8ce56b73a34b6904c4}{setIgnitionSchedule1}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{130 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a9f1511ca892508b3551eb7417d85b8ab}{setIgnitionSchedule2}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{131 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a7b33f577608cff645c9883f78f5a5c05}{setIgnitionSchedule3}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{132 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a2f7326607e26ff3d07575c018cacd2a8}{setIgnitionSchedule4}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{133 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a5e7516ecde9ec350443de8bed049912b}{setIgnitionSchedule5}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{134 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a6267973bd1c84a5050b102745526d47c}{setIgnitionSchedule6}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{135 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a6458184ce02bbd3e4c24a84e5ab7859d}{setIgnitionSchedule7}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{136 \textcolor{keywordtype}{void} \mbox{\hyperlink{scheduler_8h_a02e282e997465ea6a1bbe71cd28011e4}{setIgnitionSchedule8}}(\textcolor{keywordtype}{void} (*startCallback)(), \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} timeout, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} duration, \textcolor{keywordtype}{void}(*endCallback)());}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \textcolor{keyword}{enum} \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54}{ScheduleStatus}} \{\mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54aac132f2982b98bcaa3445e535a03ff75}{OFF}}, \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1869818fd53ff519eb8e429301bdff73}{PENDING}}, \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1061be6c3fb88d32829cba6f6b2be304}{RUNNING}}\}; \textcolor{comment}{//The 3 statuses that a schedule can have}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_schedule}{Schedule}} \{}
+\DoxyCodeLine{141   \textcolor{keyword}{volatile} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_schedule_a142a66a0e3acbf39e59c35af3cccc336}{duration}};}
+\DoxyCodeLine{142   \textcolor{keyword}{volatile} \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54}{ScheduleStatus}} \mbox{\hyperlink{struct_schedule_a778619a6259c4942fa0044fc393bc7da}{Status}};}
+\DoxyCodeLine{143   \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{struct_schedule_aa84914c30d7659179897bd91c94b2421}{schedulesSet}}; \textcolor{comment}{//A counter of how many times the schedule has been set}}
+\DoxyCodeLine{144   void (*\mbox{\hyperlink{struct_schedule_a33c7ff86fc7c5feea3500e6dd31509c1}{StartCallback}})(); \textcolor{comment}{//Start Callback function for schedule}}
+\DoxyCodeLine{145   void (*\mbox{\hyperlink{struct_schedule_a6b5e98bbafd6d4b3aea0a68f7cc27af9}{EndCallback}})(); \textcolor{comment}{//Start Callback function for schedule}}
+\DoxyCodeLine{146   \textcolor{keyword}{volatile} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_schedule_a301080ad6376b86ec1af438d101fae50}{startTime}}; \textcolor{comment}{//The system time (in uS) that the schedule started}}
+\DoxyCodeLine{147   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_schedule_ac474dceb4ff5186062d1c8eb922c1a22}{startCompare}}; \textcolor{comment}{//The counter value of the timer when this will start}}
+\DoxyCodeLine{148   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_schedule_a24e446a49c1f9df8f63dfa6efb7aea8f}{endCompare}};}
+\DoxyCodeLine{149 \};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keyword}{volatile} \mbox{\hyperlink{struct_schedule}{Schedule}} *\mbox{\hyperlink{scheduler_8h_ac5cc8cfde6dde7d4b21ea4107949b586}{timer3Aqueue}}[4];}
+\DoxyCodeLine{152 \mbox{\hyperlink{struct_schedule}{Schedule}} *\mbox{\hyperlink{scheduler_8h_ae573fb6d7a9040dd431f3fcad3730a1e}{timer3Bqueue}}[4];}
+\DoxyCodeLine{153 \mbox{\hyperlink{struct_schedule}{Schedule}} *\mbox{\hyperlink{scheduler_8h_adde5e639f643f7e34df408ba705630d6}{timer3Cqueue}}[4];}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_aae55b8a28f144d089d36a324cb822210}{fuelSchedule1}};}
+\DoxyCodeLine{156 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a87c947ace39e860a97b96eaa6017fec5}{fuelSchedule2}};}
+\DoxyCodeLine{157 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_ab453ae7afe9fae34a7b39685c6c87361}{fuelSchedule3}};}
+\DoxyCodeLine{158 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a81a839d97929926f0272148df2e82198}{fuelSchedule4}};}
+\DoxyCodeLine{159 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_af44b5a3c083dab3131263e15e5822617}{fuelSchedule5}};}
+\DoxyCodeLine{160 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a9d81eedaf51dbec9363adf1e46219622}{fuelSchedule6}};}
+\DoxyCodeLine{161 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a63644ab5fc043eb36d69dc004b7a4117}{fuelSchedule7}};}
+\DoxyCodeLine{162 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_abbab37c77c649f0eb304c46e915b9a00}{fuelSchedule8}};}
+\DoxyCodeLine{163 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a6a9ec03ae68dc8eee51fb0a97b1e31b4}{ignitionSchedule1}};}
+\DoxyCodeLine{164 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a138eb2ae9ce86a2313e2ba6577c69160}{ignitionSchedule2}};}
+\DoxyCodeLine{165 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a2a9e23f2d25b1bcae044c2cdbc146c97}{ignitionSchedule3}};}
+\DoxyCodeLine{166 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a3deb9690951cce9a6be03cb079979ae8}{ignitionSchedule4}};}
+\DoxyCodeLine{167 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a25ddf379f9b0f880cb1433df61802995}{ignitionSchedule5}};}
+\DoxyCodeLine{168 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a061e792bab82b5447ccc65f0aeefc5b4}{ignitionSchedule6}};}
+\DoxyCodeLine{169 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a139a7ba94bf49419dd6004087fc04d3a}{ignitionSchedule7}};}
+\DoxyCodeLine{170 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_aff5e8c03a998148988fa19f435e2ca3c}{ignitionSchedule8}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_afe509c098a269572785fa5c706d97b80}{nullSchedule}}; \textcolor{comment}{//This is placed at the end of the queue. It's status will always be set to OFF and hence will never perform any action within an ISR}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} setQueue(\textcolor{keyword}{volatile} \mbox{\hyperlink{struct_schedule}{Schedule}} *queue[], \mbox{\hyperlink{struct_schedule}{Schedule}} *schedule1, \mbox{\hyperlink{struct_schedule}{Schedule}} *schedule2, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} CNT)}
+\DoxyCodeLine{175 \{}
+\DoxyCodeLine{176   \textcolor{comment}{//Create an array of all the upcoming targets, relative to the current count on the timer}}
+\DoxyCodeLine{177   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} tmpQueue[4];}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179   \textcolor{comment}{//Set the initial queue state. This order matches the tmpQueue order}}
+\DoxyCodeLine{180   \textcolor{keywordflow}{if}(schedule1-\/>\mbox{\hyperlink{struct_schedule_a778619a6259c4942fa0044fc393bc7da}{Status}} == \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54aac132f2982b98bcaa3445e535a03ff75}{OFF}})}
+\DoxyCodeLine{181   \{}
+\DoxyCodeLine{182     queue[0] = schedule2;}
+\DoxyCodeLine{183     queue[1] = schedule2;}
+\DoxyCodeLine{184     tmpQueue[0] = schedule2-\/>\mbox{\hyperlink{struct_schedule_ac474dceb4ff5186062d1c8eb922c1a22}{startCompare}} -\/ CNT;}
+\DoxyCodeLine{185     tmpQueue[1] = schedule2-\/>\mbox{\hyperlink{struct_schedule_a24e446a49c1f9df8f63dfa6efb7aea8f}{endCompare}} -\/ CNT;}
+\DoxyCodeLine{186   \}}
+\DoxyCodeLine{187   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{188   \{}
+\DoxyCodeLine{189     queue[0] = schedule1;}
+\DoxyCodeLine{190     queue[1] = schedule1;}
+\DoxyCodeLine{191     tmpQueue[0] = schedule1-\/>\mbox{\hyperlink{struct_schedule_ac474dceb4ff5186062d1c8eb922c1a22}{startCompare}} -\/ CNT;}
+\DoxyCodeLine{192     tmpQueue[1] = schedule1-\/>\mbox{\hyperlink{struct_schedule_a24e446a49c1f9df8f63dfa6efb7aea8f}{endCompare}} -\/ CNT;}
+\DoxyCodeLine{193   \}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195   \textcolor{keywordflow}{if}(schedule2-\/>\mbox{\hyperlink{struct_schedule_a778619a6259c4942fa0044fc393bc7da}{Status}} == \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54aac132f2982b98bcaa3445e535a03ff75}{OFF}})}
+\DoxyCodeLine{196   \{}
+\DoxyCodeLine{197     queue[2] = schedule1;}
+\DoxyCodeLine{198     queue[3] = schedule1;}
+\DoxyCodeLine{199     tmpQueue[2] = schedule1-\/>\mbox{\hyperlink{struct_schedule_ac474dceb4ff5186062d1c8eb922c1a22}{startCompare}} -\/ CNT;}
+\DoxyCodeLine{200     tmpQueue[3] = schedule1-\/>\mbox{\hyperlink{struct_schedule_a24e446a49c1f9df8f63dfa6efb7aea8f}{endCompare}} -\/ CNT;   }
+\DoxyCodeLine{201   \}}
+\DoxyCodeLine{202   \textcolor{keywordflow}{else}}
+\DoxyCodeLine{203   \{}
+\DoxyCodeLine{204     queue[2] = schedule2;}
+\DoxyCodeLine{205     queue[3] = schedule2;   }
+\DoxyCodeLine{206     tmpQueue[2] = schedule2-\/>\mbox{\hyperlink{struct_schedule_ac474dceb4ff5186062d1c8eb922c1a22}{startCompare}} -\/ CNT;}
+\DoxyCodeLine{207     tmpQueue[3] = schedule2-\/>\mbox{\hyperlink{struct_schedule_a24e446a49c1f9df8f63dfa6efb7aea8f}{endCompare}} -\/ CNT; }
+\DoxyCodeLine{208   \}}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211   \textcolor{comment}{//Sort the queues. Both queues are kept in sync. }}
+\DoxyCodeLine{212   \textcolor{comment}{//This implementes a sorting networking based on the Bose-\/Nelson sorting network}}
+\DoxyCodeLine{213   \textcolor{comment}{//See: http://pages.ripco.net/\string~jgamble/nw.html}}
+\DoxyCodeLine{214 \textcolor{preprocessor}{  \#define SWAP(x,y) if(tmpQueue[y] < tmpQueue[x]) \{ unsigned int tmp = tmpQueue[x]; tmpQueue[x] = tmpQueue[y]; tmpQueue[y] = tmp; volatile Schedule *tmpS = queue[x]; queue[x] = queue[y]; queue[y] = tmpS; \}}}
+\DoxyCodeLine{215   \textcolor{comment}{//SWAP(0, 1); //Likely not needed}}
+\DoxyCodeLine{216   \textcolor{comment}{//SWAP(2, 3); //Likely not needed}}
+\DoxyCodeLine{217   \mbox{\hyperlink{scheduler_8h_a5d9d454d4b9f2ff8106d5199ac0d0186}{SWAP}}(0, 2);}
+\DoxyCodeLine{218   \mbox{\hyperlink{scheduler_8h_a5d9d454d4b9f2ff8106d5199ac0d0186}{SWAP}}(1, 3);}
+\DoxyCodeLine{219   \mbox{\hyperlink{scheduler_8h_a5d9d454d4b9f2ff8106d5199ac0d0186}{SWAP}}(1, 2);}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221   \textcolor{comment}{//Return the next compare time in the queue}}
+\DoxyCodeLine{222   \textcolor{keywordflow}{return} tmpQueue[0] + CNT; \textcolor{comment}{//Return the }}
+\DoxyCodeLine{223 \}}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{comment}{/*}}
+\DoxyCodeLine{226 \textcolor{comment}{ * Moves all the Schedules in a queue forward one position. }}
+\DoxyCodeLine{227 \textcolor{comment}{ * The current item (0) is discarded}}
+\DoxyCodeLine{228 \textcolor{comment}{ * The final queue slot is set to nullSchedule to indicate that no action should be taken}}
+\DoxyCodeLine{229 \textcolor{comment}{ */}}
+\DoxyCodeLine{230 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} popQueue(\textcolor{keyword}{volatile} \mbox{\hyperlink{struct_schedule}{Schedule}} *queue[])}
+\DoxyCodeLine{231 \{}
+\DoxyCodeLine{232   queue[0] = queue[1];}
+\DoxyCodeLine{233   queue[1] = queue[2];}
+\DoxyCodeLine{234   queue[2] = queue[3];}
+\DoxyCodeLine{235   queue[3] = \&\mbox{\hyperlink{scheduler_8h_afe509c098a269572785fa5c706d97b80}{nullSchedule}};}
+\DoxyCodeLine{236 }
+\DoxyCodeLine{237   \textcolor{keywordflow}{if}( queue[0]-\/>Status == \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1869818fd53ff519eb8e429301bdff73}{PENDING}} ) \{ \textcolor{keywordflow}{return} queue[0]-\/>\mbox{\hyperlink{struct_schedule_ac474dceb4ff5186062d1c8eb922c1a22}{startCompare}}; \}}
+\DoxyCodeLine{238   \textcolor{keywordflow}{else} \{ \textcolor{keywordflow}{return} queue[0]-\/>\mbox{\hyperlink{struct_schedule_a24e446a49c1f9df8f63dfa6efb7aea8f}{endCompare}}; \}}
+\DoxyCodeLine{239 \}}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{242 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SCHEDULER\_H}}
+
+\end{DoxyCode}

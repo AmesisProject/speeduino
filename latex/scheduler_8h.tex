@@ -1,0 +1,362 @@
+\hypertarget{scheduler_8h}{}\doxysection{scheduler.\+h File Reference}
+\label{scheduler_8h}\index{scheduler.h@{scheduler.h}}
+{\ttfamily \#include $<$avr/interrupt.\+h$>$}\newline
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_schedule}{Schedule}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{scheduler_8h_a5d9d454d4b9f2ff8106d5199ac0d0186}{SWAP}}(x,  y)~if(tmp\+Queue\mbox{[}y\mbox{]} $<$ tmp\+Queue\mbox{[}x\mbox{]}) \{ unsigned int tmp = tmp\+Queue\mbox{[}x\mbox{]}; tmp\+Queue\mbox{[}x\mbox{]} = tmp\+Queue\mbox{[}y\mbox{]}; tmp\+Queue\mbox{[}y\mbox{]} = tmp; volatile \mbox{\hyperlink{struct_schedule}{Schedule}} $\ast$tmpS = queue\mbox{[}x\mbox{]}; queue\mbox{[}x\mbox{]} = queue\mbox{[}y\mbox{]}; queue\mbox{[}y\mbox{]} = tmpS; \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54}{Schedule\+Status}} \{ \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54aac132f2982b98bcaa3445e535a03ff75}{OFF}}
+, \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1869818fd53ff519eb8e429301bdff73}{PENDING}}
+, \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1061be6c3fb88d32829cba6f6b2be304}{RUNNING}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{scheduler_8h_a96b6832dde269a23d3ca231c2e7e2e08}{initialise\+Schedulers}} ()
+\item 
+void \mbox{\hyperlink{scheduler_8h_a2188fd69449a54c2aff05d689519acb1}{set\+Fuel\+Schedule1}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_af59456d38dce75bd5922475b470d9d3c}{set\+Fuel\+Schedule2}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_aa366caabda024ce4fe67b3ceae06fe16}{set\+Fuel\+Schedule3}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_ae6463248e441df8e8e0ed79eac8b0dfa}{set\+Fuel\+Schedule4}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_aa9935ae3b92c4c3dd743d11e27bb891a}{set\+Fuel\+Schedule5}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_afe5d18c865a9bc446a11c21c53282e00}{set\+Fuel\+Schedule6}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a2d20f94fc98ac7a777f28fa744c6682d}{set\+Fuel\+Schedule7}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_ae5e4ae2b537af3cde5d465a34d23c3e2}{set\+Fuel\+Schedule8}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_acbabd47ae98c2c8ce56b73a34b6904c4}{set\+Ignition\+Schedule1}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a9f1511ca892508b3551eb7417d85b8ab}{set\+Ignition\+Schedule2}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a7b33f577608cff645c9883f78f5a5c05}{set\+Ignition\+Schedule3}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a2f7326607e26ff3d07575c018cacd2a8}{set\+Ignition\+Schedule4}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a5e7516ecde9ec350443de8bed049912b}{set\+Ignition\+Schedule5}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a6267973bd1c84a5050b102745526d47c}{set\+Ignition\+Schedule6}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a6458184ce02bbd3e4c24a84e5ab7859d}{set\+Ignition\+Schedule7}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\item 
+void \mbox{\hyperlink{scheduler_8h_a02e282e997465ea6a1bbe71cd28011e4}{set\+Ignition\+Schedule8}} (void($\ast$start\+Callback)(), unsigned long timeout, unsigned long duration, void($\ast$end\+Callback)())
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile \mbox{\hyperlink{struct_schedule}{Schedule}} $\ast$ \mbox{\hyperlink{scheduler_8h_ac5cc8cfde6dde7d4b21ea4107949b586}{timer3\+Aqueue}} \mbox{[}4\mbox{]}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} $\ast$ \mbox{\hyperlink{scheduler_8h_ae573fb6d7a9040dd431f3fcad3730a1e}{timer3\+Bqueue}} \mbox{[}4\mbox{]}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} $\ast$ \mbox{\hyperlink{scheduler_8h_adde5e639f643f7e34df408ba705630d6}{timer3\+Cqueue}} \mbox{[}4\mbox{]}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_aae55b8a28f144d089d36a324cb822210}{fuel\+Schedule1}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a87c947ace39e860a97b96eaa6017fec5}{fuel\+Schedule2}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_ab453ae7afe9fae34a7b39685c6c87361}{fuel\+Schedule3}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a81a839d97929926f0272148df2e82198}{fuel\+Schedule4}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_af44b5a3c083dab3131263e15e5822617}{fuel\+Schedule5}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a9d81eedaf51dbec9363adf1e46219622}{fuel\+Schedule6}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a63644ab5fc043eb36d69dc004b7a4117}{fuel\+Schedule7}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_abbab37c77c649f0eb304c46e915b9a00}{fuel\+Schedule8}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a6a9ec03ae68dc8eee51fb0a97b1e31b4}{ignition\+Schedule1}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a138eb2ae9ce86a2313e2ba6577c69160}{ignition\+Schedule2}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a2a9e23f2d25b1bcae044c2cdbc146c97}{ignition\+Schedule3}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a3deb9690951cce9a6be03cb079979ae8}{ignition\+Schedule4}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a25ddf379f9b0f880cb1433df61802995}{ignition\+Schedule5}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a061e792bab82b5447ccc65f0aeefc5b4}{ignition\+Schedule6}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_a139a7ba94bf49419dd6004087fc04d3a}{ignition\+Schedule7}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_aff5e8c03a998148988fa19f435e2ca3c}{ignition\+Schedule8}}
+\item 
+\mbox{\hyperlink{struct_schedule}{Schedule}} \mbox{\hyperlink{scheduler_8h_afe509c098a269572785fa5c706d97b80}{null\+Schedule}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{scheduler_8h_a5d9d454d4b9f2ff8106d5199ac0d0186}\label{scheduler_8h_a5d9d454d4b9f2ff8106d5199ac0d0186}} 
+\index{scheduler.h@{scheduler.h}!SWAP@{SWAP}}
+\index{SWAP@{SWAP}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{SWAP}{SWAP}}
+{\footnotesize\ttfamily \#define SWAP(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~if(tmp\+Queue\mbox{[}y\mbox{]} $<$ tmp\+Queue\mbox{[}x\mbox{]}) \{ unsigned int tmp = tmp\+Queue\mbox{[}x\mbox{]}; tmp\+Queue\mbox{[}x\mbox{]} = tmp\+Queue\mbox{[}y\mbox{]}; tmp\+Queue\mbox{[}y\mbox{]} = tmp; volatile \mbox{\hyperlink{struct_schedule}{Schedule}} $\ast$tmpS = queue\mbox{[}x\mbox{]}; queue\mbox{[}x\mbox{]} = queue\mbox{[}y\mbox{]}; queue\mbox{[}y\mbox{]} = tmpS; \}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54}\label{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54}} 
+\index{scheduler.h@{scheduler.h}!ScheduleStatus@{ScheduleStatus}}
+\index{ScheduleStatus@{ScheduleStatus}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ScheduleStatus}{ScheduleStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54}{Schedule\+Status}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OFF@{OFF}!scheduler.h@{scheduler.h}}\index{scheduler.h@{scheduler.h}!OFF@{OFF}}}\mbox{\Hypertarget{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54aac132f2982b98bcaa3445e535a03ff75}\label{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54aac132f2982b98bcaa3445e535a03ff75}} 
+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PENDING@{PENDING}!scheduler.h@{scheduler.h}}\index{scheduler.h@{scheduler.h}!PENDING@{PENDING}}}\mbox{\Hypertarget{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1869818fd53ff519eb8e429301bdff73}\label{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1869818fd53ff519eb8e429301bdff73}} 
+PENDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNNING@{RUNNING}!scheduler.h@{scheduler.h}}\index{scheduler.h@{scheduler.h}!RUNNING@{RUNNING}}}\mbox{\Hypertarget{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1061be6c3fb88d32829cba6f6b2be304}\label{scheduler_8h_ae47578e47c890aeec4d5ba7fdfc68e54a1061be6c3fb88d32829cba6f6b2be304}} 
+RUNNING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{scheduler_8h_a96b6832dde269a23d3ca231c2e7e2e08}\label{scheduler_8h_a96b6832dde269a23d3ca231c2e7e2e08}} 
+\index{scheduler.h@{scheduler.h}!initialiseSchedulers@{initialiseSchedulers}}
+\index{initialiseSchedulers@{initialiseSchedulers}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{initialiseSchedulers()}{initialiseSchedulers()}}
+{\footnotesize\ttfamily void initialise\+Schedulers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a2188fd69449a54c2aff05d689519acb1}\label{scheduler_8h_a2188fd69449a54c2aff05d689519acb1}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule1@{setFuelSchedule1}}
+\index{setFuelSchedule1@{setFuelSchedule1}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule1()}{setFuelSchedule1()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule1 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_af59456d38dce75bd5922475b470d9d3c}\label{scheduler_8h_af59456d38dce75bd5922475b470d9d3c}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule2@{setFuelSchedule2}}
+\index{setFuelSchedule2@{setFuelSchedule2}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule2()}{setFuelSchedule2()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule2 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_aa366caabda024ce4fe67b3ceae06fe16}\label{scheduler_8h_aa366caabda024ce4fe67b3ceae06fe16}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule3@{setFuelSchedule3}}
+\index{setFuelSchedule3@{setFuelSchedule3}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule3()}{setFuelSchedule3()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule3 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_ae6463248e441df8e8e0ed79eac8b0dfa}\label{scheduler_8h_ae6463248e441df8e8e0ed79eac8b0dfa}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule4@{setFuelSchedule4}}
+\index{setFuelSchedule4@{setFuelSchedule4}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule4()}{setFuelSchedule4()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule4 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_aa9935ae3b92c4c3dd743d11e27bb891a}\label{scheduler_8h_aa9935ae3b92c4c3dd743d11e27bb891a}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule5@{setFuelSchedule5}}
+\index{setFuelSchedule5@{setFuelSchedule5}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule5()}{setFuelSchedule5()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule5 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_afe5d18c865a9bc446a11c21c53282e00}\label{scheduler_8h_afe5d18c865a9bc446a11c21c53282e00}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule6@{setFuelSchedule6}}
+\index{setFuelSchedule6@{setFuelSchedule6}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule6()}{setFuelSchedule6()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule6 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a2d20f94fc98ac7a777f28fa744c6682d}\label{scheduler_8h_a2d20f94fc98ac7a777f28fa744c6682d}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule7@{setFuelSchedule7}}
+\index{setFuelSchedule7@{setFuelSchedule7}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule7()}{setFuelSchedule7()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule7 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_ae5e4ae2b537af3cde5d465a34d23c3e2}\label{scheduler_8h_ae5e4ae2b537af3cde5d465a34d23c3e2}} 
+\index{scheduler.h@{scheduler.h}!setFuelSchedule8@{setFuelSchedule8}}
+\index{setFuelSchedule8@{setFuelSchedule8}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setFuelSchedule8()}{setFuelSchedule8()}}
+{\footnotesize\ttfamily void set\+Fuel\+Schedule8 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_acbabd47ae98c2c8ce56b73a34b6904c4}\label{scheduler_8h_acbabd47ae98c2c8ce56b73a34b6904c4}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule1@{setIgnitionSchedule1}}
+\index{setIgnitionSchedule1@{setIgnitionSchedule1}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule1()}{setIgnitionSchedule1()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule1 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a9f1511ca892508b3551eb7417d85b8ab}\label{scheduler_8h_a9f1511ca892508b3551eb7417d85b8ab}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule2@{setIgnitionSchedule2}}
+\index{setIgnitionSchedule2@{setIgnitionSchedule2}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule2()}{setIgnitionSchedule2()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule2 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a7b33f577608cff645c9883f78f5a5c05}\label{scheduler_8h_a7b33f577608cff645c9883f78f5a5c05}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule3@{setIgnitionSchedule3}}
+\index{setIgnitionSchedule3@{setIgnitionSchedule3}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule3()}{setIgnitionSchedule3()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule3 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a2f7326607e26ff3d07575c018cacd2a8}\label{scheduler_8h_a2f7326607e26ff3d07575c018cacd2a8}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule4@{setIgnitionSchedule4}}
+\index{setIgnitionSchedule4@{setIgnitionSchedule4}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule4()}{setIgnitionSchedule4()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule4 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a5e7516ecde9ec350443de8bed049912b}\label{scheduler_8h_a5e7516ecde9ec350443de8bed049912b}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule5@{setIgnitionSchedule5}}
+\index{setIgnitionSchedule5@{setIgnitionSchedule5}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule5()}{setIgnitionSchedule5()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule5 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a6267973bd1c84a5050b102745526d47c}\label{scheduler_8h_a6267973bd1c84a5050b102745526d47c}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule6@{setIgnitionSchedule6}}
+\index{setIgnitionSchedule6@{setIgnitionSchedule6}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule6()}{setIgnitionSchedule6()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule6 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a6458184ce02bbd3e4c24a84e5ab7859d}\label{scheduler_8h_a6458184ce02bbd3e4c24a84e5ab7859d}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule7@{setIgnitionSchedule7}}
+\index{setIgnitionSchedule7@{setIgnitionSchedule7}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule7()}{setIgnitionSchedule7()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule7 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{scheduler_8h_a02e282e997465ea6a1bbe71cd28011e4}\label{scheduler_8h_a02e282e997465ea6a1bbe71cd28011e4}} 
+\index{scheduler.h@{scheduler.h}!setIgnitionSchedule8@{setIgnitionSchedule8}}
+\index{setIgnitionSchedule8@{setIgnitionSchedule8}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{setIgnitionSchedule8()}{setIgnitionSchedule8()}}
+{\footnotesize\ttfamily void set\+Ignition\+Schedule8 (\begin{DoxyParamCaption}\item[{void($\ast$)()}]{start\+Callback,  }\item[{unsigned long}]{timeout,  }\item[{unsigned long}]{duration,  }\item[{void($\ast$)()}]{end\+Callback }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{scheduler_8h_aae55b8a28f144d089d36a324cb822210}\label{scheduler_8h_aae55b8a28f144d089d36a324cb822210}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule1@{fuelSchedule1}}
+\index{fuelSchedule1@{fuelSchedule1}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule1}{fuelSchedule1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule1}
+
+\mbox{\Hypertarget{scheduler_8h_a87c947ace39e860a97b96eaa6017fec5}\label{scheduler_8h_a87c947ace39e860a97b96eaa6017fec5}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule2@{fuelSchedule2}}
+\index{fuelSchedule2@{fuelSchedule2}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule2}{fuelSchedule2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule2}
+
+\mbox{\Hypertarget{scheduler_8h_ab453ae7afe9fae34a7b39685c6c87361}\label{scheduler_8h_ab453ae7afe9fae34a7b39685c6c87361}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule3@{fuelSchedule3}}
+\index{fuelSchedule3@{fuelSchedule3}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule3}{fuelSchedule3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule3}
+
+\mbox{\Hypertarget{scheduler_8h_a81a839d97929926f0272148df2e82198}\label{scheduler_8h_a81a839d97929926f0272148df2e82198}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule4@{fuelSchedule4}}
+\index{fuelSchedule4@{fuelSchedule4}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule4}{fuelSchedule4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule4}
+
+\mbox{\Hypertarget{scheduler_8h_af44b5a3c083dab3131263e15e5822617}\label{scheduler_8h_af44b5a3c083dab3131263e15e5822617}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule5@{fuelSchedule5}}
+\index{fuelSchedule5@{fuelSchedule5}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule5}{fuelSchedule5}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule5}
+
+\mbox{\Hypertarget{scheduler_8h_a9d81eedaf51dbec9363adf1e46219622}\label{scheduler_8h_a9d81eedaf51dbec9363adf1e46219622}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule6@{fuelSchedule6}}
+\index{fuelSchedule6@{fuelSchedule6}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule6}{fuelSchedule6}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule6}
+
+\mbox{\Hypertarget{scheduler_8h_a63644ab5fc043eb36d69dc004b7a4117}\label{scheduler_8h_a63644ab5fc043eb36d69dc004b7a4117}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule7@{fuelSchedule7}}
+\index{fuelSchedule7@{fuelSchedule7}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule7}{fuelSchedule7}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule7}
+
+\mbox{\Hypertarget{scheduler_8h_abbab37c77c649f0eb304c46e915b9a00}\label{scheduler_8h_abbab37c77c649f0eb304c46e915b9a00}} 
+\index{scheduler.h@{scheduler.h}!fuelSchedule8@{fuelSchedule8}}
+\index{fuelSchedule8@{fuelSchedule8}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{fuelSchedule8}{fuelSchedule8}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} fuel\+Schedule8}
+
+\mbox{\Hypertarget{scheduler_8h_a6a9ec03ae68dc8eee51fb0a97b1e31b4}\label{scheduler_8h_a6a9ec03ae68dc8eee51fb0a97b1e31b4}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule1@{ignitionSchedule1}}
+\index{ignitionSchedule1@{ignitionSchedule1}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule1}{ignitionSchedule1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule1}
+
+\mbox{\Hypertarget{scheduler_8h_a138eb2ae9ce86a2313e2ba6577c69160}\label{scheduler_8h_a138eb2ae9ce86a2313e2ba6577c69160}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule2@{ignitionSchedule2}}
+\index{ignitionSchedule2@{ignitionSchedule2}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule2}{ignitionSchedule2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule2}
+
+\mbox{\Hypertarget{scheduler_8h_a2a9e23f2d25b1bcae044c2cdbc146c97}\label{scheduler_8h_a2a9e23f2d25b1bcae044c2cdbc146c97}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule3@{ignitionSchedule3}}
+\index{ignitionSchedule3@{ignitionSchedule3}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule3}{ignitionSchedule3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule3}
+
+\mbox{\Hypertarget{scheduler_8h_a3deb9690951cce9a6be03cb079979ae8}\label{scheduler_8h_a3deb9690951cce9a6be03cb079979ae8}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule4@{ignitionSchedule4}}
+\index{ignitionSchedule4@{ignitionSchedule4}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule4}{ignitionSchedule4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule4}
+
+\mbox{\Hypertarget{scheduler_8h_a25ddf379f9b0f880cb1433df61802995}\label{scheduler_8h_a25ddf379f9b0f880cb1433df61802995}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule5@{ignitionSchedule5}}
+\index{ignitionSchedule5@{ignitionSchedule5}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule5}{ignitionSchedule5}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule5}
+
+\mbox{\Hypertarget{scheduler_8h_a061e792bab82b5447ccc65f0aeefc5b4}\label{scheduler_8h_a061e792bab82b5447ccc65f0aeefc5b4}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule6@{ignitionSchedule6}}
+\index{ignitionSchedule6@{ignitionSchedule6}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule6}{ignitionSchedule6}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule6}
+
+\mbox{\Hypertarget{scheduler_8h_a139a7ba94bf49419dd6004087fc04d3a}\label{scheduler_8h_a139a7ba94bf49419dd6004087fc04d3a}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule7@{ignitionSchedule7}}
+\index{ignitionSchedule7@{ignitionSchedule7}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule7}{ignitionSchedule7}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule7}
+
+\mbox{\Hypertarget{scheduler_8h_aff5e8c03a998148988fa19f435e2ca3c}\label{scheduler_8h_aff5e8c03a998148988fa19f435e2ca3c}} 
+\index{scheduler.h@{scheduler.h}!ignitionSchedule8@{ignitionSchedule8}}
+\index{ignitionSchedule8@{ignitionSchedule8}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{ignitionSchedule8}{ignitionSchedule8}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} ignition\+Schedule8}
+
+\mbox{\Hypertarget{scheduler_8h_afe509c098a269572785fa5c706d97b80}\label{scheduler_8h_afe509c098a269572785fa5c706d97b80}} 
+\index{scheduler.h@{scheduler.h}!nullSchedule@{nullSchedule}}
+\index{nullSchedule@{nullSchedule}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{nullSchedule}{nullSchedule}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}} null\+Schedule}
+
+\mbox{\Hypertarget{scheduler_8h_ac5cc8cfde6dde7d4b21ea4107949b586}\label{scheduler_8h_ac5cc8cfde6dde7d4b21ea4107949b586}} 
+\index{scheduler.h@{scheduler.h}!timer3Aqueue@{timer3Aqueue}}
+\index{timer3Aqueue@{timer3Aqueue}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{timer3Aqueue}{timer3Aqueue}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{struct_schedule}{Schedule}}$\ast$ timer3\+Aqueue\mbox{[}4\mbox{]}}
+
+\mbox{\Hypertarget{scheduler_8h_ae573fb6d7a9040dd431f3fcad3730a1e}\label{scheduler_8h_ae573fb6d7a9040dd431f3fcad3730a1e}} 
+\index{scheduler.h@{scheduler.h}!timer3Bqueue@{timer3Bqueue}}
+\index{timer3Bqueue@{timer3Bqueue}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{timer3Bqueue}{timer3Bqueue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}}$\ast$ timer3\+Bqueue\mbox{[}4\mbox{]}}
+
+\mbox{\Hypertarget{scheduler_8h_adde5e639f643f7e34df408ba705630d6}\label{scheduler_8h_adde5e639f643f7e34df408ba705630d6}} 
+\index{scheduler.h@{scheduler.h}!timer3Cqueue@{timer3Cqueue}}
+\index{timer3Cqueue@{timer3Cqueue}!scheduler.h@{scheduler.h}}
+\doxysubsubsection{\texorpdfstring{timer3Cqueue}{timer3Cqueue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_schedule}{Schedule}}$\ast$ timer3\+Cqueue\mbox{[}4\mbox{]}}
+

@@ -1,0 +1,92 @@
+\hypertarget{cancomms_8h}{}\doxysection{cancomms.\+h File Reference}
+\label{cancomms_8h}\index{cancomms.h@{cancomms.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cancomms_8h_ac08555b37f8b765abcf15bb9871c39bf}{ve\+Map\+Page}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{cancomms_8h_a0e685b052c76997b9db44a05286a700c}{can\+Command}} ()
+\item 
+void \mbox{\hyperlink{cancomms_8h_a169b55c6582c51f705939043f5c397c2}{send\+Cancommand}} (uint8\+\_\+t cmdtype, uint16\+\_\+t canadddress, uint8\+\_\+t candata1, uint8\+\_\+t candata2)
+\item 
+void \mbox{\hyperlink{cancomms_8h_afb17d77a70e1d08a02579704eb97844c}{test\+Can\+Comm}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{cancomms_8h_ab513727c21cbd6362b2464ff39244749}{current\+Can\+Page}} = 1
+\item 
+uint8\+\_\+t \mbox{\hyperlink{cancomms_8h_a24f4e3822387d533928f93a05c6282ec}{n\+Canretry}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{cancomms_8h_aeaaca3c597afd98c1bef3806ea31373a}{cancmdfail}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{cancomms_8h_a2ed46f25e90e7afde7022c34b26c2f4c}{canlisten}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{cancomms_8h_ab423d0e0645e36c155e9063c388f3202}{Lbuffer}} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{cancomms_8h_ac08555b37f8b765abcf15bb9871c39bf}\label{cancomms_8h_ac08555b37f8b765abcf15bb9871c39bf}} 
+\index{cancomms.h@{cancomms.h}!veMapPage@{veMapPage}}
+\index{veMapPage@{veMapPage}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{veMapPage}{veMapPage}}
+{\footnotesize\ttfamily \#define ve\+Map\+Page~1}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{cancomms_8h_a0e685b052c76997b9db44a05286a700c}\label{cancomms_8h_a0e685b052c76997b9db44a05286a700c}} 
+\index{cancomms.h@{cancomms.h}!canCommand@{canCommand}}
+\index{canCommand@{canCommand}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{canCommand()}{canCommand()}}
+{\footnotesize\ttfamily void can\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cancomms_8h_a169b55c6582c51f705939043f5c397c2}\label{cancomms_8h_a169b55c6582c51f705939043f5c397c2}} 
+\index{cancomms.h@{cancomms.h}!sendCancommand@{sendCancommand}}
+\index{sendCancommand@{sendCancommand}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{sendCancommand()}{sendCancommand()}}
+{\footnotesize\ttfamily void send\+Cancommand (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmdtype,  }\item[{uint16\+\_\+t}]{canadddress,  }\item[{uint8\+\_\+t}]{candata1,  }\item[{uint8\+\_\+t}]{candata2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{cancomms_8h_afb17d77a70e1d08a02579704eb97844c}\label{cancomms_8h_afb17d77a70e1d08a02579704eb97844c}} 
+\index{cancomms.h@{cancomms.h}!testCanComm@{testCanComm}}
+\index{testCanComm@{testCanComm}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{testCanComm()}{testCanComm()}}
+{\footnotesize\ttfamily void test\+Can\+Comm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{cancomms_8h_aeaaca3c597afd98c1bef3806ea31373a}\label{cancomms_8h_aeaaca3c597afd98c1bef3806ea31373a}} 
+\index{cancomms.h@{cancomms.h}!cancmdfail@{cancmdfail}}
+\index{cancmdfail@{cancmdfail}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{cancmdfail}{cancmdfail}}
+{\footnotesize\ttfamily uint8\+\_\+t cancmdfail = 0}
+
+\mbox{\Hypertarget{cancomms_8h_a2ed46f25e90e7afde7022c34b26c2f4c}\label{cancomms_8h_a2ed46f25e90e7afde7022c34b26c2f4c}} 
+\index{cancomms.h@{cancomms.h}!canlisten@{canlisten}}
+\index{canlisten@{canlisten}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{canlisten}{canlisten}}
+{\footnotesize\ttfamily uint8\+\_\+t canlisten = 0}
+
+\mbox{\Hypertarget{cancomms_8h_ab513727c21cbd6362b2464ff39244749}\label{cancomms_8h_ab513727c21cbd6362b2464ff39244749}} 
+\index{cancomms.h@{cancomms.h}!currentCanPage@{currentCanPage}}
+\index{currentCanPage@{currentCanPage}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{currentCanPage}{currentCanPage}}
+{\footnotesize\ttfamily uint8\+\_\+t current\+Can\+Page = 1}
+
+\mbox{\Hypertarget{cancomms_8h_ab423d0e0645e36c155e9063c388f3202}\label{cancomms_8h_ab423d0e0645e36c155e9063c388f3202}} 
+\index{cancomms.h@{cancomms.h}!Lbuffer@{Lbuffer}}
+\index{Lbuffer@{Lbuffer}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{Lbuffer}{Lbuffer}}
+{\footnotesize\ttfamily uint8\+\_\+t Lbuffer\mbox{[}8\mbox{]}}
+
+\mbox{\Hypertarget{cancomms_8h_a24f4e3822387d533928f93a05c6282ec}\label{cancomms_8h_a24f4e3822387d533928f93a05c6282ec}} 
+\index{cancomms.h@{cancomms.h}!nCanretry@{nCanretry}}
+\index{nCanretry@{nCanretry}!cancomms.h@{cancomms.h}}
+\doxysubsubsection{\texorpdfstring{nCanretry}{nCanretry}}
+{\footnotesize\ttfamily uint8\+\_\+t n\+Canretry = 0}
+

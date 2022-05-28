@@ -1,0 +1,61 @@
+\hypertarget{errors_8h_source}{}\doxysection{errors.\+h}
+\mbox{\hyperlink{errors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ERRORS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ERRORS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/*}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Up to 64 different error codes may be defined (6 bits)}}
+\DoxyCodeLine{6 \textcolor{comment}{ */}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define ERR\_NONE        0 }\textcolor{comment}{//No error}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define ERR\_UNKNOWN     1 }\textcolor{comment}{//Unknown error}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define ERR\_IAT\_SHORT   2 }\textcolor{comment}{//Inlet sensor shorted}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define ERR\_IAT\_GND     3 }\textcolor{comment}{//Inlet sensor grounded}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define ERR\_CLT\_SHORT   4 }\textcolor{comment}{//Coolant sensor shorted}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define ERR\_CLT\_GND     5 }\textcolor{comment}{//Coolant Sensor grounded}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define ERR\_O2\_SHORT    6 }\textcolor{comment}{//O2 sensor shorted}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define ERR\_O2\_GND      7 }\textcolor{comment}{//O2 sensor grounded}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ERR\_TPS\_SHORT   8 }\textcolor{comment}{//TPS shorted (Is potentially valid)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define ERR\_TPS\_GND     9 }\textcolor{comment}{//TPS grounded (Is potentially valid)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define ERR\_BAT\_HIGH    10 }\textcolor{comment}{//Battery voltage is too high}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define ERR\_BAT\_LOW     11 }\textcolor{comment}{//Battery voltage is too low}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define ERR\_MAP\_HIGH    12 }\textcolor{comment}{//MAP output is too high}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define ERR\_MAP\_LOW     13 }\textcolor{comment}{//MAP output is too low}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_IAT\_SHORT   80 }\textcolor{comment}{//Note that the default is 40C. 80 is used due to the -\/40 offset}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_IAT\_GND     80 }\textcolor{comment}{//Note that the default is 40C. 80 is used due to the -\/40 offset}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_CKT\_SHORT   80 }\textcolor{comment}{//Note that the default is 40C. 80 is used due to the -\/40 offset}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_CLT\_GND     80 }\textcolor{comment}{//Note that the default is 40C. 80 is used due to the -\/40 offset}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_O2\_SHORT    147 }\textcolor{comment}{//14.7}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_O2\_GND      147 }\textcolor{comment}{//14.7}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_TPS\_SHORT   50 }\textcolor{comment}{//50\%}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_TPS\_GND     50 }\textcolor{comment}{//50\%}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_BAT\_HIGH    130 }\textcolor{comment}{//13v}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_BAT\_LOW     130 }\textcolor{comment}{//13v}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_MAP\_HIGH    240}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define ERR\_DEFAULT\_MAP\_LOW     80}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define MAX\_ERRORS  4 }\textcolor{comment}{//The number of errors the system can hold simultaneously. Should be a power of 2}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{/*}}
+\DoxyCodeLine{39 \textcolor{comment}{ * This struct is a single byte in length and is sent to TS}}
+\DoxyCodeLine{40 \textcolor{comment}{ * The first 2 bits are used to define the current error (0-\/3)}}
+\DoxyCodeLine{41 \textcolor{comment}{ * The remaining 6 bits are used to give the error number}}
+\DoxyCodeLine{42 \textcolor{comment}{ */}}
+\DoxyCodeLine{43 \textcolor{keyword}{struct }\mbox{\hyperlink{structpacked_error}{packedError}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structpacked_error_a7a36edacfeaffc573e72c92db6d19695}{errorNum}} : 2;}
+\DoxyCodeLine{46   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structpacked_error_a3d66aa5d5729f9f18858f0395a0e3a7f}{errorID}}  : 6;}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keywordtype}{byte} \mbox{\hyperlink{errors_8h_abccf9c417b2edfa7f393aa16431aa9d2}{getNextError}}();}
+\DoxyCodeLine{50 \textcolor{keywordtype}{byte} \mbox{\hyperlink{errors_8h_a8c5defb609be14d74c06439f4e2c1102}{setError}}(\textcolor{keywordtype}{byte});}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keywordtype}{byte} \mbox{\hyperlink{errors_8h_ade561dc645a1d7c5a999e7eb49e37c65}{errorCount}} = 0;}
+\DoxyCodeLine{53 \textcolor{keywordtype}{byte} \mbox{\hyperlink{errors_8h_a235045d66228ec6dd620f460ae2900ed}{errorCodes}}[4];}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

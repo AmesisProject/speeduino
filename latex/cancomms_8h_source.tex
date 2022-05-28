@@ -1,0 +1,23 @@
+\hypertarget{cancomms_8h_source}{}\doxysection{cancomms.\+h}
+\mbox{\hyperlink{cancomms_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CANCOMMS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CANCOMMS\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{//These are the page numbers that the Tuner Studio serial protocol uses to transverse the different map and config pages.}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define veMapPage    1}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 uint8\_t \mbox{\hyperlink{cancomms_8h_ab513727c21cbd6362b2464ff39244749}{currentCanPage}} = 1;\textcolor{comment}{//Not the same as the speeduino config page numbers}}
+\DoxyCodeLine{8 uint8\_t \mbox{\hyperlink{cancomms_8h_a24f4e3822387d533928f93a05c6282ec}{nCanretry}} = 0;      \textcolor{comment}{//no of retrys}}
+\DoxyCodeLine{9 uint8\_t \mbox{\hyperlink{cancomms_8h_aeaaca3c597afd98c1bef3806ea31373a}{cancmdfail}} = 0;     \textcolor{comment}{//command fail yes/no }}
+\DoxyCodeLine{10 uint8\_t \mbox{\hyperlink{cancomms_8h_a2ed46f25e90e7afde7022c34b26c2f4c}{canlisten}} = 0;      }
+\DoxyCodeLine{11 uint8\_t \mbox{\hyperlink{cancomms_8h_ab423d0e0645e36c155e9063c388f3202}{Lbuffer}}[8];         \textcolor{comment}{//8 byte buffer to store incomng can data}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13   }
+\DoxyCodeLine{14 \textcolor{keywordtype}{void} \mbox{\hyperlink{cancomms_8h_a0e685b052c76997b9db44a05286a700c}{canCommand}}();\textcolor{comment}{//This is the heart of the Command Line Interpeter.  All that needed to be done was to make it human readable.}}
+\DoxyCodeLine{15 \textcolor{keywordtype}{void} \mbox{\hyperlink{cancomms_8h_a169b55c6582c51f705939043f5c397c2}{sendCancommand}}(uint8\_t cmdtype , uint16\_t canadddress, uint8\_t candata1, uint8\_t candata2);}
+\DoxyCodeLine{16 \textcolor{keywordtype}{void} \mbox{\hyperlink{cancomms_8h_afb17d77a70e1d08a02579704eb97844c}{testCanComm}}();}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CANCOMMS\_H}}
+
+\end{DoxyCode}

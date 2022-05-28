@@ -1,0 +1,109 @@
+\hypertarget{storage_8h_source}{}\doxysection{storage.\+h}
+\mbox{\hyperlink{storage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef STORAGE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define STORAGE\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <EEPROM.h>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_a1baef6b5e51f82022a7997572e359df5}{writeConfig}}();}
+\DoxyCodeLine{6 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_ad5ed6ddd9940c0097cc91774056df1c2}{loadConfig}}();}
+\DoxyCodeLine{7 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_a369be74b7836bb9eb5a57c95db8d3052}{loadCalibration}}();}
+\DoxyCodeLine{8 \textcolor{keywordtype}{void} \mbox{\hyperlink{storage_8h_ac3efa003544375926eb7d8d88cf19523}{writeCalibration}}();}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{/*}}
+\DoxyCodeLine{11 \textcolor{comment}{Current layout of EEPROM data (Version 3) is as follows (All sizes are in bytes):}}
+\DoxyCodeLine{12 \textcolor{comment}{|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}}
+\DoxyCodeLine{13 \textcolor{comment}{|Byte \# |Size | Description                         |}}
+\DoxyCodeLine{14 \textcolor{comment}{|-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/|}}
+\DoxyCodeLine{15 \textcolor{comment}{| 0     |1    | Data structure version              |}}
+\DoxyCodeLine{16 \textcolor{comment}{| 1     |2    | X and Y sizes for VE table          |}}
+\DoxyCodeLine{17 \textcolor{comment}{| 3     |256  | VE Map (16x16)                      |}}
+\DoxyCodeLine{18 \textcolor{comment}{| 259   |16   | VE Table RPM bins                   |}}
+\DoxyCodeLine{19 \textcolor{comment}{| 275   |16   | VE Table MAP/TPS bins               |}}
+\DoxyCodeLine{20 \textcolor{comment}{| 291   |64   | Page 2 settings (Non-\/Map page)      |}}
+\DoxyCodeLine{21 \textcolor{comment}{| 355   |2    | X and Y sizes for Ign table         |}}
+\DoxyCodeLine{22 \textcolor{comment}{| 357   |256  | Ignition Map (16x16)                |}}
+\DoxyCodeLine{23 \textcolor{comment}{| 613   |16   | Ign Table RPM bins                  |}}
+\DoxyCodeLine{24 \textcolor{comment}{| 629   |16   | Ign Table MAP/TPS bins              |}}
+\DoxyCodeLine{25 \textcolor{comment}{| 645   |64   | Page 4 settings (Non-\/Map page)      |}}
+\DoxyCodeLine{26 \textcolor{comment}{| 709   |2    | X and Y sizes for AFR table         |}}
+\DoxyCodeLine{27 \textcolor{comment}{| 711   |256  | AFR Target Map (16x16)              |}}
+\DoxyCodeLine{28 \textcolor{comment}{| 967   |16   | AFR Table RPM bins                  |}}
+\DoxyCodeLine{29 \textcolor{comment}{| 983   |16   | AFR Table MAP/TPS bins              |}}
+\DoxyCodeLine{30 \textcolor{comment}{| 999   |64   | Remaining Page 3 settings           |}}
+\DoxyCodeLine{31 \textcolor{comment}{| 1063  |64   | Page 4 settings                     |}}
+\DoxyCodeLine{32 \textcolor{comment}{| 1127  |2    | X and Y sizes for boost table       |}}
+\DoxyCodeLine{33 \textcolor{comment}{| 1129  |64   | Boost Map (8x8)                     |}}
+\DoxyCodeLine{34 \textcolor{comment}{| 1193  |8    | Boost Table RPM bins                |}}
+\DoxyCodeLine{35 \textcolor{comment}{| 1201  |8    | Bost Table TPS bins                 |}}
+\DoxyCodeLine{36 \textcolor{comment}{| 2559  |512  | Calibration data (O2)               |}}
+\DoxyCodeLine{37 \textcolor{comment}{| 3071  |512  | Calibration data (IAT)              |}}
+\DoxyCodeLine{38 \textcolor{comment}{| 3583  |512  | Calibration data (CLT)              |}}
+\DoxyCodeLine{39 \textcolor{comment}{-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 \textcolor{comment}{*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define EEPROM\_CONFIG1\_XSIZE  1}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define EEPROM\_CONFIG1\_YSIZE  2}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define EEPROM\_CONFIG1\_MAP    3}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define EEPROM\_CONFIG1\_XBINS  259}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define EEPROM\_CONFIG1\_YBINS  275}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define EEPROM\_CONFIG2\_START  291}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define EEPROM\_CONFIG2\_END    355 }\textcolor{comment}{// +64   131}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define EEPROM\_CONFIG3\_XSIZE  355}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define EEPROM\_CONFIG3\_YSIZE  356}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define EEPROM\_CONFIG3\_MAP    357}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define EEPROM\_CONFIG3\_XBINS  613}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define EEPROM\_CONFIG3\_YBINS  629}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define EEPROM\_CONFIG4\_START  645}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define EEPROM\_CONFIG4\_END    709}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define EEPROM\_CONFIG5\_XSIZE  709}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define EEPROM\_CONFIG5\_YSIZE  710}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define EEPROM\_CONFIG5\_MAP    711}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define EEPROM\_CONFIG5\_XBINS  967}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define EEPROM\_CONFIG5\_YBINS  983}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define EEPROM\_CONFIG6\_START  999}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define EEPROM\_CONFIG6\_END    1063}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define EEPROM\_CONFIG7\_START  1063}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define EEPROM\_CONFIG7\_END    1127   }}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_XSIZE1 1127   }}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_YSIZE1 1128}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_MAP1   1129}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_XBINS1 1193}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_YBINS1 1201}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_XSIZE2 1209  }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_YSIZE2 1210}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_MAP2   1211}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_XBINS2 1275}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_YBINS2 1283}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define EEPROM\_CONFIG8\_END    1291}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XSIZE1 1291}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YSIZE1 1292}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_MAP1   1293}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XBINS1 1329}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YBINS1 1335}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XSIZE2 1341}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YSIZE2 1342}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_MAP2   1343}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XBINS2 1379}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YBINS2 1385}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XSIZE3 1391}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YSIZE3 1392}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_MAP3   1393}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XBINS3 1429}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YBINS3 1435}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XSIZE4 1441}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YSIZE4 1442}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_MAP4   1443}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_XBINS4 1479}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define EEPROM\_CONFIG9\_YBINS4 1485}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{comment}{//Calibration data is stored at the end of the EEPROM (This is in case any further calibration tables are needed as they are large blocks)}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define EEPROM\_LAST\_BARO      2558}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define EEPROM\_CALIBRATION\_O2 2559}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define EEPROM\_CALIBRATION\_IAT 3071}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define EEPROM\_CALIBRATION\_CLT 3583}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// STORAGE\_H}}
+
+\end{DoxyCode}

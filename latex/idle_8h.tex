@@ -1,0 +1,225 @@
+\hypertarget{idle_8h}{}\doxysection{idle.\+h File Reference}
+\label{idle_8h}\index{idle.h@{idle.h}}
+{\ttfamily \#include \char`\"{}globals.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_stepper_idle}{Stepper\+Idle}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{idle_8h_a1af5d7ca56b9c99fa30f31f7b5d327fa}{STEPPER\+\_\+\+FORWARD}}~0
+\item 
+\#define \mbox{\hyperlink{idle_8h_a93d48ab90c530af82df4cc6e16dfe660}{STEPPER\+\_\+\+BACKWARD}}~1
+\item 
+\#define \mbox{\hyperlink{idle_8h_ab25afe45a12d1b7ec45a7538c814cf60}{IDLE\+\_\+\+TABLE\+\_\+\+SIZE}}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1c}{Stepper\+Status}} \{ \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca038158d200366d1825befdac15178502}{SOFF}}
+, \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1cae69ccdc3ac8758552e4149a99a2dc3c6}{STEPPING}}
+, \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca3b043537875f509fa630e3dfd6360696}{COOLING}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{idle_8h_aca4d348119424a7474843489e1b62b3c}{initialise\+Idle}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_a0724ac5d9f6c9e61a75c6f078afdc024}{iac\+Closed\+Loop\+Table}}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_a49ae009996bacf8f0b70bbc5eb620f1e}{iac\+PWMTable}}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_ad30066f8434d669e8c531f016c5fcdd6}{iac\+Step\+Table}}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_a24ff08b97a38fc4a7496db9c96e96644}{iac\+Crank\+Steps\+Table}}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_aabec2b275e859e09628e1b1210920716}{iac\+Crank\+Duty\+Table}}
+\item 
+struct \mbox{\hyperlink{struct_stepper_idle}{Stepper\+Idle}} \mbox{\hyperlink{idle_8h_ade7b38d1e8feac00386abec2e1fac754}{idle\+Stepper}}
+\item 
+bool \mbox{\hyperlink{idle_8h_a1524e6afb86c3952d4552e9abe2de8aa}{idle\+On}}
+\item 
+unsigned int \mbox{\hyperlink{idle_8h_a3d1a75f38ce7db508153d72655406328}{iac\+Step\+Time}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{idle_8h_aa2bdf8830ff2f60fb46166fb4a37c3d1}{idle\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{idle_8h_ab70e63f66caba34d16f09ca5a8cf4e3a}{idle\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{idle_8h_ab9463d3e65e5466845a135b72270ab3e}{idle2\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{idle_8h_ac8c21468628e9dea225eeb6731026903}{idle2\+\_\+pin\+\_\+mask}}
+\item 
+volatile bool \mbox{\hyperlink{idle_8h_a8b4b852ecc9711a151cc540864083fe7}{idle\+\_\+pwm\+\_\+state}}
+\item 
+unsigned int \mbox{\hyperlink{idle_8h_ad033ae4068955a7927c2ddcf47bf1389}{idle\+\_\+pwm\+\_\+max\+\_\+count}}
+\item 
+volatile unsigned int \mbox{\hyperlink{idle_8h_a1d6a9734c098c30fceca6b35657ae5cd}{idle\+\_\+pwm\+\_\+cur\+\_\+value}}
+\item 
+long \mbox{\hyperlink{idle_8h_a29c5636152a17149cf504cbbe78aaf5e}{idle\+\_\+pwm\+\_\+target\+\_\+value}}
+\item 
+long \mbox{\hyperlink{idle_8h_ab370f333f23581c0d7fcf5f15a392e4d}{idle\+\_\+cl\+\_\+target\+\_\+rpm}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{idle_8h_ab25afe45a12d1b7ec45a7538c814cf60}\label{idle_8h_ab25afe45a12d1b7ec45a7538c814cf60}} 
+\index{idle.h@{idle.h}!IDLE\_TABLE\_SIZE@{IDLE\_TABLE\_SIZE}}
+\index{IDLE\_TABLE\_SIZE@{IDLE\_TABLE\_SIZE}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{IDLE\_TABLE\_SIZE}{IDLE\_TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define IDLE\+\_\+\+TABLE\+\_\+\+SIZE~10}
+
+\mbox{\Hypertarget{idle_8h_a93d48ab90c530af82df4cc6e16dfe660}\label{idle_8h_a93d48ab90c530af82df4cc6e16dfe660}} 
+\index{idle.h@{idle.h}!STEPPER\_BACKWARD@{STEPPER\_BACKWARD}}
+\index{STEPPER\_BACKWARD@{STEPPER\_BACKWARD}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{STEPPER\_BACKWARD}{STEPPER\_BACKWARD}}
+{\footnotesize\ttfamily \#define STEPPER\+\_\+\+BACKWARD~1}
+
+\mbox{\Hypertarget{idle_8h_a1af5d7ca56b9c99fa30f31f7b5d327fa}\label{idle_8h_a1af5d7ca56b9c99fa30f31f7b5d327fa}} 
+\index{idle.h@{idle.h}!STEPPER\_FORWARD@{STEPPER\_FORWARD}}
+\index{STEPPER\_FORWARD@{STEPPER\_FORWARD}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{STEPPER\_FORWARD}{STEPPER\_FORWARD}}
+{\footnotesize\ttfamily \#define STEPPER\+\_\+\+FORWARD~0}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1c}\label{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1c}} 
+\index{idle.h@{idle.h}!StepperStatus@{StepperStatus}}
+\index{StepperStatus@{StepperStatus}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{StepperStatus}{StepperStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1c}{Stepper\+Status}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SOFF@{SOFF}!idle.h@{idle.h}}\index{idle.h@{idle.h}!SOFF@{SOFF}}}\mbox{\Hypertarget{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca038158d200366d1825befdac15178502}\label{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca038158d200366d1825befdac15178502}} 
+SOFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STEPPING@{STEPPING}!idle.h@{idle.h}}\index{idle.h@{idle.h}!STEPPING@{STEPPING}}}\mbox{\Hypertarget{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1cae69ccdc3ac8758552e4149a99a2dc3c6}\label{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1cae69ccdc3ac8758552e4149a99a2dc3c6}} 
+STEPPING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COOLING@{COOLING}!idle.h@{idle.h}}\index{idle.h@{idle.h}!COOLING@{COOLING}}}\mbox{\Hypertarget{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca3b043537875f509fa630e3dfd6360696}\label{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca3b043537875f509fa630e3dfd6360696}} 
+COOLING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{idle_8h_aca4d348119424a7474843489e1b62b3c}\label{idle_8h_aca4d348119424a7474843489e1b62b3c}} 
+\index{idle.h@{idle.h}!initialiseIdle@{initialiseIdle}}
+\index{initialiseIdle@{initialiseIdle}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{initialiseIdle()}{initialiseIdle()}}
+{\footnotesize\ttfamily void initialise\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{idle_8h_a0724ac5d9f6c9e61a75c6f078afdc024}\label{idle_8h_a0724ac5d9f6c9e61a75c6f078afdc024}} 
+\index{idle.h@{idle.h}!iacClosedLoopTable@{iacClosedLoopTable}}
+\index{iacClosedLoopTable@{iacClosedLoopTable}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{iacClosedLoopTable}{iacClosedLoopTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable2_d}{table2D}} iac\+Closed\+Loop\+Table}
+
+\mbox{\Hypertarget{idle_8h_aabec2b275e859e09628e1b1210920716}\label{idle_8h_aabec2b275e859e09628e1b1210920716}} 
+\index{idle.h@{idle.h}!iacCrankDutyTable@{iacCrankDutyTable}}
+\index{iacCrankDutyTable@{iacCrankDutyTable}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{iacCrankDutyTable}{iacCrankDutyTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable2_d}{table2D}} iac\+Crank\+Duty\+Table}
+
+\mbox{\Hypertarget{idle_8h_a24ff08b97a38fc4a7496db9c96e96644}\label{idle_8h_a24ff08b97a38fc4a7496db9c96e96644}} 
+\index{idle.h@{idle.h}!iacCrankStepsTable@{iacCrankStepsTable}}
+\index{iacCrankStepsTable@{iacCrankStepsTable}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{iacCrankStepsTable}{iacCrankStepsTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable2_d}{table2D}} iac\+Crank\+Steps\+Table}
+
+\mbox{\Hypertarget{idle_8h_a49ae009996bacf8f0b70bbc5eb620f1e}\label{idle_8h_a49ae009996bacf8f0b70bbc5eb620f1e}} 
+\index{idle.h@{idle.h}!iacPWMTable@{iacPWMTable}}
+\index{iacPWMTable@{iacPWMTable}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{iacPWMTable}{iacPWMTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable2_d}{table2D}} iac\+PWMTable}
+
+\mbox{\Hypertarget{idle_8h_ad30066f8434d669e8c531f016c5fcdd6}\label{idle_8h_ad30066f8434d669e8c531f016c5fcdd6}} 
+\index{idle.h@{idle.h}!iacStepTable@{iacStepTable}}
+\index{iacStepTable@{iacStepTable}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{iacStepTable}{iacStepTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable2_d}{table2D}} iac\+Step\+Table}
+
+\mbox{\Hypertarget{idle_8h_a3d1a75f38ce7db508153d72655406328}\label{idle_8h_a3d1a75f38ce7db508153d72655406328}} 
+\index{idle.h@{idle.h}!iacStepTime@{iacStepTime}}
+\index{iacStepTime@{iacStepTime}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{iacStepTime}{iacStepTime}}
+{\footnotesize\ttfamily unsigned int iac\+Step\+Time}
+
+\mbox{\Hypertarget{idle_8h_ac8c21468628e9dea225eeb6731026903}\label{idle_8h_ac8c21468628e9dea225eeb6731026903}} 
+\index{idle.h@{idle.h}!idle2\_pin\_mask@{idle2\_pin\_mask}}
+\index{idle2\_pin\_mask@{idle2\_pin\_mask}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle2\_pin\_mask}{idle2\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte idle2\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{idle_8h_ab9463d3e65e5466845a135b72270ab3e}\label{idle_8h_ab9463d3e65e5466845a135b72270ab3e}} 
+\index{idle.h@{idle.h}!idle2\_pin\_port@{idle2\_pin\_port}}
+\index{idle2\_pin\_port@{idle2\_pin\_port}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle2\_pin\_port}{idle2\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ idle2\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{idle_8h_ab370f333f23581c0d7fcf5f15a392e4d}\label{idle_8h_ab370f333f23581c0d7fcf5f15a392e4d}} 
+\index{idle.h@{idle.h}!idle\_cl\_target\_rpm@{idle\_cl\_target\_rpm}}
+\index{idle\_cl\_target\_rpm@{idle\_cl\_target\_rpm}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle\_cl\_target\_rpm}{idle\_cl\_target\_rpm}}
+{\footnotesize\ttfamily long idle\+\_\+cl\+\_\+target\+\_\+rpm}
+
+\mbox{\Hypertarget{idle_8h_ab70e63f66caba34d16f09ca5a8cf4e3a}\label{idle_8h_ab70e63f66caba34d16f09ca5a8cf4e3a}} 
+\index{idle.h@{idle.h}!idle\_pin\_mask@{idle\_pin\_mask}}
+\index{idle\_pin\_mask@{idle\_pin\_mask}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle\_pin\_mask}{idle\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte idle\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{idle_8h_aa2bdf8830ff2f60fb46166fb4a37c3d1}\label{idle_8h_aa2bdf8830ff2f60fb46166fb4a37c3d1}} 
+\index{idle.h@{idle.h}!idle\_pin\_port@{idle\_pin\_port}}
+\index{idle\_pin\_port@{idle\_pin\_port}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle\_pin\_port}{idle\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ idle\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{idle_8h_a1d6a9734c098c30fceca6b35657ae5cd}\label{idle_8h_a1d6a9734c098c30fceca6b35657ae5cd}} 
+\index{idle.h@{idle.h}!idle\_pwm\_cur\_value@{idle\_pwm\_cur\_value}}
+\index{idle\_pwm\_cur\_value@{idle\_pwm\_cur\_value}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle\_pwm\_cur\_value}{idle\_pwm\_cur\_value}}
+{\footnotesize\ttfamily volatile unsigned int idle\+\_\+pwm\+\_\+cur\+\_\+value}
+
+\mbox{\Hypertarget{idle_8h_ad033ae4068955a7927c2ddcf47bf1389}\label{idle_8h_ad033ae4068955a7927c2ddcf47bf1389}} 
+\index{idle.h@{idle.h}!idle\_pwm\_max\_count@{idle\_pwm\_max\_count}}
+\index{idle\_pwm\_max\_count@{idle\_pwm\_max\_count}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle\_pwm\_max\_count}{idle\_pwm\_max\_count}}
+{\footnotesize\ttfamily unsigned int idle\+\_\+pwm\+\_\+max\+\_\+count}
+
+\mbox{\Hypertarget{idle_8h_a8b4b852ecc9711a151cc540864083fe7}\label{idle_8h_a8b4b852ecc9711a151cc540864083fe7}} 
+\index{idle.h@{idle.h}!idle\_pwm\_state@{idle\_pwm\_state}}
+\index{idle\_pwm\_state@{idle\_pwm\_state}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle\_pwm\_state}{idle\_pwm\_state}}
+{\footnotesize\ttfamily volatile bool idle\+\_\+pwm\+\_\+state}
+
+\mbox{\Hypertarget{idle_8h_a29c5636152a17149cf504cbbe78aaf5e}\label{idle_8h_a29c5636152a17149cf504cbbe78aaf5e}} 
+\index{idle.h@{idle.h}!idle\_pwm\_target\_value@{idle\_pwm\_target\_value}}
+\index{idle\_pwm\_target\_value@{idle\_pwm\_target\_value}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idle\_pwm\_target\_value}{idle\_pwm\_target\_value}}
+{\footnotesize\ttfamily long idle\+\_\+pwm\+\_\+target\+\_\+value}
+
+\mbox{\Hypertarget{idle_8h_a1524e6afb86c3952d4552e9abe2de8aa}\label{idle_8h_a1524e6afb86c3952d4552e9abe2de8aa}} 
+\index{idle.h@{idle.h}!idleOn@{idleOn}}
+\index{idleOn@{idleOn}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idleOn}{idleOn}}
+{\footnotesize\ttfamily bool idle\+On}
+
+\mbox{\Hypertarget{idle_8h_ade7b38d1e8feac00386abec2e1fac754}\label{idle_8h_ade7b38d1e8feac00386abec2e1fac754}} 
+\index{idle.h@{idle.h}!idleStepper@{idleStepper}}
+\index{idleStepper@{idleStepper}!idle.h@{idle.h}}
+\doxysubsubsection{\texorpdfstring{idleStepper}{idleStepper}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_stepper_idle}{Stepper\+Idle}} idle\+Stepper}
+

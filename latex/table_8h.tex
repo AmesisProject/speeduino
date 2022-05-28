@@ -1,0 +1,70 @@
+\hypertarget{table_8h}{}\doxysection{table.\+h File Reference}
+\label{table_8h}\index{table.h@{table.h}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}}
+\item 
+struct \mbox{\hyperlink{structtable3_d}{table3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{table_8h_a8779fbb2ff7e835a154977b0dec34787}{TABLE\+\_\+\+RPM\+\_\+\+MULTIPLIER}}~100
+\item 
+\#define \mbox{\hyperlink{table_8h_a4363dbad34db4cdd9574f72267f84d1a}{TABLE\+\_\+\+LOAD\+\_\+\+MULTIPLIER}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{table_8h_af0dc18f8d5c574d69273024ca57a243c}{table2\+D\+\_\+set\+Size}} (struct \mbox{\hyperlink{structtable2_d}{table2D}} target\+Table, byte new\+Size)
+\item 
+void \mbox{\hyperlink{table_8h_aeea29e9fe4a65a33ab4a928ac89d3cb0}{table3\+D\+\_\+set\+Size}} (struct \mbox{\hyperlink{structtable3_d}{table3D}} $\ast$target\+Table, byte new\+Size)
+\item 
+int \mbox{\hyperlink{table_8h_abcb4d91b651f8d47cbaae711ed938a0f}{get3\+DTable\+Value}} (struct \mbox{\hyperlink{structtable3_d}{table3D}} $\ast$from\+Table, int, int)
+\item 
+int \mbox{\hyperlink{table_8h_a462f96f099a0c20647d0a29e96e2e80c}{table2\+D\+\_\+get\+Value}} (struct \mbox{\hyperlink{structtable2_d}{table2D}} $\ast$from\+Table, int)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{table_8h_a4363dbad34db4cdd9574f72267f84d1a}\label{table_8h_a4363dbad34db4cdd9574f72267f84d1a}} 
+\index{table.h@{table.h}!TABLE\_LOAD\_MULTIPLIER@{TABLE\_LOAD\_MULTIPLIER}}
+\index{TABLE\_LOAD\_MULTIPLIER@{TABLE\_LOAD\_MULTIPLIER}!table.h@{table.h}}
+\doxysubsubsection{\texorpdfstring{TABLE\_LOAD\_MULTIPLIER}{TABLE\_LOAD\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+LOAD\+\_\+\+MULTIPLIER~1}
+
+\mbox{\Hypertarget{table_8h_a8779fbb2ff7e835a154977b0dec34787}\label{table_8h_a8779fbb2ff7e835a154977b0dec34787}} 
+\index{table.h@{table.h}!TABLE\_RPM\_MULTIPLIER@{TABLE\_RPM\_MULTIPLIER}}
+\index{TABLE\_RPM\_MULTIPLIER@{TABLE\_RPM\_MULTIPLIER}!table.h@{table.h}}
+\doxysubsubsection{\texorpdfstring{TABLE\_RPM\_MULTIPLIER}{TABLE\_RPM\_MULTIPLIER}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+RPM\+\_\+\+MULTIPLIER~100}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{table_8h_abcb4d91b651f8d47cbaae711ed938a0f}\label{table_8h_abcb4d91b651f8d47cbaae711ed938a0f}} 
+\index{table.h@{table.h}!get3DTableValue@{get3DTableValue}}
+\index{get3DTableValue@{get3DTableValue}!table.h@{table.h}}
+\doxysubsubsection{\texorpdfstring{get3DTableValue()}{get3DTableValue()}}
+{\footnotesize\ttfamily int get3\+DTable\+Value (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtable3_d}{table3D}} $\ast$}]{from\+Table,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{table_8h_a462f96f099a0c20647d0a29e96e2e80c}\label{table_8h_a462f96f099a0c20647d0a29e96e2e80c}} 
+\index{table.h@{table.h}!table2D\_getValue@{table2D\_getValue}}
+\index{table2D\_getValue@{table2D\_getValue}!table.h@{table.h}}
+\doxysubsubsection{\texorpdfstring{table2D\_getValue()}{table2D\_getValue()}}
+{\footnotesize\ttfamily int table2\+D\+\_\+get\+Value (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtable2_d}{table2D}} $\ast$}]{from\+Table,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{table_8h_af0dc18f8d5c574d69273024ca57a243c}\label{table_8h_af0dc18f8d5c574d69273024ca57a243c}} 
+\index{table.h@{table.h}!table2D\_setSize@{table2D\_setSize}}
+\index{table2D\_setSize@{table2D\_setSize}!table.h@{table.h}}
+\doxysubsubsection{\texorpdfstring{table2D\_setSize()}{table2D\_setSize()}}
+{\footnotesize\ttfamily void table2\+D\+\_\+set\+Size (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtable2_d}{table2D}}}]{target\+Table,  }\item[{byte}]{new\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{table_8h_aeea29e9fe4a65a33ab4a928ac89d3cb0}\label{table_8h_aeea29e9fe4a65a33ab4a928ac89d3cb0}} 
+\index{table.h@{table.h}!table3D\_setSize@{table3D\_setSize}}
+\index{table3D\_setSize@{table3D\_setSize}!table.h@{table.h}}
+\doxysubsubsection{\texorpdfstring{table3D\_setSize()}{table3D\_setSize()}}
+{\footnotesize\ttfamily void table3\+D\+\_\+set\+Size (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structtable3_d}{table3D}} $\ast$}]{target\+Table,  }\item[{byte}]{new\+Size }\end{DoxyParamCaption})}
+

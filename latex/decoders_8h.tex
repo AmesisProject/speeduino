@@ -1,0 +1,349 @@
+\hypertarget{decoders_8h}{}\doxysection{decoders.\+h File Reference}
+\label{decoders_8h}\index{decoders.h@{decoders.h}}
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{decoders_8h_acaa7b8a7167a8214f499c71c413ddcca}{LONG}}~0;
+\item 
+\#define \mbox{\hyperlink{decoders_8h_a9fbb14850a9f176447733a089071cd70}{SHORT}}~1;
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{decoders_8h_ac5680f0930cef991664953059185343a}{trigger\+Setup\+\_\+missing\+Tooth}} ()
+\item 
+void \mbox{\hyperlink{decoders_8h_adebf2bba4336ed45b68b494b866898d5}{trigger\+Pri\+\_\+missing\+Tooth}} ()
+\item 
+void \mbox{\hyperlink{decoders_8h_acd03c2839f2094fc61107c178ebb1ce4}{trigger\+Sec\+\_\+missing\+Tooth}} ()
+\item 
+int \mbox{\hyperlink{decoders_8h_a5983b881aa8086b7792620317b70582f}{get\+RPM\+\_\+missing\+Tooth}} ()
+\item 
+int \mbox{\hyperlink{decoders_8h_a9462cd7f52b96ceea6a4bd0b08d4301f}{get\+Crank\+Angle\+\_\+missing\+Tooth}} (int time\+Per\+Degree)
+\item 
+void \mbox{\hyperlink{decoders_8h_a8cc959dce8f58d38ce75c5b17ea02d40}{trigger\+Setup\+\_\+\+Dual\+Wheel}} ()
+\item 
+void \mbox{\hyperlink{decoders_8h_a51200f7a26c2e0a220c48d894c760ecd}{trigger\+Pri\+\_\+\+Dual\+Wheel}} ()
+\item 
+void \mbox{\hyperlink{decoders_8h_aa8a4b398bf1303ac0862c854e4a8ba32}{trigger\+Sec\+\_\+\+Dual\+Wheel}} ()
+\item 
+int \mbox{\hyperlink{decoders_8h_a0407cc77bc4cc932f5778163ef6c1c44}{get\+RPM\+\_\+\+Dual\+Wheel}} ()
+\item 
+int \mbox{\hyperlink{decoders_8h_afad4b6bd74917f35ba9d64ba56f147f3}{get\+Crank\+Angle\+\_\+\+Dual\+Wheel}} (int time\+Per\+Degree)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a9026a9c5d90202a2c5edf446c18311c0}{cur\+Time}}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_ac18ba0a2c1dbaf6235400f7fd4023743}{cur\+Gap}}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a59eda7c50b47e1df0e122f367f0201fa}{cur\+Time2}}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a283a7f0f69cb28a9582a4388eca996f5}{cur\+Gap2}}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a6c79b70e0eb86cd98ddf348af152c761}{last\+Gap}}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a581f2bcc9bef8295750b0da5e024b572}{target\+Gap}}
+\item 
+volatile int \mbox{\hyperlink{decoders_8h_a1b79cf76e9130babad3e942d66d2c6c5}{tooth\+Current\+Count}} = 0
+\item 
+volatile byte \mbox{\hyperlink{decoders_8h_a850b5bd646b55b24342c9b2fb552f16a}{tooth\+System\+Count}} = 0
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a5b364049047b5c3f2d551b06d6402308}{tooth\+System\+Last\+Tooth\+Time}} = 0
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a1016cfc7bbb3d0431923926e7feb5481}{tooth\+Last\+Tooth\+Time}} = 0
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a4d9c0dc167e08696c7e059de46e8f2a9}{tooth\+Last\+Sec\+Tooth\+Time}} = 0
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_aabb6a1901d1bf5d76e6965f5ec287bf3}{tooth\+Last\+Minus\+One\+Tooth\+Time}} = 0
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_aa0a6dce932427a5d9e0256d40ffb01af}{tooth\+One\+Time}} = 0
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_afeac5cbe5557c16b1ea5e4c579988f8e}{tooth\+One\+Minus\+One\+Time}} = 0
+\item 
+volatile bool \mbox{\hyperlink{decoders_8h_afce12e6bb920a5a0e061554aa2959221}{revolution\+One}} = 0
+\item 
+volatile unsigned int \mbox{\hyperlink{decoders_8h_ae89249f3d9695d946948dad05cf716db}{tooth\+History}} \mbox{[}\mbox{\hyperlink{globals_8h_a466e3c2a473e5c8a2bae6bb6efe37b88}{TOOTH\+\_\+\+LOG\+\_\+\+BUFFER}}\mbox{]}
+\item 
+volatile unsigned int \mbox{\hyperlink{decoders_8h_a406ba2c8645f7c8ffd3ccb8a01e9f167}{tooth\+History\+Index}} = 0
+\item 
+volatile bool \mbox{\hyperlink{decoders_8h_a7b9c18c8d54445542abdf2e929a4fe8b}{tooth\+Log\+Read}} = false
+\item 
+volatile byte \mbox{\hyperlink{decoders_8h_a044cc65fd5aa8764ec2b1ad9e7fe2e5c}{secondary\+Tooth\+Count}}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_a9e6b984eae540372f54e1d00c0798fd5}{secondary\+Last\+Tooth\+Time}} = 0
+\item 
+volatile int \mbox{\hyperlink{decoders_8h_a7549e04409b56a5da688f2e8d329cbb7}{trigger\+Actual\+Teeth}}
+\item 
+volatile unsigned long \mbox{\hyperlink{decoders_8h_ad777a1893f4c22552d9a538aa5a73ae9}{trigger\+Filter\+Time}}
+\item 
+unsigned int \mbox{\hyperlink{decoders_8h_a08a321314e8c9af55ee9ce687cb631e3}{trigger\+Sec\+Filter\+Time}}
+\item 
+int \mbox{\hyperlink{decoders_8h_a15518dcfbd47c061c8a8e61984b275a8}{trigger\+Tooth\+Angle}}
+\item 
+unsigned long \mbox{\hyperlink{decoders_8h_af132ab2aede03e9cfe5b035d9f688908}{revolution\+Time}}
+\item 
+bool \mbox{\hyperlink{decoders_8h_a1e54fcad7f7d745202e811045120842b}{second\+Deriv\+Enabled}}
+\item 
+bool \mbox{\hyperlink{decoders_8h_a4d018ef97f19ddbb5dc92ef2b81ce5b4}{decoder\+Is\+Sequential}}
+\item 
+byte \mbox{\hyperlink{decoders_8h_a16c057b337892e5c1999ebc7425f52b3}{check\+Sync\+Tooth\+Count}}
+\item 
+int \mbox{\hyperlink{decoders_8h_a6f75ddfaf3a3aa9c68b8f4ac5062a46e}{tooth\+Angles}} \mbox{[}24\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{decoders_8h_acaa7b8a7167a8214f499c71c413ddcca}\label{decoders_8h_acaa7b8a7167a8214f499c71c413ddcca}} 
+\index{decoders.h@{decoders.h}!LONG@{LONG}}
+\index{LONG@{LONG}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{LONG}{LONG}}
+{\footnotesize\ttfamily \#define LONG~0;}
+
+\mbox{\Hypertarget{decoders_8h_a9fbb14850a9f176447733a089071cd70}\label{decoders_8h_a9fbb14850a9f176447733a089071cd70}} 
+\index{decoders.h@{decoders.h}!SHORT@{SHORT}}
+\index{SHORT@{SHORT}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{SHORT}{SHORT}}
+{\footnotesize\ttfamily \#define SHORT~1;}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{decoders_8h_afad4b6bd74917f35ba9d64ba56f147f3}\label{decoders_8h_afad4b6bd74917f35ba9d64ba56f147f3}} 
+\index{decoders.h@{decoders.h}!getCrankAngle\_DualWheel@{getCrankAngle\_DualWheel}}
+\index{getCrankAngle\_DualWheel@{getCrankAngle\_DualWheel}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{getCrankAngle\_DualWheel()}{getCrankAngle\_DualWheel()}}
+{\footnotesize\ttfamily int get\+Crank\+Angle\+\_\+\+Dual\+Wheel (\begin{DoxyParamCaption}\item[{int}]{time\+Per\+Degree }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_a9462cd7f52b96ceea6a4bd0b08d4301f}\label{decoders_8h_a9462cd7f52b96ceea6a4bd0b08d4301f}} 
+\index{decoders.h@{decoders.h}!getCrankAngle\_missingTooth@{getCrankAngle\_missingTooth}}
+\index{getCrankAngle\_missingTooth@{getCrankAngle\_missingTooth}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{getCrankAngle\_missingTooth()}{getCrankAngle\_missingTooth()}}
+{\footnotesize\ttfamily int get\+Crank\+Angle\+\_\+missing\+Tooth (\begin{DoxyParamCaption}\item[{int}]{time\+Per\+Degree }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_a0407cc77bc4cc932f5778163ef6c1c44}\label{decoders_8h_a0407cc77bc4cc932f5778163ef6c1c44}} 
+\index{decoders.h@{decoders.h}!getRPM\_DualWheel@{getRPM\_DualWheel}}
+\index{getRPM\_DualWheel@{getRPM\_DualWheel}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{getRPM\_DualWheel()}{getRPM\_DualWheel()}}
+{\footnotesize\ttfamily int get\+RPM\+\_\+\+Dual\+Wheel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_a5983b881aa8086b7792620317b70582f}\label{decoders_8h_a5983b881aa8086b7792620317b70582f}} 
+\index{decoders.h@{decoders.h}!getRPM\_missingTooth@{getRPM\_missingTooth}}
+\index{getRPM\_missingTooth@{getRPM\_missingTooth}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{getRPM\_missingTooth()}{getRPM\_missingTooth()}}
+{\footnotesize\ttfamily int get\+RPM\+\_\+missing\+Tooth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_a51200f7a26c2e0a220c48d894c760ecd}\label{decoders_8h_a51200f7a26c2e0a220c48d894c760ecd}} 
+\index{decoders.h@{decoders.h}!triggerPri\_DualWheel@{triggerPri\_DualWheel}}
+\index{triggerPri\_DualWheel@{triggerPri\_DualWheel}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerPri\_DualWheel()}{triggerPri\_DualWheel()}}
+{\footnotesize\ttfamily void trigger\+Pri\+\_\+\+Dual\+Wheel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_adebf2bba4336ed45b68b494b866898d5}\label{decoders_8h_adebf2bba4336ed45b68b494b866898d5}} 
+\index{decoders.h@{decoders.h}!triggerPri\_missingTooth@{triggerPri\_missingTooth}}
+\index{triggerPri\_missingTooth@{triggerPri\_missingTooth}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerPri\_missingTooth()}{triggerPri\_missingTooth()}}
+{\footnotesize\ttfamily void trigger\+Pri\+\_\+missing\+Tooth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_aa8a4b398bf1303ac0862c854e4a8ba32}\label{decoders_8h_aa8a4b398bf1303ac0862c854e4a8ba32}} 
+\index{decoders.h@{decoders.h}!triggerSec\_DualWheel@{triggerSec\_DualWheel}}
+\index{triggerSec\_DualWheel@{triggerSec\_DualWheel}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerSec\_DualWheel()}{triggerSec\_DualWheel()}}
+{\footnotesize\ttfamily void trigger\+Sec\+\_\+\+Dual\+Wheel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_acd03c2839f2094fc61107c178ebb1ce4}\label{decoders_8h_acd03c2839f2094fc61107c178ebb1ce4}} 
+\index{decoders.h@{decoders.h}!triggerSec\_missingTooth@{triggerSec\_missingTooth}}
+\index{triggerSec\_missingTooth@{triggerSec\_missingTooth}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerSec\_missingTooth()}{triggerSec\_missingTooth()}}
+{\footnotesize\ttfamily void trigger\+Sec\+\_\+missing\+Tooth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_a8cc959dce8f58d38ce75c5b17ea02d40}\label{decoders_8h_a8cc959dce8f58d38ce75c5b17ea02d40}} 
+\index{decoders.h@{decoders.h}!triggerSetup\_DualWheel@{triggerSetup\_DualWheel}}
+\index{triggerSetup\_DualWheel@{triggerSetup\_DualWheel}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerSetup\_DualWheel()}{triggerSetup\_DualWheel()}}
+{\footnotesize\ttfamily void trigger\+Setup\+\_\+\+Dual\+Wheel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{decoders_8h_ac5680f0930cef991664953059185343a}\label{decoders_8h_ac5680f0930cef991664953059185343a}} 
+\index{decoders.h@{decoders.h}!triggerSetup\_missingTooth@{triggerSetup\_missingTooth}}
+\index{triggerSetup\_missingTooth@{triggerSetup\_missingTooth}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerSetup\_missingTooth()}{triggerSetup\_missingTooth()}}
+{\footnotesize\ttfamily void trigger\+Setup\+\_\+missing\+Tooth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{decoders_8h_a16c057b337892e5c1999ebc7425f52b3}\label{decoders_8h_a16c057b337892e5c1999ebc7425f52b3}} 
+\index{decoders.h@{decoders.h}!checkSyncToothCount@{checkSyncToothCount}}
+\index{checkSyncToothCount@{checkSyncToothCount}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{checkSyncToothCount}{checkSyncToothCount}}
+{\footnotesize\ttfamily byte check\+Sync\+Tooth\+Count}
+
+\mbox{\Hypertarget{decoders_8h_ac18ba0a2c1dbaf6235400f7fd4023743}\label{decoders_8h_ac18ba0a2c1dbaf6235400f7fd4023743}} 
+\index{decoders.h@{decoders.h}!curGap@{curGap}}
+\index{curGap@{curGap}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{curGap}{curGap}}
+{\footnotesize\ttfamily volatile unsigned long cur\+Gap}
+
+\mbox{\Hypertarget{decoders_8h_a283a7f0f69cb28a9582a4388eca996f5}\label{decoders_8h_a283a7f0f69cb28a9582a4388eca996f5}} 
+\index{decoders.h@{decoders.h}!curGap2@{curGap2}}
+\index{curGap2@{curGap2}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{curGap2}{curGap2}}
+{\footnotesize\ttfamily volatile unsigned long cur\+Gap2}
+
+\mbox{\Hypertarget{decoders_8h_a9026a9c5d90202a2c5edf446c18311c0}\label{decoders_8h_a9026a9c5d90202a2c5edf446c18311c0}} 
+\index{decoders.h@{decoders.h}!curTime@{curTime}}
+\index{curTime@{curTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{curTime}{curTime}}
+{\footnotesize\ttfamily volatile unsigned long cur\+Time}
+
+\mbox{\Hypertarget{decoders_8h_a59eda7c50b47e1df0e122f367f0201fa}\label{decoders_8h_a59eda7c50b47e1df0e122f367f0201fa}} 
+\index{decoders.h@{decoders.h}!curTime2@{curTime2}}
+\index{curTime2@{curTime2}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{curTime2}{curTime2}}
+{\footnotesize\ttfamily volatile unsigned long cur\+Time2}
+
+\mbox{\Hypertarget{decoders_8h_a4d018ef97f19ddbb5dc92ef2b81ce5b4}\label{decoders_8h_a4d018ef97f19ddbb5dc92ef2b81ce5b4}} 
+\index{decoders.h@{decoders.h}!decoderIsSequential@{decoderIsSequential}}
+\index{decoderIsSequential@{decoderIsSequential}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{decoderIsSequential}{decoderIsSequential}}
+{\footnotesize\ttfamily bool decoder\+Is\+Sequential}
+
+\mbox{\Hypertarget{decoders_8h_a6c79b70e0eb86cd98ddf348af152c761}\label{decoders_8h_a6c79b70e0eb86cd98ddf348af152c761}} 
+\index{decoders.h@{decoders.h}!lastGap@{lastGap}}
+\index{lastGap@{lastGap}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{lastGap}{lastGap}}
+{\footnotesize\ttfamily volatile unsigned long last\+Gap}
+
+\mbox{\Hypertarget{decoders_8h_afce12e6bb920a5a0e061554aa2959221}\label{decoders_8h_afce12e6bb920a5a0e061554aa2959221}} 
+\index{decoders.h@{decoders.h}!revolutionOne@{revolutionOne}}
+\index{revolutionOne@{revolutionOne}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{revolutionOne}{revolutionOne}}
+{\footnotesize\ttfamily volatile bool revolution\+One = 0}
+
+\mbox{\Hypertarget{decoders_8h_af132ab2aede03e9cfe5b035d9f688908}\label{decoders_8h_af132ab2aede03e9cfe5b035d9f688908}} 
+\index{decoders.h@{decoders.h}!revolutionTime@{revolutionTime}}
+\index{revolutionTime@{revolutionTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{revolutionTime}{revolutionTime}}
+{\footnotesize\ttfamily unsigned long revolution\+Time}
+
+\mbox{\Hypertarget{decoders_8h_a9e6b984eae540372f54e1d00c0798fd5}\label{decoders_8h_a9e6b984eae540372f54e1d00c0798fd5}} 
+\index{decoders.h@{decoders.h}!secondaryLastToothTime@{secondaryLastToothTime}}
+\index{secondaryLastToothTime@{secondaryLastToothTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{secondaryLastToothTime}{secondaryLastToothTime}}
+{\footnotesize\ttfamily volatile unsigned long secondary\+Last\+Tooth\+Time = 0}
+
+\mbox{\Hypertarget{decoders_8h_a044cc65fd5aa8764ec2b1ad9e7fe2e5c}\label{decoders_8h_a044cc65fd5aa8764ec2b1ad9e7fe2e5c}} 
+\index{decoders.h@{decoders.h}!secondaryToothCount@{secondaryToothCount}}
+\index{secondaryToothCount@{secondaryToothCount}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{secondaryToothCount}{secondaryToothCount}}
+{\footnotesize\ttfamily volatile byte secondary\+Tooth\+Count}
+
+\mbox{\Hypertarget{decoders_8h_a1e54fcad7f7d745202e811045120842b}\label{decoders_8h_a1e54fcad7f7d745202e811045120842b}} 
+\index{decoders.h@{decoders.h}!secondDerivEnabled@{secondDerivEnabled}}
+\index{secondDerivEnabled@{secondDerivEnabled}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{secondDerivEnabled}{secondDerivEnabled}}
+{\footnotesize\ttfamily bool second\+Deriv\+Enabled}
+
+\mbox{\Hypertarget{decoders_8h_a581f2bcc9bef8295750b0da5e024b572}\label{decoders_8h_a581f2bcc9bef8295750b0da5e024b572}} 
+\index{decoders.h@{decoders.h}!targetGap@{targetGap}}
+\index{targetGap@{targetGap}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{targetGap}{targetGap}}
+{\footnotesize\ttfamily volatile unsigned long target\+Gap}
+
+\mbox{\Hypertarget{decoders_8h_a6f75ddfaf3a3aa9c68b8f4ac5062a46e}\label{decoders_8h_a6f75ddfaf3a3aa9c68b8f4ac5062a46e}} 
+\index{decoders.h@{decoders.h}!toothAngles@{toothAngles}}
+\index{toothAngles@{toothAngles}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothAngles}{toothAngles}}
+{\footnotesize\ttfamily int tooth\+Angles\mbox{[}24\mbox{]}}
+
+\mbox{\Hypertarget{decoders_8h_a1b79cf76e9130babad3e942d66d2c6c5}\label{decoders_8h_a1b79cf76e9130babad3e942d66d2c6c5}} 
+\index{decoders.h@{decoders.h}!toothCurrentCount@{toothCurrentCount}}
+\index{toothCurrentCount@{toothCurrentCount}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothCurrentCount}{toothCurrentCount}}
+{\footnotesize\ttfamily volatile int tooth\+Current\+Count = 0}
+
+\mbox{\Hypertarget{decoders_8h_ae89249f3d9695d946948dad05cf716db}\label{decoders_8h_ae89249f3d9695d946948dad05cf716db}} 
+\index{decoders.h@{decoders.h}!toothHistory@{toothHistory}}
+\index{toothHistory@{toothHistory}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothHistory}{toothHistory}}
+{\footnotesize\ttfamily volatile unsigned int tooth\+History\mbox{[}\mbox{\hyperlink{globals_8h_a466e3c2a473e5c8a2bae6bb6efe37b88}{TOOTH\+\_\+\+LOG\+\_\+\+BUFFER}}\mbox{]}}
+
+\mbox{\Hypertarget{decoders_8h_a406ba2c8645f7c8ffd3ccb8a01e9f167}\label{decoders_8h_a406ba2c8645f7c8ffd3ccb8a01e9f167}} 
+\index{decoders.h@{decoders.h}!toothHistoryIndex@{toothHistoryIndex}}
+\index{toothHistoryIndex@{toothHistoryIndex}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothHistoryIndex}{toothHistoryIndex}}
+{\footnotesize\ttfamily volatile unsigned int tooth\+History\+Index = 0}
+
+\mbox{\Hypertarget{decoders_8h_aabb6a1901d1bf5d76e6965f5ec287bf3}\label{decoders_8h_aabb6a1901d1bf5d76e6965f5ec287bf3}} 
+\index{decoders.h@{decoders.h}!toothLastMinusOneToothTime@{toothLastMinusOneToothTime}}
+\index{toothLastMinusOneToothTime@{toothLastMinusOneToothTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothLastMinusOneToothTime}{toothLastMinusOneToothTime}}
+{\footnotesize\ttfamily volatile unsigned long tooth\+Last\+Minus\+One\+Tooth\+Time = 0}
+
+\mbox{\Hypertarget{decoders_8h_a4d9c0dc167e08696c7e059de46e8f2a9}\label{decoders_8h_a4d9c0dc167e08696c7e059de46e8f2a9}} 
+\index{decoders.h@{decoders.h}!toothLastSecToothTime@{toothLastSecToothTime}}
+\index{toothLastSecToothTime@{toothLastSecToothTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothLastSecToothTime}{toothLastSecToothTime}}
+{\footnotesize\ttfamily volatile unsigned long tooth\+Last\+Sec\+Tooth\+Time = 0}
+
+\mbox{\Hypertarget{decoders_8h_a1016cfc7bbb3d0431923926e7feb5481}\label{decoders_8h_a1016cfc7bbb3d0431923926e7feb5481}} 
+\index{decoders.h@{decoders.h}!toothLastToothTime@{toothLastToothTime}}
+\index{toothLastToothTime@{toothLastToothTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothLastToothTime}{toothLastToothTime}}
+{\footnotesize\ttfamily volatile unsigned long tooth\+Last\+Tooth\+Time = 0}
+
+\mbox{\Hypertarget{decoders_8h_a7b9c18c8d54445542abdf2e929a4fe8b}\label{decoders_8h_a7b9c18c8d54445542abdf2e929a4fe8b}} 
+\index{decoders.h@{decoders.h}!toothLogRead@{toothLogRead}}
+\index{toothLogRead@{toothLogRead}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothLogRead}{toothLogRead}}
+{\footnotesize\ttfamily volatile bool tooth\+Log\+Read = false}
+
+\mbox{\Hypertarget{decoders_8h_afeac5cbe5557c16b1ea5e4c579988f8e}\label{decoders_8h_afeac5cbe5557c16b1ea5e4c579988f8e}} 
+\index{decoders.h@{decoders.h}!toothOneMinusOneTime@{toothOneMinusOneTime}}
+\index{toothOneMinusOneTime@{toothOneMinusOneTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothOneMinusOneTime}{toothOneMinusOneTime}}
+{\footnotesize\ttfamily volatile unsigned long tooth\+One\+Minus\+One\+Time = 0}
+
+\mbox{\Hypertarget{decoders_8h_aa0a6dce932427a5d9e0256d40ffb01af}\label{decoders_8h_aa0a6dce932427a5d9e0256d40ffb01af}} 
+\index{decoders.h@{decoders.h}!toothOneTime@{toothOneTime}}
+\index{toothOneTime@{toothOneTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothOneTime}{toothOneTime}}
+{\footnotesize\ttfamily volatile unsigned long tooth\+One\+Time = 0}
+
+\mbox{\Hypertarget{decoders_8h_a850b5bd646b55b24342c9b2fb552f16a}\label{decoders_8h_a850b5bd646b55b24342c9b2fb552f16a}} 
+\index{decoders.h@{decoders.h}!toothSystemCount@{toothSystemCount}}
+\index{toothSystemCount@{toothSystemCount}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothSystemCount}{toothSystemCount}}
+{\footnotesize\ttfamily volatile byte tooth\+System\+Count = 0}
+
+\mbox{\Hypertarget{decoders_8h_a5b364049047b5c3f2d551b06d6402308}\label{decoders_8h_a5b364049047b5c3f2d551b06d6402308}} 
+\index{decoders.h@{decoders.h}!toothSystemLastToothTime@{toothSystemLastToothTime}}
+\index{toothSystemLastToothTime@{toothSystemLastToothTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{toothSystemLastToothTime}{toothSystemLastToothTime}}
+{\footnotesize\ttfamily volatile unsigned long tooth\+System\+Last\+Tooth\+Time = 0}
+
+\mbox{\Hypertarget{decoders_8h_a7549e04409b56a5da688f2e8d329cbb7}\label{decoders_8h_a7549e04409b56a5da688f2e8d329cbb7}} 
+\index{decoders.h@{decoders.h}!triggerActualTeeth@{triggerActualTeeth}}
+\index{triggerActualTeeth@{triggerActualTeeth}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerActualTeeth}{triggerActualTeeth}}
+{\footnotesize\ttfamily volatile int trigger\+Actual\+Teeth}
+
+\mbox{\Hypertarget{decoders_8h_ad777a1893f4c22552d9a538aa5a73ae9}\label{decoders_8h_ad777a1893f4c22552d9a538aa5a73ae9}} 
+\index{decoders.h@{decoders.h}!triggerFilterTime@{triggerFilterTime}}
+\index{triggerFilterTime@{triggerFilterTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerFilterTime}{triggerFilterTime}}
+{\footnotesize\ttfamily volatile unsigned long trigger\+Filter\+Time}
+
+\mbox{\Hypertarget{decoders_8h_a08a321314e8c9af55ee9ce687cb631e3}\label{decoders_8h_a08a321314e8c9af55ee9ce687cb631e3}} 
+\index{decoders.h@{decoders.h}!triggerSecFilterTime@{triggerSecFilterTime}}
+\index{triggerSecFilterTime@{triggerSecFilterTime}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerSecFilterTime}{triggerSecFilterTime}}
+{\footnotesize\ttfamily unsigned int trigger\+Sec\+Filter\+Time}
+
+\mbox{\Hypertarget{decoders_8h_a15518dcfbd47c061c8a8e61984b275a8}\label{decoders_8h_a15518dcfbd47c061c8a8e61984b275a8}} 
+\index{decoders.h@{decoders.h}!triggerToothAngle@{triggerToothAngle}}
+\index{triggerToothAngle@{triggerToothAngle}!decoders.h@{decoders.h}}
+\doxysubsubsection{\texorpdfstring{triggerToothAngle}{triggerToothAngle}}
+{\footnotesize\ttfamily int trigger\+Tooth\+Angle}
+

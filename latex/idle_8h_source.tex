@@ -1,0 +1,45 @@
+\hypertarget{idle_8h_source}{}\doxysection{idle.\+h}
+\mbox{\hyperlink{idle_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{globals_8h}{globals.h}}"{}}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define STEPPER\_FORWARD 0}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define STEPPER\_BACKWARD 1}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define IDLE\_TABLE\_SIZE 10}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{enum} \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1c}{StepperStatus}} \{\mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca038158d200366d1825befdac15178502}{SOFF}}, \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1cae69ccdc3ac8758552e4149a99a2dc3c6}{STEPPING}}, \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1ca3b043537875f509fa630e3dfd6360696}{COOLING}}\}; \textcolor{comment}{//The 2 statuses that a stepper can have. STEPPING means that a high pulse is currently being sent and will need to be turned off at some point.}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_stepper_idle}{StepperIdle}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_stepper_idle_a62b6e10359034ac2b8613fb37507de6a}{curIdleStep}}; \textcolor{comment}{//Tracks the current location of the stepper}}
+\DoxyCodeLine{12   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_stepper_idle_acaa9d196dbd55b934e5cd7c4613fa77d}{targetIdleStep}}; \textcolor{comment}{//What the targetted step is}}
+\DoxyCodeLine{13   \textcolor{keyword}{volatile} \mbox{\hyperlink{idle_8h_ae818db0cc84bf646086fdd76ce4a2f1c}{StepperStatus}} \mbox{\hyperlink{struct_stepper_idle_a74d81abd204873af010d8b4dc85ea7ab}{stepperStatus}}; }
+\DoxyCodeLine{14   \textcolor{keyword}{volatile} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_stepper_idle_a48abedea5bf28f2efcd071ce631ce418}{stepStartTime}}; \textcolor{comment}{//The time the curren}}
+\DoxyCodeLine{15 \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_a0724ac5d9f6c9e61a75c6f078afdc024}{iacClosedLoopTable}};}
+\DoxyCodeLine{18 \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_a49ae009996bacf8f0b70bbc5eb620f1e}{iacPWMTable}};}
+\DoxyCodeLine{19 \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_ad30066f8434d669e8c531f016c5fcdd6}{iacStepTable}};}
+\DoxyCodeLine{20 \textcolor{comment}{//Open loop tables specifically for cranking}}
+\DoxyCodeLine{21 \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_a24ff08b97a38fc4a7496db9c96e96644}{iacCrankStepsTable}};}
+\DoxyCodeLine{22 \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{idle_8h_aabec2b275e859e09628e1b1210920716}{iacCrankDutyTable}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_stepper_idle}{StepperIdle}} \mbox{\hyperlink{idle_8h_ade7b38d1e8feac00386abec2e1fac754}{idleStepper}};}
+\DoxyCodeLine{25 \textcolor{keywordtype}{bool} \mbox{\hyperlink{idle_8h_a1524e6afb86c3952d4552e9abe2de8aa}{idleOn}}; \textcolor{comment}{//Simply tracks whether idle was on last time around}}
+\DoxyCodeLine{26 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{idle_8h_a3d1a75f38ce7db508153d72655406328}{iacStepTime}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{idle_8h_aa2bdf8830ff2f60fb46166fb4a37c3d1}{idle\_pin\_port}};}
+\DoxyCodeLine{29 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{idle_8h_ab70e63f66caba34d16f09ca5a8cf4e3a}{idle\_pin\_mask}};}
+\DoxyCodeLine{30 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{idle_8h_ab9463d3e65e5466845a135b72270ab3e}{idle2\_pin\_port}};}
+\DoxyCodeLine{31 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{idle_8h_ac8c21468628e9dea225eeb6731026903}{idle2\_pin\_mask}};}
+\DoxyCodeLine{32 \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} \mbox{\hyperlink{idle_8h_a8b4b852ecc9711a151cc540864083fe7}{idle\_pwm\_state}};}
+\DoxyCodeLine{33 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{idle_8h_ad033ae4068955a7927c2ddcf47bf1389}{idle\_pwm\_max\_count}}; \textcolor{comment}{//Used for variable PWM frequency}}
+\DoxyCodeLine{34 \textcolor{keyword}{volatile} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{idle_8h_a1d6a9734c098c30fceca6b35657ae5cd}{idle\_pwm\_cur\_value}};}
+\DoxyCodeLine{35 \textcolor{keywordtype}{long} \mbox{\hyperlink{idle_8h_a29c5636152a17149cf504cbbe78aaf5e}{idle\_pwm\_target\_value}};}
+\DoxyCodeLine{36 \textcolor{keywordtype}{long} \mbox{\hyperlink{idle_8h_ab370f333f23581c0d7fcf5f15a392e4d}{idle\_cl\_target\_rpm}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keywordtype}{void} \mbox{\hyperlink{idle_8h_aca4d348119424a7474843489e1b62b3c}{initialiseIdle}}();}
+\DoxyCodeLine{39 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} disableIdle();}
+\DoxyCodeLine{40 \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{void} enableIdle();}
+
+\end{DoxyCode}

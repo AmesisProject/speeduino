@@ -1,0 +1,60 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "c:/ProgramPerso/GitHub/speeduino/include",
+                "c:/ProgramPerso/GitHub/speeduino/speeduino",
+                "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "c:/ProgramPerso/GitHub/speeduino/.pio/libdeps/megaatmega2560/Time",
+                "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/amesi/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/amesi/.platformio/packages/framework-arduino-avr/variants/mega",
+                "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                "C:/Users/amesi/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "c:/ProgramPerso/GitHub/speeduino/include",
+                    "c:/ProgramPerso/GitHub/speeduino/speeduino",
+                    "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "c:/ProgramPerso/GitHub/speeduino/.pio/libdeps/megaatmega2560/Time",
+                    "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/amesi/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/amesi/.platformio/packages/framework-arduino-avr/variants/mega",
+                    "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/amesi/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    "C:/Users/amesi/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=50205",
+                "ARDUINO_AVR_MEGA2560",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega2560__",
+                ""
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "C:/Users/amesi/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega2560",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}

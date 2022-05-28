@@ -1,0 +1,70 @@
+\hypertarget{table_8h_source}{}\doxysection{table.\+h}
+\mbox{\hyperlink{table_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{This file is used for everything related to maps/tables including their definition, functions etc}}
+\DoxyCodeLine{3 \textcolor{comment}{*/}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifndef TABLE\_H}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define TABLE\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define TABLE\_RPM\_MULTIPLIER  100}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define TABLE\_LOAD\_MULTIPLIER 1}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{/*}}
+\DoxyCodeLine{12 \textcolor{comment}{The 2D table can contain either 8-\/bit (byte) or 16-\/bit (int) values}}
+\DoxyCodeLine{13 \textcolor{comment}{The valueSize variable should be set to either 8 or 16 to indicate this BEFORE the table is used}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \{}
+\DoxyCodeLine{16   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structtable2_d_a6437fa4cc10414e263c0075aa00ef2fa}{valueSize}}; }
+\DoxyCodeLine{17   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structtable2_d_a34722746eca3e5dc4ce90fd627e324fa}{xSize}};}
+\DoxyCodeLine{18   }
+\DoxyCodeLine{19   \textcolor{keywordtype}{byte} *\mbox{\hyperlink{structtable2_d_a6990f08fc471cb67a0088bf5553be45c}{values}};}
+\DoxyCodeLine{20   \textcolor{keywordtype}{byte} *\mbox{\hyperlink{structtable2_d_aa80839eb7e81f7008e500c66a8a39e35}{axisX}};}
+\DoxyCodeLine{21   }
+\DoxyCodeLine{22   \textcolor{keywordtype}{int} *\mbox{\hyperlink{structtable2_d_a99767a276a8894c586da2bf2d8f000a4}{values16}};}
+\DoxyCodeLine{23   \textcolor{keywordtype}{int} *\mbox{\hyperlink{structtable2_d_a2f717cd024792d64d5fa351cca848415}{axisX16}};}
+\DoxyCodeLine{24   }
+\DoxyCodeLine{25   \textcolor{comment}{//Store the last X and Y coordinates in the table. This is used to make the next check faster}}
+\DoxyCodeLine{26   \textcolor{keywordtype}{int} \mbox{\hyperlink{structtable2_d_a94ee3fca90cd75fa17f17a28961e930c}{lastXMax}}, \mbox{\hyperlink{structtable2_d_a21b0cccdbbc733b995914a9fb3a03fc1}{lastXMin}};}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keywordtype}{void} \mbox{\hyperlink{table_8h_af0dc18f8d5c574d69273024ca57a243c}{table2D\_setSize}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structtable2_d}{table2D}} targetTable, \textcolor{keywordtype}{byte} newSize);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{struct }\mbox{\hyperlink{structtable3_d}{table3D}} \{}
+\DoxyCodeLine{32   }
+\DoxyCodeLine{33   \textcolor{comment}{//All tables must be the same size for simplicity}}
+\DoxyCodeLine{34   }
+\DoxyCodeLine{35   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structtable3_d_af40916f620bce0461a9e3ef3cc0b201a}{xSize}};}
+\DoxyCodeLine{36   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structtable3_d_a173dc19d825c6effeb83598848ed36ca}{ySize}};}
+\DoxyCodeLine{37   }
+\DoxyCodeLine{38   \textcolor{keywordtype}{byte} **\mbox{\hyperlink{structtable3_d_a2a13d26f896806065bcb8686ca31376b}{values}};}
+\DoxyCodeLine{39   \textcolor{keywordtype}{int} *\mbox{\hyperlink{structtable3_d_a76bcce99eb76a7ac403c4792f79e4a6e}{axisX}};}
+\DoxyCodeLine{40   \textcolor{keywordtype}{int} *\mbox{\hyperlink{structtable3_d_a13de560a891477090a44d46a9843767a}{axisY}};}
+\DoxyCodeLine{41   }
+\DoxyCodeLine{42   \textcolor{comment}{//Store the last X and Y coordinates in the table. This is used to make the next check faster}}
+\DoxyCodeLine{43   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structtable3_d_a0ccc7ac5dca138fb0f39cce32cf0b722}{lastXMax}}, \mbox{\hyperlink{structtable3_d_af9fac7d93ba3d8adf283f3b44fe8ab6a}{lastXMin}};}
+\DoxyCodeLine{44   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structtable3_d_af6bae3d26a3034ad8762a41945c24605}{lastYMax}}, \mbox{\hyperlink{structtable3_d_a57a6067bf5ffa79e4adab6d14999620b}{lastYMin}};}
+\DoxyCodeLine{45 \};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{table_8h_aeea29e9fe4a65a33ab4a928ac89d3cb0}{table3D\_setSize}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structtable3_d}{table3D}} *targetTable, \textcolor{keywordtype}{byte} newSize);}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/*}}
+\DoxyCodeLine{50 \textcolor{comment}{3D Tables have an origin (0,0) in the top left hand corner. Vertical axis is expressed first.}}
+\DoxyCodeLine{51 \textcolor{comment}{Eg: 2x2 table}}
+\DoxyCodeLine{52 \textcolor{comment}{-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{53 \textcolor{comment}{|2 7|}}
+\DoxyCodeLine{54 \textcolor{comment}{|1 4|}}
+\DoxyCodeLine{55 \textcolor{comment}{-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{56 \textcolor{comment}{}}
+\DoxyCodeLine{57 \textcolor{comment}{(0,1) = 7}}
+\DoxyCodeLine{58 \textcolor{comment}{(0,0) = 2}}
+\DoxyCodeLine{59 \textcolor{comment}{(1,0) = 1}}
+\DoxyCodeLine{60 \textcolor{comment}{}}
+\DoxyCodeLine{61 \textcolor{comment}{*/}}
+\DoxyCodeLine{62 \textcolor{keywordtype}{int} \mbox{\hyperlink{table_8h_abcb4d91b651f8d47cbaae711ed938a0f}{get3DTableValue}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structtable3_d}{table3D}} *fromTable, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{63 \textcolor{keywordtype}{int} \mbox{\hyperlink{table_8h_a462f96f099a0c20647d0a29e96e2e80c}{table2D\_getValue}}(\textcolor{keyword}{struct} \mbox{\hyperlink{structtable2_d}{table2D}} *fromTable, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TABLE\_H}}
+
+\end{DoxyCode}

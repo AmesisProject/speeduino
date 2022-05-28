@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['baro_0',['baro',['../structstatuses.html#a759bc5a4f3297f442490f4cc36f1cf32',1,'statuses']]],
+  ['barocorr_1',['baroCorr',['../structconfig1.html#ada860aabb93460b025099d0743f026b2',1,'config1']]],
+  ['batadc_2',['batADC',['../structstatuses.html#a7d8a66c38c70bdfe8013a8f859ab7adc',1,'statuses']]],
+  ['batcorrection_3',['batCorrection',['../structstatuses.html#a4951c58340caddad83e473cb274208d8',1,'statuses']]],
+  ['battery10_4',['battery10',['../structstatuses.html#a8d7eae01c5f8284f889bf4c246a259da',1,'statuses']]],
+  ['boost_5fcl_5ftarget_5fboost_5',['boost_cl_target_boost',['../auxiliaries_8h.html#ad526633fccbd3def9d1c5b02cad2dcaf',1,'auxiliaries.h']]],
+  ['boost_5fpin_5fmask_6',['boost_pin_mask',['../auxiliaries_8h.html#aa706e1a4d63a5d1efe73430e13aeeaad',1,'auxiliaries.h']]],
+  ['boost_5fpin_5fport_7',['boost_pin_port',['../auxiliaries_8h.html#ad6fceb73e40a8df5c22226f0a373f668',1,'auxiliaries.h']]],
+  ['boost_5fpwm_5fcur_5fvalue_8',['boost_pwm_cur_value',['../auxiliaries_8h.html#a561e4c2b29e72e06c0e86b5bea0eaae4',1,'auxiliaries.h']]],
+  ['boost_5fpwm_5fmax_5fcount_9',['boost_pwm_max_count',['../auxiliaries_8h.html#a352398dabeadf9329d97f6899a5a036e',1,'auxiliaries.h']]],
+  ['boost_5fpwm_5fstate_10',['boost_pwm_state',['../auxiliaries_8h.html#a890f54cc385e3554e1e9ae3962cfa1aa',1,'auxiliaries.h']]],
+  ['boost_5fpwm_5ftarget_5fvalue_11',['boost_pwm_target_value',['../auxiliaries_8h.html#a6b5cb46c773772a82e1cbd8428cedd71',1,'auxiliaries.h']]],
+  ['boostcuttype_12',['boostCutType',['../structconfig3.html#a90d1037366adcfa68ec429fda1cba391',1,'config3']]],
+  ['boostenabled_13',['boostEnabled',['../structconfig3.html#a2502ba9460a69fefdb6aefb935c8d346',1,'config3']]],
+  ['boostfreq_14',['boostFreq',['../structconfig3.html#a65e70eb2f5eb6f9bef96cbd42cb7807e',1,'config3']]],
+  ['boostkd_15',['boostKD',['../structconfig3.html#a2477d164caa96a7aa81f465928331d74',1,'config3']]],
+  ['boostki_16',['boostKI',['../structconfig3.html#a7624aaa1b606b267ae1a79dbb8d51409',1,'config3']]],
+  ['boostkp_17',['boostKP',['../structconfig3.html#a660ad41e07f05db07eedf1637b8315eb',1,'config3']]],
+  ['boostlimit_18',['boostLimit',['../structconfig3.html#a66f776c5a05b65a6a6cb1920fc5bbfb5',1,'config3']]]
+];

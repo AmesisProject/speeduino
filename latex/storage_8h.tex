@@ -1,0 +1,511 @@
+\hypertarget{storage_8h}{}\doxysection{storage.\+h File Reference}
+\label{storage_8h}\index{storage.h@{storage.h}}
+{\ttfamily \#include $<$EEPROM.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{storage_8h_a26da4e61da7c86dedd9fd3adf8132fd0}{EEPROM\+\_\+\+CONFIG1\+\_\+\+XSIZE}}~1
+\item 
+\#define \mbox{\hyperlink{storage_8h_a3bd369b8bb311472bcb4f2b2bd74a93b}{EEPROM\+\_\+\+CONFIG1\+\_\+\+YSIZE}}~2
+\item 
+\#define \mbox{\hyperlink{storage_8h_a99a9c363e83201ebfafc3932b1a36357}{EEPROM\+\_\+\+CONFIG1\+\_\+\+MAP}}~3
+\item 
+\#define \mbox{\hyperlink{storage_8h_a80dee5184c4b4d6f77c016b79c958921}{EEPROM\+\_\+\+CONFIG1\+\_\+\+XBINS}}~259
+\item 
+\#define \mbox{\hyperlink{storage_8h_a7ccc52552284e9402a7d902acfe29cc8}{EEPROM\+\_\+\+CONFIG1\+\_\+\+YBINS}}~275
+\item 
+\#define \mbox{\hyperlink{storage_8h_a297ca20e451e29fa9364eb966bb2863a}{EEPROM\+\_\+\+CONFIG2\+\_\+\+START}}~291
+\item 
+\#define \mbox{\hyperlink{storage_8h_aeec2ceb6e96530e38cab30dc955eb83c}{EEPROM\+\_\+\+CONFIG2\+\_\+\+END}}~355
+\item 
+\#define \mbox{\hyperlink{storage_8h_aff6c75d9b79e3443bfc1d2265d7647b5}{EEPROM\+\_\+\+CONFIG3\+\_\+\+XSIZE}}~355
+\item 
+\#define \mbox{\hyperlink{storage_8h_af0a3105c470b2e339e4b548c50fdb65a}{EEPROM\+\_\+\+CONFIG3\+\_\+\+YSIZE}}~356
+\item 
+\#define \mbox{\hyperlink{storage_8h_abb6e8da2685bff20dfd16d0f7acb84a7}{EEPROM\+\_\+\+CONFIG3\+\_\+\+MAP}}~357
+\item 
+\#define \mbox{\hyperlink{storage_8h_a558c358c16203010e667f9b3d208ad43}{EEPROM\+\_\+\+CONFIG3\+\_\+\+XBINS}}~613
+\item 
+\#define \mbox{\hyperlink{storage_8h_aafc587b2e7c3d8d3cf827a27f389535f}{EEPROM\+\_\+\+CONFIG3\+\_\+\+YBINS}}~629
+\item 
+\#define \mbox{\hyperlink{storage_8h_a570b1e9639b766e710dbcec97e65846a}{EEPROM\+\_\+\+CONFIG4\+\_\+\+START}}~645
+\item 
+\#define \mbox{\hyperlink{storage_8h_ab84a9b208cebac08c4b3ae4c10376ebe}{EEPROM\+\_\+\+CONFIG4\+\_\+\+END}}~709
+\item 
+\#define \mbox{\hyperlink{storage_8h_afd97992453bab26ca0e7a2dc035a3bef}{EEPROM\+\_\+\+CONFIG5\+\_\+\+XSIZE}}~709
+\item 
+\#define \mbox{\hyperlink{storage_8h_a7b7ae7806f6896eda2791ab838f74585}{EEPROM\+\_\+\+CONFIG5\+\_\+\+YSIZE}}~710
+\item 
+\#define \mbox{\hyperlink{storage_8h_ab77a2bc3dccb048dedf6669f4a8cc1fe}{EEPROM\+\_\+\+CONFIG5\+\_\+\+MAP}}~711
+\item 
+\#define \mbox{\hyperlink{storage_8h_a4aa132a4244f360b12a16049e54bad6a}{EEPROM\+\_\+\+CONFIG5\+\_\+\+XBINS}}~967
+\item 
+\#define \mbox{\hyperlink{storage_8h_a97fad1b84eb420e59a1f9e74b53529e4}{EEPROM\+\_\+\+CONFIG5\+\_\+\+YBINS}}~983
+\item 
+\#define \mbox{\hyperlink{storage_8h_aecd4038302615d7eaed7e366c6508ab8}{EEPROM\+\_\+\+CONFIG6\+\_\+\+START}}~999
+\item 
+\#define \mbox{\hyperlink{storage_8h_a09c19d0c4be3a52084b248832d3fb096}{EEPROM\+\_\+\+CONFIG6\+\_\+\+END}}~1063
+\item 
+\#define \mbox{\hyperlink{storage_8h_a1b71b15bf3739e47f1ea144c68ac455d}{EEPROM\+\_\+\+CONFIG7\+\_\+\+START}}~1063
+\item 
+\#define \mbox{\hyperlink{storage_8h_ac813a49cbfbb81da72316e730bb3c8f2}{EEPROM\+\_\+\+CONFIG7\+\_\+\+END}}~1127
+\item 
+\#define \mbox{\hyperlink{storage_8h_ab6d0c8a21627a8e92babf34b5f4038e3}{EEPROM\+\_\+\+CONFIG8\+\_\+\+XSIZE1}}~1127
+\item 
+\#define \mbox{\hyperlink{storage_8h_a24f0d1e40ed67177612fc7d2e6933932}{EEPROM\+\_\+\+CONFIG8\+\_\+\+YSIZE1}}~1128
+\item 
+\#define \mbox{\hyperlink{storage_8h_aa1cdb1e36874d79499274a41747280a2}{EEPROM\+\_\+\+CONFIG8\+\_\+\+MAP1}}~1129
+\item 
+\#define \mbox{\hyperlink{storage_8h_affedf8959a2646b45b64c613e8f91159}{EEPROM\+\_\+\+CONFIG8\+\_\+\+XBINS1}}~1193
+\item 
+\#define \mbox{\hyperlink{storage_8h_aacfebb2ea12a210a4cf3136cd3cd98b1}{EEPROM\+\_\+\+CONFIG8\+\_\+\+YBINS1}}~1201
+\item 
+\#define \mbox{\hyperlink{storage_8h_ad23bb462574928a64403ae7e5d56080f}{EEPROM\+\_\+\+CONFIG8\+\_\+\+XSIZE2}}~1209
+\item 
+\#define \mbox{\hyperlink{storage_8h_af7d2e0498d627ce7351192f977fa3530}{EEPROM\+\_\+\+CONFIG8\+\_\+\+YSIZE2}}~1210
+\item 
+\#define \mbox{\hyperlink{storage_8h_a32df535c755a09f0135023d06e2aa8c1}{EEPROM\+\_\+\+CONFIG8\+\_\+\+MAP2}}~1211
+\item 
+\#define \mbox{\hyperlink{storage_8h_ac4ab9f80b053bc8d0b9098fa5b36cd84}{EEPROM\+\_\+\+CONFIG8\+\_\+\+XBINS2}}~1275
+\item 
+\#define \mbox{\hyperlink{storage_8h_aa35cc1bb4465c3bbff12756ac35c500c}{EEPROM\+\_\+\+CONFIG8\+\_\+\+YBINS2}}~1283
+\item 
+\#define \mbox{\hyperlink{storage_8h_a684183b4b86e8ca617d4acb1db7b7069}{EEPROM\+\_\+\+CONFIG8\+\_\+\+END}}~1291
+\item 
+\#define \mbox{\hyperlink{storage_8h_abcc0266197948b1dc5950f77e3ec16a7}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE1}}~1291
+\item 
+\#define \mbox{\hyperlink{storage_8h_a5408a3f60f4a43b10a78924e04616d15}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE1}}~1292
+\item 
+\#define \mbox{\hyperlink{storage_8h_afd90656ea8d2d754dd9bc8d81c0efce6}{EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP1}}~1293
+\item 
+\#define \mbox{\hyperlink{storage_8h_a5891521f7801af1c3bd848051e9e9257}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS1}}~1329
+\item 
+\#define \mbox{\hyperlink{storage_8h_abff9430c5b5ce4c8b31905efbaba5087}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS1}}~1335
+\item 
+\#define \mbox{\hyperlink{storage_8h_afbf572138be229692bbce68ccbc606d4}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE2}}~1341
+\item 
+\#define \mbox{\hyperlink{storage_8h_a87ae73859689cd897ead2bc740594d2a}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE2}}~1342
+\item 
+\#define \mbox{\hyperlink{storage_8h_a2e8419e0540d95fb76763cac0725f4dc}{EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP2}}~1343
+\item 
+\#define \mbox{\hyperlink{storage_8h_a1f2282fe882e6228dac38e8c32688e7e}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS2}}~1379
+\item 
+\#define \mbox{\hyperlink{storage_8h_a64309bbd14a970775251b79eaa922d50}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS2}}~1385
+\item 
+\#define \mbox{\hyperlink{storage_8h_a29622cd69bc64ba82c3f0d028a8b95e9}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE3}}~1391
+\item 
+\#define \mbox{\hyperlink{storage_8h_adf1d023210bf0af8738831d480391dd6}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE3}}~1392
+\item 
+\#define \mbox{\hyperlink{storage_8h_aae7b67e9b2c79303743cda972c84e7dc}{EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP3}}~1393
+\item 
+\#define \mbox{\hyperlink{storage_8h_a6d4cbde00055d83b2891d1ff603c3b38}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS3}}~1429
+\item 
+\#define \mbox{\hyperlink{storage_8h_a6a530e08335318f018c5f7f77916ccfd}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS3}}~1435
+\item 
+\#define \mbox{\hyperlink{storage_8h_a6162cc6aad447564c4450aacacd4a21c}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE4}}~1441
+\item 
+\#define \mbox{\hyperlink{storage_8h_a0b3f67cef826d4e97117c8e66e965236}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE4}}~1442
+\item 
+\#define \mbox{\hyperlink{storage_8h_a05c3c566ff7d6ef08fe649d059fd9df5}{EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP4}}~1443
+\item 
+\#define \mbox{\hyperlink{storage_8h_ae61b33e2097b0ee50a544b7fa7644f54}{EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS4}}~1479
+\item 
+\#define \mbox{\hyperlink{storage_8h_a16a50cb7337f05980f35894147db6781}{EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS4}}~1485
+\item 
+\#define \mbox{\hyperlink{storage_8h_a3883bd7685c795fc06ed435efa83dc2e}{EEPROM\+\_\+\+LAST\+\_\+\+BARO}}~2558
+\item 
+\#define \mbox{\hyperlink{storage_8h_afb395f3adf65eaad052499a5aac655c0}{EEPROM\+\_\+\+CALIBRATION\+\_\+\+O2}}~2559
+\item 
+\#define \mbox{\hyperlink{storage_8h_abe5e585d2b85b8b0d6f6e84e56fb91c6}{EEPROM\+\_\+\+CALIBRATION\+\_\+\+IAT}}~3071
+\item 
+\#define \mbox{\hyperlink{storage_8h_a5b1cea84b8376ac1a29567253fb5f798}{EEPROM\+\_\+\+CALIBRATION\+\_\+\+CLT}}~3583
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{storage_8h_a1baef6b5e51f82022a7997572e359df5}{write\+Config}} ()
+\item 
+void \mbox{\hyperlink{storage_8h_ad5ed6ddd9940c0097cc91774056df1c2}{load\+Config}} ()
+\item 
+void \mbox{\hyperlink{storage_8h_a369be74b7836bb9eb5a57c95db8d3052}{load\+Calibration}} ()
+\item 
+void \mbox{\hyperlink{storage_8h_ac3efa003544375926eb7d8d88cf19523}{write\+Calibration}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{storage_8h_a5b1cea84b8376ac1a29567253fb5f798}\label{storage_8h_a5b1cea84b8376ac1a29567253fb5f798}} 
+\index{storage.h@{storage.h}!EEPROM\_CALIBRATION\_CLT@{EEPROM\_CALIBRATION\_CLT}}
+\index{EEPROM\_CALIBRATION\_CLT@{EEPROM\_CALIBRATION\_CLT}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CALIBRATION\_CLT}{EEPROM\_CALIBRATION\_CLT}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CALIBRATION\+\_\+\+CLT~3583}
+
+\mbox{\Hypertarget{storage_8h_abe5e585d2b85b8b0d6f6e84e56fb91c6}\label{storage_8h_abe5e585d2b85b8b0d6f6e84e56fb91c6}} 
+\index{storage.h@{storage.h}!EEPROM\_CALIBRATION\_IAT@{EEPROM\_CALIBRATION\_IAT}}
+\index{EEPROM\_CALIBRATION\_IAT@{EEPROM\_CALIBRATION\_IAT}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CALIBRATION\_IAT}{EEPROM\_CALIBRATION\_IAT}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CALIBRATION\+\_\+\+IAT~3071}
+
+\mbox{\Hypertarget{storage_8h_afb395f3adf65eaad052499a5aac655c0}\label{storage_8h_afb395f3adf65eaad052499a5aac655c0}} 
+\index{storage.h@{storage.h}!EEPROM\_CALIBRATION\_O2@{EEPROM\_CALIBRATION\_O2}}
+\index{EEPROM\_CALIBRATION\_O2@{EEPROM\_CALIBRATION\_O2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CALIBRATION\_O2}{EEPROM\_CALIBRATION\_O2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CALIBRATION\+\_\+\+O2~2559}
+
+\mbox{\Hypertarget{storage_8h_a99a9c363e83201ebfafc3932b1a36357}\label{storage_8h_a99a9c363e83201ebfafc3932b1a36357}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG1\_MAP@{EEPROM\_CONFIG1\_MAP}}
+\index{EEPROM\_CONFIG1\_MAP@{EEPROM\_CONFIG1\_MAP}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG1\_MAP}{EEPROM\_CONFIG1\_MAP}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG1\+\_\+\+MAP~3}
+
+\mbox{\Hypertarget{storage_8h_a80dee5184c4b4d6f77c016b79c958921}\label{storage_8h_a80dee5184c4b4d6f77c016b79c958921}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG1\_XBINS@{EEPROM\_CONFIG1\_XBINS}}
+\index{EEPROM\_CONFIG1\_XBINS@{EEPROM\_CONFIG1\_XBINS}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG1\_XBINS}{EEPROM\_CONFIG1\_XBINS}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG1\+\_\+\+XBINS~259}
+
+\mbox{\Hypertarget{storage_8h_a26da4e61da7c86dedd9fd3adf8132fd0}\label{storage_8h_a26da4e61da7c86dedd9fd3adf8132fd0}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG1\_XSIZE@{EEPROM\_CONFIG1\_XSIZE}}
+\index{EEPROM\_CONFIG1\_XSIZE@{EEPROM\_CONFIG1\_XSIZE}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG1\_XSIZE}{EEPROM\_CONFIG1\_XSIZE}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG1\+\_\+\+XSIZE~1}
+
+\mbox{\Hypertarget{storage_8h_a7ccc52552284e9402a7d902acfe29cc8}\label{storage_8h_a7ccc52552284e9402a7d902acfe29cc8}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG1\_YBINS@{EEPROM\_CONFIG1\_YBINS}}
+\index{EEPROM\_CONFIG1\_YBINS@{EEPROM\_CONFIG1\_YBINS}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG1\_YBINS}{EEPROM\_CONFIG1\_YBINS}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG1\+\_\+\+YBINS~275}
+
+\mbox{\Hypertarget{storage_8h_a3bd369b8bb311472bcb4f2b2bd74a93b}\label{storage_8h_a3bd369b8bb311472bcb4f2b2bd74a93b}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG1\_YSIZE@{EEPROM\_CONFIG1\_YSIZE}}
+\index{EEPROM\_CONFIG1\_YSIZE@{EEPROM\_CONFIG1\_YSIZE}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG1\_YSIZE}{EEPROM\_CONFIG1\_YSIZE}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG1\+\_\+\+YSIZE~2}
+
+\mbox{\Hypertarget{storage_8h_aeec2ceb6e96530e38cab30dc955eb83c}\label{storage_8h_aeec2ceb6e96530e38cab30dc955eb83c}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG2\_END@{EEPROM\_CONFIG2\_END}}
+\index{EEPROM\_CONFIG2\_END@{EEPROM\_CONFIG2\_END}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG2\_END}{EEPROM\_CONFIG2\_END}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG2\+\_\+\+END~355}
+
+\mbox{\Hypertarget{storage_8h_a297ca20e451e29fa9364eb966bb2863a}\label{storage_8h_a297ca20e451e29fa9364eb966bb2863a}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG2\_START@{EEPROM\_CONFIG2\_START}}
+\index{EEPROM\_CONFIG2\_START@{EEPROM\_CONFIG2\_START}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG2\_START}{EEPROM\_CONFIG2\_START}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG2\+\_\+\+START~291}
+
+\mbox{\Hypertarget{storage_8h_abb6e8da2685bff20dfd16d0f7acb84a7}\label{storage_8h_abb6e8da2685bff20dfd16d0f7acb84a7}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG3\_MAP@{EEPROM\_CONFIG3\_MAP}}
+\index{EEPROM\_CONFIG3\_MAP@{EEPROM\_CONFIG3\_MAP}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG3\_MAP}{EEPROM\_CONFIG3\_MAP}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG3\+\_\+\+MAP~357}
+
+\mbox{\Hypertarget{storage_8h_a558c358c16203010e667f9b3d208ad43}\label{storage_8h_a558c358c16203010e667f9b3d208ad43}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG3\_XBINS@{EEPROM\_CONFIG3\_XBINS}}
+\index{EEPROM\_CONFIG3\_XBINS@{EEPROM\_CONFIG3\_XBINS}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG3\_XBINS}{EEPROM\_CONFIG3\_XBINS}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG3\+\_\+\+XBINS~613}
+
+\mbox{\Hypertarget{storage_8h_aff6c75d9b79e3443bfc1d2265d7647b5}\label{storage_8h_aff6c75d9b79e3443bfc1d2265d7647b5}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG3\_XSIZE@{EEPROM\_CONFIG3\_XSIZE}}
+\index{EEPROM\_CONFIG3\_XSIZE@{EEPROM\_CONFIG3\_XSIZE}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG3\_XSIZE}{EEPROM\_CONFIG3\_XSIZE}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG3\+\_\+\+XSIZE~355}
+
+\mbox{\Hypertarget{storage_8h_aafc587b2e7c3d8d3cf827a27f389535f}\label{storage_8h_aafc587b2e7c3d8d3cf827a27f389535f}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG3\_YBINS@{EEPROM\_CONFIG3\_YBINS}}
+\index{EEPROM\_CONFIG3\_YBINS@{EEPROM\_CONFIG3\_YBINS}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG3\_YBINS}{EEPROM\_CONFIG3\_YBINS}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG3\+\_\+\+YBINS~629}
+
+\mbox{\Hypertarget{storage_8h_af0a3105c470b2e339e4b548c50fdb65a}\label{storage_8h_af0a3105c470b2e339e4b548c50fdb65a}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG3\_YSIZE@{EEPROM\_CONFIG3\_YSIZE}}
+\index{EEPROM\_CONFIG3\_YSIZE@{EEPROM\_CONFIG3\_YSIZE}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG3\_YSIZE}{EEPROM\_CONFIG3\_YSIZE}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG3\+\_\+\+YSIZE~356}
+
+\mbox{\Hypertarget{storage_8h_ab84a9b208cebac08c4b3ae4c10376ebe}\label{storage_8h_ab84a9b208cebac08c4b3ae4c10376ebe}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG4\_END@{EEPROM\_CONFIG4\_END}}
+\index{EEPROM\_CONFIG4\_END@{EEPROM\_CONFIG4\_END}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG4\_END}{EEPROM\_CONFIG4\_END}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG4\+\_\+\+END~709}
+
+\mbox{\Hypertarget{storage_8h_a570b1e9639b766e710dbcec97e65846a}\label{storage_8h_a570b1e9639b766e710dbcec97e65846a}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG4\_START@{EEPROM\_CONFIG4\_START}}
+\index{EEPROM\_CONFIG4\_START@{EEPROM\_CONFIG4\_START}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG4\_START}{EEPROM\_CONFIG4\_START}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG4\+\_\+\+START~645}
+
+\mbox{\Hypertarget{storage_8h_ab77a2bc3dccb048dedf6669f4a8cc1fe}\label{storage_8h_ab77a2bc3dccb048dedf6669f4a8cc1fe}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG5\_MAP@{EEPROM\_CONFIG5\_MAP}}
+\index{EEPROM\_CONFIG5\_MAP@{EEPROM\_CONFIG5\_MAP}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG5\_MAP}{EEPROM\_CONFIG5\_MAP}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG5\+\_\+\+MAP~711}
+
+\mbox{\Hypertarget{storage_8h_a4aa132a4244f360b12a16049e54bad6a}\label{storage_8h_a4aa132a4244f360b12a16049e54bad6a}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG5\_XBINS@{EEPROM\_CONFIG5\_XBINS}}
+\index{EEPROM\_CONFIG5\_XBINS@{EEPROM\_CONFIG5\_XBINS}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG5\_XBINS}{EEPROM\_CONFIG5\_XBINS}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG5\+\_\+\+XBINS~967}
+
+\mbox{\Hypertarget{storage_8h_afd97992453bab26ca0e7a2dc035a3bef}\label{storage_8h_afd97992453bab26ca0e7a2dc035a3bef}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG5\_XSIZE@{EEPROM\_CONFIG5\_XSIZE}}
+\index{EEPROM\_CONFIG5\_XSIZE@{EEPROM\_CONFIG5\_XSIZE}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG5\_XSIZE}{EEPROM\_CONFIG5\_XSIZE}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG5\+\_\+\+XSIZE~709}
+
+\mbox{\Hypertarget{storage_8h_a97fad1b84eb420e59a1f9e74b53529e4}\label{storage_8h_a97fad1b84eb420e59a1f9e74b53529e4}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG5\_YBINS@{EEPROM\_CONFIG5\_YBINS}}
+\index{EEPROM\_CONFIG5\_YBINS@{EEPROM\_CONFIG5\_YBINS}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG5\_YBINS}{EEPROM\_CONFIG5\_YBINS}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG5\+\_\+\+YBINS~983}
+
+\mbox{\Hypertarget{storage_8h_a7b7ae7806f6896eda2791ab838f74585}\label{storage_8h_a7b7ae7806f6896eda2791ab838f74585}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG5\_YSIZE@{EEPROM\_CONFIG5\_YSIZE}}
+\index{EEPROM\_CONFIG5\_YSIZE@{EEPROM\_CONFIG5\_YSIZE}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG5\_YSIZE}{EEPROM\_CONFIG5\_YSIZE}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG5\+\_\+\+YSIZE~710}
+
+\mbox{\Hypertarget{storage_8h_a09c19d0c4be3a52084b248832d3fb096}\label{storage_8h_a09c19d0c4be3a52084b248832d3fb096}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG6\_END@{EEPROM\_CONFIG6\_END}}
+\index{EEPROM\_CONFIG6\_END@{EEPROM\_CONFIG6\_END}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG6\_END}{EEPROM\_CONFIG6\_END}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG6\+\_\+\+END~1063}
+
+\mbox{\Hypertarget{storage_8h_aecd4038302615d7eaed7e366c6508ab8}\label{storage_8h_aecd4038302615d7eaed7e366c6508ab8}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG6\_START@{EEPROM\_CONFIG6\_START}}
+\index{EEPROM\_CONFIG6\_START@{EEPROM\_CONFIG6\_START}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG6\_START}{EEPROM\_CONFIG6\_START}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG6\+\_\+\+START~999}
+
+\mbox{\Hypertarget{storage_8h_ac813a49cbfbb81da72316e730bb3c8f2}\label{storage_8h_ac813a49cbfbb81da72316e730bb3c8f2}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG7\_END@{EEPROM\_CONFIG7\_END}}
+\index{EEPROM\_CONFIG7\_END@{EEPROM\_CONFIG7\_END}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG7\_END}{EEPROM\_CONFIG7\_END}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG7\+\_\+\+END~1127}
+
+\mbox{\Hypertarget{storage_8h_a1b71b15bf3739e47f1ea144c68ac455d}\label{storage_8h_a1b71b15bf3739e47f1ea144c68ac455d}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG7\_START@{EEPROM\_CONFIG7\_START}}
+\index{EEPROM\_CONFIG7\_START@{EEPROM\_CONFIG7\_START}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG7\_START}{EEPROM\_CONFIG7\_START}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG7\+\_\+\+START~1063}
+
+\mbox{\Hypertarget{storage_8h_a684183b4b86e8ca617d4acb1db7b7069}\label{storage_8h_a684183b4b86e8ca617d4acb1db7b7069}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_END@{EEPROM\_CONFIG8\_END}}
+\index{EEPROM\_CONFIG8\_END@{EEPROM\_CONFIG8\_END}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_END}{EEPROM\_CONFIG8\_END}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+END~1291}
+
+\mbox{\Hypertarget{storage_8h_aa1cdb1e36874d79499274a41747280a2}\label{storage_8h_aa1cdb1e36874d79499274a41747280a2}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_MAP1@{EEPROM\_CONFIG8\_MAP1}}
+\index{EEPROM\_CONFIG8\_MAP1@{EEPROM\_CONFIG8\_MAP1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_MAP1}{EEPROM\_CONFIG8\_MAP1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+MAP1~1129}
+
+\mbox{\Hypertarget{storage_8h_a32df535c755a09f0135023d06e2aa8c1}\label{storage_8h_a32df535c755a09f0135023d06e2aa8c1}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_MAP2@{EEPROM\_CONFIG8\_MAP2}}
+\index{EEPROM\_CONFIG8\_MAP2@{EEPROM\_CONFIG8\_MAP2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_MAP2}{EEPROM\_CONFIG8\_MAP2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+MAP2~1211}
+
+\mbox{\Hypertarget{storage_8h_affedf8959a2646b45b64c613e8f91159}\label{storage_8h_affedf8959a2646b45b64c613e8f91159}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_XBINS1@{EEPROM\_CONFIG8\_XBINS1}}
+\index{EEPROM\_CONFIG8\_XBINS1@{EEPROM\_CONFIG8\_XBINS1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_XBINS1}{EEPROM\_CONFIG8\_XBINS1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+XBINS1~1193}
+
+\mbox{\Hypertarget{storage_8h_ac4ab9f80b053bc8d0b9098fa5b36cd84}\label{storage_8h_ac4ab9f80b053bc8d0b9098fa5b36cd84}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_XBINS2@{EEPROM\_CONFIG8\_XBINS2}}
+\index{EEPROM\_CONFIG8\_XBINS2@{EEPROM\_CONFIG8\_XBINS2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_XBINS2}{EEPROM\_CONFIG8\_XBINS2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+XBINS2~1275}
+
+\mbox{\Hypertarget{storage_8h_ab6d0c8a21627a8e92babf34b5f4038e3}\label{storage_8h_ab6d0c8a21627a8e92babf34b5f4038e3}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_XSIZE1@{EEPROM\_CONFIG8\_XSIZE1}}
+\index{EEPROM\_CONFIG8\_XSIZE1@{EEPROM\_CONFIG8\_XSIZE1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_XSIZE1}{EEPROM\_CONFIG8\_XSIZE1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+XSIZE1~1127}
+
+\mbox{\Hypertarget{storage_8h_ad23bb462574928a64403ae7e5d56080f}\label{storage_8h_ad23bb462574928a64403ae7e5d56080f}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_XSIZE2@{EEPROM\_CONFIG8\_XSIZE2}}
+\index{EEPROM\_CONFIG8\_XSIZE2@{EEPROM\_CONFIG8\_XSIZE2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_XSIZE2}{EEPROM\_CONFIG8\_XSIZE2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+XSIZE2~1209}
+
+\mbox{\Hypertarget{storage_8h_aacfebb2ea12a210a4cf3136cd3cd98b1}\label{storage_8h_aacfebb2ea12a210a4cf3136cd3cd98b1}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_YBINS1@{EEPROM\_CONFIG8\_YBINS1}}
+\index{EEPROM\_CONFIG8\_YBINS1@{EEPROM\_CONFIG8\_YBINS1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_YBINS1}{EEPROM\_CONFIG8\_YBINS1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+YBINS1~1201}
+
+\mbox{\Hypertarget{storage_8h_aa35cc1bb4465c3bbff12756ac35c500c}\label{storage_8h_aa35cc1bb4465c3bbff12756ac35c500c}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_YBINS2@{EEPROM\_CONFIG8\_YBINS2}}
+\index{EEPROM\_CONFIG8\_YBINS2@{EEPROM\_CONFIG8\_YBINS2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_YBINS2}{EEPROM\_CONFIG8\_YBINS2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+YBINS2~1283}
+
+\mbox{\Hypertarget{storage_8h_a24f0d1e40ed67177612fc7d2e6933932}\label{storage_8h_a24f0d1e40ed67177612fc7d2e6933932}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_YSIZE1@{EEPROM\_CONFIG8\_YSIZE1}}
+\index{EEPROM\_CONFIG8\_YSIZE1@{EEPROM\_CONFIG8\_YSIZE1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_YSIZE1}{EEPROM\_CONFIG8\_YSIZE1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+YSIZE1~1128}
+
+\mbox{\Hypertarget{storage_8h_af7d2e0498d627ce7351192f977fa3530}\label{storage_8h_af7d2e0498d627ce7351192f977fa3530}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG8\_YSIZE2@{EEPROM\_CONFIG8\_YSIZE2}}
+\index{EEPROM\_CONFIG8\_YSIZE2@{EEPROM\_CONFIG8\_YSIZE2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG8\_YSIZE2}{EEPROM\_CONFIG8\_YSIZE2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG8\+\_\+\+YSIZE2~1210}
+
+\mbox{\Hypertarget{storage_8h_afd90656ea8d2d754dd9bc8d81c0efce6}\label{storage_8h_afd90656ea8d2d754dd9bc8d81c0efce6}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_MAP1@{EEPROM\_CONFIG9\_MAP1}}
+\index{EEPROM\_CONFIG9\_MAP1@{EEPROM\_CONFIG9\_MAP1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_MAP1}{EEPROM\_CONFIG9\_MAP1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP1~1293}
+
+\mbox{\Hypertarget{storage_8h_a2e8419e0540d95fb76763cac0725f4dc}\label{storage_8h_a2e8419e0540d95fb76763cac0725f4dc}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_MAP2@{EEPROM\_CONFIG9\_MAP2}}
+\index{EEPROM\_CONFIG9\_MAP2@{EEPROM\_CONFIG9\_MAP2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_MAP2}{EEPROM\_CONFIG9\_MAP2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP2~1343}
+
+\mbox{\Hypertarget{storage_8h_aae7b67e9b2c79303743cda972c84e7dc}\label{storage_8h_aae7b67e9b2c79303743cda972c84e7dc}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_MAP3@{EEPROM\_CONFIG9\_MAP3}}
+\index{EEPROM\_CONFIG9\_MAP3@{EEPROM\_CONFIG9\_MAP3}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_MAP3}{EEPROM\_CONFIG9\_MAP3}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP3~1393}
+
+\mbox{\Hypertarget{storage_8h_a05c3c566ff7d6ef08fe649d059fd9df5}\label{storage_8h_a05c3c566ff7d6ef08fe649d059fd9df5}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_MAP4@{EEPROM\_CONFIG9\_MAP4}}
+\index{EEPROM\_CONFIG9\_MAP4@{EEPROM\_CONFIG9\_MAP4}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_MAP4}{EEPROM\_CONFIG9\_MAP4}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+MAP4~1443}
+
+\mbox{\Hypertarget{storage_8h_a5891521f7801af1c3bd848051e9e9257}\label{storage_8h_a5891521f7801af1c3bd848051e9e9257}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XBINS1@{EEPROM\_CONFIG9\_XBINS1}}
+\index{EEPROM\_CONFIG9\_XBINS1@{EEPROM\_CONFIG9\_XBINS1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XBINS1}{EEPROM\_CONFIG9\_XBINS1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS1~1329}
+
+\mbox{\Hypertarget{storage_8h_a1f2282fe882e6228dac38e8c32688e7e}\label{storage_8h_a1f2282fe882e6228dac38e8c32688e7e}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XBINS2@{EEPROM\_CONFIG9\_XBINS2}}
+\index{EEPROM\_CONFIG9\_XBINS2@{EEPROM\_CONFIG9\_XBINS2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XBINS2}{EEPROM\_CONFIG9\_XBINS2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS2~1379}
+
+\mbox{\Hypertarget{storage_8h_a6d4cbde00055d83b2891d1ff603c3b38}\label{storage_8h_a6d4cbde00055d83b2891d1ff603c3b38}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XBINS3@{EEPROM\_CONFIG9\_XBINS3}}
+\index{EEPROM\_CONFIG9\_XBINS3@{EEPROM\_CONFIG9\_XBINS3}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XBINS3}{EEPROM\_CONFIG9\_XBINS3}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS3~1429}
+
+\mbox{\Hypertarget{storage_8h_ae61b33e2097b0ee50a544b7fa7644f54}\label{storage_8h_ae61b33e2097b0ee50a544b7fa7644f54}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XBINS4@{EEPROM\_CONFIG9\_XBINS4}}
+\index{EEPROM\_CONFIG9\_XBINS4@{EEPROM\_CONFIG9\_XBINS4}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XBINS4}{EEPROM\_CONFIG9\_XBINS4}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XBINS4~1479}
+
+\mbox{\Hypertarget{storage_8h_abcc0266197948b1dc5950f77e3ec16a7}\label{storage_8h_abcc0266197948b1dc5950f77e3ec16a7}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XSIZE1@{EEPROM\_CONFIG9\_XSIZE1}}
+\index{EEPROM\_CONFIG9\_XSIZE1@{EEPROM\_CONFIG9\_XSIZE1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XSIZE1}{EEPROM\_CONFIG9\_XSIZE1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE1~1291}
+
+\mbox{\Hypertarget{storage_8h_afbf572138be229692bbce68ccbc606d4}\label{storage_8h_afbf572138be229692bbce68ccbc606d4}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XSIZE2@{EEPROM\_CONFIG9\_XSIZE2}}
+\index{EEPROM\_CONFIG9\_XSIZE2@{EEPROM\_CONFIG9\_XSIZE2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XSIZE2}{EEPROM\_CONFIG9\_XSIZE2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE2~1341}
+
+\mbox{\Hypertarget{storage_8h_a29622cd69bc64ba82c3f0d028a8b95e9}\label{storage_8h_a29622cd69bc64ba82c3f0d028a8b95e9}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XSIZE3@{EEPROM\_CONFIG9\_XSIZE3}}
+\index{EEPROM\_CONFIG9\_XSIZE3@{EEPROM\_CONFIG9\_XSIZE3}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XSIZE3}{EEPROM\_CONFIG9\_XSIZE3}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE3~1391}
+
+\mbox{\Hypertarget{storage_8h_a6162cc6aad447564c4450aacacd4a21c}\label{storage_8h_a6162cc6aad447564c4450aacacd4a21c}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_XSIZE4@{EEPROM\_CONFIG9\_XSIZE4}}
+\index{EEPROM\_CONFIG9\_XSIZE4@{EEPROM\_CONFIG9\_XSIZE4}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_XSIZE4}{EEPROM\_CONFIG9\_XSIZE4}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+XSIZE4~1441}
+
+\mbox{\Hypertarget{storage_8h_abff9430c5b5ce4c8b31905efbaba5087}\label{storage_8h_abff9430c5b5ce4c8b31905efbaba5087}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YBINS1@{EEPROM\_CONFIG9\_YBINS1}}
+\index{EEPROM\_CONFIG9\_YBINS1@{EEPROM\_CONFIG9\_YBINS1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YBINS1}{EEPROM\_CONFIG9\_YBINS1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS1~1335}
+
+\mbox{\Hypertarget{storage_8h_a64309bbd14a970775251b79eaa922d50}\label{storage_8h_a64309bbd14a970775251b79eaa922d50}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YBINS2@{EEPROM\_CONFIG9\_YBINS2}}
+\index{EEPROM\_CONFIG9\_YBINS2@{EEPROM\_CONFIG9\_YBINS2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YBINS2}{EEPROM\_CONFIG9\_YBINS2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS2~1385}
+
+\mbox{\Hypertarget{storage_8h_a6a530e08335318f018c5f7f77916ccfd}\label{storage_8h_a6a530e08335318f018c5f7f77916ccfd}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YBINS3@{EEPROM\_CONFIG9\_YBINS3}}
+\index{EEPROM\_CONFIG9\_YBINS3@{EEPROM\_CONFIG9\_YBINS3}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YBINS3}{EEPROM\_CONFIG9\_YBINS3}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS3~1435}
+
+\mbox{\Hypertarget{storage_8h_a16a50cb7337f05980f35894147db6781}\label{storage_8h_a16a50cb7337f05980f35894147db6781}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YBINS4@{EEPROM\_CONFIG9\_YBINS4}}
+\index{EEPROM\_CONFIG9\_YBINS4@{EEPROM\_CONFIG9\_YBINS4}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YBINS4}{EEPROM\_CONFIG9\_YBINS4}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YBINS4~1485}
+
+\mbox{\Hypertarget{storage_8h_a5408a3f60f4a43b10a78924e04616d15}\label{storage_8h_a5408a3f60f4a43b10a78924e04616d15}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YSIZE1@{EEPROM\_CONFIG9\_YSIZE1}}
+\index{EEPROM\_CONFIG9\_YSIZE1@{EEPROM\_CONFIG9\_YSIZE1}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YSIZE1}{EEPROM\_CONFIG9\_YSIZE1}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE1~1292}
+
+\mbox{\Hypertarget{storage_8h_a87ae73859689cd897ead2bc740594d2a}\label{storage_8h_a87ae73859689cd897ead2bc740594d2a}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YSIZE2@{EEPROM\_CONFIG9\_YSIZE2}}
+\index{EEPROM\_CONFIG9\_YSIZE2@{EEPROM\_CONFIG9\_YSIZE2}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YSIZE2}{EEPROM\_CONFIG9\_YSIZE2}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE2~1342}
+
+\mbox{\Hypertarget{storage_8h_adf1d023210bf0af8738831d480391dd6}\label{storage_8h_adf1d023210bf0af8738831d480391dd6}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YSIZE3@{EEPROM\_CONFIG9\_YSIZE3}}
+\index{EEPROM\_CONFIG9\_YSIZE3@{EEPROM\_CONFIG9\_YSIZE3}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YSIZE3}{EEPROM\_CONFIG9\_YSIZE3}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE3~1392}
+
+\mbox{\Hypertarget{storage_8h_a0b3f67cef826d4e97117c8e66e965236}\label{storage_8h_a0b3f67cef826d4e97117c8e66e965236}} 
+\index{storage.h@{storage.h}!EEPROM\_CONFIG9\_YSIZE4@{EEPROM\_CONFIG9\_YSIZE4}}
+\index{EEPROM\_CONFIG9\_YSIZE4@{EEPROM\_CONFIG9\_YSIZE4}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_CONFIG9\_YSIZE4}{EEPROM\_CONFIG9\_YSIZE4}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+CONFIG9\+\_\+\+YSIZE4~1442}
+
+\mbox{\Hypertarget{storage_8h_a3883bd7685c795fc06ed435efa83dc2e}\label{storage_8h_a3883bd7685c795fc06ed435efa83dc2e}} 
+\index{storage.h@{storage.h}!EEPROM\_LAST\_BARO@{EEPROM\_LAST\_BARO}}
+\index{EEPROM\_LAST\_BARO@{EEPROM\_LAST\_BARO}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{EEPROM\_LAST\_BARO}{EEPROM\_LAST\_BARO}}
+{\footnotesize\ttfamily \#define EEPROM\+\_\+\+LAST\+\_\+\+BARO~2558}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{storage_8h_a369be74b7836bb9eb5a57c95db8d3052}\label{storage_8h_a369be74b7836bb9eb5a57c95db8d3052}} 
+\index{storage.h@{storage.h}!loadCalibration@{loadCalibration}}
+\index{loadCalibration@{loadCalibration}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{loadCalibration()}{loadCalibration()}}
+{\footnotesize\ttfamily void load\+Calibration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{storage_8h_ad5ed6ddd9940c0097cc91774056df1c2}\label{storage_8h_ad5ed6ddd9940c0097cc91774056df1c2}} 
+\index{storage.h@{storage.h}!loadConfig@{loadConfig}}
+\index{loadConfig@{loadConfig}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{loadConfig()}{loadConfig()}}
+{\footnotesize\ttfamily void load\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{storage_8h_ac3efa003544375926eb7d8d88cf19523}\label{storage_8h_ac3efa003544375926eb7d8d88cf19523}} 
+\index{storage.h@{storage.h}!writeCalibration@{writeCalibration}}
+\index{writeCalibration@{writeCalibration}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{writeCalibration()}{writeCalibration()}}
+{\footnotesize\ttfamily void write\+Calibration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{storage_8h_a1baef6b5e51f82022a7997572e359df5}\label{storage_8h_a1baef6b5e51f82022a7997572e359df5}} 
+\index{storage.h@{storage.h}!writeConfig@{writeConfig}}
+\index{writeConfig@{writeConfig}!storage.h@{storage.h}}
+\doxysubsubsection{\texorpdfstring{writeConfig()}{writeConfig()}}
+{\footnotesize\ttfamily void write\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

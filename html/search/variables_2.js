@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['cancmdfail_0',['cancmdfail',['../cancomms_8h.html#aeaaca3c597afd98c1bef3806ea31373a',1,'cancomms.h']]],
+  ['canenable_1',['canEnable',['../structconfig1.html#ac06b7e5e61fdd99726f0315eddd9e1e6',1,'config1']]],
+  ['canlisten_2',['canlisten',['../cancomms_8h.html#a2ed46f25e90e7afde7022c34b26c2f4c',1,'cancomms.h']]],
+  ['checksynctoothcount_3',['checkSyncToothCount',['../decoders_8h.html#a16c057b337892e5c1999ebc7425f52b3',1,'decoders.h']]],
+  ['cltadc_4',['cltADC',['../structstatuses.html#a8bcd9b49bd9ee12b63a4eb29ad9639d5',1,'statuses']]],
+  ['cltcalibrationtable_5',['cltCalibrationTable',['../globals_8h.html#a25dec7d77cf1c281884f4215ad9fc4b8',1,'globals.h']]],
+  ['clttype1_6',['cltType1',['../structconfig1.html#afd6a456cdeff7a8acc4ef3c47d09a69f',1,'config1']]],
+  ['configpage1_7',['configPage1',['../globals_8h.html#a04d67459cb0b684540bba6bfdde4c5a7',1,'globals.h']]],
+  ['configpage2_8',['configPage2',['../globals_8h.html#add94b67c28e6368081a7f29347e363e3',1,'globals.h']]],
+  ['configpage3_9',['configPage3',['../globals_8h.html#ae7d55795f4307e8894ac119756e9ec12',1,'globals.h']]],
+  ['coolant_10',['coolant',['../structstatuses.html#a7a9f35075a213a363be285a3988a32da',1,'statuses']]],
+  ['corrections_11',['corrections',['../structstatuses.html#a446d4083c348113f21724705f4b93404',1,'statuses']]],
+  ['crankang_12',['CrankAng',['../structconfig2.html#a202c866ae966894e8d2a70ae66046777',1,'config2']]],
+  ['crankingpct_13',['crankingPct',['../structconfig1.html#a7086198c4ea0e4dfd7e213eeca509b85',1,'config1']]],
+  ['crankrpm_14',['crankRPM',['../structconfig2.html#a3b35d159b9f217d1cff5e01fda135202',1,'config2']]],
+  ['curgap_15',['curGap',['../decoders_8h.html#ac18ba0a2c1dbaf6235400f7fd4023743',1,'decoders.h']]],
+  ['curgap2_16',['curGap2',['../decoders_8h.html#a283a7f0f69cb28a9582a4388eca996f5',1,'decoders.h']]],
+  ['curidlestep_17',['curIdleStep',['../struct_stepper_idle.html#a62b6e10359034ac2b8613fb37507de6a',1,'StepperIdle']]],
+  ['currentcanpage_18',['currentCanPage',['../cancomms_8h.html#ab513727c21cbd6362b2464ff39244749',1,'cancomms.h']]],
+  ['currentlooptime_19',['currentLoopTime',['../globals_8h.html#a45ad906e34abe5d3fd7f7f628110fbe5',1,'globals.h']]],
+  ['currentpage_20',['currentPage',['../comms_8h.html#a2b88e8085d30a5021f05251216095266',1,'comms.h']]],
+  ['currentstatus_21',['currentStatus',['../globals_8h.html#a1f40d45116b758fe0b792db21f3cecea',1,'globals.h']]],
+  ['curtime_22',['curTime',['../decoders_8h.html#a9026a9c5d90202a2c5edf446c18311c0',1,'decoders.h']]],
+  ['curtime2_23',['curTime2',['../decoders_8h.html#a59eda7c50b47e1df0e122f367f0201fa',1,'decoders.h']]]
+];

@@ -1,0 +1,148 @@
+\hypertarget{sensors_8h}{}\doxysection{sensors.\+h File Reference}
+\label{sensors_8h}\index{sensors.h@{sensors.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sensors_8h_ae1c3920aa36a96a8ef64df35b5d9e53e}{ADCFILTER\+\_\+\+TPS}}~128
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a73309c25b40f2442d0e3e48ba5b62478}{ADCFILTER\+\_\+\+CLT}}~180
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a0378bbabd0bcad9cd31a7488265640a4}{ADCFILTER\+\_\+\+IAT}}~180
+\item 
+\#define \mbox{\hyperlink{sensors_8h_ac72fb85908fb7830f633edee66fa748a}{ADCFILTER\+\_\+\+O2}}~128
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a533a366a88fa61269311fbed44fd564e}{ADCFILTER\+\_\+\+BAT}}~128
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a0e5b50132b45c470470f4641fd09b2f9}{BARO\+\_\+\+MIN}}~87
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a84f969a66daab08c19a3710213bf9749}{BARO\+\_\+\+MAX}}~108
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a96f6791c5834e1d00b64bbd178d7e25f}{ANALOG\+\_\+\+ISR}}
+\item 
+\#define \mbox{\hyperlink{sensors_8h_a546e9cb3295371234f60dcf3beae19dd}{ADC\+\_\+\+FILTER}}(input,  alpha,  prior)~(((long)input $\ast$ (256 -\/ alpha) + ((long)prior $\ast$ alpha))) $>$$>$ 8
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sensors_8h_a02cc6ed477813eb5425c02a750d86ed4}{instanteneous\+MAPReading}} ()
+\item 
+void \mbox{\hyperlink{sensors_8h_afdbaa610062629b506a68674a17318a1}{read\+MAP}} ()
+\item 
+void \mbox{\hyperlink{sensors_8h_afc4c1603c3188812d718d348d28cf276}{flex\+Pulse}} ()
+\item 
+\mbox{\hyperlink{sensors_8h_a05c2e5b588ced1cd7312f5b0edc5b295}{ISR}} (ADC\+\_\+vect)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile byte \mbox{\hyperlink{sensors_8h_aa8017c1c1d748c2a0ccedd19aab068c6}{flex\+Counter}} = 0
+\item 
+volatile int \mbox{\hyperlink{sensors_8h_a339fe59e3d02fd0dec6866d52c7e0164}{An\+Channel}} \mbox{[}15\mbox{]}
+\item 
+unsigned int \mbox{\hyperlink{sensors_8h_a91323d6f7c309f95c63d8bcaa26f617d}{temp\+Reading}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{sensors_8h_a546e9cb3295371234f60dcf3beae19dd}\label{sensors_8h_a546e9cb3295371234f60dcf3beae19dd}} 
+\index{sensors.h@{sensors.h}!ADC\_FILTER@{ADC\_FILTER}}
+\index{ADC\_FILTER@{ADC\_FILTER}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ADC\_FILTER}{ADC\_FILTER}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+FILTER(\begin{DoxyParamCaption}\item[{}]{input,  }\item[{}]{alpha,  }\item[{}]{prior }\end{DoxyParamCaption})~(((long)input $\ast$ (256 -\/ alpha) + ((long)prior $\ast$ alpha))) $>$$>$ 8}
+
+\mbox{\Hypertarget{sensors_8h_a533a366a88fa61269311fbed44fd564e}\label{sensors_8h_a533a366a88fa61269311fbed44fd564e}} 
+\index{sensors.h@{sensors.h}!ADCFILTER\_BAT@{ADCFILTER\_BAT}}
+\index{ADCFILTER\_BAT@{ADCFILTER\_BAT}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ADCFILTER\_BAT}{ADCFILTER\_BAT}}
+{\footnotesize\ttfamily \#define ADCFILTER\+\_\+\+BAT~128}
+
+\mbox{\Hypertarget{sensors_8h_a73309c25b40f2442d0e3e48ba5b62478}\label{sensors_8h_a73309c25b40f2442d0e3e48ba5b62478}} 
+\index{sensors.h@{sensors.h}!ADCFILTER\_CLT@{ADCFILTER\_CLT}}
+\index{ADCFILTER\_CLT@{ADCFILTER\_CLT}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ADCFILTER\_CLT}{ADCFILTER\_CLT}}
+{\footnotesize\ttfamily \#define ADCFILTER\+\_\+\+CLT~180}
+
+\mbox{\Hypertarget{sensors_8h_a0378bbabd0bcad9cd31a7488265640a4}\label{sensors_8h_a0378bbabd0bcad9cd31a7488265640a4}} 
+\index{sensors.h@{sensors.h}!ADCFILTER\_IAT@{ADCFILTER\_IAT}}
+\index{ADCFILTER\_IAT@{ADCFILTER\_IAT}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ADCFILTER\_IAT}{ADCFILTER\_IAT}}
+{\footnotesize\ttfamily \#define ADCFILTER\+\_\+\+IAT~180}
+
+\mbox{\Hypertarget{sensors_8h_ac72fb85908fb7830f633edee66fa748a}\label{sensors_8h_ac72fb85908fb7830f633edee66fa748a}} 
+\index{sensors.h@{sensors.h}!ADCFILTER\_O2@{ADCFILTER\_O2}}
+\index{ADCFILTER\_O2@{ADCFILTER\_O2}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ADCFILTER\_O2}{ADCFILTER\_O2}}
+{\footnotesize\ttfamily \#define ADCFILTER\+\_\+\+O2~128}
+
+\mbox{\Hypertarget{sensors_8h_ae1c3920aa36a96a8ef64df35b5d9e53e}\label{sensors_8h_ae1c3920aa36a96a8ef64df35b5d9e53e}} 
+\index{sensors.h@{sensors.h}!ADCFILTER\_TPS@{ADCFILTER\_TPS}}
+\index{ADCFILTER\_TPS@{ADCFILTER\_TPS}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ADCFILTER\_TPS}{ADCFILTER\_TPS}}
+{\footnotesize\ttfamily \#define ADCFILTER\+\_\+\+TPS~128}
+
+\mbox{\Hypertarget{sensors_8h_a96f6791c5834e1d00b64bbd178d7e25f}\label{sensors_8h_a96f6791c5834e1d00b64bbd178d7e25f}} 
+\index{sensors.h@{sensors.h}!ANALOG\_ISR@{ANALOG\_ISR}}
+\index{ANALOG\_ISR@{ANALOG\_ISR}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ANALOG\_ISR}{ANALOG\_ISR}}
+{\footnotesize\ttfamily \#define ANALOG\+\_\+\+ISR}
+
+\mbox{\Hypertarget{sensors_8h_a84f969a66daab08c19a3710213bf9749}\label{sensors_8h_a84f969a66daab08c19a3710213bf9749}} 
+\index{sensors.h@{sensors.h}!BARO\_MAX@{BARO\_MAX}}
+\index{BARO\_MAX@{BARO\_MAX}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{BARO\_MAX}{BARO\_MAX}}
+{\footnotesize\ttfamily \#define BARO\+\_\+\+MAX~108}
+
+\mbox{\Hypertarget{sensors_8h_a0e5b50132b45c470470f4641fd09b2f9}\label{sensors_8h_a0e5b50132b45c470470f4641fd09b2f9}} 
+\index{sensors.h@{sensors.h}!BARO\_MIN@{BARO\_MIN}}
+\index{BARO\_MIN@{BARO\_MIN}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{BARO\_MIN}{BARO\_MIN}}
+{\footnotesize\ttfamily \#define BARO\+\_\+\+MIN~87}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sensors_8h_afc4c1603c3188812d718d348d28cf276}\label{sensors_8h_afc4c1603c3188812d718d348d28cf276}} 
+\index{sensors.h@{sensors.h}!flexPulse@{flexPulse}}
+\index{flexPulse@{flexPulse}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{flexPulse()}{flexPulse()}}
+{\footnotesize\ttfamily void flex\+Pulse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensors_8h_a02cc6ed477813eb5425c02a750d86ed4}\label{sensors_8h_a02cc6ed477813eb5425c02a750d86ed4}} 
+\index{sensors.h@{sensors.h}!instanteneousMAPReading@{instanteneousMAPReading}}
+\index{instanteneousMAPReading@{instanteneousMAPReading}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{instanteneousMAPReading()}{instanteneousMAPReading()}}
+{\footnotesize\ttfamily void instanteneous\+MAPReading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensors_8h_a05c2e5b588ced1cd7312f5b0edc5b295}\label{sensors_8h_a05c2e5b588ced1cd7312f5b0edc5b295}} 
+\index{sensors.h@{sensors.h}!ISR@{ISR}}
+\index{ISR@{ISR}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{ISR()}{ISR()}}
+{\footnotesize\ttfamily ISR (\begin{DoxyParamCaption}\item[{ADC\+\_\+vect}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sensors_8h_afdbaa610062629b506a68674a17318a1}\label{sensors_8h_afdbaa610062629b506a68674a17318a1}} 
+\index{sensors.h@{sensors.h}!readMAP@{readMAP}}
+\index{readMAP@{readMAP}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{readMAP()}{readMAP()}}
+{\footnotesize\ttfamily void read\+MAP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{sensors_8h_a339fe59e3d02fd0dec6866d52c7e0164}\label{sensors_8h_a339fe59e3d02fd0dec6866d52c7e0164}} 
+\index{sensors.h@{sensors.h}!AnChannel@{AnChannel}}
+\index{AnChannel@{AnChannel}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{AnChannel}{AnChannel}}
+{\footnotesize\ttfamily volatile int An\+Channel\mbox{[}15\mbox{]}}
+
+\mbox{\Hypertarget{sensors_8h_aa8017c1c1d748c2a0ccedd19aab068c6}\label{sensors_8h_aa8017c1c1d748c2a0ccedd19aab068c6}} 
+\index{sensors.h@{sensors.h}!flexCounter@{flexCounter}}
+\index{flexCounter@{flexCounter}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{flexCounter}{flexCounter}}
+{\footnotesize\ttfamily volatile byte flex\+Counter = 0}
+
+\mbox{\Hypertarget{sensors_8h_a91323d6f7c309f95c63d8bcaa26f617d}\label{sensors_8h_a91323d6f7c309f95c63d8bcaa26f617d}} 
+\index{sensors.h@{sensors.h}!tempReading@{tempReading}}
+\index{tempReading@{tempReading}!sensors.h@{sensors.h}}
+\doxysubsubsection{\texorpdfstring{tempReading}{tempReading}}
+{\footnotesize\ttfamily unsigned int temp\+Reading}
+

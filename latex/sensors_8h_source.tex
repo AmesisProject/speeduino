@@ -1,0 +1,72 @@
+\hypertarget{sensors_8h_source}{}\doxysection{sensors.\+h}
+\mbox{\hyperlink{sensors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SENSORS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SENSORS\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// The following are alpha values for the ADC filters. }}
+\DoxyCodeLine{5 \textcolor{comment}{// Their values are from 0 to 255 with 0 being no filtering and 255 being maximum}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define ADCFILTER\_TPS  128}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define ADCFILTER\_CLT  180}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define ADCFILTER\_IAT  180}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define ADCFILTER\_O2  128}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define ADCFILTER\_BAT  128}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define BARO\_MIN      87}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define BARO\_MAX      108}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define ANALOG\_ISR}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{sensors_8h_aa8017c1c1d748c2a0ccedd19aab068c6}{flexCounter}} = 0;}
+\DoxyCodeLine{18 \textcolor{keyword}{volatile} \textcolor{keywordtype}{int} \mbox{\hyperlink{sensors_8h_a339fe59e3d02fd0dec6866d52c7e0164}{AnChannel}}[15];}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{/*}}
+\DoxyCodeLine{21 \textcolor{comment}{ * Simple low pass IIR filter macro for the analog inputs}}
+\DoxyCodeLine{22 \textcolor{comment}{ * This is effectively implementing the smooth filter from http://playground.arduino.cc/Main/Smooth}}
+\DoxyCodeLine{23 \textcolor{comment}{ * But removes the use of floats and uses 8 bits of fixed precision. }}
+\DoxyCodeLine{24 \textcolor{comment}{ */}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define ADC\_FILTER(input, alpha, prior) (((long)input * (256 -\/ alpha) + ((long)prior * alpha))) >> 8}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keywordtype}{void} \mbox{\hyperlink{sensors_8h_a02cc6ed477813eb5425c02a750d86ed4}{instanteneousMAPReading}}();}
+\DoxyCodeLine{28 \textcolor{keywordtype}{void} \mbox{\hyperlink{sensors_8h_afdbaa610062629b506a68674a17318a1}{readMAP}}();}
+\DoxyCodeLine{29 \textcolor{keywordtype}{void} \mbox{\hyperlink{sensors_8h_afc4c1603c3188812d718d348d28cf276}{flexPulse}}();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{sensors_8h_a91323d6f7c309f95c63d8bcaa26f617d}{tempReading}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#if defined(ANALOG\_ISR)}}
+\DoxyCodeLine{34 \textcolor{comment}{//Analog ISR interrupt routine}}
+\DoxyCodeLine{35 \mbox{\hyperlink{sensors_8h_a05c2e5b588ced1cd7312f5b0edc5b295}{ISR}}(ADC\_vect)}
+\DoxyCodeLine{36 \{}
+\DoxyCodeLine{37   \textcolor{keywordtype}{byte} nChannel;}
+\DoxyCodeLine{38   \textcolor{keywordtype}{int} result = ADCL | (ADCH << 8);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40   \textcolor{comment}{//ADCSRA = 0x6E;  // ADC disabled by clearing bit 7(ADEN)}}
+\DoxyCodeLine{41   \textcolor{comment}{//BIT\_CLEAR(ADCSRA, ADIE);}}
+\DoxyCodeLine{42   }
+\DoxyCodeLine{43   nChannel = ADMUX \& 0x07;}
+\DoxyCodeLine{44 \textcolor{preprocessor}{  \#if defined(\_\_AVR\_ATmega1281\_\_) || defined(\_\_AVR\_ATmega2561\_\_)}}
+\DoxyCodeLine{45     \textcolor{keywordflow}{if} (nChannel==7) \{ ADMUX = 0x40; \}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{  \#elif defined(\_\_AVR\_ATmega1280\_\_) || defined(\_\_AVR\_ATmega2560\_\_)}}
+\DoxyCodeLine{47     \textcolor{keywordflow}{if}(ADCSRB \& 0x08) \{ nChannel += 8; \}  \textcolor{comment}{//8 to 15}}
+\DoxyCodeLine{48     \textcolor{keywordflow}{if}(nChannel == 15)}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50       ADMUX = 0x40; \textcolor{comment}{//channel 0}}
+\DoxyCodeLine{51       ADCSRB = 0x00; \textcolor{comment}{//clear MUX5 bit}}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (nChannel == 7) \textcolor{comment}{//channel 7}}
+\DoxyCodeLine{54     \{ }
+\DoxyCodeLine{55       ADMUX = 0x40;}
+\DoxyCodeLine{56       ADCSRB = 0x08; \textcolor{comment}{//Set MUX5 bit}}
+\DoxyCodeLine{57     \}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{  \#endif}}
+\DoxyCodeLine{59     \textcolor{keywordflow}{else} \{ ADMUX++; \}}
+\DoxyCodeLine{60   \mbox{\hyperlink{sensors_8h_a339fe59e3d02fd0dec6866d52c7e0164}{AnChannel}}[nChannel-\/1] = result;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62   \textcolor{comment}{//BIT\_SET(ADCSRA, ADIE);}}
+\DoxyCodeLine{63   \textcolor{comment}{//ADCSRA = 0xEE; // ADC Interrupt Flag enabled}}
+\DoxyCodeLine{64 \}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// SENSORS\_H}}
+
+\end{DoxyCode}

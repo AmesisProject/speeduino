@@ -1,0 +1,203 @@
+\hypertarget{comms_8h}{}\doxysection{comms.\+h File Reference}
+\label{comms_8h}\index{comms.h@{comms.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{comms_8h_ac08555b37f8b765abcf15bb9871c39bf}{ve\+Map\+Page}}~1
+\item 
+\#define \mbox{\hyperlink{comms_8h_ae0859a89352534458f9cef6a2d8c0f36}{ve\+Set\+Page}}~2
+\item 
+\#define \mbox{\hyperlink{comms_8h_a6894142189f915452e053994b95d07fb}{ign\+Map\+Page}}~3
+\item 
+\#define \mbox{\hyperlink{comms_8h_ac578dae9dba8affd61d2f47d25e61854}{ign\+Set\+Page}}~4
+\item 
+\#define \mbox{\hyperlink{comms_8h_a662ceae37f8f17a64d85551afb7889c0}{afr\+Map\+Page}}~5
+\item 
+\#define \mbox{\hyperlink{comms_8h_aaee843271a3f806326d7b94fad9b89bd}{afr\+Set\+Page}}~6
+\item 
+\#define \mbox{\hyperlink{comms_8h_a7ece46126711d05acadd5dec33b124b6}{iac\+Page}}~7
+\item 
+\#define \mbox{\hyperlink{comms_8h_a36631b0c2f2ea02c3dc863611da5f1cf}{boostvvt\+Page}}~8
+\item 
+\#define \mbox{\hyperlink{comms_8h_a2390a3e93194eb3613602fffae68baa0}{seq\+Fuel\+Page}}~9
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{comms_8h_ab8982e36e76fb7a0600ece003e4631db}{command}} ()
+\item 
+void \mbox{\hyperlink{comms_8h_a10af2141a7c461b54d18c6db37d41358}{send\+Values}} (int packetlength, byte portnum)
+\item 
+void \mbox{\hyperlink{comms_8h_a6457063e66dde6c198bd9210beec2474}{receive\+Value}} (int offset, byte new\+Value)
+\item 
+void \mbox{\hyperlink{comms_8h_a688d00bbabd28fbaf9e0c50eca3adeae}{save\+Config}} ()
+\item 
+void \mbox{\hyperlink{comms_8h_ad9e205052c562f10d8797191f21ff41e}{send\+Page}} (bool use\+Char)
+\item 
+void \mbox{\hyperlink{comms_8h_a9262c29790543b70f25aa2912caa45fc}{receive\+Calibration}} (byte table\+ID)
+\item 
+void \mbox{\hyperlink{comms_8h_a14d8d468253ff9ab12fe39c359f1094f}{send\+Tooth\+Log}} (bool use\+Char)
+\item 
+void \mbox{\hyperlink{comms_8h_a1f8112fe04261fb00a689fbd96afd606}{test\+Comm}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{\hyperlink{comms_8h_a2b88e8085d30a5021f05251216095266}{current\+Page}} = 1
+\item 
+boolean \mbox{\hyperlink{comms_8h_afd96d5e87b4c2f0c6017d221b56a0fc3}{is\+Map}} = true
+\item 
+unsigned long \mbox{\hyperlink{comms_8h_a154d82e943826b19ae76406a2ba8ad6f}{request\+Count}} = 0
+\item 
+const char page\+Titles\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{comms_8h_a4678e63753af438068cadfea9ff54025}{PROGMEM}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{comms_8h_a662ceae37f8f17a64d85551afb7889c0}\label{comms_8h_a662ceae37f8f17a64d85551afb7889c0}} 
+\index{comms.h@{comms.h}!afrMapPage@{afrMapPage}}
+\index{afrMapPage@{afrMapPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{afrMapPage}{afrMapPage}}
+{\footnotesize\ttfamily \#define afr\+Map\+Page~5}
+
+\mbox{\Hypertarget{comms_8h_aaee843271a3f806326d7b94fad9b89bd}\label{comms_8h_aaee843271a3f806326d7b94fad9b89bd}} 
+\index{comms.h@{comms.h}!afrSetPage@{afrSetPage}}
+\index{afrSetPage@{afrSetPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{afrSetPage}{afrSetPage}}
+{\footnotesize\ttfamily \#define afr\+Set\+Page~6}
+
+\mbox{\Hypertarget{comms_8h_a36631b0c2f2ea02c3dc863611da5f1cf}\label{comms_8h_a36631b0c2f2ea02c3dc863611da5f1cf}} 
+\index{comms.h@{comms.h}!boostvvtPage@{boostvvtPage}}
+\index{boostvvtPage@{boostvvtPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{boostvvtPage}{boostvvtPage}}
+{\footnotesize\ttfamily \#define boostvvt\+Page~8}
+
+\mbox{\Hypertarget{comms_8h_a7ece46126711d05acadd5dec33b124b6}\label{comms_8h_a7ece46126711d05acadd5dec33b124b6}} 
+\index{comms.h@{comms.h}!iacPage@{iacPage}}
+\index{iacPage@{iacPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{iacPage}{iacPage}}
+{\footnotesize\ttfamily \#define iac\+Page~7}
+
+\mbox{\Hypertarget{comms_8h_a6894142189f915452e053994b95d07fb}\label{comms_8h_a6894142189f915452e053994b95d07fb}} 
+\index{comms.h@{comms.h}!ignMapPage@{ignMapPage}}
+\index{ignMapPage@{ignMapPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{ignMapPage}{ignMapPage}}
+{\footnotesize\ttfamily \#define ign\+Map\+Page~3}
+
+\mbox{\Hypertarget{comms_8h_ac578dae9dba8affd61d2f47d25e61854}\label{comms_8h_ac578dae9dba8affd61d2f47d25e61854}} 
+\index{comms.h@{comms.h}!ignSetPage@{ignSetPage}}
+\index{ignSetPage@{ignSetPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{ignSetPage}{ignSetPage}}
+{\footnotesize\ttfamily \#define ign\+Set\+Page~4}
+
+\mbox{\Hypertarget{comms_8h_a2390a3e93194eb3613602fffae68baa0}\label{comms_8h_a2390a3e93194eb3613602fffae68baa0}} 
+\index{comms.h@{comms.h}!seqFuelPage@{seqFuelPage}}
+\index{seqFuelPage@{seqFuelPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{seqFuelPage}{seqFuelPage}}
+{\footnotesize\ttfamily \#define seq\+Fuel\+Page~9}
+
+\mbox{\Hypertarget{comms_8h_ac08555b37f8b765abcf15bb9871c39bf}\label{comms_8h_ac08555b37f8b765abcf15bb9871c39bf}} 
+\index{comms.h@{comms.h}!veMapPage@{veMapPage}}
+\index{veMapPage@{veMapPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{veMapPage}{veMapPage}}
+{\footnotesize\ttfamily \#define ve\+Map\+Page~1}
+
+\mbox{\Hypertarget{comms_8h_ae0859a89352534458f9cef6a2d8c0f36}\label{comms_8h_ae0859a89352534458f9cef6a2d8c0f36}} 
+\index{comms.h@{comms.h}!veSetPage@{veSetPage}}
+\index{veSetPage@{veSetPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{veSetPage}{veSetPage}}
+{\footnotesize\ttfamily \#define ve\+Set\+Page~2}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{comms_8h_ab8982e36e76fb7a0600ece003e4631db}\label{comms_8h_ab8982e36e76fb7a0600ece003e4631db}} 
+\index{comms.h@{comms.h}!command@{command}}
+\index{command@{command}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{command()}{command()}}
+{\footnotesize\ttfamily void command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{comms_8h_a9262c29790543b70f25aa2912caa45fc}\label{comms_8h_a9262c29790543b70f25aa2912caa45fc}} 
+\index{comms.h@{comms.h}!receiveCalibration@{receiveCalibration}}
+\index{receiveCalibration@{receiveCalibration}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{receiveCalibration()}{receiveCalibration()}}
+{\footnotesize\ttfamily void receive\+Calibration (\begin{DoxyParamCaption}\item[{byte}]{table\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{comms_8h_a6457063e66dde6c198bd9210beec2474}\label{comms_8h_a6457063e66dde6c198bd9210beec2474}} 
+\index{comms.h@{comms.h}!receiveValue@{receiveValue}}
+\index{receiveValue@{receiveValue}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{receiveValue()}{receiveValue()}}
+{\footnotesize\ttfamily void receive\+Value (\begin{DoxyParamCaption}\item[{int}]{offset,  }\item[{byte}]{new\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{comms_8h_a688d00bbabd28fbaf9e0c50eca3adeae}\label{comms_8h_a688d00bbabd28fbaf9e0c50eca3adeae}} 
+\index{comms.h@{comms.h}!saveConfig@{saveConfig}}
+\index{saveConfig@{saveConfig}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{saveConfig()}{saveConfig()}}
+{\footnotesize\ttfamily void save\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{comms_8h_ad9e205052c562f10d8797191f21ff41e}\label{comms_8h_ad9e205052c562f10d8797191f21ff41e}} 
+\index{comms.h@{comms.h}!sendPage@{sendPage}}
+\index{sendPage@{sendPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{sendPage()}{sendPage()}}
+{\footnotesize\ttfamily void send\+Page (\begin{DoxyParamCaption}\item[{bool}]{use\+Char }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{comms_8h_a14d8d468253ff9ab12fe39c359f1094f}\label{comms_8h_a14d8d468253ff9ab12fe39c359f1094f}} 
+\index{comms.h@{comms.h}!sendToothLog@{sendToothLog}}
+\index{sendToothLog@{sendToothLog}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{sendToothLog()}{sendToothLog()}}
+{\footnotesize\ttfamily void send\+Tooth\+Log (\begin{DoxyParamCaption}\item[{bool}]{use\+Char }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{comms_8h_a10af2141a7c461b54d18c6db37d41358}\label{comms_8h_a10af2141a7c461b54d18c6db37d41358}} 
+\index{comms.h@{comms.h}!sendValues@{sendValues}}
+\index{sendValues@{sendValues}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{sendValues()}{sendValues()}}
+{\footnotesize\ttfamily void send\+Values (\begin{DoxyParamCaption}\item[{int}]{packetlength,  }\item[{byte}]{portnum }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{comms_8h_a1f8112fe04261fb00a689fbd96afd606}\label{comms_8h_a1f8112fe04261fb00a689fbd96afd606}} 
+\index{comms.h@{comms.h}!testComm@{testComm}}
+\index{testComm@{testComm}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{testComm()}{testComm()}}
+{\footnotesize\ttfamily void test\+Comm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{comms_8h_a2b88e8085d30a5021f05251216095266}\label{comms_8h_a2b88e8085d30a5021f05251216095266}} 
+\index{comms.h@{comms.h}!currentPage@{currentPage}}
+\index{currentPage@{currentPage}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{currentPage}{currentPage}}
+{\footnotesize\ttfamily byte current\+Page = 1}
+
+\mbox{\Hypertarget{comms_8h_afd96d5e87b4c2f0c6017d221b56a0fc3}\label{comms_8h_afd96d5e87b4c2f0c6017d221b56a0fc3}} 
+\index{comms.h@{comms.h}!isMap@{isMap}}
+\index{isMap@{isMap}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{isMap}{isMap}}
+{\footnotesize\ttfamily boolean is\+Map = true}
+
+\mbox{\Hypertarget{comms_8h_a4678e63753af438068cadfea9ff54025}\label{comms_8h_a4678e63753af438068cadfea9ff54025}} 
+\index{comms.h@{comms.h}!PROGMEM@{PROGMEM}}
+\index{PROGMEM@{PROGMEM}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{PROGMEM}{PROGMEM}}
+{\footnotesize\ttfamily const char page\+Titles \mbox{[}$\,$\mbox{]} PROGMEM}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nVolumetric Efficiancy Map\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nPage 1 Config\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nIgnition Map\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nPage 2 Config\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nAir/Fuel Ratio Map\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nPage 3 Config\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nPage 4 Config\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nBoost Map\(\backslash\)0"{}}}
+\DoxyCodeLine{   \textcolor{stringliteral}{"{}\(\backslash\)nVVT Map"{}}}
+\DoxyCodeLine{  \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{comms_8h_a154d82e943826b19ae76406a2ba8ad6f}\label{comms_8h_a154d82e943826b19ae76406a2ba8ad6f}} 
+\index{comms.h@{comms.h}!requestCount@{requestCount}}
+\index{requestCount@{requestCount}!comms.h@{comms.h}}
+\doxysubsubsection{\texorpdfstring{requestCount}{requestCount}}
+{\footnotesize\ttfamily unsigned long request\+Count = 0}
+

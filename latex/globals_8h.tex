@@ -1,0 +1,1188 @@
+\hypertarget{globals_8h}{}\doxysection{globals.\+h File Reference}
+\label{globals_8h}\index{globals.h@{globals.h}}
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structstatuses}{statuses}}
+\item 
+struct \mbox{\hyperlink{structconfig1}{config1}}
+\item 
+struct \mbox{\hyperlink{structconfig2}{config2}}
+\item 
+struct \mbox{\hyperlink{structconfig3}{config3}}
+\item 
+struct \mbox{\hyperlink{structconfig4}{config4}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{globals_8h_ade3c083fa7b1178fcca5671e1830f2f9}{BIT\+\_\+\+SET}}(a,  b)~((a) $\vert$= (1$<$$<$(b)))
+\item 
+\#define \mbox{\hyperlink{globals_8h_a77fc3a931d1ad5fa08201e5c544817a0}{BIT\+\_\+\+CLEAR}}(a,  b)~((a) \&= $\sim$(1$<$$<$(b)))
+\item 
+\#define \mbox{\hyperlink{globals_8h_a76fdd8cbc1fedd623886785637bc334d}{BIT\+\_\+\+CHECK}}(var,  pos)~((var) \& (1$<$$<$(pos)))
+\item 
+\#define \mbox{\hyperlink{globals_8h_ad884d37309ac7f3efa6b3624a2006f48}{BIT\+\_\+\+ENGINE\+\_\+\+RUN}}~0
+\item 
+\#define \mbox{\hyperlink{globals_8h_a897d8e217c012a0999b82a41940c7dd2}{BIT\+\_\+\+ENGINE\+\_\+\+CRANK}}~1
+\item 
+\#define \mbox{\hyperlink{globals_8h_a39f647ace0a823db6f8f7f7268fb6113}{BIT\+\_\+\+ENGINE\+\_\+\+ASE}}~2
+\item 
+\#define \mbox{\hyperlink{globals_8h_a82fc39d15c2f3b88967fdf866472059f}{BIT\+\_\+\+ENGINE\+\_\+\+WARMUP}}~3
+\item 
+\#define \mbox{\hyperlink{globals_8h_ab1c548cbf950cae247066490cd7fa54f}{BIT\+\_\+\+ENGINE\+\_\+\+ACC}}~4
+\item 
+\#define \mbox{\hyperlink{globals_8h_af7dadd00fcdf9685b2a1707dbef19c8f}{BIT\+\_\+\+ENGINE\+\_\+\+DCC}}~5
+\item 
+\#define \mbox{\hyperlink{globals_8h_a2a93809167e2cc9de7d422a6fb15cc95}{BIT\+\_\+\+ENGINE\+\_\+\+MAPACC}}~6
+\item 
+\#define \mbox{\hyperlink{globals_8h_a1811688e6c8f1930292c667f52b22523}{BIT\+\_\+\+ENGINE\+\_\+\+MAPDCC}}~7
+\item 
+\#define \mbox{\hyperlink{globals_8h_a802134e80a3cddf09c399e990e0818ed}{BIT\+\_\+\+SQUIRT\+\_\+\+INJ1}}~0
+\item 
+\#define \mbox{\hyperlink{globals_8h_af31072e88c02300d3809266e739c5916}{BIT\+\_\+\+SQUIRT\+\_\+\+INJ2}}~1
+\item 
+\#define \mbox{\hyperlink{globals_8h_ad7b325811d0eaaa912fef7547e1d09c4}{BIT\+\_\+\+SQUIRT\+\_\+\+INJ3}}~2
+\item 
+\#define \mbox{\hyperlink{globals_8h_af539a6e9eb4cc9533134d91f0ece3061}{BIT\+\_\+\+SQUIRT\+\_\+\+INJ4}}~3
+\item 
+\#define \mbox{\hyperlink{globals_8h_a8124b58afd2c80f487a87a2cc232a938}{BIT\+\_\+\+SQUIRT\+\_\+\+DFCO}}~4
+\item 
+\#define \mbox{\hyperlink{globals_8h_ae866752a4f13c958ddaedcd84ada5a6f}{BIT\+\_\+\+SQUIRT\+\_\+\+BOOSTCUT}}~5
+\item 
+\#define \mbox{\hyperlink{globals_8h_aa781caad025e04e95a9f48893a3eabe7}{BIT\+\_\+\+SQUIRT\+\_\+\+TOOTHLOG1\+READY}}~6
+\item 
+\#define \mbox{\hyperlink{globals_8h_a2cdf70d428f36b08690ff14440a15762}{BIT\+\_\+\+SQUIRT\+\_\+\+TOOTHLOG2\+READY}}~7
+\item 
+\#define \mbox{\hyperlink{globals_8h_a3d7a84412f1e54a10bc5a2472e823cad}{BIT\+\_\+\+SPARK\+\_\+\+HLAUNCH}}~0
+\item 
+\#define \mbox{\hyperlink{globals_8h_a861167df2b72df8da4648b0cda922b9d}{BIT\+\_\+\+SPARK\+\_\+\+SLAUNCH}}~1
+\item 
+\#define \mbox{\hyperlink{globals_8h_a660fb45e7ed2e84fce1a8b7603604e16}{BIT\+\_\+\+SPARK\+\_\+\+HRDLIM}}~2
+\item 
+\#define \mbox{\hyperlink{globals_8h_a381e05f77efed6bc423017c83b1908e1}{BIT\+\_\+\+SPARK\+\_\+\+SFTLIM}}~3
+\item 
+\#define \mbox{\hyperlink{globals_8h_a5f31232c97b1b9d746a011a92230a5ad}{BIT\+\_\+\+SPARK\+\_\+\+BOOSTCUT}}~4
+\item 
+\#define \mbox{\hyperlink{globals_8h_adf36cd7e4f0352a471af8af5323260d6}{BIT\+\_\+\+SPARK\+\_\+\+ERROR}}~5
+\item 
+\#define \mbox{\hyperlink{globals_8h_a1232ca298e1ec669e38eccf7a21a7942}{BIT\+\_\+\+SPARK\+\_\+\+IDLE}}~6
+\item 
+\#define \mbox{\hyperlink{globals_8h_a80a58a3d31a2f92795677f04f6246078}{BIT\+\_\+\+SPARK\+\_\+\+SYNC}}~7
+\item 
+\#define \mbox{\hyperlink{globals_8h_a90a51c7015ee8de34915ea323950f98b}{VALID\+\_\+\+MAP\+\_\+\+MAX}}~1022
+\item 
+\#define \mbox{\hyperlink{globals_8h_a1ac572a4a78896607b1fc34777ea9c1e}{VALID\+\_\+\+MAP\+\_\+\+MIN}}~2
+\item 
+\#define \mbox{\hyperlink{globals_8h_a49ace293e0ae63863e3a0358ad205578}{TOOTH\+\_\+\+LOG\+\_\+\+SIZE}}~128
+\item 
+\#define \mbox{\hyperlink{globals_8h_a466e3c2a473e5c8a2bae6bb6efe37b88}{TOOTH\+\_\+\+LOG\+\_\+\+BUFFER}}~256
+\item 
+\#define \mbox{\hyperlink{globals_8h_a0901d1f94a267fac053ae69186c5aedb}{INJ\+\_\+\+PAIRED}}~0
+\item 
+\#define \mbox{\hyperlink{globals_8h_a1e46299aba6e2a353b020afc55b7dcc1}{INJ\+\_\+\+SEMISEQUENTIAL}}~1
+\item 
+\#define \mbox{\hyperlink{globals_8h_a2efcdcc2f4185aa75aa2049266c379d3}{INJ\+\_\+\+BANKED}}~2
+\item 
+\#define \mbox{\hyperlink{globals_8h_a6e740690b21f81a3ba79cb0de5921f6f}{INJ\+\_\+\+SEQUENTIAL}}~3
+\item 
+\#define \mbox{\hyperlink{globals_8h_a8df8409776c88f2c2ed0e66fd5509e85}{IGN\+\_\+\+MODE\+\_\+\+WASTED}}~0
+\item 
+\#define \mbox{\hyperlink{globals_8h_a0cbf76150adc24da61cf60b684d829e1}{IGN\+\_\+\+MODE\+\_\+\+SINGLE}}~1
+\item 
+\#define \mbox{\hyperlink{globals_8h_a55d621c1a35d4e69599bb874cd15de65}{IGN\+\_\+\+MODE\+\_\+\+WASTEDCOP}}~2
+\item 
+\#define \mbox{\hyperlink{globals_8h_a8d20de9e04c86cc49232565dcac13534}{IGN\+\_\+\+MODE\+\_\+\+SEQUENTIAL}}~3
+\item 
+\#define \mbox{\hyperlink{globals_8h_ab51e982ba3dd0fcb3f2f5c4f1006197b}{SIZE\+\_\+\+BYTE}}~8
+\item 
+\#define \mbox{\hyperlink{globals_8h_a6e9340affe2ce06ae958bd5ce9c7fd4d}{SIZE\+\_\+\+INT}}~16
+\item 
+\#define \mbox{\hyperlink{globals_8h_ae60d569422eb2e73a51e349ce1c6ff82}{EVEN\+\_\+\+FIRE}}~0
+\item 
+\#define \mbox{\hyperlink{globals_8h_ae1cd409f4712fff605f01fa6af3a835a}{ODD\+\_\+\+FIRE}}~1
+\item 
+\#define \mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE}}~512
+\item 
+\#define \mbox{\hyperlink{globals_8h_a7d46d98f00a9feb31cdc771a21b91c67}{CALIBRATION\+\_\+\+TEMPERATURE\+\_\+\+OFFSET}}~40
+\item 
+\#define \mbox{\hyperlink{globals_8h_a31e817fc9ea7d66640a4f42b1ea7e9a6}{OFFSET\+\_\+\+FUELTRIM}}~127
+\item 
+\#define \mbox{\hyperlink{globals_8h_a6b790444384f7a3c57b495edbec62048}{SERIAL\+\_\+\+BUFFER\+\_\+\+THRESHOLD}}~32
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const byte \mbox{\hyperlink{globals_8h_aa828df4e92e0a2db467fe17d20eb8d80}{signature}} = 20
+\item 
+const char \mbox{\hyperlink{globals_8h_a0964785d1defa060a3580f2d9b8ae11f}{display\+Signature}} \mbox{[}$\,$\mbox{]} = \char`\"{}speeduino 201609-\/dev\char`\"{}
+\item 
+const char \mbox{\hyperlink{globals_8h_ac974154ea4b7834ca1ecc0528a635c1b}{TSfirmware\+Version}} \mbox{[}$\,$\mbox{]} = \char`\"{}Speeduino 2016.\+09\char`\"{}
+\item 
+const byte \mbox{\hyperlink{globals_8h_a210e00350a2fd93687924cb3df3c0a4c}{data\+\_\+structure\+\_\+version}} = 2
+\item 
+const byte \mbox{\hyperlink{globals_8h_a7d484f8c7c96557baed742926668c78e}{page\+\_\+size}} = 64
+\item 
+const int \mbox{\hyperlink{globals_8h_a7e6e7c56f968a3fc084e7ecdcc5fbc21}{map\+\_\+page\+\_\+size}} = 288
+\item 
+const byte \mbox{\hyperlink{globals_8h_ad675afa182e3532d480917b68cfce43b}{packet\+Size}} = 35
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_ae7ece79f602007192d2bb927d18e672b}{inj1\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_a056f97e4ee2431d51c2ea4e7f102df89}{inj1\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_ad36f29b6fe2725936f80b4e9732ac22b}{inj2\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_a454f6463bacd634196e4fa3cd8c99885}{inj2\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_afeb7f51bd87c82e7157f120178113f50}{inj3\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_aed6c93c8750d1b389dd1b455b0bd323a}{inj3\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_af448f04a20cb89c5d194916fb7567069}{inj4\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_a4e8497ceeaf10d44eb4e2d681cda26a1}{inj4\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_aab1ba07f89e6c472261fb52c0ee67889}{inj5\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_a620a83fc00ba0c45cab3b82f948a3271}{inj5\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_aee137d814c3ad458e13655914a2ba376}{ign1\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_a6add0de02a099f93e1548fefb3ebf4ff}{ign1\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_aedc8038dea7501348123067bc6e89bf8}{ign2\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_af3401ea4693c0ed55297fe811f76db48}{ign2\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_ae8d90611dc442269bac40635c6ee9d93}{ign3\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_a9dda381f788c2c768431423bfc465de4}{ign3\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_afc46ae91e5a98df7f8b10df1c23326f4}{ign4\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_aacb3000dadeac1c7a83894795c483e3f}{ign4\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{globals_8h_a8de938ec2182eec5407565d2624fe3a2}{ign5\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{globals_8h_a2a7a9f22457b788918264f58f42775c9}{ign5\+\_\+pin\+\_\+mask}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a8ea43fd1f04c488f5322147c51219b9f}{pin\+Injector1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a561165a765cfbf61d8b3e8d8bf134f3e}{pin\+Injector2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a533c314b0e28e2abb6a6b2d91305e9da}{pin\+Injector3}}
+\item 
+byte \mbox{\hyperlink{globals_8h_af6bd1083e2f273177d4cc9826c34ff70}{pin\+Injector4}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a9ce7656fd744c84b32c61f40bcdfe1d5}{pin\+Injector5}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a8030ba64a9de06a88410ab8d84d8903a}{pin\+Injector6}}
+\item 
+byte \mbox{\hyperlink{globals_8h_acc3d304a57b51f9451e3d5016fcc26f7}{pin\+Injector7}}
+\item 
+byte \mbox{\hyperlink{globals_8h_acba371ef305cc37dfc0187e1e84dab22}{pin\+Injector8}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a8a6e1f6fba2f0b2b47703e027143d4ec}{pin\+Coil1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_aeb511e6eea8a635fd37b04bde9f45789}{pin\+Coil2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a703aca2a766f599405de81dea21e5ef1}{pin\+Coil3}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a15569dd7b2eb96e1539e34ea9b3c346b}{pin\+Coil4}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a5e324a1731df2076ac7800527e53831e}{pin\+Coil5}}
+\item 
+byte \mbox{\hyperlink{globals_8h_acaedeb3e4150080abef8b8bfc56c47be}{pin\+Coil6}}
+\item 
+byte \mbox{\hyperlink{globals_8h_af9a94b45efb540df74f1f523522bf531}{pin\+Coil7}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a75d2c2c0d61e2e9f9bbcca4cd62bc871}{pin\+Coil8}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a7f4858230128aedeb4be4f34058a8c58}{pin\+Trigger}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a18a8717fbf36f4169602422e5ab63ef9}{pin\+Trigger2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a0247d84fdc266d9278396e1d07e2b1aa}{pin\+Trigger3}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a19394b4f039d761f98105dae64d93010}{pin\+TPS}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a5d21bbebce5ccb2a690f5bc43ca1f523}{pin\+MAP}}
+\item 
+byte \mbox{\hyperlink{globals_8h_ad4d46080a6bb7f8e17fefc040e63c2a6}{pin\+MAP2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a8aad45e9d20a38a3a6c0ede5c1deb671}{pin\+IAT}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a783dd3492868a39beaca836ba76e3cac}{pin\+CLT}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a7d7a279cda21c1a27449143e85e7ceb1}{pin\+O2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a3268cc0d8b3ef390d3565ce026e54971}{pin\+O2\+\_\+2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a2b6a9627ddc53169fe33a8d96d33d996}{pin\+Bat}}
+\item 
+byte \mbox{\hyperlink{globals_8h_aa67d1500f2ffa0c16d741a72b3c53126}{pin\+Display\+Reset}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a2e9371fb43bfb4c570b58436ddbdd81c}{pin\+Tach\+Out}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a12049f71fe7d040de459811b9682b23f}{pin\+Fuel\+Pump}}
+\item 
+byte \mbox{\hyperlink{globals_8h_aa3344d2dbdbdf7ec37da1e36d28b71a3}{pin\+Idle1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_ab87cc9df2fa4e06d04951678cde2a648}{pin\+Idle2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a8584f0fa695ec2a086e9c3d77cf02ef2}{pin\+Spare\+Temp1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a6d793b94552b4229e15533a5a1cd86e0}{pin\+Spare\+Temp2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_ac71a3b4655583de53a2caf387a273df9}{pin\+Spare\+Out1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_ad4f81be06e0012b20696c081f9d30440}{pin\+Spare\+Out2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a6eaad0cef255188c964cd0723bbcb648}{pin\+Spare\+Out3}}
+\item 
+byte \mbox{\hyperlink{globals_8h_aa307958a05dc0ab4be9165ecb976a779}{pin\+Spare\+Out4}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a6888b7e7fa4e36d9ce83fce176052d0c}{pin\+Spare\+Out5}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a149253745b460329ab79f6773b827dc4}{pin\+Spare\+Out6}}
+\item 
+byte \mbox{\hyperlink{globals_8h_aeda237151f224c76302e136fc80ba68a}{pin\+Spare\+HOut1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a8b73c2a7a9ddad8e8e73f7eee7c20f81}{pin\+Spare\+HOut2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a9af7a027ffec9f2ac0db7561925745f1}{pin\+Spare\+LOut1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a0d5582f7f902c3bb7e5b030cbcf8a3e6}{pin\+Spare\+LOut2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_acfc0e928c176f6c17f300705d9ff0b45}{pin\+Spare\+LOut3}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a0a133d86ce53b854e8b4344de129e2b7}{pin\+Spare\+LOut4}}
+\item 
+byte \mbox{\hyperlink{globals_8h_aa2dd320c257f71f62483b4f4d56a204d}{pin\+Spare\+LOut5}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a6ac806de7b5f1296db541587dec52e65}{pin\+Boost}}
+\item 
+byte \mbox{\hyperlink{globals_8h_aac55f6a9243ce7472b9efca18c44344d}{pin\+VVT\+\_\+1}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a523fb19812a9eb07983c2e4ac98f6378}{pin\+VVt\+\_\+2}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a22d616037351905f8c0ee8d9cdac172b}{pin\+Fan}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a81250b536ee4caa65256151d32c759f0}{pin\+Stepper\+Dir}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a9d4dcdc8ed6f9f7e75c09171ae608278}{pin\+Stepper\+Step}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a79a5ac2ab6c40d4c52618a6db80cde92}{pin\+Launch}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a6d3b7c0af2504eec05ead2f094c0c7ae}{pin\+Ign\+Bypass}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a881676bf3546a0b2d7bec83e8d50d45b}{pin\+Flex}}
+\item 
+struct \mbox{\hyperlink{structstatuses}{statuses}} \mbox{\hyperlink{globals_8h_a1f40d45116b758fe0b792db21f3cecea}{current\+Status}}
+\item 
+struct \mbox{\hyperlink{structtable3_d}{table3D}} \mbox{\hyperlink{globals_8h_a6e23e7d5be06ffdb1e5b70ba2bf01896}{fuel\+Table}}
+\item 
+struct \mbox{\hyperlink{structtable3_d}{table3D}} \mbox{\hyperlink{globals_8h_a30064545ba7389c46acf2d7986f970e2}{ignition\+Table}}
+\item 
+struct \mbox{\hyperlink{structtable3_d}{table3D}} \mbox{\hyperlink{globals_8h_abbf760ecc3f7b10ca580fb0e986a60be}{afr\+Table}}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{globals_8h_ab870130af2c18e5a63d65754518130ab}{tae\+Table}}
+\item 
+struct \mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{globals_8h_af5085c0b67e738994a9093ba342bf01e}{WUETable}}
+\item 
+struct \mbox{\hyperlink{structconfig1}{config1}} \mbox{\hyperlink{globals_8h_a04d67459cb0b684540bba6bfdde4c5a7}{config\+Page1}}
+\item 
+struct \mbox{\hyperlink{structconfig2}{config2}} \mbox{\hyperlink{globals_8h_add94b67c28e6368081a7f29347e363e3}{config\+Page2}}
+\item 
+struct \mbox{\hyperlink{structconfig3}{config3}} \mbox{\hyperlink{globals_8h_ae7d55795f4307e8894ac119756e9ec12}{config\+Page3}}
+\item 
+unsigned long \mbox{\hyperlink{globals_8h_a45ad906e34abe5d3fd7f7f628110fbe5}{current\+Loop\+Time}}
+\item 
+unsigned long \mbox{\hyperlink{globals_8h_a8c1270967c0f23dcc46f4ff54808795c}{previous\+Loop\+Time}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a10aaa124e03d7c72c515c8b8694dcda9}{ignition\+Count}}
+\item 
+byte \mbox{\hyperlink{globals_8h_a25dec7d77cf1c281884f4215ad9fc4b8}{clt\+Calibration\+Table}} \mbox{[}\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE}}\mbox{]}
+\item 
+byte \mbox{\hyperlink{globals_8h_abc3528ba8aa0afcfaa14653df9e72781}{iat\+Calibration\+Table}} \mbox{[}\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE}}\mbox{]}
+\item 
+byte \mbox{\hyperlink{globals_8h_a1e0c14f053668dce5a7474df6a3199c2}{o2\+Calibration\+Table}} \mbox{[}\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{globals_8h_a76fdd8cbc1fedd623886785637bc334d}\label{globals_8h_a76fdd8cbc1fedd623886785637bc334d}} 
+\index{globals.h@{globals.h}!BIT\_CHECK@{BIT\_CHECK}}
+\index{BIT\_CHECK@{BIT\_CHECK}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_CHECK}{BIT\_CHECK}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+CHECK(\begin{DoxyParamCaption}\item[{}]{var,  }\item[{}]{pos }\end{DoxyParamCaption})~((var) \& (1$<$$<$(pos)))}
+
+\mbox{\Hypertarget{globals_8h_a77fc3a931d1ad5fa08201e5c544817a0}\label{globals_8h_a77fc3a931d1ad5fa08201e5c544817a0}} 
+\index{globals.h@{globals.h}!BIT\_CLEAR@{BIT\_CLEAR}}
+\index{BIT\_CLEAR@{BIT\_CLEAR}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_CLEAR}{BIT\_CLEAR}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+CLEAR(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a) \&= $\sim$(1$<$$<$(b)))}
+
+\mbox{\Hypertarget{globals_8h_ab1c548cbf950cae247066490cd7fa54f}\label{globals_8h_ab1c548cbf950cae247066490cd7fa54f}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_ACC@{BIT\_ENGINE\_ACC}}
+\index{BIT\_ENGINE\_ACC@{BIT\_ENGINE\_ACC}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_ACC}{BIT\_ENGINE\_ACC}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+ACC~4}
+
+\mbox{\Hypertarget{globals_8h_a39f647ace0a823db6f8f7f7268fb6113}\label{globals_8h_a39f647ace0a823db6f8f7f7268fb6113}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_ASE@{BIT\_ENGINE\_ASE}}
+\index{BIT\_ENGINE\_ASE@{BIT\_ENGINE\_ASE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_ASE}{BIT\_ENGINE\_ASE}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+ASE~2}
+
+\mbox{\Hypertarget{globals_8h_a897d8e217c012a0999b82a41940c7dd2}\label{globals_8h_a897d8e217c012a0999b82a41940c7dd2}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_CRANK@{BIT\_ENGINE\_CRANK}}
+\index{BIT\_ENGINE\_CRANK@{BIT\_ENGINE\_CRANK}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_CRANK}{BIT\_ENGINE\_CRANK}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+CRANK~1}
+
+\mbox{\Hypertarget{globals_8h_af7dadd00fcdf9685b2a1707dbef19c8f}\label{globals_8h_af7dadd00fcdf9685b2a1707dbef19c8f}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_DCC@{BIT\_ENGINE\_DCC}}
+\index{BIT\_ENGINE\_DCC@{BIT\_ENGINE\_DCC}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_DCC}{BIT\_ENGINE\_DCC}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+DCC~5}
+
+\mbox{\Hypertarget{globals_8h_a2a93809167e2cc9de7d422a6fb15cc95}\label{globals_8h_a2a93809167e2cc9de7d422a6fb15cc95}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_MAPACC@{BIT\_ENGINE\_MAPACC}}
+\index{BIT\_ENGINE\_MAPACC@{BIT\_ENGINE\_MAPACC}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_MAPACC}{BIT\_ENGINE\_MAPACC}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+MAPACC~6}
+
+\mbox{\Hypertarget{globals_8h_a1811688e6c8f1930292c667f52b22523}\label{globals_8h_a1811688e6c8f1930292c667f52b22523}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_MAPDCC@{BIT\_ENGINE\_MAPDCC}}
+\index{BIT\_ENGINE\_MAPDCC@{BIT\_ENGINE\_MAPDCC}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_MAPDCC}{BIT\_ENGINE\_MAPDCC}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+MAPDCC~7}
+
+\mbox{\Hypertarget{globals_8h_ad884d37309ac7f3efa6b3624a2006f48}\label{globals_8h_ad884d37309ac7f3efa6b3624a2006f48}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_RUN@{BIT\_ENGINE\_RUN}}
+\index{BIT\_ENGINE\_RUN@{BIT\_ENGINE\_RUN}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_RUN}{BIT\_ENGINE\_RUN}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+RUN~0}
+
+\mbox{\Hypertarget{globals_8h_a82fc39d15c2f3b88967fdf866472059f}\label{globals_8h_a82fc39d15c2f3b88967fdf866472059f}} 
+\index{globals.h@{globals.h}!BIT\_ENGINE\_WARMUP@{BIT\_ENGINE\_WARMUP}}
+\index{BIT\_ENGINE\_WARMUP@{BIT\_ENGINE\_WARMUP}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_ENGINE\_WARMUP}{BIT\_ENGINE\_WARMUP}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+ENGINE\+\_\+\+WARMUP~3}
+
+\mbox{\Hypertarget{globals_8h_ade3c083fa7b1178fcca5671e1830f2f9}\label{globals_8h_ade3c083fa7b1178fcca5671e1830f2f9}} 
+\index{globals.h@{globals.h}!BIT\_SET@{BIT\_SET}}
+\index{BIT\_SET@{BIT\_SET}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SET}{BIT\_SET}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})~((a) $\vert$= (1$<$$<$(b)))}
+
+\mbox{\Hypertarget{globals_8h_a5f31232c97b1b9d746a011a92230a5ad}\label{globals_8h_a5f31232c97b1b9d746a011a92230a5ad}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_BOOSTCUT@{BIT\_SPARK\_BOOSTCUT}}
+\index{BIT\_SPARK\_BOOSTCUT@{BIT\_SPARK\_BOOSTCUT}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_BOOSTCUT}{BIT\_SPARK\_BOOSTCUT}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+BOOSTCUT~4}
+
+\mbox{\Hypertarget{globals_8h_adf36cd7e4f0352a471af8af5323260d6}\label{globals_8h_adf36cd7e4f0352a471af8af5323260d6}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_ERROR@{BIT\_SPARK\_ERROR}}
+\index{BIT\_SPARK\_ERROR@{BIT\_SPARK\_ERROR}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_ERROR}{BIT\_SPARK\_ERROR}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+ERROR~5}
+
+\mbox{\Hypertarget{globals_8h_a3d7a84412f1e54a10bc5a2472e823cad}\label{globals_8h_a3d7a84412f1e54a10bc5a2472e823cad}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_HLAUNCH@{BIT\_SPARK\_HLAUNCH}}
+\index{BIT\_SPARK\_HLAUNCH@{BIT\_SPARK\_HLAUNCH}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_HLAUNCH}{BIT\_SPARK\_HLAUNCH}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+HLAUNCH~0}
+
+\mbox{\Hypertarget{globals_8h_a660fb45e7ed2e84fce1a8b7603604e16}\label{globals_8h_a660fb45e7ed2e84fce1a8b7603604e16}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_HRDLIM@{BIT\_SPARK\_HRDLIM}}
+\index{BIT\_SPARK\_HRDLIM@{BIT\_SPARK\_HRDLIM}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_HRDLIM}{BIT\_SPARK\_HRDLIM}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+HRDLIM~2}
+
+\mbox{\Hypertarget{globals_8h_a1232ca298e1ec669e38eccf7a21a7942}\label{globals_8h_a1232ca298e1ec669e38eccf7a21a7942}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_IDLE@{BIT\_SPARK\_IDLE}}
+\index{BIT\_SPARK\_IDLE@{BIT\_SPARK\_IDLE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_IDLE}{BIT\_SPARK\_IDLE}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+IDLE~6}
+
+\mbox{\Hypertarget{globals_8h_a381e05f77efed6bc423017c83b1908e1}\label{globals_8h_a381e05f77efed6bc423017c83b1908e1}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_SFTLIM@{BIT\_SPARK\_SFTLIM}}
+\index{BIT\_SPARK\_SFTLIM@{BIT\_SPARK\_SFTLIM}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_SFTLIM}{BIT\_SPARK\_SFTLIM}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+SFTLIM~3}
+
+\mbox{\Hypertarget{globals_8h_a861167df2b72df8da4648b0cda922b9d}\label{globals_8h_a861167df2b72df8da4648b0cda922b9d}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_SLAUNCH@{BIT\_SPARK\_SLAUNCH}}
+\index{BIT\_SPARK\_SLAUNCH@{BIT\_SPARK\_SLAUNCH}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_SLAUNCH}{BIT\_SPARK\_SLAUNCH}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+SLAUNCH~1}
+
+\mbox{\Hypertarget{globals_8h_a80a58a3d31a2f92795677f04f6246078}\label{globals_8h_a80a58a3d31a2f92795677f04f6246078}} 
+\index{globals.h@{globals.h}!BIT\_SPARK\_SYNC@{BIT\_SPARK\_SYNC}}
+\index{BIT\_SPARK\_SYNC@{BIT\_SPARK\_SYNC}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SPARK\_SYNC}{BIT\_SPARK\_SYNC}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SPARK\+\_\+\+SYNC~7}
+
+\mbox{\Hypertarget{globals_8h_ae866752a4f13c958ddaedcd84ada5a6f}\label{globals_8h_ae866752a4f13c958ddaedcd84ada5a6f}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_BOOSTCUT@{BIT\_SQUIRT\_BOOSTCUT}}
+\index{BIT\_SQUIRT\_BOOSTCUT@{BIT\_SQUIRT\_BOOSTCUT}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_BOOSTCUT}{BIT\_SQUIRT\_BOOSTCUT}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+BOOSTCUT~5}
+
+\mbox{\Hypertarget{globals_8h_a8124b58afd2c80f487a87a2cc232a938}\label{globals_8h_a8124b58afd2c80f487a87a2cc232a938}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_DFCO@{BIT\_SQUIRT\_DFCO}}
+\index{BIT\_SQUIRT\_DFCO@{BIT\_SQUIRT\_DFCO}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_DFCO}{BIT\_SQUIRT\_DFCO}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+DFCO~4}
+
+\mbox{\Hypertarget{globals_8h_a802134e80a3cddf09c399e990e0818ed}\label{globals_8h_a802134e80a3cddf09c399e990e0818ed}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_INJ1@{BIT\_SQUIRT\_INJ1}}
+\index{BIT\_SQUIRT\_INJ1@{BIT\_SQUIRT\_INJ1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_INJ1}{BIT\_SQUIRT\_INJ1}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+INJ1~0}
+
+\mbox{\Hypertarget{globals_8h_af31072e88c02300d3809266e739c5916}\label{globals_8h_af31072e88c02300d3809266e739c5916}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_INJ2@{BIT\_SQUIRT\_INJ2}}
+\index{BIT\_SQUIRT\_INJ2@{BIT\_SQUIRT\_INJ2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_INJ2}{BIT\_SQUIRT\_INJ2}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+INJ2~1}
+
+\mbox{\Hypertarget{globals_8h_ad7b325811d0eaaa912fef7547e1d09c4}\label{globals_8h_ad7b325811d0eaaa912fef7547e1d09c4}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_INJ3@{BIT\_SQUIRT\_INJ3}}
+\index{BIT\_SQUIRT\_INJ3@{BIT\_SQUIRT\_INJ3}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_INJ3}{BIT\_SQUIRT\_INJ3}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+INJ3~2}
+
+\mbox{\Hypertarget{globals_8h_af539a6e9eb4cc9533134d91f0ece3061}\label{globals_8h_af539a6e9eb4cc9533134d91f0ece3061}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_INJ4@{BIT\_SQUIRT\_INJ4}}
+\index{BIT\_SQUIRT\_INJ4@{BIT\_SQUIRT\_INJ4}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_INJ4}{BIT\_SQUIRT\_INJ4}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+INJ4~3}
+
+\mbox{\Hypertarget{globals_8h_aa781caad025e04e95a9f48893a3eabe7}\label{globals_8h_aa781caad025e04e95a9f48893a3eabe7}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_TOOTHLOG1READY@{BIT\_SQUIRT\_TOOTHLOG1READY}}
+\index{BIT\_SQUIRT\_TOOTHLOG1READY@{BIT\_SQUIRT\_TOOTHLOG1READY}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_TOOTHLOG1READY}{BIT\_SQUIRT\_TOOTHLOG1READY}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+TOOTHLOG1\+READY~6}
+
+\mbox{\Hypertarget{globals_8h_a2cdf70d428f36b08690ff14440a15762}\label{globals_8h_a2cdf70d428f36b08690ff14440a15762}} 
+\index{globals.h@{globals.h}!BIT\_SQUIRT\_TOOTHLOG2READY@{BIT\_SQUIRT\_TOOTHLOG2READY}}
+\index{BIT\_SQUIRT\_TOOTHLOG2READY@{BIT\_SQUIRT\_TOOTHLOG2READY}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{BIT\_SQUIRT\_TOOTHLOG2READY}{BIT\_SQUIRT\_TOOTHLOG2READY}}
+{\footnotesize\ttfamily \#define BIT\+\_\+\+SQUIRT\+\_\+\+TOOTHLOG2\+READY~7}
+
+\mbox{\Hypertarget{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}\label{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}} 
+\index{globals.h@{globals.h}!CALIBRATION\_TABLE\_SIZE@{CALIBRATION\_TABLE\_SIZE}}
+\index{CALIBRATION\_TABLE\_SIZE@{CALIBRATION\_TABLE\_SIZE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{CALIBRATION\_TABLE\_SIZE}{CALIBRATION\_TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE~512}
+
+\mbox{\Hypertarget{globals_8h_a7d46d98f00a9feb31cdc771a21b91c67}\label{globals_8h_a7d46d98f00a9feb31cdc771a21b91c67}} 
+\index{globals.h@{globals.h}!CALIBRATION\_TEMPERATURE\_OFFSET@{CALIBRATION\_TEMPERATURE\_OFFSET}}
+\index{CALIBRATION\_TEMPERATURE\_OFFSET@{CALIBRATION\_TEMPERATURE\_OFFSET}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{CALIBRATION\_TEMPERATURE\_OFFSET}{CALIBRATION\_TEMPERATURE\_OFFSET}}
+{\footnotesize\ttfamily \#define CALIBRATION\+\_\+\+TEMPERATURE\+\_\+\+OFFSET~40}
+
+\mbox{\Hypertarget{globals_8h_ae60d569422eb2e73a51e349ce1c6ff82}\label{globals_8h_ae60d569422eb2e73a51e349ce1c6ff82}} 
+\index{globals.h@{globals.h}!EVEN\_FIRE@{EVEN\_FIRE}}
+\index{EVEN\_FIRE@{EVEN\_FIRE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{EVEN\_FIRE}{EVEN\_FIRE}}
+{\footnotesize\ttfamily \#define EVEN\+\_\+\+FIRE~0}
+
+\mbox{\Hypertarget{globals_8h_a8d20de9e04c86cc49232565dcac13534}\label{globals_8h_a8d20de9e04c86cc49232565dcac13534}} 
+\index{globals.h@{globals.h}!IGN\_MODE\_SEQUENTIAL@{IGN\_MODE\_SEQUENTIAL}}
+\index{IGN\_MODE\_SEQUENTIAL@{IGN\_MODE\_SEQUENTIAL}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{IGN\_MODE\_SEQUENTIAL}{IGN\_MODE\_SEQUENTIAL}}
+{\footnotesize\ttfamily \#define IGN\+\_\+\+MODE\+\_\+\+SEQUENTIAL~3}
+
+\mbox{\Hypertarget{globals_8h_a0cbf76150adc24da61cf60b684d829e1}\label{globals_8h_a0cbf76150adc24da61cf60b684d829e1}} 
+\index{globals.h@{globals.h}!IGN\_MODE\_SINGLE@{IGN\_MODE\_SINGLE}}
+\index{IGN\_MODE\_SINGLE@{IGN\_MODE\_SINGLE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{IGN\_MODE\_SINGLE}{IGN\_MODE\_SINGLE}}
+{\footnotesize\ttfamily \#define IGN\+\_\+\+MODE\+\_\+\+SINGLE~1}
+
+\mbox{\Hypertarget{globals_8h_a8df8409776c88f2c2ed0e66fd5509e85}\label{globals_8h_a8df8409776c88f2c2ed0e66fd5509e85}} 
+\index{globals.h@{globals.h}!IGN\_MODE\_WASTED@{IGN\_MODE\_WASTED}}
+\index{IGN\_MODE\_WASTED@{IGN\_MODE\_WASTED}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{IGN\_MODE\_WASTED}{IGN\_MODE\_WASTED}}
+{\footnotesize\ttfamily \#define IGN\+\_\+\+MODE\+\_\+\+WASTED~0}
+
+\mbox{\Hypertarget{globals_8h_a55d621c1a35d4e69599bb874cd15de65}\label{globals_8h_a55d621c1a35d4e69599bb874cd15de65}} 
+\index{globals.h@{globals.h}!IGN\_MODE\_WASTEDCOP@{IGN\_MODE\_WASTEDCOP}}
+\index{IGN\_MODE\_WASTEDCOP@{IGN\_MODE\_WASTEDCOP}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{IGN\_MODE\_WASTEDCOP}{IGN\_MODE\_WASTEDCOP}}
+{\footnotesize\ttfamily \#define IGN\+\_\+\+MODE\+\_\+\+WASTEDCOP~2}
+
+\mbox{\Hypertarget{globals_8h_a2efcdcc2f4185aa75aa2049266c379d3}\label{globals_8h_a2efcdcc2f4185aa75aa2049266c379d3}} 
+\index{globals.h@{globals.h}!INJ\_BANKED@{INJ\_BANKED}}
+\index{INJ\_BANKED@{INJ\_BANKED}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{INJ\_BANKED}{INJ\_BANKED}}
+{\footnotesize\ttfamily \#define INJ\+\_\+\+BANKED~2}
+
+\mbox{\Hypertarget{globals_8h_a0901d1f94a267fac053ae69186c5aedb}\label{globals_8h_a0901d1f94a267fac053ae69186c5aedb}} 
+\index{globals.h@{globals.h}!INJ\_PAIRED@{INJ\_PAIRED}}
+\index{INJ\_PAIRED@{INJ\_PAIRED}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{INJ\_PAIRED}{INJ\_PAIRED}}
+{\footnotesize\ttfamily \#define INJ\+\_\+\+PAIRED~0}
+
+\mbox{\Hypertarget{globals_8h_a1e46299aba6e2a353b020afc55b7dcc1}\label{globals_8h_a1e46299aba6e2a353b020afc55b7dcc1}} 
+\index{globals.h@{globals.h}!INJ\_SEMISEQUENTIAL@{INJ\_SEMISEQUENTIAL}}
+\index{INJ\_SEMISEQUENTIAL@{INJ\_SEMISEQUENTIAL}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{INJ\_SEMISEQUENTIAL}{INJ\_SEMISEQUENTIAL}}
+{\footnotesize\ttfamily \#define INJ\+\_\+\+SEMISEQUENTIAL~1}
+
+\mbox{\Hypertarget{globals_8h_a6e740690b21f81a3ba79cb0de5921f6f}\label{globals_8h_a6e740690b21f81a3ba79cb0de5921f6f}} 
+\index{globals.h@{globals.h}!INJ\_SEQUENTIAL@{INJ\_SEQUENTIAL}}
+\index{INJ\_SEQUENTIAL@{INJ\_SEQUENTIAL}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{INJ\_SEQUENTIAL}{INJ\_SEQUENTIAL}}
+{\footnotesize\ttfamily \#define INJ\+\_\+\+SEQUENTIAL~3}
+
+\mbox{\Hypertarget{globals_8h_ae1cd409f4712fff605f01fa6af3a835a}\label{globals_8h_ae1cd409f4712fff605f01fa6af3a835a}} 
+\index{globals.h@{globals.h}!ODD\_FIRE@{ODD\_FIRE}}
+\index{ODD\_FIRE@{ODD\_FIRE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ODD\_FIRE}{ODD\_FIRE}}
+{\footnotesize\ttfamily \#define ODD\+\_\+\+FIRE~1}
+
+\mbox{\Hypertarget{globals_8h_a31e817fc9ea7d66640a4f42b1ea7e9a6}\label{globals_8h_a31e817fc9ea7d66640a4f42b1ea7e9a6}} 
+\index{globals.h@{globals.h}!OFFSET\_FUELTRIM@{OFFSET\_FUELTRIM}}
+\index{OFFSET\_FUELTRIM@{OFFSET\_FUELTRIM}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{OFFSET\_FUELTRIM}{OFFSET\_FUELTRIM}}
+{\footnotesize\ttfamily \#define OFFSET\+\_\+\+FUELTRIM~127}
+
+\mbox{\Hypertarget{globals_8h_a6b790444384f7a3c57b495edbec62048}\label{globals_8h_a6b790444384f7a3c57b495edbec62048}} 
+\index{globals.h@{globals.h}!SERIAL\_BUFFER\_THRESHOLD@{SERIAL\_BUFFER\_THRESHOLD}}
+\index{SERIAL\_BUFFER\_THRESHOLD@{SERIAL\_BUFFER\_THRESHOLD}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_BUFFER\_THRESHOLD}{SERIAL\_BUFFER\_THRESHOLD}}
+{\footnotesize\ttfamily \#define SERIAL\+\_\+\+BUFFER\+\_\+\+THRESHOLD~32}
+
+\mbox{\Hypertarget{globals_8h_ab51e982ba3dd0fcb3f2f5c4f1006197b}\label{globals_8h_ab51e982ba3dd0fcb3f2f5c4f1006197b}} 
+\index{globals.h@{globals.h}!SIZE\_BYTE@{SIZE\_BYTE}}
+\index{SIZE\_BYTE@{SIZE\_BYTE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{SIZE\_BYTE}{SIZE\_BYTE}}
+{\footnotesize\ttfamily \#define SIZE\+\_\+\+BYTE~8}
+
+\mbox{\Hypertarget{globals_8h_a6e9340affe2ce06ae958bd5ce9c7fd4d}\label{globals_8h_a6e9340affe2ce06ae958bd5ce9c7fd4d}} 
+\index{globals.h@{globals.h}!SIZE\_INT@{SIZE\_INT}}
+\index{SIZE\_INT@{SIZE\_INT}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{SIZE\_INT}{SIZE\_INT}}
+{\footnotesize\ttfamily \#define SIZE\+\_\+\+INT~16}
+
+\mbox{\Hypertarget{globals_8h_a466e3c2a473e5c8a2bae6bb6efe37b88}\label{globals_8h_a466e3c2a473e5c8a2bae6bb6efe37b88}} 
+\index{globals.h@{globals.h}!TOOTH\_LOG\_BUFFER@{TOOTH\_LOG\_BUFFER}}
+\index{TOOTH\_LOG\_BUFFER@{TOOTH\_LOG\_BUFFER}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{TOOTH\_LOG\_BUFFER}{TOOTH\_LOG\_BUFFER}}
+{\footnotesize\ttfamily \#define TOOTH\+\_\+\+LOG\+\_\+\+BUFFER~256}
+
+\mbox{\Hypertarget{globals_8h_a49ace293e0ae63863e3a0358ad205578}\label{globals_8h_a49ace293e0ae63863e3a0358ad205578}} 
+\index{globals.h@{globals.h}!TOOTH\_LOG\_SIZE@{TOOTH\_LOG\_SIZE}}
+\index{TOOTH\_LOG\_SIZE@{TOOTH\_LOG\_SIZE}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{TOOTH\_LOG\_SIZE}{TOOTH\_LOG\_SIZE}}
+{\footnotesize\ttfamily \#define TOOTH\+\_\+\+LOG\+\_\+\+SIZE~128}
+
+\mbox{\Hypertarget{globals_8h_a90a51c7015ee8de34915ea323950f98b}\label{globals_8h_a90a51c7015ee8de34915ea323950f98b}} 
+\index{globals.h@{globals.h}!VALID\_MAP\_MAX@{VALID\_MAP\_MAX}}
+\index{VALID\_MAP\_MAX@{VALID\_MAP\_MAX}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{VALID\_MAP\_MAX}{VALID\_MAP\_MAX}}
+{\footnotesize\ttfamily \#define VALID\+\_\+\+MAP\+\_\+\+MAX~1022}
+
+\mbox{\Hypertarget{globals_8h_a1ac572a4a78896607b1fc34777ea9c1e}\label{globals_8h_a1ac572a4a78896607b1fc34777ea9c1e}} 
+\index{globals.h@{globals.h}!VALID\_MAP\_MIN@{VALID\_MAP\_MIN}}
+\index{VALID\_MAP\_MIN@{VALID\_MAP\_MIN}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{VALID\_MAP\_MIN}{VALID\_MAP\_MIN}}
+{\footnotesize\ttfamily \#define VALID\+\_\+\+MAP\+\_\+\+MIN~2}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{globals_8h_abbf760ecc3f7b10ca580fb0e986a60be}\label{globals_8h_abbf760ecc3f7b10ca580fb0e986a60be}} 
+\index{globals.h@{globals.h}!afrTable@{afrTable}}
+\index{afrTable@{afrTable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{afrTable}{afrTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable3_d}{table3D}} afr\+Table\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a25dec7d77cf1c281884f4215ad9fc4b8}\label{globals_8h_a25dec7d77cf1c281884f4215ad9fc4b8}} 
+\index{globals.h@{globals.h}!cltCalibrationTable@{cltCalibrationTable}}
+\index{cltCalibrationTable@{cltCalibrationTable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{cltCalibrationTable}{cltCalibrationTable}}
+{\footnotesize\ttfamily byte clt\+Calibration\+Table\mbox{[}\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a04d67459cb0b684540bba6bfdde4c5a7}\label{globals_8h_a04d67459cb0b684540bba6bfdde4c5a7}} 
+\index{globals.h@{globals.h}!configPage1@{configPage1}}
+\index{configPage1@{configPage1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{configPage1}{configPage1}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structconfig1}{config1}} config\+Page1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_add94b67c28e6368081a7f29347e363e3}\label{globals_8h_add94b67c28e6368081a7f29347e363e3}} 
+\index{globals.h@{globals.h}!configPage2@{configPage2}}
+\index{configPage2@{configPage2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{configPage2}{configPage2}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structconfig2}{config2}} config\+Page2\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_ae7d55795f4307e8894ac119756e9ec12}\label{globals_8h_ae7d55795f4307e8894ac119756e9ec12}} 
+\index{globals.h@{globals.h}!configPage3@{configPage3}}
+\index{configPage3@{configPage3}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{configPage3}{configPage3}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structconfig3}{config3}} config\+Page3\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a45ad906e34abe5d3fd7f7f628110fbe5}\label{globals_8h_a45ad906e34abe5d3fd7f7f628110fbe5}} 
+\index{globals.h@{globals.h}!currentLoopTime@{currentLoopTime}}
+\index{currentLoopTime@{currentLoopTime}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{currentLoopTime}{currentLoopTime}}
+{\footnotesize\ttfamily unsigned long current\+Loop\+Time\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a1f40d45116b758fe0b792db21f3cecea}\label{globals_8h_a1f40d45116b758fe0b792db21f3cecea}} 
+\index{globals.h@{globals.h}!currentStatus@{currentStatus}}
+\index{currentStatus@{currentStatus}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{currentStatus}{currentStatus}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structstatuses}{statuses}} current\+Status\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a210e00350a2fd93687924cb3df3c0a4c}\label{globals_8h_a210e00350a2fd93687924cb3df3c0a4c}} 
+\index{globals.h@{globals.h}!data\_structure\_version@{data\_structure\_version}}
+\index{data\_structure\_version@{data\_structure\_version}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{data\_structure\_version}{data\_structure\_version}}
+{\footnotesize\ttfamily const byte data\+\_\+structure\+\_\+version = 2}
+
+\mbox{\Hypertarget{globals_8h_a0964785d1defa060a3580f2d9b8ae11f}\label{globals_8h_a0964785d1defa060a3580f2d9b8ae11f}} 
+\index{globals.h@{globals.h}!displaySignature@{displaySignature}}
+\index{displaySignature@{displaySignature}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{displaySignature}{displaySignature}}
+{\footnotesize\ttfamily const char display\+Signature\mbox{[}$\,$\mbox{]} = \char`\"{}speeduino 201609-\/dev\char`\"{}}
+
+\mbox{\Hypertarget{globals_8h_a6e23e7d5be06ffdb1e5b70ba2bf01896}\label{globals_8h_a6e23e7d5be06ffdb1e5b70ba2bf01896}} 
+\index{globals.h@{globals.h}!fuelTable@{fuelTable}}
+\index{fuelTable@{fuelTable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{fuelTable}{fuelTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable3_d}{table3D}} fuel\+Table\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_abc3528ba8aa0afcfaa14653df9e72781}\label{globals_8h_abc3528ba8aa0afcfaa14653df9e72781}} 
+\index{globals.h@{globals.h}!iatCalibrationTable@{iatCalibrationTable}}
+\index{iatCalibrationTable@{iatCalibrationTable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{iatCalibrationTable}{iatCalibrationTable}}
+{\footnotesize\ttfamily byte iat\+Calibration\+Table\mbox{[}\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a6add0de02a099f93e1548fefb3ebf4ff}\label{globals_8h_a6add0de02a099f93e1548fefb3ebf4ff}} 
+\index{globals.h@{globals.h}!ign1\_pin\_mask@{ign1\_pin\_mask}}
+\index{ign1\_pin\_mask@{ign1\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign1\_pin\_mask}{ign1\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte ign1\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_aee137d814c3ad458e13655914a2ba376}\label{globals_8h_aee137d814c3ad458e13655914a2ba376}} 
+\index{globals.h@{globals.h}!ign1\_pin\_port@{ign1\_pin\_port}}
+\index{ign1\_pin\_port@{ign1\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign1\_pin\_port}{ign1\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ ign1\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_af3401ea4693c0ed55297fe811f76db48}\label{globals_8h_af3401ea4693c0ed55297fe811f76db48}} 
+\index{globals.h@{globals.h}!ign2\_pin\_mask@{ign2\_pin\_mask}}
+\index{ign2\_pin\_mask@{ign2\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign2\_pin\_mask}{ign2\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte ign2\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_aedc8038dea7501348123067bc6e89bf8}\label{globals_8h_aedc8038dea7501348123067bc6e89bf8}} 
+\index{globals.h@{globals.h}!ign2\_pin\_port@{ign2\_pin\_port}}
+\index{ign2\_pin\_port@{ign2\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign2\_pin\_port}{ign2\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ ign2\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_a9dda381f788c2c768431423bfc465de4}\label{globals_8h_a9dda381f788c2c768431423bfc465de4}} 
+\index{globals.h@{globals.h}!ign3\_pin\_mask@{ign3\_pin\_mask}}
+\index{ign3\_pin\_mask@{ign3\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign3\_pin\_mask}{ign3\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte ign3\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_ae8d90611dc442269bac40635c6ee9d93}\label{globals_8h_ae8d90611dc442269bac40635c6ee9d93}} 
+\index{globals.h@{globals.h}!ign3\_pin\_port@{ign3\_pin\_port}}
+\index{ign3\_pin\_port@{ign3\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign3\_pin\_port}{ign3\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ ign3\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_aacb3000dadeac1c7a83894795c483e3f}\label{globals_8h_aacb3000dadeac1c7a83894795c483e3f}} 
+\index{globals.h@{globals.h}!ign4\_pin\_mask@{ign4\_pin\_mask}}
+\index{ign4\_pin\_mask@{ign4\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign4\_pin\_mask}{ign4\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte ign4\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_afc46ae91e5a98df7f8b10df1c23326f4}\label{globals_8h_afc46ae91e5a98df7f8b10df1c23326f4}} 
+\index{globals.h@{globals.h}!ign4\_pin\_port@{ign4\_pin\_port}}
+\index{ign4\_pin\_port@{ign4\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign4\_pin\_port}{ign4\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ ign4\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_a2a7a9f22457b788918264f58f42775c9}\label{globals_8h_a2a7a9f22457b788918264f58f42775c9}} 
+\index{globals.h@{globals.h}!ign5\_pin\_mask@{ign5\_pin\_mask}}
+\index{ign5\_pin\_mask@{ign5\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign5\_pin\_mask}{ign5\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte ign5\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_a8de938ec2182eec5407565d2624fe3a2}\label{globals_8h_a8de938ec2182eec5407565d2624fe3a2}} 
+\index{globals.h@{globals.h}!ign5\_pin\_port@{ign5\_pin\_port}}
+\index{ign5\_pin\_port@{ign5\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ign5\_pin\_port}{ign5\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ ign5\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_a10aaa124e03d7c72c515c8b8694dcda9}\label{globals_8h_a10aaa124e03d7c72c515c8b8694dcda9}} 
+\index{globals.h@{globals.h}!ignitionCount@{ignitionCount}}
+\index{ignitionCount@{ignitionCount}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ignitionCount}{ignitionCount}}
+{\footnotesize\ttfamily byte ignition\+Count\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a30064545ba7389c46acf2d7986f970e2}\label{globals_8h_a30064545ba7389c46acf2d7986f970e2}} 
+\index{globals.h@{globals.h}!ignitionTable@{ignitionTable}}
+\index{ignitionTable@{ignitionTable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{ignitionTable}{ignitionTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable3_d}{table3D}} ignition\+Table\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_a056f97e4ee2431d51c2ea4e7f102df89}\label{globals_8h_a056f97e4ee2431d51c2ea4e7f102df89}} 
+\index{globals.h@{globals.h}!inj1\_pin\_mask@{inj1\_pin\_mask}}
+\index{inj1\_pin\_mask@{inj1\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj1\_pin\_mask}{inj1\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte inj1\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_ae7ece79f602007192d2bb927d18e672b}\label{globals_8h_ae7ece79f602007192d2bb927d18e672b}} 
+\index{globals.h@{globals.h}!inj1\_pin\_port@{inj1\_pin\_port}}
+\index{inj1\_pin\_port@{inj1\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj1\_pin\_port}{inj1\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ inj1\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_a454f6463bacd634196e4fa3cd8c99885}\label{globals_8h_a454f6463bacd634196e4fa3cd8c99885}} 
+\index{globals.h@{globals.h}!inj2\_pin\_mask@{inj2\_pin\_mask}}
+\index{inj2\_pin\_mask@{inj2\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj2\_pin\_mask}{inj2\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte inj2\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_ad36f29b6fe2725936f80b4e9732ac22b}\label{globals_8h_ad36f29b6fe2725936f80b4e9732ac22b}} 
+\index{globals.h@{globals.h}!inj2\_pin\_port@{inj2\_pin\_port}}
+\index{inj2\_pin\_port@{inj2\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj2\_pin\_port}{inj2\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ inj2\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_aed6c93c8750d1b389dd1b455b0bd323a}\label{globals_8h_aed6c93c8750d1b389dd1b455b0bd323a}} 
+\index{globals.h@{globals.h}!inj3\_pin\_mask@{inj3\_pin\_mask}}
+\index{inj3\_pin\_mask@{inj3\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj3\_pin\_mask}{inj3\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte inj3\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_afeb7f51bd87c82e7157f120178113f50}\label{globals_8h_afeb7f51bd87c82e7157f120178113f50}} 
+\index{globals.h@{globals.h}!inj3\_pin\_port@{inj3\_pin\_port}}
+\index{inj3\_pin\_port@{inj3\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj3\_pin\_port}{inj3\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ inj3\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_a4e8497ceeaf10d44eb4e2d681cda26a1}\label{globals_8h_a4e8497ceeaf10d44eb4e2d681cda26a1}} 
+\index{globals.h@{globals.h}!inj4\_pin\_mask@{inj4\_pin\_mask}}
+\index{inj4\_pin\_mask@{inj4\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj4\_pin\_mask}{inj4\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte inj4\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_af448f04a20cb89c5d194916fb7567069}\label{globals_8h_af448f04a20cb89c5d194916fb7567069}} 
+\index{globals.h@{globals.h}!inj4\_pin\_port@{inj4\_pin\_port}}
+\index{inj4\_pin\_port@{inj4\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj4\_pin\_port}{inj4\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ inj4\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_a620a83fc00ba0c45cab3b82f948a3271}\label{globals_8h_a620a83fc00ba0c45cab3b82f948a3271}} 
+\index{globals.h@{globals.h}!inj5\_pin\_mask@{inj5\_pin\_mask}}
+\index{inj5\_pin\_mask@{inj5\_pin\_mask}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj5\_pin\_mask}{inj5\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte inj5\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{globals_8h_aab1ba07f89e6c472261fb52c0ee67889}\label{globals_8h_aab1ba07f89e6c472261fb52c0ee67889}} 
+\index{globals.h@{globals.h}!inj5\_pin\_port@{inj5\_pin\_port}}
+\index{inj5\_pin\_port@{inj5\_pin\_port}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{inj5\_pin\_port}{inj5\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ inj5\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{globals_8h_a7e6e7c56f968a3fc084e7ecdcc5fbc21}\label{globals_8h_a7e6e7c56f968a3fc084e7ecdcc5fbc21}} 
+\index{globals.h@{globals.h}!map\_page\_size@{map\_page\_size}}
+\index{map\_page\_size@{map\_page\_size}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{map\_page\_size}{map\_page\_size}}
+{\footnotesize\ttfamily const int map\+\_\+page\+\_\+size = 288}
+
+\mbox{\Hypertarget{globals_8h_a1e0c14f053668dce5a7474df6a3199c2}\label{globals_8h_a1e0c14f053668dce5a7474df6a3199c2}} 
+\index{globals.h@{globals.h}!o2CalibrationTable@{o2CalibrationTable}}
+\index{o2CalibrationTable@{o2CalibrationTable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{o2CalibrationTable}{o2CalibrationTable}}
+{\footnotesize\ttfamily byte o2\+Calibration\+Table\mbox{[}\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\+\_\+\+TABLE\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_ad675afa182e3532d480917b68cfce43b}\label{globals_8h_ad675afa182e3532d480917b68cfce43b}} 
+\index{globals.h@{globals.h}!packetSize@{packetSize}}
+\index{packetSize@{packetSize}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{packetSize}{packetSize}}
+{\footnotesize\ttfamily const byte packet\+Size = 35}
+
+\mbox{\Hypertarget{globals_8h_a7d484f8c7c96557baed742926668c78e}\label{globals_8h_a7d484f8c7c96557baed742926668c78e}} 
+\index{globals.h@{globals.h}!page\_size@{page\_size}}
+\index{page\_size@{page\_size}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{page\_size}{page\_size}}
+{\footnotesize\ttfamily const byte page\+\_\+size = 64}
+
+\mbox{\Hypertarget{globals_8h_a2b6a9627ddc53169fe33a8d96d33d996}\label{globals_8h_a2b6a9627ddc53169fe33a8d96d33d996}} 
+\index{globals.h@{globals.h}!pinBat@{pinBat}}
+\index{pinBat@{pinBat}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinBat}{pinBat}}
+{\footnotesize\ttfamily byte pin\+Bat}
+
+\mbox{\Hypertarget{globals_8h_a6ac806de7b5f1296db541587dec52e65}\label{globals_8h_a6ac806de7b5f1296db541587dec52e65}} 
+\index{globals.h@{globals.h}!pinBoost@{pinBoost}}
+\index{pinBoost@{pinBoost}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinBoost}{pinBoost}}
+{\footnotesize\ttfamily byte pin\+Boost}
+
+\mbox{\Hypertarget{globals_8h_a783dd3492868a39beaca836ba76e3cac}\label{globals_8h_a783dd3492868a39beaca836ba76e3cac}} 
+\index{globals.h@{globals.h}!pinCLT@{pinCLT}}
+\index{pinCLT@{pinCLT}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCLT}{pinCLT}}
+{\footnotesize\ttfamily byte pin\+CLT}
+
+\mbox{\Hypertarget{globals_8h_a8a6e1f6fba2f0b2b47703e027143d4ec}\label{globals_8h_a8a6e1f6fba2f0b2b47703e027143d4ec}} 
+\index{globals.h@{globals.h}!pinCoil1@{pinCoil1}}
+\index{pinCoil1@{pinCoil1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil1}{pinCoil1}}
+{\footnotesize\ttfamily byte pin\+Coil1}
+
+\mbox{\Hypertarget{globals_8h_aeb511e6eea8a635fd37b04bde9f45789}\label{globals_8h_aeb511e6eea8a635fd37b04bde9f45789}} 
+\index{globals.h@{globals.h}!pinCoil2@{pinCoil2}}
+\index{pinCoil2@{pinCoil2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil2}{pinCoil2}}
+{\footnotesize\ttfamily byte pin\+Coil2}
+
+\mbox{\Hypertarget{globals_8h_a703aca2a766f599405de81dea21e5ef1}\label{globals_8h_a703aca2a766f599405de81dea21e5ef1}} 
+\index{globals.h@{globals.h}!pinCoil3@{pinCoil3}}
+\index{pinCoil3@{pinCoil3}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil3}{pinCoil3}}
+{\footnotesize\ttfamily byte pin\+Coil3}
+
+\mbox{\Hypertarget{globals_8h_a15569dd7b2eb96e1539e34ea9b3c346b}\label{globals_8h_a15569dd7b2eb96e1539e34ea9b3c346b}} 
+\index{globals.h@{globals.h}!pinCoil4@{pinCoil4}}
+\index{pinCoil4@{pinCoil4}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil4}{pinCoil4}}
+{\footnotesize\ttfamily byte pin\+Coil4}
+
+\mbox{\Hypertarget{globals_8h_a5e324a1731df2076ac7800527e53831e}\label{globals_8h_a5e324a1731df2076ac7800527e53831e}} 
+\index{globals.h@{globals.h}!pinCoil5@{pinCoil5}}
+\index{pinCoil5@{pinCoil5}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil5}{pinCoil5}}
+{\footnotesize\ttfamily byte pin\+Coil5}
+
+\mbox{\Hypertarget{globals_8h_acaedeb3e4150080abef8b8bfc56c47be}\label{globals_8h_acaedeb3e4150080abef8b8bfc56c47be}} 
+\index{globals.h@{globals.h}!pinCoil6@{pinCoil6}}
+\index{pinCoil6@{pinCoil6}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil6}{pinCoil6}}
+{\footnotesize\ttfamily byte pin\+Coil6}
+
+\mbox{\Hypertarget{globals_8h_af9a94b45efb540df74f1f523522bf531}\label{globals_8h_af9a94b45efb540df74f1f523522bf531}} 
+\index{globals.h@{globals.h}!pinCoil7@{pinCoil7}}
+\index{pinCoil7@{pinCoil7}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil7}{pinCoil7}}
+{\footnotesize\ttfamily byte pin\+Coil7}
+
+\mbox{\Hypertarget{globals_8h_a75d2c2c0d61e2e9f9bbcca4cd62bc871}\label{globals_8h_a75d2c2c0d61e2e9f9bbcca4cd62bc871}} 
+\index{globals.h@{globals.h}!pinCoil8@{pinCoil8}}
+\index{pinCoil8@{pinCoil8}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinCoil8}{pinCoil8}}
+{\footnotesize\ttfamily byte pin\+Coil8}
+
+\mbox{\Hypertarget{globals_8h_aa67d1500f2ffa0c16d741a72b3c53126}\label{globals_8h_aa67d1500f2ffa0c16d741a72b3c53126}} 
+\index{globals.h@{globals.h}!pinDisplayReset@{pinDisplayReset}}
+\index{pinDisplayReset@{pinDisplayReset}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinDisplayReset}{pinDisplayReset}}
+{\footnotesize\ttfamily byte pin\+Display\+Reset}
+
+\mbox{\Hypertarget{globals_8h_a22d616037351905f8c0ee8d9cdac172b}\label{globals_8h_a22d616037351905f8c0ee8d9cdac172b}} 
+\index{globals.h@{globals.h}!pinFan@{pinFan}}
+\index{pinFan@{pinFan}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinFan}{pinFan}}
+{\footnotesize\ttfamily byte pin\+Fan}
+
+\mbox{\Hypertarget{globals_8h_a881676bf3546a0b2d7bec83e8d50d45b}\label{globals_8h_a881676bf3546a0b2d7bec83e8d50d45b}} 
+\index{globals.h@{globals.h}!pinFlex@{pinFlex}}
+\index{pinFlex@{pinFlex}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinFlex}{pinFlex}}
+{\footnotesize\ttfamily byte pin\+Flex}
+
+\mbox{\Hypertarget{globals_8h_a12049f71fe7d040de459811b9682b23f}\label{globals_8h_a12049f71fe7d040de459811b9682b23f}} 
+\index{globals.h@{globals.h}!pinFuelPump@{pinFuelPump}}
+\index{pinFuelPump@{pinFuelPump}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinFuelPump}{pinFuelPump}}
+{\footnotesize\ttfamily byte pin\+Fuel\+Pump}
+
+\mbox{\Hypertarget{globals_8h_a8aad45e9d20a38a3a6c0ede5c1deb671}\label{globals_8h_a8aad45e9d20a38a3a6c0ede5c1deb671}} 
+\index{globals.h@{globals.h}!pinIAT@{pinIAT}}
+\index{pinIAT@{pinIAT}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinIAT}{pinIAT}}
+{\footnotesize\ttfamily byte pin\+IAT}
+
+\mbox{\Hypertarget{globals_8h_aa3344d2dbdbdf7ec37da1e36d28b71a3}\label{globals_8h_aa3344d2dbdbdf7ec37da1e36d28b71a3}} 
+\index{globals.h@{globals.h}!pinIdle1@{pinIdle1}}
+\index{pinIdle1@{pinIdle1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinIdle1}{pinIdle1}}
+{\footnotesize\ttfamily byte pin\+Idle1}
+
+\mbox{\Hypertarget{globals_8h_ab87cc9df2fa4e06d04951678cde2a648}\label{globals_8h_ab87cc9df2fa4e06d04951678cde2a648}} 
+\index{globals.h@{globals.h}!pinIdle2@{pinIdle2}}
+\index{pinIdle2@{pinIdle2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinIdle2}{pinIdle2}}
+{\footnotesize\ttfamily byte pin\+Idle2}
+
+\mbox{\Hypertarget{globals_8h_a6d3b7c0af2504eec05ead2f094c0c7ae}\label{globals_8h_a6d3b7c0af2504eec05ead2f094c0c7ae}} 
+\index{globals.h@{globals.h}!pinIgnBypass@{pinIgnBypass}}
+\index{pinIgnBypass@{pinIgnBypass}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinIgnBypass}{pinIgnBypass}}
+{\footnotesize\ttfamily byte pin\+Ign\+Bypass}
+
+\mbox{\Hypertarget{globals_8h_a8ea43fd1f04c488f5322147c51219b9f}\label{globals_8h_a8ea43fd1f04c488f5322147c51219b9f}} 
+\index{globals.h@{globals.h}!pinInjector1@{pinInjector1}}
+\index{pinInjector1@{pinInjector1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector1}{pinInjector1}}
+{\footnotesize\ttfamily byte pin\+Injector1}
+
+\mbox{\Hypertarget{globals_8h_a561165a765cfbf61d8b3e8d8bf134f3e}\label{globals_8h_a561165a765cfbf61d8b3e8d8bf134f3e}} 
+\index{globals.h@{globals.h}!pinInjector2@{pinInjector2}}
+\index{pinInjector2@{pinInjector2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector2}{pinInjector2}}
+{\footnotesize\ttfamily byte pin\+Injector2}
+
+\mbox{\Hypertarget{globals_8h_a533c314b0e28e2abb6a6b2d91305e9da}\label{globals_8h_a533c314b0e28e2abb6a6b2d91305e9da}} 
+\index{globals.h@{globals.h}!pinInjector3@{pinInjector3}}
+\index{pinInjector3@{pinInjector3}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector3}{pinInjector3}}
+{\footnotesize\ttfamily byte pin\+Injector3}
+
+\mbox{\Hypertarget{globals_8h_af6bd1083e2f273177d4cc9826c34ff70}\label{globals_8h_af6bd1083e2f273177d4cc9826c34ff70}} 
+\index{globals.h@{globals.h}!pinInjector4@{pinInjector4}}
+\index{pinInjector4@{pinInjector4}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector4}{pinInjector4}}
+{\footnotesize\ttfamily byte pin\+Injector4}
+
+\mbox{\Hypertarget{globals_8h_a9ce7656fd744c84b32c61f40bcdfe1d5}\label{globals_8h_a9ce7656fd744c84b32c61f40bcdfe1d5}} 
+\index{globals.h@{globals.h}!pinInjector5@{pinInjector5}}
+\index{pinInjector5@{pinInjector5}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector5}{pinInjector5}}
+{\footnotesize\ttfamily byte pin\+Injector5}
+
+\mbox{\Hypertarget{globals_8h_a8030ba64a9de06a88410ab8d84d8903a}\label{globals_8h_a8030ba64a9de06a88410ab8d84d8903a}} 
+\index{globals.h@{globals.h}!pinInjector6@{pinInjector6}}
+\index{pinInjector6@{pinInjector6}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector6}{pinInjector6}}
+{\footnotesize\ttfamily byte pin\+Injector6}
+
+\mbox{\Hypertarget{globals_8h_acc3d304a57b51f9451e3d5016fcc26f7}\label{globals_8h_acc3d304a57b51f9451e3d5016fcc26f7}} 
+\index{globals.h@{globals.h}!pinInjector7@{pinInjector7}}
+\index{pinInjector7@{pinInjector7}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector7}{pinInjector7}}
+{\footnotesize\ttfamily byte pin\+Injector7}
+
+\mbox{\Hypertarget{globals_8h_acba371ef305cc37dfc0187e1e84dab22}\label{globals_8h_acba371ef305cc37dfc0187e1e84dab22}} 
+\index{globals.h@{globals.h}!pinInjector8@{pinInjector8}}
+\index{pinInjector8@{pinInjector8}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinInjector8}{pinInjector8}}
+{\footnotesize\ttfamily byte pin\+Injector8}
+
+\mbox{\Hypertarget{globals_8h_a79a5ac2ab6c40d4c52618a6db80cde92}\label{globals_8h_a79a5ac2ab6c40d4c52618a6db80cde92}} 
+\index{globals.h@{globals.h}!pinLaunch@{pinLaunch}}
+\index{pinLaunch@{pinLaunch}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinLaunch}{pinLaunch}}
+{\footnotesize\ttfamily byte pin\+Launch}
+
+\mbox{\Hypertarget{globals_8h_a5d21bbebce5ccb2a690f5bc43ca1f523}\label{globals_8h_a5d21bbebce5ccb2a690f5bc43ca1f523}} 
+\index{globals.h@{globals.h}!pinMAP@{pinMAP}}
+\index{pinMAP@{pinMAP}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinMAP}{pinMAP}}
+{\footnotesize\ttfamily byte pin\+MAP}
+
+\mbox{\Hypertarget{globals_8h_ad4d46080a6bb7f8e17fefc040e63c2a6}\label{globals_8h_ad4d46080a6bb7f8e17fefc040e63c2a6}} 
+\index{globals.h@{globals.h}!pinMAP2@{pinMAP2}}
+\index{pinMAP2@{pinMAP2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinMAP2}{pinMAP2}}
+{\footnotesize\ttfamily byte pin\+MAP2}
+
+\mbox{\Hypertarget{globals_8h_a7d7a279cda21c1a27449143e85e7ceb1}\label{globals_8h_a7d7a279cda21c1a27449143e85e7ceb1}} 
+\index{globals.h@{globals.h}!pinO2@{pinO2}}
+\index{pinO2@{pinO2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinO2}{pinO2}}
+{\footnotesize\ttfamily byte pin\+O2}
+
+\mbox{\Hypertarget{globals_8h_a3268cc0d8b3ef390d3565ce026e54971}\label{globals_8h_a3268cc0d8b3ef390d3565ce026e54971}} 
+\index{globals.h@{globals.h}!pinO2\_2@{pinO2\_2}}
+\index{pinO2\_2@{pinO2\_2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinO2\_2}{pinO2\_2}}
+{\footnotesize\ttfamily byte pin\+O2\+\_\+2}
+
+\mbox{\Hypertarget{globals_8h_aeda237151f224c76302e136fc80ba68a}\label{globals_8h_aeda237151f224c76302e136fc80ba68a}} 
+\index{globals.h@{globals.h}!pinSpareHOut1@{pinSpareHOut1}}
+\index{pinSpareHOut1@{pinSpareHOut1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareHOut1}{pinSpareHOut1}}
+{\footnotesize\ttfamily byte pin\+Spare\+HOut1}
+
+\mbox{\Hypertarget{globals_8h_a8b73c2a7a9ddad8e8e73f7eee7c20f81}\label{globals_8h_a8b73c2a7a9ddad8e8e73f7eee7c20f81}} 
+\index{globals.h@{globals.h}!pinSpareHOut2@{pinSpareHOut2}}
+\index{pinSpareHOut2@{pinSpareHOut2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareHOut2}{pinSpareHOut2}}
+{\footnotesize\ttfamily byte pin\+Spare\+HOut2}
+
+\mbox{\Hypertarget{globals_8h_a9af7a027ffec9f2ac0db7561925745f1}\label{globals_8h_a9af7a027ffec9f2ac0db7561925745f1}} 
+\index{globals.h@{globals.h}!pinSpareLOut1@{pinSpareLOut1}}
+\index{pinSpareLOut1@{pinSpareLOut1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareLOut1}{pinSpareLOut1}}
+{\footnotesize\ttfamily byte pin\+Spare\+LOut1}
+
+\mbox{\Hypertarget{globals_8h_a0d5582f7f902c3bb7e5b030cbcf8a3e6}\label{globals_8h_a0d5582f7f902c3bb7e5b030cbcf8a3e6}} 
+\index{globals.h@{globals.h}!pinSpareLOut2@{pinSpareLOut2}}
+\index{pinSpareLOut2@{pinSpareLOut2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareLOut2}{pinSpareLOut2}}
+{\footnotesize\ttfamily byte pin\+Spare\+LOut2}
+
+\mbox{\Hypertarget{globals_8h_acfc0e928c176f6c17f300705d9ff0b45}\label{globals_8h_acfc0e928c176f6c17f300705d9ff0b45}} 
+\index{globals.h@{globals.h}!pinSpareLOut3@{pinSpareLOut3}}
+\index{pinSpareLOut3@{pinSpareLOut3}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareLOut3}{pinSpareLOut3}}
+{\footnotesize\ttfamily byte pin\+Spare\+LOut3}
+
+\mbox{\Hypertarget{globals_8h_a0a133d86ce53b854e8b4344de129e2b7}\label{globals_8h_a0a133d86ce53b854e8b4344de129e2b7}} 
+\index{globals.h@{globals.h}!pinSpareLOut4@{pinSpareLOut4}}
+\index{pinSpareLOut4@{pinSpareLOut4}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareLOut4}{pinSpareLOut4}}
+{\footnotesize\ttfamily byte pin\+Spare\+LOut4}
+
+\mbox{\Hypertarget{globals_8h_aa2dd320c257f71f62483b4f4d56a204d}\label{globals_8h_aa2dd320c257f71f62483b4f4d56a204d}} 
+\index{globals.h@{globals.h}!pinSpareLOut5@{pinSpareLOut5}}
+\index{pinSpareLOut5@{pinSpareLOut5}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareLOut5}{pinSpareLOut5}}
+{\footnotesize\ttfamily byte pin\+Spare\+LOut5}
+
+\mbox{\Hypertarget{globals_8h_ac71a3b4655583de53a2caf387a273df9}\label{globals_8h_ac71a3b4655583de53a2caf387a273df9}} 
+\index{globals.h@{globals.h}!pinSpareOut1@{pinSpareOut1}}
+\index{pinSpareOut1@{pinSpareOut1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareOut1}{pinSpareOut1}}
+{\footnotesize\ttfamily byte pin\+Spare\+Out1}
+
+\mbox{\Hypertarget{globals_8h_ad4f81be06e0012b20696c081f9d30440}\label{globals_8h_ad4f81be06e0012b20696c081f9d30440}} 
+\index{globals.h@{globals.h}!pinSpareOut2@{pinSpareOut2}}
+\index{pinSpareOut2@{pinSpareOut2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareOut2}{pinSpareOut2}}
+{\footnotesize\ttfamily byte pin\+Spare\+Out2}
+
+\mbox{\Hypertarget{globals_8h_a6eaad0cef255188c964cd0723bbcb648}\label{globals_8h_a6eaad0cef255188c964cd0723bbcb648}} 
+\index{globals.h@{globals.h}!pinSpareOut3@{pinSpareOut3}}
+\index{pinSpareOut3@{pinSpareOut3}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareOut3}{pinSpareOut3}}
+{\footnotesize\ttfamily byte pin\+Spare\+Out3}
+
+\mbox{\Hypertarget{globals_8h_aa307958a05dc0ab4be9165ecb976a779}\label{globals_8h_aa307958a05dc0ab4be9165ecb976a779}} 
+\index{globals.h@{globals.h}!pinSpareOut4@{pinSpareOut4}}
+\index{pinSpareOut4@{pinSpareOut4}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareOut4}{pinSpareOut4}}
+{\footnotesize\ttfamily byte pin\+Spare\+Out4}
+
+\mbox{\Hypertarget{globals_8h_a6888b7e7fa4e36d9ce83fce176052d0c}\label{globals_8h_a6888b7e7fa4e36d9ce83fce176052d0c}} 
+\index{globals.h@{globals.h}!pinSpareOut5@{pinSpareOut5}}
+\index{pinSpareOut5@{pinSpareOut5}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareOut5}{pinSpareOut5}}
+{\footnotesize\ttfamily byte pin\+Spare\+Out5}
+
+\mbox{\Hypertarget{globals_8h_a149253745b460329ab79f6773b827dc4}\label{globals_8h_a149253745b460329ab79f6773b827dc4}} 
+\index{globals.h@{globals.h}!pinSpareOut6@{pinSpareOut6}}
+\index{pinSpareOut6@{pinSpareOut6}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareOut6}{pinSpareOut6}}
+{\footnotesize\ttfamily byte pin\+Spare\+Out6}
+
+\mbox{\Hypertarget{globals_8h_a8584f0fa695ec2a086e9c3d77cf02ef2}\label{globals_8h_a8584f0fa695ec2a086e9c3d77cf02ef2}} 
+\index{globals.h@{globals.h}!pinSpareTemp1@{pinSpareTemp1}}
+\index{pinSpareTemp1@{pinSpareTemp1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareTemp1}{pinSpareTemp1}}
+{\footnotesize\ttfamily byte pin\+Spare\+Temp1}
+
+\mbox{\Hypertarget{globals_8h_a6d793b94552b4229e15533a5a1cd86e0}\label{globals_8h_a6d793b94552b4229e15533a5a1cd86e0}} 
+\index{globals.h@{globals.h}!pinSpareTemp2@{pinSpareTemp2}}
+\index{pinSpareTemp2@{pinSpareTemp2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinSpareTemp2}{pinSpareTemp2}}
+{\footnotesize\ttfamily byte pin\+Spare\+Temp2}
+
+\mbox{\Hypertarget{globals_8h_a81250b536ee4caa65256151d32c759f0}\label{globals_8h_a81250b536ee4caa65256151d32c759f0}} 
+\index{globals.h@{globals.h}!pinStepperDir@{pinStepperDir}}
+\index{pinStepperDir@{pinStepperDir}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinStepperDir}{pinStepperDir}}
+{\footnotesize\ttfamily byte pin\+Stepper\+Dir}
+
+\mbox{\Hypertarget{globals_8h_a9d4dcdc8ed6f9f7e75c09171ae608278}\label{globals_8h_a9d4dcdc8ed6f9f7e75c09171ae608278}} 
+\index{globals.h@{globals.h}!pinStepperStep@{pinStepperStep}}
+\index{pinStepperStep@{pinStepperStep}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinStepperStep}{pinStepperStep}}
+{\footnotesize\ttfamily byte pin\+Stepper\+Step}
+
+\mbox{\Hypertarget{globals_8h_a2e9371fb43bfb4c570b58436ddbdd81c}\label{globals_8h_a2e9371fb43bfb4c570b58436ddbdd81c}} 
+\index{globals.h@{globals.h}!pinTachOut@{pinTachOut}}
+\index{pinTachOut@{pinTachOut}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinTachOut}{pinTachOut}}
+{\footnotesize\ttfamily byte pin\+Tach\+Out}
+
+\mbox{\Hypertarget{globals_8h_a19394b4f039d761f98105dae64d93010}\label{globals_8h_a19394b4f039d761f98105dae64d93010}} 
+\index{globals.h@{globals.h}!pinTPS@{pinTPS}}
+\index{pinTPS@{pinTPS}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinTPS}{pinTPS}}
+{\footnotesize\ttfamily byte pin\+TPS}
+
+\mbox{\Hypertarget{globals_8h_a7f4858230128aedeb4be4f34058a8c58}\label{globals_8h_a7f4858230128aedeb4be4f34058a8c58}} 
+\index{globals.h@{globals.h}!pinTrigger@{pinTrigger}}
+\index{pinTrigger@{pinTrigger}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinTrigger}{pinTrigger}}
+{\footnotesize\ttfamily byte pin\+Trigger}
+
+\mbox{\Hypertarget{globals_8h_a18a8717fbf36f4169602422e5ab63ef9}\label{globals_8h_a18a8717fbf36f4169602422e5ab63ef9}} 
+\index{globals.h@{globals.h}!pinTrigger2@{pinTrigger2}}
+\index{pinTrigger2@{pinTrigger2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinTrigger2}{pinTrigger2}}
+{\footnotesize\ttfamily byte pin\+Trigger2}
+
+\mbox{\Hypertarget{globals_8h_a0247d84fdc266d9278396e1d07e2b1aa}\label{globals_8h_a0247d84fdc266d9278396e1d07e2b1aa}} 
+\index{globals.h@{globals.h}!pinTrigger3@{pinTrigger3}}
+\index{pinTrigger3@{pinTrigger3}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinTrigger3}{pinTrigger3}}
+{\footnotesize\ttfamily byte pin\+Trigger3}
+
+\mbox{\Hypertarget{globals_8h_aac55f6a9243ce7472b9efca18c44344d}\label{globals_8h_aac55f6a9243ce7472b9efca18c44344d}} 
+\index{globals.h@{globals.h}!pinVVT\_1@{pinVVT\_1}}
+\index{pinVVT\_1@{pinVVT\_1}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinVVT\_1}{pinVVT\_1}}
+{\footnotesize\ttfamily byte pin\+VVT\+\_\+1}
+
+\mbox{\Hypertarget{globals_8h_a523fb19812a9eb07983c2e4ac98f6378}\label{globals_8h_a523fb19812a9eb07983c2e4ac98f6378}} 
+\index{globals.h@{globals.h}!pinVVt\_2@{pinVVt\_2}}
+\index{pinVVt\_2@{pinVVt\_2}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{pinVVt\_2}{pinVVt\_2}}
+{\footnotesize\ttfamily byte pin\+VVt\+\_\+2}
+
+\mbox{\Hypertarget{globals_8h_a8c1270967c0f23dcc46f4ff54808795c}\label{globals_8h_a8c1270967c0f23dcc46f4ff54808795c}} 
+\index{globals.h@{globals.h}!previousLoopTime@{previousLoopTime}}
+\index{previousLoopTime@{previousLoopTime}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{previousLoopTime}{previousLoopTime}}
+{\footnotesize\ttfamily unsigned long previous\+Loop\+Time\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_aa828df4e92e0a2db467fe17d20eb8d80}\label{globals_8h_aa828df4e92e0a2db467fe17d20eb8d80}} 
+\index{globals.h@{globals.h}!signature@{signature}}
+\index{signature@{signature}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily const byte signature = 20}
+
+\mbox{\Hypertarget{globals_8h_ab870130af2c18e5a63d65754518130ab}\label{globals_8h_ab870130af2c18e5a63d65754518130ab}} 
+\index{globals.h@{globals.h}!taeTable@{taeTable}}
+\index{taeTable@{taeTable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{taeTable}{taeTable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable2_d}{table2D}} tae\+Table\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{globals_8h_ac974154ea4b7834ca1ecc0528a635c1b}\label{globals_8h_ac974154ea4b7834ca1ecc0528a635c1b}} 
+\index{globals.h@{globals.h}!TSfirmwareVersion@{TSfirmwareVersion}}
+\index{TSfirmwareVersion@{TSfirmwareVersion}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{TSfirmwareVersion}{TSfirmwareVersion}}
+{\footnotesize\ttfamily const char TSfirmware\+Version\mbox{[}$\,$\mbox{]} = \char`\"{}Speeduino 2016.\+09\char`\"{}}
+
+\mbox{\Hypertarget{globals_8h_af5085c0b67e738994a9093ba342bf01e}\label{globals_8h_af5085c0b67e738994a9093ba342bf01e}} 
+\index{globals.h@{globals.h}!WUETable@{WUETable}}
+\index{WUETable@{WUETable}!globals.h@{globals.h}}
+\doxysubsubsection{\texorpdfstring{WUETable}{WUETable}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structtable2_d}{table2D}} WUETable\hspace{0.3cm}{\ttfamily [extern]}}
+

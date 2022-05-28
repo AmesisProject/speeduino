@@ -1,0 +1,45 @@
+\hypertarget{comms_8h_source}{}\doxysection{comms.\+h}
+\mbox{\hyperlink{comms_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef COMMS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define COMMS\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{//These are the page numbers that the Tuner Studio serial protocol uses to transverse the different map and config pages.}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#define veMapPage    1}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#define veSetPage    2}\textcolor{comment}{//Config Page 1}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define ignMapPage   3}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define ignSetPage   4}\textcolor{comment}{//Config Page 2}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define afrMapPage   5}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define afrSetPage   6}\textcolor{comment}{//Config Page 3}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define iacPage      7}\textcolor{comment}{//Config Page 4}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define boostvvtPage 8}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define seqFuelPage  9}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keywordtype}{byte} \mbox{\hyperlink{comms_8h_a2b88e8085d30a5021f05251216095266}{currentPage}} = 1;\textcolor{comment}{//Not the same as the speeduino config page numbers}}
+\DoxyCodeLine{15 \textcolor{keywordtype}{boolean} \mbox{\hyperlink{comms_8h_afd96d5e87b4c2f0c6017d221b56a0fc3}{isMap}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{16 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{comms_8h_a154d82e943826b19ae76406a2ba8ad6f}{requestCount}} = 0; \textcolor{comment}{//The number of times the A command has been issued}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{const} \textcolor{keywordtype}{char} pageTitles[] \mbox{\hyperlink{comms_8h_a4678e63753af438068cadfea9ff54025}{PROGMEM}} \textcolor{comment}{//This is being stored in the avr flash instead of SRAM which there is not very much of}}
+\DoxyCodeLine{19   \{}
+\DoxyCodeLine{20    \textcolor{stringliteral}{"{}\(\backslash\)nVolumetric Efficiancy Map\(\backslash\)0"{}}\textcolor{comment}{//This is an alternative to using a 2D array which would waste space because of the different lengths of the strings}}
+\DoxyCodeLine{21    \textcolor{stringliteral}{"{}\(\backslash\)nPage 1 Config\(\backslash\)0"{}}\textcolor{comment}{//The configuration page titles' indexes are found by counting the chars}}
+\DoxyCodeLine{22    \textcolor{stringliteral}{"{}\(\backslash\)nIgnition Map\(\backslash\)0"{}}\textcolor{comment}{//The map page titles' indexes are put into a var called currentTitleIndex. That represents the first char of each string.}}
+\DoxyCodeLine{23    \textcolor{stringliteral}{"{}\(\backslash\)nPage 2 Config\(\backslash\)0"{}}}
+\DoxyCodeLine{24    \textcolor{stringliteral}{"{}\(\backslash\)nAir/Fuel Ratio Map\(\backslash\)0"{}}}
+\DoxyCodeLine{25    \textcolor{stringliteral}{"{}\(\backslash\)nPage 3 Config\(\backslash\)0"{}}}
+\DoxyCodeLine{26    \textcolor{stringliteral}{"{}\(\backslash\)nPage 4 Config\(\backslash\)0"{}}}
+\DoxyCodeLine{27    \textcolor{stringliteral}{"{}\(\backslash\)nBoost Map\(\backslash\)0"{}}}
+\DoxyCodeLine{28    \textcolor{stringliteral}{"{}\(\backslash\)nVVT Map"{}}\textcolor{comment}{//No need to put a trailing null because it's the last string and the compliler does it for you.}}
+\DoxyCodeLine{29   \};}
+\DoxyCodeLine{30   }
+\DoxyCodeLine{31 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_ab8982e36e76fb7a0600ece003e4631db}{command}}();\textcolor{comment}{//This is the heart of the Command Line Interpeter.  All that needed to be done was to make it human readable.}}
+\DoxyCodeLine{32 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_a10af2141a7c461b54d18c6db37d41358}{sendValues}}(\textcolor{keywordtype}{int} packetlength, \textcolor{keywordtype}{byte} portnum);}
+\DoxyCodeLine{33 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_a6457063e66dde6c198bd9210beec2474}{receiveValue}}(\textcolor{keywordtype}{int} offset, \textcolor{keywordtype}{byte} newValue);}
+\DoxyCodeLine{34 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_a688d00bbabd28fbaf9e0c50eca3adeae}{saveConfig}}();}
+\DoxyCodeLine{35 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_ad9e205052c562f10d8797191f21ff41e}{sendPage}}(\textcolor{keywordtype}{bool} useChar);}
+\DoxyCodeLine{36 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_a9262c29790543b70f25aa2912caa45fc}{receiveCalibration}}(\textcolor{keywordtype}{byte} tableID);}
+\DoxyCodeLine{37 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_a14d8d468253ff9ab12fe39c359f1094f}{sendToothLog}}(\textcolor{keywordtype}{bool} useChar);}
+\DoxyCodeLine{38 \textcolor{keywordtype}{void} \mbox{\hyperlink{comms_8h_a1f8112fe04261fb00a689fbd96afd606}{testComm}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// COMMS\_H}}
+
+\end{DoxyCode}

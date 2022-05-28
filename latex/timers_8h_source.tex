@@ -1,0 +1,37 @@
+\hypertarget{timers_8h_source}{}\doxysection{timers.\+h}
+\mbox{\hyperlink{timers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{NOTE -\/ This file and it's associated functions need a CLEARER NAME}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{//Purpose}}
+\DoxyCodeLine{7 \textcolor{comment}{We're implementing a lower frequency interrupt loop to perform calculations that are needed less often, some of which depend on time having passed (delta/time) to be meaningful. }}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{}}
+\DoxyCodeLine{10 \textcolor{comment}{//Technical}}
+\DoxyCodeLine{11 \textcolor{comment}{Timer2 is only 8bit so we are setting the prescaler to 128 to get the most out of it. This means that the counter increments every 0.008ms and the overflow at 256 will be after 2.048ms}}
+\DoxyCodeLine{12 \textcolor{comment}{Max Period = (Prescale)*(1/Frequency)*(2\string^8)}}
+\DoxyCodeLine{13 \textcolor{comment}{(See http://arduinomega.blogspot.com.au/2011/05/timer2-\/and-\/overflow-\/interrupt-\/lets-\/get.html)}}
+\DoxyCodeLine{14 \textcolor{comment}{}}
+\DoxyCodeLine{15 \textcolor{comment}{We're after a 1ms interval so we'll need 131 intervals to reach this ( 1ms / 0.008ms per tick = 125). }}
+\DoxyCodeLine{16 \textcolor{comment}{Hence we will preload the timer with 131 cycles to leave 125 until overflow (1ms).}}
+\DoxyCodeLine{17 \textcolor{comment}{}}
+\DoxyCodeLine{18 \textcolor{comment}{*/}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef TIMERS\_H}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define TIMERS\_H}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{volatile} \textcolor{keywordtype}{int} \mbox{\hyperlink{timers_8h_addb1d95ed45d9a5adbd6c03caa4b2861}{loop250ms}};}
+\DoxyCodeLine{23 \textcolor{keyword}{volatile} \textcolor{keywordtype}{int} \mbox{\hyperlink{timers_8h_a1321f3ca7623708598b3751940e9b343}{loopSec}};}
+\DoxyCodeLine{24 \textcolor{keyword}{volatile} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{timers_8h_acff029f314b3884fdb071afa6af8bb06}{targetOverdwellTime}};}
+\DoxyCodeLine{25 \textcolor{keyword}{volatile} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{timers_8h_a153f9bd64ceed82b65317b4042263d75}{targetTachoPulseTime}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#if defined (CORE\_TEENSY)}}
+\DoxyCodeLine{28   IntervalTimer lowResTimer;}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{30 \textcolor{keywordtype}{void} \mbox{\hyperlink{timers_8h_a1810db7313ccf1b647a57d8c978c25c6}{initialiseTimers}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// TIMERS\_H}}
+
+\end{DoxyCode}

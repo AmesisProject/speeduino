@@ -1,0 +1,150 @@
+\hypertarget{auxiliaries_8h}{}\doxysection{auxiliaries.\+h File Reference}
+\label{auxiliaries_8h}\index{auxiliaries.h@{auxiliaries.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{auxiliaries_8h_a058a74aeacf1d90199b5022c2e0006e6}{initialise\+Aux\+PWM}} ()
+\item 
+void \mbox{\hyperlink{auxiliaries_8h_a770b0c3006d85b0793024ce26bd36284}{boost\+Control}} ()
+\item 
+void \mbox{\hyperlink{auxiliaries_8h_adc12024b0e15526b60ec8c2721eb7165}{vvt\+Control}} ()
+\item 
+void \mbox{\hyperlink{auxiliaries_8h_a1ae70a247d788207e39e41849fa4b6a3}{initialise\+Fan}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{auxiliaries_8h_ad6fceb73e40a8df5c22226f0a373f668}{boost\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{auxiliaries_8h_aa706e1a4d63a5d1efe73430e13aeeaad}{boost\+\_\+pin\+\_\+mask}}
+\item 
+volatile byte $\ast$ \mbox{\hyperlink{auxiliaries_8h_a2346918425b825d4cbff7175d03eb16e}{vvt\+\_\+pin\+\_\+port}}
+\item 
+volatile byte \mbox{\hyperlink{auxiliaries_8h_abc8dbad8dd2a33a207f533cc8761c805}{vvt\+\_\+pin\+\_\+mask}}
+\item 
+volatile bool \mbox{\hyperlink{auxiliaries_8h_a890f54cc385e3554e1e9ae3962cfa1aa}{boost\+\_\+pwm\+\_\+state}}
+\item 
+unsigned int \mbox{\hyperlink{auxiliaries_8h_a352398dabeadf9329d97f6899a5a036e}{boost\+\_\+pwm\+\_\+max\+\_\+count}}
+\item 
+volatile unsigned int \mbox{\hyperlink{auxiliaries_8h_a561e4c2b29e72e06c0e86b5bea0eaae4}{boost\+\_\+pwm\+\_\+cur\+\_\+value}}
+\item 
+long \mbox{\hyperlink{auxiliaries_8h_a6b5cb46c773772a82e1cbd8428cedd71}{boost\+\_\+pwm\+\_\+target\+\_\+value}}
+\item 
+long \mbox{\hyperlink{auxiliaries_8h_ad526633fccbd3def9d1c5b02cad2dcaf}{boost\+\_\+cl\+\_\+target\+\_\+boost}}
+\item 
+volatile bool \mbox{\hyperlink{auxiliaries_8h_a19d76994eaa6d885a06a9e7b069fbf83}{vvt\+\_\+pwm\+\_\+state}}
+\item 
+unsigned int \mbox{\hyperlink{auxiliaries_8h_a18c262c8282eec7c98b8acb8ea254bf1}{vvt\+\_\+pwm\+\_\+max\+\_\+count}}
+\item 
+volatile unsigned int \mbox{\hyperlink{auxiliaries_8h_a8a56430b2d9f5a3ec454004a936cd2e4}{vvt\+\_\+pwm\+\_\+cur\+\_\+value}}
+\item 
+long \mbox{\hyperlink{auxiliaries_8h_a990678a951afb1af8b3cb105dbf69806}{vvt\+\_\+pwm\+\_\+target\+\_\+value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{auxiliaries_8h_a770b0c3006d85b0793024ce26bd36284}\label{auxiliaries_8h_a770b0c3006d85b0793024ce26bd36284}} 
+\index{auxiliaries.h@{auxiliaries.h}!boostControl@{boostControl}}
+\index{boostControl@{boostControl}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boostControl()}{boostControl()}}
+{\footnotesize\ttfamily void boost\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{auxiliaries_8h_a058a74aeacf1d90199b5022c2e0006e6}\label{auxiliaries_8h_a058a74aeacf1d90199b5022c2e0006e6}} 
+\index{auxiliaries.h@{auxiliaries.h}!initialiseAuxPWM@{initialiseAuxPWM}}
+\index{initialiseAuxPWM@{initialiseAuxPWM}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{initialiseAuxPWM()}{initialiseAuxPWM()}}
+{\footnotesize\ttfamily void initialise\+Aux\+PWM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{auxiliaries_8h_a1ae70a247d788207e39e41849fa4b6a3}\label{auxiliaries_8h_a1ae70a247d788207e39e41849fa4b6a3}} 
+\index{auxiliaries.h@{auxiliaries.h}!initialiseFan@{initialiseFan}}
+\index{initialiseFan@{initialiseFan}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{initialiseFan()}{initialiseFan()}}
+{\footnotesize\ttfamily void initialise\+Fan (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{auxiliaries_8h_adc12024b0e15526b60ec8c2721eb7165}\label{auxiliaries_8h_adc12024b0e15526b60ec8c2721eb7165}} 
+\index{auxiliaries.h@{auxiliaries.h}!vvtControl@{vvtControl}}
+\index{vvtControl@{vvtControl}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{vvtControl()}{vvtControl()}}
+{\footnotesize\ttfamily void vvt\+Control (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{auxiliaries_8h_ad526633fccbd3def9d1c5b02cad2dcaf}\label{auxiliaries_8h_ad526633fccbd3def9d1c5b02cad2dcaf}} 
+\index{auxiliaries.h@{auxiliaries.h}!boost\_cl\_target\_boost@{boost\_cl\_target\_boost}}
+\index{boost\_cl\_target\_boost@{boost\_cl\_target\_boost}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boost\_cl\_target\_boost}{boost\_cl\_target\_boost}}
+{\footnotesize\ttfamily long boost\+\_\+cl\+\_\+target\+\_\+boost}
+
+\mbox{\Hypertarget{auxiliaries_8h_aa706e1a4d63a5d1efe73430e13aeeaad}\label{auxiliaries_8h_aa706e1a4d63a5d1efe73430e13aeeaad}} 
+\index{auxiliaries.h@{auxiliaries.h}!boost\_pin\_mask@{boost\_pin\_mask}}
+\index{boost\_pin\_mask@{boost\_pin\_mask}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boost\_pin\_mask}{boost\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte boost\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{auxiliaries_8h_ad6fceb73e40a8df5c22226f0a373f668}\label{auxiliaries_8h_ad6fceb73e40a8df5c22226f0a373f668}} 
+\index{auxiliaries.h@{auxiliaries.h}!boost\_pin\_port@{boost\_pin\_port}}
+\index{boost\_pin\_port@{boost\_pin\_port}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boost\_pin\_port}{boost\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ boost\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{auxiliaries_8h_a561e4c2b29e72e06c0e86b5bea0eaae4}\label{auxiliaries_8h_a561e4c2b29e72e06c0e86b5bea0eaae4}} 
+\index{auxiliaries.h@{auxiliaries.h}!boost\_pwm\_cur\_value@{boost\_pwm\_cur\_value}}
+\index{boost\_pwm\_cur\_value@{boost\_pwm\_cur\_value}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boost\_pwm\_cur\_value}{boost\_pwm\_cur\_value}}
+{\footnotesize\ttfamily volatile unsigned int boost\+\_\+pwm\+\_\+cur\+\_\+value}
+
+\mbox{\Hypertarget{auxiliaries_8h_a352398dabeadf9329d97f6899a5a036e}\label{auxiliaries_8h_a352398dabeadf9329d97f6899a5a036e}} 
+\index{auxiliaries.h@{auxiliaries.h}!boost\_pwm\_max\_count@{boost\_pwm\_max\_count}}
+\index{boost\_pwm\_max\_count@{boost\_pwm\_max\_count}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boost\_pwm\_max\_count}{boost\_pwm\_max\_count}}
+{\footnotesize\ttfamily unsigned int boost\+\_\+pwm\+\_\+max\+\_\+count}
+
+\mbox{\Hypertarget{auxiliaries_8h_a890f54cc385e3554e1e9ae3962cfa1aa}\label{auxiliaries_8h_a890f54cc385e3554e1e9ae3962cfa1aa}} 
+\index{auxiliaries.h@{auxiliaries.h}!boost\_pwm\_state@{boost\_pwm\_state}}
+\index{boost\_pwm\_state@{boost\_pwm\_state}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boost\_pwm\_state}{boost\_pwm\_state}}
+{\footnotesize\ttfamily volatile bool boost\+\_\+pwm\+\_\+state}
+
+\mbox{\Hypertarget{auxiliaries_8h_a6b5cb46c773772a82e1cbd8428cedd71}\label{auxiliaries_8h_a6b5cb46c773772a82e1cbd8428cedd71}} 
+\index{auxiliaries.h@{auxiliaries.h}!boost\_pwm\_target\_value@{boost\_pwm\_target\_value}}
+\index{boost\_pwm\_target\_value@{boost\_pwm\_target\_value}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{boost\_pwm\_target\_value}{boost\_pwm\_target\_value}}
+{\footnotesize\ttfamily long boost\+\_\+pwm\+\_\+target\+\_\+value}
+
+\mbox{\Hypertarget{auxiliaries_8h_abc8dbad8dd2a33a207f533cc8761c805}\label{auxiliaries_8h_abc8dbad8dd2a33a207f533cc8761c805}} 
+\index{auxiliaries.h@{auxiliaries.h}!vvt\_pin\_mask@{vvt\_pin\_mask}}
+\index{vvt\_pin\_mask@{vvt\_pin\_mask}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{vvt\_pin\_mask}{vvt\_pin\_mask}}
+{\footnotesize\ttfamily volatile byte vvt\+\_\+pin\+\_\+mask}
+
+\mbox{\Hypertarget{auxiliaries_8h_a2346918425b825d4cbff7175d03eb16e}\label{auxiliaries_8h_a2346918425b825d4cbff7175d03eb16e}} 
+\index{auxiliaries.h@{auxiliaries.h}!vvt\_pin\_port@{vvt\_pin\_port}}
+\index{vvt\_pin\_port@{vvt\_pin\_port}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{vvt\_pin\_port}{vvt\_pin\_port}}
+{\footnotesize\ttfamily volatile byte$\ast$ vvt\+\_\+pin\+\_\+port}
+
+\mbox{\Hypertarget{auxiliaries_8h_a8a56430b2d9f5a3ec454004a936cd2e4}\label{auxiliaries_8h_a8a56430b2d9f5a3ec454004a936cd2e4}} 
+\index{auxiliaries.h@{auxiliaries.h}!vvt\_pwm\_cur\_value@{vvt\_pwm\_cur\_value}}
+\index{vvt\_pwm\_cur\_value@{vvt\_pwm\_cur\_value}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{vvt\_pwm\_cur\_value}{vvt\_pwm\_cur\_value}}
+{\footnotesize\ttfamily volatile unsigned int vvt\+\_\+pwm\+\_\+cur\+\_\+value}
+
+\mbox{\Hypertarget{auxiliaries_8h_a18c262c8282eec7c98b8acb8ea254bf1}\label{auxiliaries_8h_a18c262c8282eec7c98b8acb8ea254bf1}} 
+\index{auxiliaries.h@{auxiliaries.h}!vvt\_pwm\_max\_count@{vvt\_pwm\_max\_count}}
+\index{vvt\_pwm\_max\_count@{vvt\_pwm\_max\_count}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{vvt\_pwm\_max\_count}{vvt\_pwm\_max\_count}}
+{\footnotesize\ttfamily unsigned int vvt\+\_\+pwm\+\_\+max\+\_\+count}
+
+\mbox{\Hypertarget{auxiliaries_8h_a19d76994eaa6d885a06a9e7b069fbf83}\label{auxiliaries_8h_a19d76994eaa6d885a06a9e7b069fbf83}} 
+\index{auxiliaries.h@{auxiliaries.h}!vvt\_pwm\_state@{vvt\_pwm\_state}}
+\index{vvt\_pwm\_state@{vvt\_pwm\_state}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{vvt\_pwm\_state}{vvt\_pwm\_state}}
+{\footnotesize\ttfamily volatile bool vvt\+\_\+pwm\+\_\+state}
+
+\mbox{\Hypertarget{auxiliaries_8h_a990678a951afb1af8b3cb105dbf69806}\label{auxiliaries_8h_a990678a951afb1af8b3cb105dbf69806}} 
+\index{auxiliaries.h@{auxiliaries.h}!vvt\_pwm\_target\_value@{vvt\_pwm\_target\_value}}
+\index{vvt\_pwm\_target\_value@{vvt\_pwm\_target\_value}!auxiliaries.h@{auxiliaries.h}}
+\doxysubsubsection{\texorpdfstring{vvt\_pwm\_target\_value}{vvt\_pwm\_target\_value}}
+{\footnotesize\ttfamily long vvt\+\_\+pwm\+\_\+target\+\_\+value}
+

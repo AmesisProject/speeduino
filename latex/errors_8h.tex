@@ -1,0 +1,273 @@
+\hypertarget{errors_8h}{}\doxysection{errors.\+h File Reference}
+\label{errors_8h}\index{errors.h@{errors.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpacked_error}{packed\+Error}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{errors_8h_aff0d3fb76f11f6e8ea4002d826bbd23c}{ERR\+\_\+\+NONE}}~0
+\item 
+\#define \mbox{\hyperlink{errors_8h_a60d04c865fd58d86758894edca38bf30}{ERR\+\_\+\+UNKNOWN}}~1
+\item 
+\#define \mbox{\hyperlink{errors_8h_ae4374a1859dc2c4c2115635dd78c4a2e}{ERR\+\_\+\+IAT\+\_\+\+SHORT}}~2
+\item 
+\#define \mbox{\hyperlink{errors_8h_aff1ddecce9e3436d5826c70bb8b01564}{ERR\+\_\+\+IAT\+\_\+\+GND}}~3
+\item 
+\#define \mbox{\hyperlink{errors_8h_a89e972fa04625d227a03804ab2f50537}{ERR\+\_\+\+CLT\+\_\+\+SHORT}}~4
+\item 
+\#define \mbox{\hyperlink{errors_8h_ad5dcc096ba611fa02424a8618f53e8e3}{ERR\+\_\+\+CLT\+\_\+\+GND}}~5
+\item 
+\#define \mbox{\hyperlink{errors_8h_aa4505bbab8dc939846d73c9d493d4079}{ERR\+\_\+\+O2\+\_\+\+SHORT}}~6
+\item 
+\#define \mbox{\hyperlink{errors_8h_a297ebe4e04dbd213a49f6ae60e0d79da}{ERR\+\_\+\+O2\+\_\+\+GND}}~7
+\item 
+\#define \mbox{\hyperlink{errors_8h_a7c12293b5c23af6ff513a75ec097ad5c}{ERR\+\_\+\+TPS\+\_\+\+SHORT}}~8
+\item 
+\#define \mbox{\hyperlink{errors_8h_aacef41051dfd6d41f1f7133336fd7da2}{ERR\+\_\+\+TPS\+\_\+\+GND}}~9
+\item 
+\#define \mbox{\hyperlink{errors_8h_a09fefe71794296201cc39825c4d16854}{ERR\+\_\+\+BAT\+\_\+\+HIGH}}~10
+\item 
+\#define \mbox{\hyperlink{errors_8h_a315ba1df931fdce654efb51c967e9f7a}{ERR\+\_\+\+BAT\+\_\+\+LOW}}~11
+\item 
+\#define \mbox{\hyperlink{errors_8h_a7e434da9e80fd745f8819af4fbc122b5}{ERR\+\_\+\+MAP\+\_\+\+HIGH}}~12
+\item 
+\#define \mbox{\hyperlink{errors_8h_a5166d374564f0735789a9e4aa83202a4}{ERR\+\_\+\+MAP\+\_\+\+LOW}}~13
+\item 
+\#define \mbox{\hyperlink{errors_8h_a42192b7d1030a4faeb79304fd9e2f552}{ERR\+\_\+\+DEFAULT\+\_\+\+IAT\+\_\+\+SHORT}}~80
+\item 
+\#define \mbox{\hyperlink{errors_8h_a6c7442a65bab7439cdcfb7b5650463e3}{ERR\+\_\+\+DEFAULT\+\_\+\+IAT\+\_\+\+GND}}~80
+\item 
+\#define \mbox{\hyperlink{errors_8h_ae40b6a670f87fe084c1bc4253f1ea14b}{ERR\+\_\+\+DEFAULT\+\_\+\+CKT\+\_\+\+SHORT}}~80
+\item 
+\#define \mbox{\hyperlink{errors_8h_af22d4488ec074edf3a94fc2f0673cc6a}{ERR\+\_\+\+DEFAULT\+\_\+\+CLT\+\_\+\+GND}}~80
+\item 
+\#define \mbox{\hyperlink{errors_8h_aa768e9f9df641ec68f1a1093da53eb48}{ERR\+\_\+\+DEFAULT\+\_\+\+O2\+\_\+\+SHORT}}~147
+\item 
+\#define \mbox{\hyperlink{errors_8h_a4fbd818e61ae9684c62af28a75ae5ea3}{ERR\+\_\+\+DEFAULT\+\_\+\+O2\+\_\+\+GND}}~147
+\item 
+\#define \mbox{\hyperlink{errors_8h_a8455cb901d74724d437355db5b588988}{ERR\+\_\+\+DEFAULT\+\_\+\+TPS\+\_\+\+SHORT}}~50
+\item 
+\#define \mbox{\hyperlink{errors_8h_a291653d02bc03f61311814363edd6cce}{ERR\+\_\+\+DEFAULT\+\_\+\+TPS\+\_\+\+GND}}~50
+\item 
+\#define \mbox{\hyperlink{errors_8h_aa200900839b04f3106198b36c80eecf4}{ERR\+\_\+\+DEFAULT\+\_\+\+BAT\+\_\+\+HIGH}}~130
+\item 
+\#define \mbox{\hyperlink{errors_8h_a1c7851ba1d14c470b5cc517a9eba2a64}{ERR\+\_\+\+DEFAULT\+\_\+\+BAT\+\_\+\+LOW}}~130
+\item 
+\#define \mbox{\hyperlink{errors_8h_ab637caf2087e41fe3a7d0254524208b4}{ERR\+\_\+\+DEFAULT\+\_\+\+MAP\+\_\+\+HIGH}}~240
+\item 
+\#define \mbox{\hyperlink{errors_8h_ac8ab678b44d91332b7a40b22cd086500}{ERR\+\_\+\+DEFAULT\+\_\+\+MAP\+\_\+\+LOW}}~80
+\item 
+\#define \mbox{\hyperlink{errors_8h_aee6f4b0b74820d727dd8fba4f5efa061}{MAX\+\_\+\+ERRORS}}~4
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{\hyperlink{errors_8h_abccf9c417b2edfa7f393aa16431aa9d2}{get\+Next\+Error}} ()
+\item 
+byte \mbox{\hyperlink{errors_8h_a8c5defb609be14d74c06439f4e2c1102}{set\+Error}} (byte)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{\hyperlink{errors_8h_ade561dc645a1d7c5a999e7eb49e37c65}{error\+Count}} = 0
+\item 
+byte \mbox{\hyperlink{errors_8h_a235045d66228ec6dd620f460ae2900ed}{error\+Codes}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{errors_8h_a09fefe71794296201cc39825c4d16854}\label{errors_8h_a09fefe71794296201cc39825c4d16854}} 
+\index{errors.h@{errors.h}!ERR\_BAT\_HIGH@{ERR\_BAT\_HIGH}}
+\index{ERR\_BAT\_HIGH@{ERR\_BAT\_HIGH}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_BAT\_HIGH}{ERR\_BAT\_HIGH}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+BAT\+\_\+\+HIGH~10}
+
+\mbox{\Hypertarget{errors_8h_a315ba1df931fdce654efb51c967e9f7a}\label{errors_8h_a315ba1df931fdce654efb51c967e9f7a}} 
+\index{errors.h@{errors.h}!ERR\_BAT\_LOW@{ERR\_BAT\_LOW}}
+\index{ERR\_BAT\_LOW@{ERR\_BAT\_LOW}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_BAT\_LOW}{ERR\_BAT\_LOW}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+BAT\+\_\+\+LOW~11}
+
+\mbox{\Hypertarget{errors_8h_ad5dcc096ba611fa02424a8618f53e8e3}\label{errors_8h_ad5dcc096ba611fa02424a8618f53e8e3}} 
+\index{errors.h@{errors.h}!ERR\_CLT\_GND@{ERR\_CLT\_GND}}
+\index{ERR\_CLT\_GND@{ERR\_CLT\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_CLT\_GND}{ERR\_CLT\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+CLT\+\_\+\+GND~5}
+
+\mbox{\Hypertarget{errors_8h_a89e972fa04625d227a03804ab2f50537}\label{errors_8h_a89e972fa04625d227a03804ab2f50537}} 
+\index{errors.h@{errors.h}!ERR\_CLT\_SHORT@{ERR\_CLT\_SHORT}}
+\index{ERR\_CLT\_SHORT@{ERR\_CLT\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_CLT\_SHORT}{ERR\_CLT\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+CLT\+\_\+\+SHORT~4}
+
+\mbox{\Hypertarget{errors_8h_aa200900839b04f3106198b36c80eecf4}\label{errors_8h_aa200900839b04f3106198b36c80eecf4}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_BAT\_HIGH@{ERR\_DEFAULT\_BAT\_HIGH}}
+\index{ERR\_DEFAULT\_BAT\_HIGH@{ERR\_DEFAULT\_BAT\_HIGH}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_BAT\_HIGH}{ERR\_DEFAULT\_BAT\_HIGH}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+BAT\+\_\+\+HIGH~130}
+
+\mbox{\Hypertarget{errors_8h_a1c7851ba1d14c470b5cc517a9eba2a64}\label{errors_8h_a1c7851ba1d14c470b5cc517a9eba2a64}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_BAT\_LOW@{ERR\_DEFAULT\_BAT\_LOW}}
+\index{ERR\_DEFAULT\_BAT\_LOW@{ERR\_DEFAULT\_BAT\_LOW}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_BAT\_LOW}{ERR\_DEFAULT\_BAT\_LOW}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+BAT\+\_\+\+LOW~130}
+
+\mbox{\Hypertarget{errors_8h_ae40b6a670f87fe084c1bc4253f1ea14b}\label{errors_8h_ae40b6a670f87fe084c1bc4253f1ea14b}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_CKT\_SHORT@{ERR\_DEFAULT\_CKT\_SHORT}}
+\index{ERR\_DEFAULT\_CKT\_SHORT@{ERR\_DEFAULT\_CKT\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_CKT\_SHORT}{ERR\_DEFAULT\_CKT\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+CKT\+\_\+\+SHORT~80}
+
+\mbox{\Hypertarget{errors_8h_af22d4488ec074edf3a94fc2f0673cc6a}\label{errors_8h_af22d4488ec074edf3a94fc2f0673cc6a}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_CLT\_GND@{ERR\_DEFAULT\_CLT\_GND}}
+\index{ERR\_DEFAULT\_CLT\_GND@{ERR\_DEFAULT\_CLT\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_CLT\_GND}{ERR\_DEFAULT\_CLT\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+CLT\+\_\+\+GND~80}
+
+\mbox{\Hypertarget{errors_8h_a6c7442a65bab7439cdcfb7b5650463e3}\label{errors_8h_a6c7442a65bab7439cdcfb7b5650463e3}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_IAT\_GND@{ERR\_DEFAULT\_IAT\_GND}}
+\index{ERR\_DEFAULT\_IAT\_GND@{ERR\_DEFAULT\_IAT\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_IAT\_GND}{ERR\_DEFAULT\_IAT\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+IAT\+\_\+\+GND~80}
+
+\mbox{\Hypertarget{errors_8h_a42192b7d1030a4faeb79304fd9e2f552}\label{errors_8h_a42192b7d1030a4faeb79304fd9e2f552}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_IAT\_SHORT@{ERR\_DEFAULT\_IAT\_SHORT}}
+\index{ERR\_DEFAULT\_IAT\_SHORT@{ERR\_DEFAULT\_IAT\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_IAT\_SHORT}{ERR\_DEFAULT\_IAT\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+IAT\+\_\+\+SHORT~80}
+
+\mbox{\Hypertarget{errors_8h_ab637caf2087e41fe3a7d0254524208b4}\label{errors_8h_ab637caf2087e41fe3a7d0254524208b4}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_MAP\_HIGH@{ERR\_DEFAULT\_MAP\_HIGH}}
+\index{ERR\_DEFAULT\_MAP\_HIGH@{ERR\_DEFAULT\_MAP\_HIGH}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_MAP\_HIGH}{ERR\_DEFAULT\_MAP\_HIGH}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+MAP\+\_\+\+HIGH~240}
+
+\mbox{\Hypertarget{errors_8h_ac8ab678b44d91332b7a40b22cd086500}\label{errors_8h_ac8ab678b44d91332b7a40b22cd086500}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_MAP\_LOW@{ERR\_DEFAULT\_MAP\_LOW}}
+\index{ERR\_DEFAULT\_MAP\_LOW@{ERR\_DEFAULT\_MAP\_LOW}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_MAP\_LOW}{ERR\_DEFAULT\_MAP\_LOW}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+MAP\+\_\+\+LOW~80}
+
+\mbox{\Hypertarget{errors_8h_a4fbd818e61ae9684c62af28a75ae5ea3}\label{errors_8h_a4fbd818e61ae9684c62af28a75ae5ea3}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_O2\_GND@{ERR\_DEFAULT\_O2\_GND}}
+\index{ERR\_DEFAULT\_O2\_GND@{ERR\_DEFAULT\_O2\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_O2\_GND}{ERR\_DEFAULT\_O2\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+O2\+\_\+\+GND~147}
+
+\mbox{\Hypertarget{errors_8h_aa768e9f9df641ec68f1a1093da53eb48}\label{errors_8h_aa768e9f9df641ec68f1a1093da53eb48}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_O2\_SHORT@{ERR\_DEFAULT\_O2\_SHORT}}
+\index{ERR\_DEFAULT\_O2\_SHORT@{ERR\_DEFAULT\_O2\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_O2\_SHORT}{ERR\_DEFAULT\_O2\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+O2\+\_\+\+SHORT~147}
+
+\mbox{\Hypertarget{errors_8h_a291653d02bc03f61311814363edd6cce}\label{errors_8h_a291653d02bc03f61311814363edd6cce}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_TPS\_GND@{ERR\_DEFAULT\_TPS\_GND}}
+\index{ERR\_DEFAULT\_TPS\_GND@{ERR\_DEFAULT\_TPS\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_TPS\_GND}{ERR\_DEFAULT\_TPS\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+TPS\+\_\+\+GND~50}
+
+\mbox{\Hypertarget{errors_8h_a8455cb901d74724d437355db5b588988}\label{errors_8h_a8455cb901d74724d437355db5b588988}} 
+\index{errors.h@{errors.h}!ERR\_DEFAULT\_TPS\_SHORT@{ERR\_DEFAULT\_TPS\_SHORT}}
+\index{ERR\_DEFAULT\_TPS\_SHORT@{ERR\_DEFAULT\_TPS\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_DEFAULT\_TPS\_SHORT}{ERR\_DEFAULT\_TPS\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+DEFAULT\+\_\+\+TPS\+\_\+\+SHORT~50}
+
+\mbox{\Hypertarget{errors_8h_aff1ddecce9e3436d5826c70bb8b01564}\label{errors_8h_aff1ddecce9e3436d5826c70bb8b01564}} 
+\index{errors.h@{errors.h}!ERR\_IAT\_GND@{ERR\_IAT\_GND}}
+\index{ERR\_IAT\_GND@{ERR\_IAT\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_IAT\_GND}{ERR\_IAT\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+IAT\+\_\+\+GND~3}
+
+\mbox{\Hypertarget{errors_8h_ae4374a1859dc2c4c2115635dd78c4a2e}\label{errors_8h_ae4374a1859dc2c4c2115635dd78c4a2e}} 
+\index{errors.h@{errors.h}!ERR\_IAT\_SHORT@{ERR\_IAT\_SHORT}}
+\index{ERR\_IAT\_SHORT@{ERR\_IAT\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_IAT\_SHORT}{ERR\_IAT\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+IAT\+\_\+\+SHORT~2}
+
+\mbox{\Hypertarget{errors_8h_a7e434da9e80fd745f8819af4fbc122b5}\label{errors_8h_a7e434da9e80fd745f8819af4fbc122b5}} 
+\index{errors.h@{errors.h}!ERR\_MAP\_HIGH@{ERR\_MAP\_HIGH}}
+\index{ERR\_MAP\_HIGH@{ERR\_MAP\_HIGH}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_MAP\_HIGH}{ERR\_MAP\_HIGH}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+MAP\+\_\+\+HIGH~12}
+
+\mbox{\Hypertarget{errors_8h_a5166d374564f0735789a9e4aa83202a4}\label{errors_8h_a5166d374564f0735789a9e4aa83202a4}} 
+\index{errors.h@{errors.h}!ERR\_MAP\_LOW@{ERR\_MAP\_LOW}}
+\index{ERR\_MAP\_LOW@{ERR\_MAP\_LOW}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_MAP\_LOW}{ERR\_MAP\_LOW}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+MAP\+\_\+\+LOW~13}
+
+\mbox{\Hypertarget{errors_8h_aff0d3fb76f11f6e8ea4002d826bbd23c}\label{errors_8h_aff0d3fb76f11f6e8ea4002d826bbd23c}} 
+\index{errors.h@{errors.h}!ERR\_NONE@{ERR\_NONE}}
+\index{ERR\_NONE@{ERR\_NONE}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_NONE}{ERR\_NONE}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+NONE~0}
+
+\mbox{\Hypertarget{errors_8h_a297ebe4e04dbd213a49f6ae60e0d79da}\label{errors_8h_a297ebe4e04dbd213a49f6ae60e0d79da}} 
+\index{errors.h@{errors.h}!ERR\_O2\_GND@{ERR\_O2\_GND}}
+\index{ERR\_O2\_GND@{ERR\_O2\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_O2\_GND}{ERR\_O2\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+O2\+\_\+\+GND~7}
+
+\mbox{\Hypertarget{errors_8h_aa4505bbab8dc939846d73c9d493d4079}\label{errors_8h_aa4505bbab8dc939846d73c9d493d4079}} 
+\index{errors.h@{errors.h}!ERR\_O2\_SHORT@{ERR\_O2\_SHORT}}
+\index{ERR\_O2\_SHORT@{ERR\_O2\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_O2\_SHORT}{ERR\_O2\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+O2\+\_\+\+SHORT~6}
+
+\mbox{\Hypertarget{errors_8h_aacef41051dfd6d41f1f7133336fd7da2}\label{errors_8h_aacef41051dfd6d41f1f7133336fd7da2}} 
+\index{errors.h@{errors.h}!ERR\_TPS\_GND@{ERR\_TPS\_GND}}
+\index{ERR\_TPS\_GND@{ERR\_TPS\_GND}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_TPS\_GND}{ERR\_TPS\_GND}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+TPS\+\_\+\+GND~9}
+
+\mbox{\Hypertarget{errors_8h_a7c12293b5c23af6ff513a75ec097ad5c}\label{errors_8h_a7c12293b5c23af6ff513a75ec097ad5c}} 
+\index{errors.h@{errors.h}!ERR\_TPS\_SHORT@{ERR\_TPS\_SHORT}}
+\index{ERR\_TPS\_SHORT@{ERR\_TPS\_SHORT}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_TPS\_SHORT}{ERR\_TPS\_SHORT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+TPS\+\_\+\+SHORT~8}
+
+\mbox{\Hypertarget{errors_8h_a60d04c865fd58d86758894edca38bf30}\label{errors_8h_a60d04c865fd58d86758894edca38bf30}} 
+\index{errors.h@{errors.h}!ERR\_UNKNOWN@{ERR\_UNKNOWN}}
+\index{ERR\_UNKNOWN@{ERR\_UNKNOWN}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_UNKNOWN}{ERR\_UNKNOWN}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+UNKNOWN~1}
+
+\mbox{\Hypertarget{errors_8h_aee6f4b0b74820d727dd8fba4f5efa061}\label{errors_8h_aee6f4b0b74820d727dd8fba4f5efa061}} 
+\index{errors.h@{errors.h}!MAX\_ERRORS@{MAX\_ERRORS}}
+\index{MAX\_ERRORS@{MAX\_ERRORS}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ERRORS}{MAX\_ERRORS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ERRORS~4}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{errors_8h_abccf9c417b2edfa7f393aa16431aa9d2}\label{errors_8h_abccf9c417b2edfa7f393aa16431aa9d2}} 
+\index{errors.h@{errors.h}!getNextError@{getNextError}}
+\index{getNextError@{getNextError}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{getNextError()}{getNextError()}}
+{\footnotesize\ttfamily byte get\+Next\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{errors_8h_a8c5defb609be14d74c06439f4e2c1102}\label{errors_8h_a8c5defb609be14d74c06439f4e2c1102}} 
+\index{errors.h@{errors.h}!setError@{setError}}
+\index{setError@{setError}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{setError()}{setError()}}
+{\footnotesize\ttfamily byte set\+Error (\begin{DoxyParamCaption}\item[{byte}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{errors_8h_a235045d66228ec6dd620f460ae2900ed}\label{errors_8h_a235045d66228ec6dd620f460ae2900ed}} 
+\index{errors.h@{errors.h}!errorCodes@{errorCodes}}
+\index{errorCodes@{errorCodes}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{errorCodes}{errorCodes}}
+{\footnotesize\ttfamily byte error\+Codes\mbox{[}4\mbox{]}}
+
+\mbox{\Hypertarget{errors_8h_ade561dc645a1d7c5a999e7eb49e37c65}\label{errors_8h_ade561dc645a1d7c5a999e7eb49e37c65}} 
+\index{errors.h@{errors.h}!errorCount@{errorCount}}
+\index{errorCount@{errorCount}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{errorCount}{errorCount}}
+{\footnotesize\ttfamily byte error\+Count = 0}
+

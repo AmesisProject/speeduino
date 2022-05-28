@@ -1,0 +1,485 @@
+\hypertarget{globals_8h_source}{}\doxysection{globals.\+h}
+\mbox{\hyperlink{globals_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GLOBALS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GLOBALS\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <Arduino.h>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{comment}{//const byte ms\_version = 20;}}
+\DoxyCodeLine{6 \textcolor{keyword}{const} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aa828df4e92e0a2db467fe17d20eb8d80}{signature}} = 20;}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//const char signature[] = "{}speeduino"{};}}
+\DoxyCodeLine{9 \textcolor{keyword}{const} \textcolor{keywordtype}{char} \mbox{\hyperlink{globals_8h_a0964785d1defa060a3580f2d9b8ae11f}{displaySignature}}[] = \textcolor{stringliteral}{"{}speeduino 201609-\/dev"{}};}
+\DoxyCodeLine{10 \textcolor{keyword}{const} \textcolor{keywordtype}{char} \mbox{\hyperlink{globals_8h_ac974154ea4b7834ca1ecc0528a635c1b}{TSfirmwareVersion}}[] = \textcolor{stringliteral}{"{}Speeduino 2016.09"{}};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{const} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a210e00350a2fd93687924cb3df3c0a4c}{data\_structure\_version}} = 2; \textcolor{comment}{//This identifies the data structure when reading / writing. }}
+\DoxyCodeLine{13 \textcolor{keyword}{const} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a7d484f8c7c96557baed742926668c78e}{page\_size}} = 64;}
+\DoxyCodeLine{14 \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{globals_8h_a7e6e7c56f968a3fc084e7ecdcc5fbc21}{map\_page\_size}} = 288;}
+\DoxyCodeLine{15 \textcolor{keyword}{const} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_ad675afa182e3532d480917b68cfce43b}{packetSize}} = 35;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//Handy bitsetting macros}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define BIT\_SET(a,b) ((a) |= (1<<(b)))}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define BIT\_CLEAR(a,b) ((a) \&= \string~(1<<(b)))}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define BIT\_CHECK(var,pos) ((var) \& (1<<(pos)))}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//Define bit positions within engine virable}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define BIT\_ENGINE\_RUN      0   }\textcolor{comment}{// Engine running}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define BIT\_ENGINE\_CRANK    1   }\textcolor{comment}{// Engine cranking}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define BIT\_ENGINE\_ASE      2   }\textcolor{comment}{// after start enrichment (ASE)}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define BIT\_ENGINE\_WARMUP   3   }\textcolor{comment}{// Engine in warmup}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define BIT\_ENGINE\_ACC      4   }\textcolor{comment}{// in acceleration mode (TPS accel)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define BIT\_ENGINE\_DCC      5   }\textcolor{comment}{// in deceleration mode}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define BIT\_ENGINE\_MAPACC   6   }\textcolor{comment}{// MAP acceleration mode}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define BIT\_ENGINE\_MAPDCC   7   }\textcolor{comment}{// MAP decelleration mode}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{//Define masks for Squirt}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_INJ1          0  }\textcolor{comment}{//inj1 Squirt}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_INJ2          1  }\textcolor{comment}{//inj2 Squirt}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_INJ3          2  }\textcolor{comment}{//inj3 Squirt}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_INJ4          3  }\textcolor{comment}{//inj4 Squirt}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_DFCO          4 }\textcolor{comment}{//Decelleration fuel cutoff}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_BOOSTCUT      5  }\textcolor{comment}{//Fuel component of MAP based boost cut out }}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_TOOTHLOG1READY 6  }\textcolor{comment}{//Used to flag if tooth log 1 is ready}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define BIT\_SQUIRT\_TOOTHLOG2READY 7  }\textcolor{comment}{//Used to flag if tooth log 2 is ready (Log is not currently used)}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{//Define masks for spark variable}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define BIT\_SPARK\_HLAUNCH         0  }\textcolor{comment}{//Hard Launch indicator}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define BIT\_SPARK\_SLAUNCH         1  }\textcolor{comment}{//Soft Launch indicator}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define BIT\_SPARK\_HRDLIM          2  }\textcolor{comment}{//Hard limiter indicator}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define BIT\_SPARK\_SFTLIM          3  }\textcolor{comment}{//Soft limiter indicator}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define BIT\_SPARK\_BOOSTCUT        4  }\textcolor{comment}{//Spark component of MAP based boost cut out}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define BIT\_SPARK\_ERROR           5  }\textcolor{comment}{// Error is detected}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define BIT\_SPARK\_IDLE            6  }\textcolor{comment}{// idle on}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define BIT\_SPARK\_SYNC            7  }\textcolor{comment}{// Whether engine has sync or not }}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define VALID\_MAP\_MAX 1022 }\textcolor{comment}{//The largest ADC value that is valid for the MAP sensor}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define VALID\_MAP\_MIN 2 }\textcolor{comment}{//The smallest ADC value that is valid for the MAP sensor}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define TOOTH\_LOG\_SIZE      128}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define TOOTH\_LOG\_BUFFER    256}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define INJ\_PAIRED          0}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define INJ\_SEMISEQUENTIAL  1}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define INJ\_BANKED          2}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define INJ\_SEQUENTIAL      3}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define IGN\_MODE\_WASTED     0}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define IGN\_MODE\_SINGLE     1}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define IGN\_MODE\_WASTEDCOP  2}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define IGN\_MODE\_SEQUENTIAL 3}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define SIZE\_BYTE   8}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define SIZE\_INT    16}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define EVEN\_FIRE         0}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define ODD\_FIRE          1}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{//Table sizes}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define CALIBRATION\_TABLE\_SIZE 512}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define CALIBRATION\_TEMPERATURE\_OFFSET 40 }\textcolor{comment}{// All temperature measurements are stored offset by 40 degrees. This is so we can use an unsigned byte (0-\/255) to represent temperature ranges from -\/40 to 215}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define OFFSET\_FUELTRIM 127 }\textcolor{comment}{//The fuel trim tables are offset by 128 to allow for -\/128 to +128 values}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define SERIAL\_BUFFER\_THRESHOLD 32 }\textcolor{comment}{// When the serial buffer is filled to greater than this threshold value, the serial processing operations will be performed more urgently in order to avoid it overflowing. Serial buffer is 64 bytes long, so the threshold is set at half this as a reasonable figure}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{//These are for the direct port manipulation of the injectors and coils}}
+\DoxyCodeLine{82 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_ae7ece79f602007192d2bb927d18e672b}{inj1\_pin\_port}};}
+\DoxyCodeLine{83 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a056f97e4ee2431d51c2ea4e7f102df89}{inj1\_pin\_mask}};}
+\DoxyCodeLine{84 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_ad36f29b6fe2725936f80b4e9732ac22b}{inj2\_pin\_port}};}
+\DoxyCodeLine{85 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a454f6463bacd634196e4fa3cd8c99885}{inj2\_pin\_mask}};}
+\DoxyCodeLine{86 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_afeb7f51bd87c82e7157f120178113f50}{inj3\_pin\_port}};}
+\DoxyCodeLine{87 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aed6c93c8750d1b389dd1b455b0bd323a}{inj3\_pin\_mask}};}
+\DoxyCodeLine{88 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_af448f04a20cb89c5d194916fb7567069}{inj4\_pin\_port}};}
+\DoxyCodeLine{89 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a4e8497ceeaf10d44eb4e2d681cda26a1}{inj4\_pin\_mask}};}
+\DoxyCodeLine{90 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_aab1ba07f89e6c472261fb52c0ee67889}{inj5\_pin\_port}};}
+\DoxyCodeLine{91 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a620a83fc00ba0c45cab3b82f948a3271}{inj5\_pin\_mask}};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_aee137d814c3ad458e13655914a2ba376}{ign1\_pin\_port}};}
+\DoxyCodeLine{94 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a6add0de02a099f93e1548fefb3ebf4ff}{ign1\_pin\_mask}};}
+\DoxyCodeLine{95 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_aedc8038dea7501348123067bc6e89bf8}{ign2\_pin\_port}};}
+\DoxyCodeLine{96 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_af3401ea4693c0ed55297fe811f76db48}{ign2\_pin\_mask}};}
+\DoxyCodeLine{97 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_ae8d90611dc442269bac40635c6ee9d93}{ign3\_pin\_port}};}
+\DoxyCodeLine{98 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a9dda381f788c2c768431423bfc465de4}{ign3\_pin\_mask}};}
+\DoxyCodeLine{99 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_afc46ae91e5a98df7f8b10df1c23326f4}{ign4\_pin\_port}};}
+\DoxyCodeLine{100 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aacb3000dadeac1c7a83894795c483e3f}{ign4\_pin\_mask}};}
+\DoxyCodeLine{101 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} *\mbox{\hyperlink{globals_8h_a8de938ec2182eec5407565d2624fe3a2}{ign5\_pin\_port}};}
+\DoxyCodeLine{102 \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a2a7a9f22457b788918264f58f42775c9}{ign5\_pin\_mask}};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{//The status struct contains the current values for all 'live' variables}}
+\DoxyCodeLine{105 \textcolor{comment}{//In current version this is 64 bytes}}
+\DoxyCodeLine{106 \textcolor{keyword}{struct }\mbox{\hyperlink{structstatuses}{statuses}} \{}
+\DoxyCodeLine{107   \textcolor{keyword}{volatile} \textcolor{keywordtype}{boolean} \mbox{\hyperlink{structstatuses_a3001b48d106c2fd54eabb8f38dd3a75b}{hasSync}};}
+\DoxyCodeLine{108   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_acc12a5cd6d86be6431e30b1c13e3c330}{RPM}};}
+\DoxyCodeLine{109   \textcolor{keywordtype}{long} \mbox{\hyperlink{structstatuses_a950c168f3abcc4e7be1eb8fcbbb229b1}{longRPM}};}
+\DoxyCodeLine{110   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a7e498b4fee93dece347e79296cc4cd24}{mapADC}};}
+\DoxyCodeLine{111   \textcolor{keywordtype}{long} \mbox{\hyperlink{structstatuses_adbf7841ecb42302848f968f2a1f9933e}{MAP}}; \textcolor{comment}{//Has to be a long for PID calcs (Boost control)}}
+\DoxyCodeLine{112   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a759bc5a4f3297f442490f4cc36f1cf32}{baro}}; \textcolor{comment}{//Barometric pressure is simply the inital MAP reading, taken before the engine is running}}
+\DoxyCodeLine{113   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_abe58b9ed61f7f5eb4dfd9ca2792b22dd}{TPS}}; \textcolor{comment}{//The current TPS reading (0\% -\/ 100\%)}}
+\DoxyCodeLine{114   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a222db3a9a8032a0b230d61756998e0c9}{TPSlast}}; \textcolor{comment}{//The previous TPS reading}}
+\DoxyCodeLine{115   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{structstatuses_a0daa0c42d07567ed4308da0277c22352}{TPS\_time}}; \textcolor{comment}{//The time the TPS sample was taken}}
+\DoxyCodeLine{116   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{structstatuses_a7087551f0a217efc7ba68c7e592be20c}{TPSlast\_time}}; \textcolor{comment}{//The time the previous TPS sample was taken}}
+\DoxyCodeLine{117   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_aa35126735ffcc878db31d94641627d9f}{tpsADC}}; \textcolor{comment}{//0-\/255 byte representation of the TPS}}
+\DoxyCodeLine{118   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_af31fc7e0d5831be31517d983bdd105c2}{tpsDOT}};}
+\DoxyCodeLine{119   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_ac5e1457b0f4510a70e6e77191351f2b8}{rpmDOT}};}
+\DoxyCodeLine{120   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a7b03d5829c0be6d5ea91c25cacb1d637}{VE}};}
+\DoxyCodeLine{121   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_af04d2a79786e75354112868d3aa4573c}{O2}};}
+\DoxyCodeLine{122   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a422f8dd982262c6c350f341f82e009b7}{O2\_2}};}
+\DoxyCodeLine{123   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a7a9f35075a213a363be285a3988a32da}{coolant}};}
+\DoxyCodeLine{124   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a8bcd9b49bd9ee12b63a4eb29ad9639d5}{cltADC}};}
+\DoxyCodeLine{125   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a3f886e4d095edd5bf5fe6fa90a5e80e4}{IAT}};}
+\DoxyCodeLine{126   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a1c58742468330847d4b3abab5ae65ef9}{iatADC}};}
+\DoxyCodeLine{127   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a7d8a66c38c70bdfe8013a8f859ab7adc}{batADC}};}
+\DoxyCodeLine{128   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a8b83de680404eeb2430d3998692fb411}{O2ADC}};}
+\DoxyCodeLine{129   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_ad00e73bbe740c796c70f8b701eeb90d3}{O2\_2ADC}};}
+\DoxyCodeLine{130   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_ad88511c6e07bcf4d5e0c9d67f11298f0}{dwell}};}
+\DoxyCodeLine{131   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a01a2a98b8225c2f64b68cd19364debb8}{dwellCorrection}}; \textcolor{comment}{//The amount of correction being applied to the dwell time.}}
+\DoxyCodeLine{132   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a8d7eae01c5f8284f889bf4c246a259da}{battery10}}; \textcolor{comment}{//The current BRV in volts (multiplied by 10. Eg 12.5V = 125)}}
+\DoxyCodeLine{133   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a156cffd88d89ec330f0629f026083802}{advance}};}
+\DoxyCodeLine{134   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a446d4083c348113f21724705f4b93404}{corrections}};}
+\DoxyCodeLine{135   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a22ce77ebafbfe6fdc1a53c93e7494f14}{TAEamount}}; \textcolor{comment}{//The amount of accleration enrichment currently being applied}}
+\DoxyCodeLine{136   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_aca73d8730684f0625e79777d61c9f60b}{egoCorrection}}; \textcolor{comment}{//The amount of closed loop AFR enrichment currently being applied}}
+\DoxyCodeLine{137   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a48a83016142263d94e3be18265e80c93}{wueCorrection}}; \textcolor{comment}{//The amount of warmup enrichment currently being applied}}
+\DoxyCodeLine{138   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a4951c58340caddad83e473cb274208d8}{batCorrection}}; \textcolor{comment}{//The amount of battery voltage enrichment currently being applied}}
+\DoxyCodeLine{139   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_ad42d7fc1c1e21ff741f58b7e04442484}{iatCorrection}}; \textcolor{comment}{//The amount of inlet air temperature adjustment currently being applied}}
+\DoxyCodeLine{140   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a145ef309764cd78e58fe7d2fce548841}{launchCorrection}}; \textcolor{comment}{//The amount of correction being applied if launch control is active}}
+\DoxyCodeLine{141   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_aac11d4acc049940066078367c504ff89}{afrTarget}};}
+\DoxyCodeLine{142   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a1517680af7abd19ace4a84a6d6c4039c}{idleDuty}};}
+\DoxyCodeLine{143   \textcolor{keywordtype}{bool} \mbox{\hyperlink{structstatuses_a62b76c01c564465bf631e595d4ba9fab}{fanOn}}; \textcolor{comment}{//Whether or not the fan is turned on}}
+\DoxyCodeLine{144   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a358199a32090f2127706a57f242c9246}{flex}}; \textcolor{comment}{//Ethanol reading (if enabled). 0 = No ethanol, 100 = pure ethanol. Eg E85 = 85. }}
+\DoxyCodeLine{145   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{structstatuses_a49c8be23c1917969fd070192f0677297}{TAEEndTime}}; \textcolor{comment}{//The target end time used whenever TAE is turned on}}
+\DoxyCodeLine{146   \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a849d723884d753a65c2f92d56624bd0e}{squirt}};}
+\DoxyCodeLine{147   \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a589da470c749b05fdf286d8011cc7d42}{spark}};}
+\DoxyCodeLine{148   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_ae50e9e51ed2ae836563352666065cb0b}{engine}};}
+\DoxyCodeLine{149   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a4b0034de3a0462c2fe42fbfdc0c24146}{PW1}}; \textcolor{comment}{//In uS}}
+\DoxyCodeLine{150   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_ab65f5fbc52da5a0a1a321e8ef24908d0}{PW2}}; \textcolor{comment}{//In uS}}
+\DoxyCodeLine{151   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a136508f4dbfcd333a88a7069f864db03}{PW3}}; \textcolor{comment}{//In uS}}
+\DoxyCodeLine{152   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a33d321514360ecb5233fcb6cf301d146}{PW4}}; \textcolor{comment}{//In uS}}
+\DoxyCodeLine{153   \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a8e1171e36b9918d61de526e01f2d6db4}{runSecs}}; \textcolor{comment}{//Counter of seconds since cranking commenced (overflows at 255 obviously)}}
+\DoxyCodeLine{154   \textcolor{keyword}{volatile} \textcolor{keywordtype}{byte} \mbox{\hyperlink{structstatuses_a739c35982fbfc585684cb2daa53d1575}{secl}}; \textcolor{comment}{//Continous }}
+\DoxyCodeLine{155   \textcolor{keyword}{volatile} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_afeb67d1b61c1a12dc414da24c44b54bd}{loopsPerSecond}};}
+\DoxyCodeLine{156   \textcolor{keywordtype}{boolean} \mbox{\hyperlink{structstatuses_aaaab05f79b1c607cd8af18d7065c4aea}{launchingSoft}}; \textcolor{comment}{//True when in launch control soft limit mode}}
+\DoxyCodeLine{157   \textcolor{keywordtype}{boolean} \mbox{\hyperlink{structstatuses_a6585041a1b8baa660146957b2527ec9a}{launchingHard}}; \textcolor{comment}{//True when in launch control hard limit mode}}
+\DoxyCodeLine{158   \textcolor{keywordtype}{int} \mbox{\hyperlink{structstatuses_a5a446b61187ef3dc507591dddb9c4583}{freeRAM}};}
+\DoxyCodeLine{159   }
+\DoxyCodeLine{160   \textcolor{comment}{//Helpful bitwise operations:}}
+\DoxyCodeLine{161   \textcolor{comment}{//Useful reference: http://playground.arduino.cc/Code/BitMath}}
+\DoxyCodeLine{162   \textcolor{comment}{// y = (x >> n) \& 1;    // n=0..15.  stores nth bit of x in y.  y becomes 0 or 1.}}
+\DoxyCodeLine{163   \textcolor{comment}{// x \&= \string~(1 << n);      // forces nth bit of x to be 0.  all other bits left alone.}}
+\DoxyCodeLine{164   \textcolor{comment}{// x |= (1 << n);       // forces nth bit of x to be 1.  all other bits left alone.}}
+\DoxyCodeLine{165   }
+\DoxyCodeLine{166 \};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{//Page 1 of the config -\/ See the ini file for further reference}}
+\DoxyCodeLine{170 \textcolor{comment}{//This mostly covers off variables that are required for fuel}}
+\DoxyCodeLine{171 \textcolor{keyword}{struct }\mbox{\hyperlink{structconfig1}{config1}} \{}
+\DoxyCodeLine{172   }
+\DoxyCodeLine{173   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_aa9235b82deb0e9de2648be02fe7f2541}{unused1}}; \textcolor{comment}{//Cold cranking pulsewidth modifier. This is added to the fuel pulsewidth when cranking under a certain temp threshold (ms)}}
+\DoxyCodeLine{174   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a08eae611981b723177f5523e9c1fc3a0}{unused2}}; \textcolor{comment}{//Warm cranking pulsewidth modifier. This is added to the fuel pulsewidth when cranking (ms)}}
+\DoxyCodeLine{175   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ab9f56f47db94a93dc6374a9df8784d46}{asePct}}; \textcolor{comment}{//Afterstart enrichment (\%)}}
+\DoxyCodeLine{176   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a14850521c94e4f342e881ed21e3f8b7c}{aseCount}}; \textcolor{comment}{//Afterstart enrichment cycles. This is the number of ignition cycles that the afterstart enrichment \% lasts for}}
+\DoxyCodeLine{177   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a4f96987e15bf7a697831b2b7e0aec6ae}{wueValues}}[10]; \textcolor{comment}{//Warm up enrichment array (10 bytes)}}
+\DoxyCodeLine{178   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a7086198c4ea0e4dfd7e213eeca509b85}{crankingPct}}; \textcolor{comment}{//Cranking enrichment}}
+\DoxyCodeLine{179   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a517eb75d3b1cd8ece4ea5487f22ca198}{pinMapping}}; \textcolor{comment}{// The board / ping mapping to be used}}
+\DoxyCodeLine{180   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a091a0c651795834528293137b4795647}{tachoPin}} : 6; \textcolor{comment}{//Custom pin setting for tacho output}}
+\DoxyCodeLine{181   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a600280d59d945641bfcbee2b1f2a52ba}{unused16}} : 2;}
+\DoxyCodeLine{182   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a865262fa4f87ebdaf88f1b09522dfb6b}{tdePct}}; \textcolor{comment}{// TPS decelleration (\%)}}
+\DoxyCodeLine{183   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a0a398c96e7fba107462637af8c0276ab}{taeColdA}};}
+\DoxyCodeLine{184   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_aebf8e4bac12ffcadfdf2aa9c07278a99}{tpsThresh}};}
+\DoxyCodeLine{185   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_afcece7da3794e3e512c2d4d5e910641a}{taeTime}};}
+\DoxyCodeLine{186   }
+\DoxyCodeLine{187   \textcolor{comment}{//Display config bits}}
+\DoxyCodeLine{188   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a62ff4ed846ce41896611087d1f2f7943}{displayType}} : 3;}
+\DoxyCodeLine{189   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a7810e3d29c04dc8f81bb57c101a5c0ca}{display1}} : 3;}
+\DoxyCodeLine{190   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a691718462c67ad11f782a1473e781943}{display2}} : 2;}
+\DoxyCodeLine{191   }
+\DoxyCodeLine{192   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_af34033e380ae422079d955aa7f97ef66}{display3}} : 3;}
+\DoxyCodeLine{193   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a279168bb7f13b90c213f7c9e5e0a938b}{display4}} : 2;}
+\DoxyCodeLine{194   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ab4cc4de6715ba801c0ac0eeb77e9b87b}{display5}} : 3;}
+\DoxyCodeLine{195   }
+\DoxyCodeLine{196   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a9fef176fbfe6ef369c777e54d81df189}{displayB1}} : 4;}
+\DoxyCodeLine{197   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a341faef19dc56f61d20d657b0531c748}{displayB2}} : 4;}
+\DoxyCodeLine{198   }
+\DoxyCodeLine{199   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a63d651d9ccbf7e8b753f7ba9127d7f0e}{reqFuel}};}
+\DoxyCodeLine{200   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_af9f6b40d135170d8ea498f6f01185512}{divider}};}
+\DoxyCodeLine{201   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_acc467ee1e1176794f2a314f7d4ea2343}{injTiming}} : 1;}
+\DoxyCodeLine{202   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a392153780901e402fb040c563a53495f}{multiplyMAP}} : 1;}
+\DoxyCodeLine{203   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a601dd07fe8d3a45388d882f732dd2af2}{includeAFR}} : 1;}
+\DoxyCodeLine{204   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_adfb66e30428679b120f512738fb233b8}{unused26}} : 5;}
+\DoxyCodeLine{205   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a44abb23441603f68e5889a333968d457}{injOpen}}; \textcolor{comment}{//Injector opening time (ms * 10)}}
+\DoxyCodeLine{206   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_a4090ad245736eb05cfb1bd6e6abfaf1a}{inj1Ang}};}
+\DoxyCodeLine{207   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_a8c74f52fcfe9b773f4cfc55bae0f66bc}{inj2Ang}}; }
+\DoxyCodeLine{208   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_a17cfa1a7932c1d63326d1ac825d5cc2f}{inj3Ang}}; }
+\DoxyCodeLine{209   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_a3095d7f718fdb1245f0ac994e587aaf2}{inj4Ang}}; }
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211   \textcolor{comment}{//config1 in ini}}
+\DoxyCodeLine{212   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a56dca0ac9824290597b01fae6a309545}{mapSample}} : 2;}
+\DoxyCodeLine{213   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a07e47b6480a7634d24578d41ed5a3359}{strokes}} : 1;}
+\DoxyCodeLine{214   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a184d147bea6529c847562e7685c61daf}{injType}} : 1;}
+\DoxyCodeLine{215   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a3aa3e51c4e98095907641ad462239e30}{nCylinders}} : 4; \textcolor{comment}{//Number of cylinders}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217   \textcolor{comment}{//config2 in ini  }}
+\DoxyCodeLine{218   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_afd6a456cdeff7a8acc4ef3c47d09a69f}{cltType1}} : 2;}
+\DoxyCodeLine{219   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_aca91cb139e875c05e056e6a0ac49322e}{matType1}} : 2;}
+\DoxyCodeLine{220   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a04872691e60a84a54b61c7c85bf6ad52}{nInjectors}} : 4; \textcolor{comment}{//Number of injectors}}
+\DoxyCodeLine{221   }
+\DoxyCodeLine{222 }
+\DoxyCodeLine{223   \textcolor{comment}{//config3 in ini}}
+\DoxyCodeLine{224   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_af2f7d56f4138fadcdeafff982f443eb2}{engineType}} : 1; }
+\DoxyCodeLine{225   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a594be0f312f34991ba1f84a3983b0cac}{flexEnabled}} : 1;}
+\DoxyCodeLine{226   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a7668abf58f3778a1cb6e6a47057745ae}{algorithm}} : 1; \textcolor{comment}{//"{}Speed Density"{}, "{}Alpha-\/N"{}}}
+\DoxyCodeLine{227   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ada860aabb93460b025099d0743f026b2}{baroCorr}} : 1;}
+\DoxyCodeLine{228   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ae690dceaaff0e1bf75235fcba3c069ed}{injLayout}} : 2;}
+\DoxyCodeLine{229   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ac06b7e5e61fdd99726f0315eddd9e1e6}{canEnable}} : 1; \textcolor{comment}{//is can interface enabled}}
+\DoxyCodeLine{230   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a96220d8522a2bf0da7e6c8c0b2c0d0aa}{unused2\_38h}} : 1;}
+\DoxyCodeLine{231   }
+\DoxyCodeLine{232   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a1b7b6ef7f29978ec89d873f4c6a959a6}{primePulse}};}
+\DoxyCodeLine{233   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a625702c6a8f05f7289d7e60afdd637d8}{dutyLim}};}
+\DoxyCodeLine{234   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a929838dd5a35c61673c4ff9547e29d7b}{unused41}};}
+\DoxyCodeLine{235   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_aa32880f2e3da4061797ff45cfee2f740}{egoSwitch}};}
+\DoxyCodeLine{236   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ad8001784f465b74d72c82ca6f6da8d61}{taeColdM}};}
+\DoxyCodeLine{237   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ac421d4e38ad937a61cfa11495dba7c3d}{tpsMin}};}
+\DoxyCodeLine{238   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ae14b5891a64ca451c44919296b9f892a}{tpsMax}};}
+\DoxyCodeLine{239   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ab464dc5a243f76599c100be6b4b64a18}{mapMin}};}
+\DoxyCodeLine{240   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_a62bde0198cf812552b2deb29ddea99de}{mapMax}};}
+\DoxyCodeLine{241   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_af09da4ca41e00cffd62f79a1675721d4}{fpPrime}}; \textcolor{comment}{//Time (In seconds) that the fuel pump should be primed for on power up}}
+\DoxyCodeLine{242   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ad1ed84397cdd139e4731d7fb5f66a5d1}{stoich}};}
+\DoxyCodeLine{243   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_ae5762065188d3e809e10add944a6f6b0}{oddfire2}}; \textcolor{comment}{//The ATDC angle of channel 2 for oddfire}}
+\DoxyCodeLine{244   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_a36274787d886c7ce47a1f17e4118474f}{oddfire3}}; \textcolor{comment}{//The ATDC angle of channel 3 for oddfire}}
+\DoxyCodeLine{245   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig1_a537bd34deba45c37b915dcab62a0c1ef}{oddfire4}}; \textcolor{comment}{//The ATDC angle of channel 4 for oddfire}}
+\DoxyCodeLine{246   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ab2180cfaf60d851ccc52bd26dd563957}{unused57}};}
+\DoxyCodeLine{247   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a648369aa94345bbb2a228b058c4f6b15}{unused58}};}
+\DoxyCodeLine{248   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a17960cea6952abf06647f1f648539a72}{unused59}};}
+\DoxyCodeLine{249   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_ad8ac1496632d1c285a67fa0c3a95cf7c}{unused60}};}
+\DoxyCodeLine{250   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a61ce3f463187ee20583390088b8ec223}{unused61}};}
+\DoxyCodeLine{251   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_aaa01fd2c93fe6cf49f29c20158df3da1}{unused62}};}
+\DoxyCodeLine{252   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig1_a11c8a28d37ac69ee327345083e2e5080}{unused63}};}
+\DoxyCodeLine{253   }
+\DoxyCodeLine{254 \};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256 \textcolor{comment}{//Page 2 of the config -\/ See the ini file for further reference}}
+\DoxyCodeLine{257 \textcolor{comment}{//This mostly covers off variables that are required for ignition}}
+\DoxyCodeLine{258 \textcolor{keyword}{struct }\mbox{\hyperlink{structconfig2}{config2}} \{}
+\DoxyCodeLine{259   }
+\DoxyCodeLine{260   \textcolor{keywordtype}{int} \mbox{\hyperlink{structconfig2_a58812a821ee877ca9cf4cb2f433d2b05}{triggerAngle}};}
+\DoxyCodeLine{261   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a9d4f5247c9534da51ec8ada373b1f931}{FixAng}};}
+\DoxyCodeLine{262   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a202c866ae966894e8d2a70ae66046777}{CrankAng}};}
+\DoxyCodeLine{263   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a519abbc9d7fdd01b9b108870596dca65}{TrigAngMul}}; \textcolor{comment}{//Multiplier for non evenly divisible tooth counts. }}
+\DoxyCodeLine{264   }
+\DoxyCodeLine{265   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a033feb3ec56919af56f763e40dd3dad7}{TrigEdge}} : 1;}
+\DoxyCodeLine{266   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_adb4738a15e205281f413d164ed2c5e8d}{TrigSpeed}} : 1;}
+\DoxyCodeLine{267   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a0c0829853ab71e882f0e57cc13712003}{IgInv}} : 1;}
+\DoxyCodeLine{268   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a7170070cff5ed15f2cbd4d0894184d8a}{oddfire}} : 1;}
+\DoxyCodeLine{269   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a747cd8fa509597888a84ffb1b563e3cd}{TrigPattern}} : 4;}
+\DoxyCodeLine{270   }
+\DoxyCodeLine{271   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a67a07c39c55d3363218907d90b961322}{unused4\_6}};}
+\DoxyCodeLine{272   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a3bfe8cc03ec08b2ae1c032c27d1455fa}{unused4\_7}};}
+\DoxyCodeLine{273   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_af0ae69d4be5d0b86b3f1624becafc947}{IdleAdvRPM}};}
+\DoxyCodeLine{274   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_aaa6e2770328fa2ade7d9f087b200900d}{IdleAdvCLT}}; \textcolor{comment}{//The temperature below which the idle is advanced}}
+\DoxyCodeLine{275   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a00a52a0f7f64385c9389895504a6dedb}{IdleDelayTime}};}
+\DoxyCodeLine{276   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a7ca17407b44c2c8937b3c10e5e6855f4}{StgCycles}}; \textcolor{comment}{//The number of initial cycles before the ignition should fire when first cranking}}
+\DoxyCodeLine{277   }
+\DoxyCodeLine{278   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_aaf23b44104a5c7ce7873c4aa79affbcc}{dwellCont}} : 1; \textcolor{comment}{//Fixed duty dwell control}}
+\DoxyCodeLine{279   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_af282a1c7eef4a6c450e788e575d3ee56}{useDwellLim}} : 1; \textcolor{comment}{//Whether the dwell limiter is off or on}}
+\DoxyCodeLine{280   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a390dae5dd1e5697d9b5ced2160e7f253}{sparkMode}} : 2; \textcolor{comment}{//Spark output mode (Eg Wasted spark, single channel or Wasted COP)}}
+\DoxyCodeLine{281   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a2a57959fa68a521afb1b2baaf5113cd1}{dfcoEnabled}} : 1; \textcolor{comment}{//Whether or not DFCO is turned on}}
+\DoxyCodeLine{282   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a8d6eed419a75085e9562f9f59ab8628d}{triggerFilter}} : 2; \textcolor{comment}{//The mode of trigger filter being used (0=Off, 1=Light (Not currently used), 2=Normal, 3=Aggressive)}}
+\DoxyCodeLine{283   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_abf3cee75edf98d99136c51d89364f149}{ignCranklock}} : 1; \textcolor{comment}{//Whether or not the ignition timing during cranking is locked to a CAS pulse. Only currently valid for Basic distributor and 4G63. }}
+\DoxyCodeLine{284   }
+\DoxyCodeLine{285   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a04d42b4fdef8c0c8a94fd8d3d31766a5}{dwellCrank}}; \textcolor{comment}{//Dwell time whilst cranking}}
+\DoxyCodeLine{286   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_abc9c43eb18096d4ae93e28f1618c4f1f}{dwellRun}}; \textcolor{comment}{//Dwell time whilst running }}
+\DoxyCodeLine{287   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a6f58bd95db1bf23352228e45201b8644}{triggerTeeth}}; \textcolor{comment}{//The full count of teeth on the trigger wheel if there were no gaps}}
+\DoxyCodeLine{288   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a5f6d8fbf4366fe3aaed050f33ff26610}{triggerMissingTeeth}}; \textcolor{comment}{//The size of the tooth gap (ie number of missing teeth)}}
+\DoxyCodeLine{289   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a3b35d159b9f217d1cff5e01fda135202}{crankRPM}}; \textcolor{comment}{//RPM below which the engine is considered to be cranking}}
+\DoxyCodeLine{290   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a396eef5614d3c73eb9babf1f7b15a5ee}{floodClear}}; \textcolor{comment}{//TPS value that triggers flood clear mode (No fuel whilst cranking)}}
+\DoxyCodeLine{291   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a16aa365426fd119a1c35be7a7209f956}{SoftRevLim}}; \textcolor{comment}{//Soft rev limit (RPM/100)}}
+\DoxyCodeLine{292   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_ab8e226d4ef364578b835025b624f1945}{SoftLimRetard}}; \textcolor{comment}{//Amount soft limit retards (degrees)}}
+\DoxyCodeLine{293   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a141cb4f147821e04f545a1bf7e2273fd}{SoftLimMax}}; \textcolor{comment}{//Time the soft limit can run}}
+\DoxyCodeLine{294   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a7f70993045aa946e3238a6445542969f}{HardRevLim}}; \textcolor{comment}{//Hard rev limit (RPM/100)}}
+\DoxyCodeLine{295   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a9856cd65377160bd1f02d50710ef0c5f}{taeBins}}[4]; \textcolor{comment}{//TPS based acceleration enrichment bins (\%/s)}}
+\DoxyCodeLine{296   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_ab04c0e17212895f54ea5f3fbaa685ddc}{taeValues}}[4]; \textcolor{comment}{//TPS based acceleration enrichment rates (\% to add)}}
+\DoxyCodeLine{297   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a0cc0e8bae7dbc2f1d7522acfce7dde6b}{wueBins}}[10]; \textcolor{comment}{//Warmup Enrichment bins (Values are in configTable1)}}
+\DoxyCodeLine{298   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a6389dd545d9eece7e6cf688d52276729}{dwellLimit}};}
+\DoxyCodeLine{299   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_ad0baba23f09fab7d2701690d67ed826b}{dwellCorrectionValues}}[6]; \textcolor{comment}{//Correction table for dwell vs battery voltage}}
+\DoxyCodeLine{300   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_ae64778f06c5cafdfbd14bce0989d7379}{iatRetBins}}[6]; \textcolor{comment}{// Inlet Air Temp timing retard curve bins}}
+\DoxyCodeLine{301   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_acedfc38b6cf603b7e6715de7ae5f3385}{iatRetValues}}[6]; \textcolor{comment}{// Inlet Air Temp timing retard curve values}}
+\DoxyCodeLine{302   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_a76a67f89fa08b93397eaab803b628d45}{dfcoRPM}}; \textcolor{comment}{//RPM at which DFCO turns off/on at}}
+\DoxyCodeLine{303   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_ab9cf8047d5a1c93450c4e40728bdb09e}{dfcoHyster}}; \textcolor{comment}{//Hysteris RPM for DFCO}}
+\DoxyCodeLine{304   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_aaff7a351131533e319791c64fc451567}{dfcoTPSThresh}}; \textcolor{comment}{//TPS must be below this figure for DFCO to engage}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_aa77ae864a2b09bd75c14b3fd5ed575b3}{ignBypassEnabled}} : 1; \textcolor{comment}{//Whether or not the ignition bypass is enabled}}
+\DoxyCodeLine{307   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_aee548a592e25ed3086a7440533b17d93}{ignBypassPin}} : 6; \textcolor{comment}{//Pin the ignition bypass is activated on}}
+\DoxyCodeLine{308   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig2_acb2d68a2d5016b128711f83b26d876a5}{ignBypassHiLo}} : 1; \textcolor{comment}{//Whether this should be active high or low. }}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310   }
+\DoxyCodeLine{311 \};}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{comment}{//Page 3 of the config -\/ See the ini file for further reference}}
+\DoxyCodeLine{314 \textcolor{comment}{//This mostly covers off variables that are required for AFR targets and closed loop}}
+\DoxyCodeLine{315 \textcolor{keyword}{struct }\mbox{\hyperlink{structconfig3}{config3}} \{}
+\DoxyCodeLine{316   }
+\DoxyCodeLine{317   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a0f94c94001e2873c49606513eff60ffa}{egoAlgorithm}} : 2;}
+\DoxyCodeLine{318   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a5d8a90426aec17209dda24eb6a836b8d}{egoType}} : 2;}
+\DoxyCodeLine{319   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a2502ba9460a69fefdb6aefb935c8d346}{boostEnabled}} : 1;}
+\DoxyCodeLine{320   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a934f85adbbde31576e0afa10d93321cb}{vvtEnabled}} : 1;}
+\DoxyCodeLine{321   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a90d1037366adcfa68ec429fda1cba391}{boostCutType}} : 2;}
+\DoxyCodeLine{322   }
+\DoxyCodeLine{323   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a00b31890d2e755a8321062c437c64c5e}{egoKP}};}
+\DoxyCodeLine{324   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a8bc068fc370281b5b3fa48a236c846ce}{egoKI}};}
+\DoxyCodeLine{325   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a71f65c679ea1e33f943a256d3a47160c}{egoKD}};}
+\DoxyCodeLine{326   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a3624f581d8c5e3c8ff0fd4299ef8dfa7}{egoTemp}}; \textcolor{comment}{//The temperature above which closed loop functions}}
+\DoxyCodeLine{327   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a7dd7a2d6f6448abbd89f9239d2adbfe8}{egoCount}}; \textcolor{comment}{//The number of ignition cylces per step}}
+\DoxyCodeLine{328   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a4bbc5a620ea57d63569e731ba466a576}{egoDelta}}; \textcolor{comment}{//The step size (In \%) when using simple algorithm}}
+\DoxyCodeLine{329   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_aa5f6c22f79678f68724deb2e527efc71}{egoLimit}}; \textcolor{comment}{//Maximum amount the closed loop will vary the fueling}}
+\DoxyCodeLine{330   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_ac60763516c9707906499511ffd894d33}{ego\_min}}; \textcolor{comment}{//AFR must be above this for closed loop to function}}
+\DoxyCodeLine{331   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a6f928d6dab92694dac8a96596f66a17f}{ego\_max}}; \textcolor{comment}{//AFR must be below this for closed loop to function}}
+\DoxyCodeLine{332   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a76d81d7f02fbac5ffd0f3a5b8222323f}{ego\_sdelay}}; \textcolor{comment}{//Time in seconds after engine starts that closed loop becomes available}}
+\DoxyCodeLine{333   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a75019c3f1ab3018f2d739e36214739f8}{egoRPM}}; \textcolor{comment}{//RPM must be above this for closed loop to function}}
+\DoxyCodeLine{334   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a39d0e0dcb4023830b6cbb9e2bb360e33}{egoTPSMax}}; \textcolor{comment}{//TPS must be below this for closed loop to function}}
+\DoxyCodeLine{335   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a1aae6347e4dfc7d2a85738dec8c914b2}{egoLoadMax}}; \textcolor{comment}{//Load (TPS or MAP) must be below this for closed loop to function}}
+\DoxyCodeLine{336   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a05d530d8a3ff1c9b058df81c50502264}{egoLoadMin}}; \textcolor{comment}{//Load (TPS or MAP) must be above this for closed loop to function}}
+\DoxyCodeLine{337   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a2ae206b33b881a7d1b73b5687aa44fd0}{voltageCorrectionBins}}[6]; \textcolor{comment}{//X axis bins for voltage correction tables}}
+\DoxyCodeLine{338   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a43072b36845daccfaa097e8a638629ae}{injVoltageCorrectionValues}}[6]; \textcolor{comment}{//Correction table for injector PW vs battery voltage}}
+\DoxyCodeLine{339   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_ac8181f7462013c786b61d4f2f6599241}{airDenBins}}[9];}
+\DoxyCodeLine{340   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a31ae3b77ffb8828a5299936c13c903e7}{airDenRates}}[9];}
+\DoxyCodeLine{341   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a65e70eb2f5eb6f9bef96cbd42cb7807e}{boostFreq}}; \textcolor{comment}{//Frequency of the boost PWM valve}}
+\DoxyCodeLine{342   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a743c903a38ea91fe877d45a2dc80bf13}{vvtFreq}}; \textcolor{comment}{//Frequency of the vvt PWM valve}}
+\DoxyCodeLine{343   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_ab49ca51f8706a58819b5ad7438d00caf}{idleFreq}};}
+\DoxyCodeLine{344   }
+\DoxyCodeLine{345   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a597cf18148e6fc3e9e204d984a9e8bbb}{launchPin}} : 6;}
+\DoxyCodeLine{346   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_ae06db0fe7f8e89c7d0205ad8c7cc74da}{launchEnabled}} : 1;}
+\DoxyCodeLine{347   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a5b033fbe401c45a8bdd4d35a50ac7abd}{launchHiLo}} : 1;}
+\DoxyCodeLine{348   }
+\DoxyCodeLine{349   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a58420beb08dafdfbdc067e17929d870c}{lnchSoftLim}};}
+\DoxyCodeLine{350   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a7736ea17b7c06c63d36d67ebe648f97b}{lnchRetard}};}
+\DoxyCodeLine{351   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_ad0de3ec5a794901466663b3e0567fd57}{lnchHardLim}};}
+\DoxyCodeLine{352   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a0aeccb5154d917b6be4cee4e5aa2aa9c}{lnchFuelAdd}};}
+\DoxyCodeLine{353 }
+\DoxyCodeLine{354   \textcolor{comment}{//PID values for idle needed to go here as out of room in the idle page}}
+\DoxyCodeLine{355   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a4609e566cd7cf01dd6e7e277805f7233}{idleKP}};}
+\DoxyCodeLine{356   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a50e30d2e1d751358a7bffc7e4b13f019}{idleKI}};}
+\DoxyCodeLine{357   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a317addbe35287d56fcc9eb3ac5e3cd20}{idleKD}};}
+\DoxyCodeLine{358   }
+\DoxyCodeLine{359   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a66f776c5a05b65a6a6cb1920fc5bbfb5}{boostLimit}}; \textcolor{comment}{//Is divided by 2, allowing kPa values up to 511}}
+\DoxyCodeLine{360   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a660ad41e07f05db07eedf1637b8315eb}{boostKP}};}
+\DoxyCodeLine{361   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a7624aaa1b606b267ae1a79dbb8d51409}{boostKI}};}
+\DoxyCodeLine{362   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a2477d164caa96a7aa81f465928331d74}{boostKD}};}
+\DoxyCodeLine{363   }
+\DoxyCodeLine{364   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_ad1bf9068740303c6b58442097a1755f6}{lnchPullRes}} : 2;}
+\DoxyCodeLine{365   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a1815c59498c6548547d9d969da34e826}{fuelTrimEnabled}} : 1;}
+\DoxyCodeLine{366   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_afa5a81b30c4de9860e32d54d4f9358db}{unused60}} : 5;}
+\DoxyCodeLine{367   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a4809b1b5641bd571713dba71ad614f21}{unused61}};}
+\DoxyCodeLine{368   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a7499933fbf68a240973e4ff83897144c}{unused62}};}
+\DoxyCodeLine{369   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig3_a9494291afd0fac8ddd9b9ce14c74f9da}{unused63}};}
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371   }
+\DoxyCodeLine{372 \};}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{comment}{//Page 4 of the config mostly deals with idle control}}
+\DoxyCodeLine{376 \textcolor{comment}{//See ini file for further info (Config Page 7 in the ini)}}
+\DoxyCodeLine{377 \textcolor{keyword}{struct }\mbox{\hyperlink{structconfig4}{config4}} \{}
+\DoxyCodeLine{378   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_abfae47dd617c2ba13c4c13c9b68cc40a}{iacCLValues}}[10]; \textcolor{comment}{//Closed loop target RPM value}}
+\DoxyCodeLine{379   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_ae5f4f42d8285a56b4755fc8d33b93e9e}{iacOLStepVal}}[10]; \textcolor{comment}{//Open loop step values for stepper motors}}
+\DoxyCodeLine{380   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a90a8cbf841b8e954324cb41d0ef1a412}{iacOLPWMVal}}[10]; \textcolor{comment}{//Open loop duty values for PMWM valves}}
+\DoxyCodeLine{381   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_ae65894184cbf4cb7db1f00e5f127f622}{iacBins}}[10]; \textcolor{comment}{//Temperature Bins for the above 3 curves}}
+\DoxyCodeLine{382   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a1b850321a6310a0de340f593ae281bbc}{iacCrankSteps}}[4]; \textcolor{comment}{//Steps to use when cranking (Stepper motor)}}
+\DoxyCodeLine{383   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a37e78f70401d7b056a0eae690355b4b3}{iacCrankDuty}}[4]; \textcolor{comment}{//Duty cycle to use on PWM valves when cranking}}
+\DoxyCodeLine{384   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a061a2093d8b8ffd15119685a02c40afa}{iacCrankBins}}[4]; \textcolor{comment}{//Temperature Bins for the above 2 curves}}
+\DoxyCodeLine{385   }
+\DoxyCodeLine{386   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_ac84c98b40975ee4d3225bfe0ef0b4d18}{iacAlgorithm}} : 3; \textcolor{comment}{//Valid values are: "{}None"{}, "{}On/Off"{}, "{}PWM"{}, "{}PWM Closed Loop"{}, "{}Stepper"{}, "{}Stepper Closed Loop"{}}}
+\DoxyCodeLine{387   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a950179a9d1810594993f133cc766e45e}{iacStepTime}} : 3; \textcolor{comment}{//How long to pulse the stepper for to ensure the step completes (ms)}}
+\DoxyCodeLine{388   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_afad7bbdb5f82ec7668b50e8967c12b3f}{iacChannels}} : 1; \textcolor{comment}{//How many outputs to use in PWM mode (0 = 1 channel, 1 = 2 channels)}}
+\DoxyCodeLine{389   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a24aca248550483b6a6e8fc515d9b0aac}{iacPWMdir}} : 1; \textcolor{comment}{//Directino of the PWM valve. 0 = Normal = Higher RPM with more duty. 1 = Reverse = Lower RPM with more duty}}
+\DoxyCodeLine{390   }
+\DoxyCodeLine{391   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a59aa2894ac7c6d52ad6d8519d62387e4}{iacFastTemp}}; \textcolor{comment}{//Fast idle temp when using a simple on/off valve}}
+\DoxyCodeLine{392   }
+\DoxyCodeLine{393   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a862bdde33769fdeb48e6cf8e5c1bbcec}{iacStepHome}}; \textcolor{comment}{//When using a stepper motor, the number of steps to be taken on startup to home the motor}}
+\DoxyCodeLine{394   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a283614f36b94ac8faca28b641fc8cc40}{iacStepHyster}}; \textcolor{comment}{//Hysteresis temperature (*10). Eg 2.2C = 22}}
+\DoxyCodeLine{395   }
+\DoxyCodeLine{396   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a6aa6ad5c3e0cb4edf2ab024551cd0cc6}{fanInv}} : 1;        \textcolor{comment}{// Fan output inversion bit}}
+\DoxyCodeLine{397   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a5e1f30cd14b664df462a5dc9efd2a206}{fanEnable}} : 2;     \textcolor{comment}{// Fan enable bit. 0=Off, 1=On/Off, 2=PWM}}
+\DoxyCodeLine{398   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a4c0e52f40c554e59734b277919e0eed4}{unused}} : 5;}
+\DoxyCodeLine{399   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a469c4de2f1c019d92c5d65b2ae131af9}{fanSP}};             \textcolor{comment}{// Cooling fan start temperature}}
+\DoxyCodeLine{400   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a6dd4fe59db04c2ccbb03359bd1c02e40}{fanHyster}};         \textcolor{comment}{// Fan hysteresis }}
+\DoxyCodeLine{401   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_ab09acd76936954cebacb88ff62063313}{fanFreq}};           \textcolor{comment}{// Fan PWM frequency}}
+\DoxyCodeLine{402   \textcolor{keywordtype}{byte} \mbox{\hyperlink{structconfig4_a3732640448950fc8bc7a238a0798ea3a}{fanPWMBins}}[4];     \textcolor{comment}{//Temperature Bins for the PWM fan control}}
+\DoxyCodeLine{403 \};}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a8ea43fd1f04c488f5322147c51219b9f}{pinInjector1}}; \textcolor{comment}{//Output pin injector 1}}
+\DoxyCodeLine{406 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a561165a765cfbf61d8b3e8d8bf134f3e}{pinInjector2}}; \textcolor{comment}{//Output pin injector 2}}
+\DoxyCodeLine{407 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a533c314b0e28e2abb6a6b2d91305e9da}{pinInjector3}}; \textcolor{comment}{//Output pin injector 3 is on}}
+\DoxyCodeLine{408 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_af6bd1083e2f273177d4cc9826c34ff70}{pinInjector4}}; \textcolor{comment}{//Output pin injector 4 is on}}
+\DoxyCodeLine{409 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a9ce7656fd744c84b32c61f40bcdfe1d5}{pinInjector5}}; \textcolor{comment}{//Output pin injector 5 NOT USED YET}}
+\DoxyCodeLine{410 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a8030ba64a9de06a88410ab8d84d8903a}{pinInjector6}}; \textcolor{comment}{//Placeholder only -\/ NOT USED}}
+\DoxyCodeLine{411 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_acc3d304a57b51f9451e3d5016fcc26f7}{pinInjector7}}; \textcolor{comment}{//Placeholder only -\/ NOT USED}}
+\DoxyCodeLine{412 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_acba371ef305cc37dfc0187e1e84dab22}{pinInjector8}}; \textcolor{comment}{//Placeholder only -\/ NOT USED}}
+\DoxyCodeLine{413 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a8a6e1f6fba2f0b2b47703e027143d4ec}{pinCoil1}}; \textcolor{comment}{//Pin for coil 1}}
+\DoxyCodeLine{414 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aeb511e6eea8a635fd37b04bde9f45789}{pinCoil2}}; \textcolor{comment}{//Pin for coil 2}}
+\DoxyCodeLine{415 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a703aca2a766f599405de81dea21e5ef1}{pinCoil3}}; \textcolor{comment}{//Pin for coil 3}}
+\DoxyCodeLine{416 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a15569dd7b2eb96e1539e34ea9b3c346b}{pinCoil4}}; \textcolor{comment}{//Pin for coil 4}}
+\DoxyCodeLine{417 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a5e324a1731df2076ac7800527e53831e}{pinCoil5}}; \textcolor{comment}{//Pin for coil 5}}
+\DoxyCodeLine{418 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_acaedeb3e4150080abef8b8bfc56c47be}{pinCoil6}}; \textcolor{comment}{//Pin for coil 6}}
+\DoxyCodeLine{419 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_af9a94b45efb540df74f1f523522bf531}{pinCoil7}}; \textcolor{comment}{//Pin for coil 7}}
+\DoxyCodeLine{420 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a75d2c2c0d61e2e9f9bbcca4cd62bc871}{pinCoil8}}; \textcolor{comment}{//Pin for coil 8}}
+\DoxyCodeLine{421 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a7f4858230128aedeb4be4f34058a8c58}{pinTrigger}}; \textcolor{comment}{//The CAS pin}}
+\DoxyCodeLine{422 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a18a8717fbf36f4169602422e5ab63ef9}{pinTrigger2}}; \textcolor{comment}{//The Cam Sensor pin}}
+\DoxyCodeLine{423 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a0247d84fdc266d9278396e1d07e2b1aa}{pinTrigger3}};    \textcolor{comment}{//the 2nd cam sensor pin}}
+\DoxyCodeLine{424 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a19394b4f039d761f98105dae64d93010}{pinTPS}};\textcolor{comment}{//TPS input pin}}
+\DoxyCodeLine{425 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a5d21bbebce5ccb2a690f5bc43ca1f523}{pinMAP}}; \textcolor{comment}{//MAP sensor pin}}
+\DoxyCodeLine{426 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_ad4d46080a6bb7f8e17fefc040e63c2a6}{pinMAP2}}; \textcolor{comment}{//2nd MAP sensor (Currently unused)}}
+\DoxyCodeLine{427 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a8aad45e9d20a38a3a6c0ede5c1deb671}{pinIAT}}; \textcolor{comment}{//IAT sensor pin}}
+\DoxyCodeLine{428 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a783dd3492868a39beaca836ba76e3cac}{pinCLT}}; \textcolor{comment}{//CLS sensor pin}}
+\DoxyCodeLine{429 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a7d7a279cda21c1a27449143e85e7ceb1}{pinO2}}; \textcolor{comment}{//O2 Sensor pin}}
+\DoxyCodeLine{430 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a3268cc0d8b3ef390d3565ce026e54971}{pinO2\_2}}; \textcolor{comment}{//second O2 pin}}
+\DoxyCodeLine{431 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a2b6a9627ddc53169fe33a8d96d33d996}{pinBat}}; \textcolor{comment}{//Battery voltage pin}}
+\DoxyCodeLine{432 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aa67d1500f2ffa0c16d741a72b3c53126}{pinDisplayReset}}; \textcolor{comment}{// OLED reset pin}}
+\DoxyCodeLine{433 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a2e9371fb43bfb4c570b58436ddbdd81c}{pinTachOut}}; \textcolor{comment}{//Tacho output}}
+\DoxyCodeLine{434 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a12049f71fe7d040de459811b9682b23f}{pinFuelPump}}; \textcolor{comment}{//Fuel pump on/off}}
+\DoxyCodeLine{435 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aa3344d2dbdbdf7ec37da1e36d28b71a3}{pinIdle1}}; \textcolor{comment}{//Single wire idle control}}
+\DoxyCodeLine{436 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_ab87cc9df2fa4e06d04951678cde2a648}{pinIdle2}}; \textcolor{comment}{//2 wire idle control (Not currently used)}}
+\DoxyCodeLine{437 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a8584f0fa695ec2a086e9c3d77cf02ef2}{pinSpareTemp1}}; \textcolor{comment}{// Future use only}}
+\DoxyCodeLine{438 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a6d793b94552b4229e15533a5a1cd86e0}{pinSpareTemp2}}; \textcolor{comment}{// Future use only}}
+\DoxyCodeLine{439 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_ac71a3b4655583de53a2caf387a273df9}{pinSpareOut1}}; \textcolor{comment}{//Generic output}}
+\DoxyCodeLine{440 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_ad4f81be06e0012b20696c081f9d30440}{pinSpareOut2}}; \textcolor{comment}{//Generic output}}
+\DoxyCodeLine{441 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a6eaad0cef255188c964cd0723bbcb648}{pinSpareOut3}}; \textcolor{comment}{//Generic output}}
+\DoxyCodeLine{442 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aa307958a05dc0ab4be9165ecb976a779}{pinSpareOut4}}; \textcolor{comment}{//Generic output}}
+\DoxyCodeLine{443 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a6888b7e7fa4e36d9ce83fce176052d0c}{pinSpareOut5}}; \textcolor{comment}{//Generic output}}
+\DoxyCodeLine{444 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a149253745b460329ab79f6773b827dc4}{pinSpareOut6}}; \textcolor{comment}{//Generic output}}
+\DoxyCodeLine{445 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aeda237151f224c76302e136fc80ba68a}{pinSpareHOut1}}; \textcolor{comment}{//spare high current output}}
+\DoxyCodeLine{446 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a8b73c2a7a9ddad8e8e73f7eee7c20f81}{pinSpareHOut2}}; \textcolor{comment}{// spare high current output}}
+\DoxyCodeLine{447 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a9af7a027ffec9f2ac0db7561925745f1}{pinSpareLOut1}}; \textcolor{comment}{// spare low current output}}
+\DoxyCodeLine{448 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a0d5582f7f902c3bb7e5b030cbcf8a3e6}{pinSpareLOut2}}; \textcolor{comment}{// spare low current output}}
+\DoxyCodeLine{449 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_acfc0e928c176f6c17f300705d9ff0b45}{pinSpareLOut3}};}
+\DoxyCodeLine{450 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a0a133d86ce53b854e8b4344de129e2b7}{pinSpareLOut4}};}
+\DoxyCodeLine{451 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aa2dd320c257f71f62483b4f4d56a204d}{pinSpareLOut5}};}
+\DoxyCodeLine{452 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a6ac806de7b5f1296db541587dec52e65}{pinBoost}};}
+\DoxyCodeLine{453 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_aac55f6a9243ce7472b9efca18c44344d}{pinVVT\_1}};      \textcolor{comment}{// vvt output 1}}
+\DoxyCodeLine{454 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a523fb19812a9eb07983c2e4ac98f6378}{pinVVt\_2}};      \textcolor{comment}{// vvt output 2}}
+\DoxyCodeLine{455 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a22d616037351905f8c0ee8d9cdac172b}{pinFan}};       \textcolor{comment}{// Cooling fan output}}
+\DoxyCodeLine{456 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a81250b536ee4caa65256151d32c759f0}{pinStepperDir}}; \textcolor{comment}{//Direction pin for the stepper motor driver}}
+\DoxyCodeLine{457 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a9d4dcdc8ed6f9f7e75c09171ae608278}{pinStepperStep}}; \textcolor{comment}{//Step pin for the stepper motor driver}}
+\DoxyCodeLine{458 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a79a5ac2ab6c40d4c52618a6db80cde92}{pinLaunch}};}
+\DoxyCodeLine{459 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a6d3b7c0af2504eec05ead2f094c0c7ae}{pinIgnBypass}}; \textcolor{comment}{//The pin used for an ignition bypass (Optional)}}
+\DoxyCodeLine{460 \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a881676bf3546a0b2d7bec83e8d50d45b}{pinFlex}}; \textcolor{comment}{//Pin with the flex sensor attached}}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{comment}{// global variables // from speeduino.ino}}
+\DoxyCodeLine{463 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structstatuses}{statuses}} \mbox{\hyperlink{globals_8h_a1f40d45116b758fe0b792db21f3cecea}{currentStatus}}; \textcolor{comment}{// from speeduino.ino}}
+\DoxyCodeLine{464 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structtable3_d}{table3D}} \mbox{\hyperlink{globals_8h_a6e23e7d5be06ffdb1e5b70ba2bf01896}{fuelTable}}; \textcolor{comment}{//16x16 fuel map}}
+\DoxyCodeLine{465 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structtable3_d}{table3D}} \mbox{\hyperlink{globals_8h_a30064545ba7389c46acf2d7986f970e2}{ignitionTable}}; \textcolor{comment}{//16x16 ignition map}}
+\DoxyCodeLine{466 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structtable3_d}{table3D}} \mbox{\hyperlink{globals_8h_abbf760ecc3f7b10ca580fb0e986a60be}{afrTable}}; \textcolor{comment}{//16x16 afr target map}}
+\DoxyCodeLine{467 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{globals_8h_ab870130af2c18e5a63d65754518130ab}{taeTable}}; \textcolor{comment}{//4 bin TPS Acceleration Enrichment map (2D)}}
+\DoxyCodeLine{468 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structtable2_d}{table2D}} \mbox{\hyperlink{globals_8h_af5085c0b67e738994a9093ba342bf01e}{WUETable}}; \textcolor{comment}{//10 bin Warm Up Enrichment map (2D)}}
+\DoxyCodeLine{469 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structconfig1}{config1}} \mbox{\hyperlink{globals_8h_a04d67459cb0b684540bba6bfdde4c5a7}{configPage1}};}
+\DoxyCodeLine{470 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structconfig2}{config2}} \mbox{\hyperlink{globals_8h_add94b67c28e6368081a7f29347e363e3}{configPage2}};}
+\DoxyCodeLine{471 \textcolor{keyword}{extern} \textcolor{keyword}{struct }\mbox{\hyperlink{structconfig3}{config3}} \mbox{\hyperlink{globals_8h_ae7d55795f4307e8894ac119756e9ec12}{configPage3}};}
+\DoxyCodeLine{472 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{globals_8h_a45ad906e34abe5d3fd7f7f628110fbe5}{currentLoopTime}}; \textcolor{comment}{//The time the current loop started (uS)}}
+\DoxyCodeLine{473 \textcolor{keyword}{extern} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{globals_8h_a8c1270967c0f23dcc46f4ff54808795c}{previousLoopTime}}; \textcolor{comment}{//The time the previous loop started (uS)}}
+\DoxyCodeLine{474 \textcolor{keyword}{extern} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a10aaa124e03d7c72c515c8b8694dcda9}{ignitionCount}};}
+\DoxyCodeLine{475 \textcolor{keyword}{extern} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a25dec7d77cf1c281884f4215ad9fc4b8}{cltCalibrationTable}}[\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\_TABLE\_SIZE}}];}
+\DoxyCodeLine{476 \textcolor{keyword}{extern} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_abc3528ba8aa0afcfaa14653df9e72781}{iatCalibrationTable}}[\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\_TABLE\_SIZE}}];}
+\DoxyCodeLine{477 \textcolor{keyword}{extern} \textcolor{keywordtype}{byte} \mbox{\hyperlink{globals_8h_a1e0c14f053668dce5a7474df6a3199c2}{o2CalibrationTable}}[\mbox{\hyperlink{globals_8h_ae6818c8663b6e1efdd2cacbabf810c2c}{CALIBRATION\_TABLE\_SIZE}}];}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// GLOBALS\_H}}
+
+\end{DoxyCode}
