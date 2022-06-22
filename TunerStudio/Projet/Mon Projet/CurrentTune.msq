@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<msq xmlns="http://www.msefi.com/:msq">
+<bibliography author="TunerStudio MS Lite! 3.1.08 - EFI Analytics, Inc." tuneComment="" writeDate="Sun Jun 19 10:49:52 CEST 2022"/>
+<versionInfo fileFormat="5.0" firmwareInfo="" nPages="14" signature="speeduino 202109-dev"/>
+<page>
+<pcVariable name="tsCanId">"0"</pcVariable>
+<pcVariable digits="0" name="rpmhigh" units="rpm">8000.0</pcVariable>
+<pcVariable digits="0" name="rpmwarn" units="rpm">3000.0</pcVariable>
+<pcVariable digits="0" name="rpmdang" units="rpm">5000.0</pcVariable>
+<pcVariable digits="0" name="maphigh" units="kPa">255.0</pcVariable>
+<pcVariable digits="0" name="mapwarn" units="kPa">200.0</pcVariable>
+<pcVariable digits="0" name="mapdang" units="kPa">245.0</pcVariable>
+<pcVariable cols="1" digits="1" name="wueAFR" rows="10" units="AFR">
+         -2.0 
+         -1.5 
+         -1.2 
+         -1.0 
+         -0.8 
+         -0.6 
+         -0.4 
+         -0.2 
+         -0.1 
+         0.0 
+      </pcVariable>
+<pcVariable cols="1" digits="0" name="boardFuelOutputs" rows="128" units=" ">
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         6.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         8.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         8.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+      </pcVariable>
+<pcVariable cols="1" digits="0" name="boardIgnOutputs" rows="128" units=" ">
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         6.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         8.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         8.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+         4.0 
+      </pcVariable>
+<pcVariable cols="1" digits="0" name="boardHasRTC" rows="128" units=" ">
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         6.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         8.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         8.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+         0.0 
+      </pcVariable>
+<pcVariable cols="1" digits="0" name="algorithmLimits" rows="8">
+         511.0 
+         100.0 
+         511.0 
+         511.0 
+         100.0 
+         100.0 
+         100.0 
+         100.0 
+      </pcVariable>
+<pcVariable digits="0" name="fuelLoadMax">255.0</pcVariable>
+<pcVariable digits="0" name="ignLoadMax">255.0</pcVariable>
+<pcVariable digits="0" name="fuel2LoadMax">255.0</pcVariable>
+<pcVariable digits="0" name="ign2LoadMax">255.0</pcVariable>
+</page>
+<page number="0" size="128">
+<constant cols="1" digits="0" name="injAng" rows="4" units="deg">
+         355.0 
+         355.0 
+         355.0 
+         355.0 
+      </constant>
+<constant cols="1" digits="0" name="injAngRPM" rows="4" units="RPM">
+         500.0 
+         2000.0 
+         4500.0 
+         6500.0 
+      </constant>
+</page>
+<page number="1" size="288"/>
+<page number="2" size="288"/>
+<page number="3" size="128"/>
+<page number="4" size="288"/>
+<page number="5" size="128"/>
+<page number="6" size="240"/>
+<page number="7" size="384"/>
+<page number="8" size="192"/>
+<page number="9" size="192"/>
+<page number="10" size="288"/>
+<page number="11" size="192"/>
+<page number="12" size="128"/>
+<page number="13" size="288"/>
+<settings Comment="These setting are only used if this msq is opened without a project.">
+<setting name="CAN_COMMANDS" value="CAN_COMMANDS"/>
+<setting name="enablehardware_test" value="enablehardware_test"/>
+<setting name="CELSIUS" value="CELSIUS"/>
+<setting name="AFR" value="AFR"/>
+<setting name="resetcontrol_adv" value="resetcontrol_adv"/>
+</settings>
+<userComments Comment="These are user comments that can be related to a particular setting or dialog."/>
+</msq>
