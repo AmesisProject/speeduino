@@ -1,0 +1,192 @@
+Starting on DESKTOP-JHT857A
+TunerStudio 3.1.08 started on Thu May 04 11:39:59 CEST 2023
+JRE 1.8.0_66, Windows 10 10.0, x86
+java.library.path=./lib
+TunerStudioMS.jar
+Look:Metal, ClassName:'javax.swing.plaf.metal.MetalLookAndFeel'
+Look:Nimbus, ClassName:'javax.swing.plaf.nimbus.NimbusLookAndFeel'
+Look:CDE/Motif, ClassName:'com.sun.java.swing.plaf.motif.MotifLookAndFeel'
+Look:Windows, ClassName:'com.sun.java.swing.plaf.windows.WindowsLookAndFeel'
+Look:Windows Classic, ClassName:'com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel'
+Look:Night Shade, ClassName:'de.muntjak.tinylookandfeel.TinyLookAndFeel'
+Setting Look & Feel to:javax.swing.plaf.metal.MetalLookAndFeel
+ScrollBar.width
+04/05/23 11:39:59 :Debug: no update:defaultFont
+04/05/23 11:39:59 :Info: Initializing File Dialogs.
+04/05/23 11:40:00 :Debug: hid: 656.24304
+04/05/23 11:40:00 :Info: Loading Language Content.
+04/05/23 11:40:02 :Debug: Command Non-VolatileBytes for F resolved to: x46                                                                   F
+04/05/23 11:40:02 :Debug: Command Non-VolatileBytes for I resolved to: x49                                                                   I
+04/05/23 11:40:02 :Debug: Command Non-VolatileBytes for f resolved to: x66                                                                   f
+04/05/23 11:40:02 :Info: Initializing Help.
+04/05/23 11:40:02 :Info: Initializing Edition Features.
+04/05/23 11:40:02 :Info: Initializing App Events.
+04/05/23 11:40:02 :Debug: App Name:TunerStudio, appEdition:MS Lite!
+04/05/23 11:40:02 :Debug: Dummy Function Factory Created.
+04/05/23 11:40:02 :Info: Initializing User Interface
+arg found 0:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt\Dirt\CurrentTune.msq
+04/05/23 11:40:04 :Info: Loading Font list.
+04/05/23 11:40:04 :Debug: Time to retreive font name list: 18 ms.
+04/05/23 11:40:04 :Info: 
+04/05/23 11:40:04 :Info: Initializing UI Components.
+04/05/23 11:40:04 :Info: Ready
+04/05/23 11:41:09 :Debug: Directory Changed:
+	Old:C:\Users\amesi\OneDrive\Documents
+	New:C:\ProgramPerso\GitHub\speeduino\TunerStudio\Projet
+04/05/23 11:41:12 :Debug: Directory Changed:
+	Old:C:\ProgramPerso\GitHub\speeduino\TunerStudio\Projet
+	New:Ce PC
+04/05/23 11:41:12 :Debug: Directory Changed:
+	Old:Ce PC
+	New:C:\Users\amesi\AppData\Roaming\Microsoft\Windows\Recent
+04/05/23 11:41:28 :Debug: File Changed:
+	Old:null
+	New:null
+04/05/23 11:41:29 :Debug: File Changed:
+	Old:null
+	New:null
+04/05/23 11:41:30 :Debug: File Changed:
+	Old:null
+	New:null
+04/05/23 11:41:31 :Debug: File Changed:
+	Old:null
+	New:null
+04/05/23 11:41:31 :Debug: File Changed:
+	Old:null
+	New:null
+04/05/23 11:41:31 :Debug: File Changed:
+	Old:null
+	New:null
+04/05/23 11:41:36 :Debug: File Changed:
+	Old:null
+	New:null
+04/05/23 11:41:39 :Debug: Directory Changed:
+	Old:C:\Users\amesi\AppData\Roaming\Microsoft\Windows\Recent
+	New:C:\Users\amesi\OneDrive\AppData\Bureau
+04/05/23 11:41:39 :Debug: Directory Changed:
+	Old:C:\Users\amesi\OneDrive\AppData\Bureau
+	New:C:\Users\amesi\OneDrive\Documents
+04/05/23 11:41:39 :Debug: Directory Changed:
+	Old:C:\Users\amesi\OneDrive\Documents
+	New:Ce PC
+04/05/23 11:41:42 :Debug: File Changed:
+	Old:null
+	New:C:\
+04/05/23 11:41:43 :Debug: Directory Changed:
+	Old:Ce PC
+	New:C:\
+04/05/23 11:41:45 :Debug: File Changed:
+	Old:C:\
+	New:C:\ProgramPerso
+04/05/23 11:41:45 :Debug: Directory Changed:
+	Old:C:\
+	New:C:\ProgramPerso
+04/05/23 11:42:06 :Debug: File Changed:
+	Old:C:\ProgramPerso
+	New:C:\ProgramPerso\GitHub
+04/05/23 11:42:06 :Debug: Directory Changed:
+	Old:C:\ProgramPerso
+	New:C:\ProgramPerso\GitHub
+04/05/23 11:42:17 :Debug: File Changed:
+	Old:C:\ProgramPerso\GitHub
+	New:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino
+04/05/23 11:42:17 :Debug: Directory Changed:
+	Old:C:\ProgramPerso\GitHub
+	New:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino
+04/05/23 11:42:30 :Debug: File Changed:
+	Old:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino
+	New:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio
+04/05/23 11:42:31 :Debug: Directory Changed:
+	Old:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino
+	New:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio
+04/05/23 11:42:32 :Debug: File Changed:
+	Old:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio
+	New:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt
+04/05/23 11:43:12 :Debug: Directory Changed:
+	Old:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio
+	New:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt
+04/05/23 11:43:13 :Debug: File Changed:
+	Old:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt
+	New:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt\Dirt
+04/05/23 11:43:17 :Info: Ouverture d’un projet ...
+04/05/23 11:43:17 :Debug: Opening project: C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt\Dirt
+04/05/23 11:43:17 :Debug: Reading translation file as plain text
+04/05/23 11:43:17 :Info: Supported iniSpecVersion=3.71
+04/05/23 11:43:17 :Debug: Filtered ConfigurationOptionGroup in 6ms.
+04/05/23 11:43:17 :Info: Supported iniSpecVersion=3.71
+04/05/23 11:43:17 :Info: Read file canPcVariables.ini: 0.6636ms
+04/05/23 11:43:17 :Info: Filtered ini: 0.0287ms
+04/05/23 11:43:17 :Info: No iniVersion defined
+04/05/23 11:43:17 :Info: Loading Trigger Wheels
+04/05/23 11:43:17 :Info: Loaded All known ini sections
+04/05/23 11:43:17 :Info: Parsed and validated ini "canPcVariables.ini" in : 12ms.
+04/05/23 11:43:17 :Info: Read file mainController.ini: 2.9772ms
+04/05/23 11:43:17 :Info: Filtered ini: 3.7035ms
+04/05/23 11:43:17 :Info: No iniVersion defined
+04/05/23 11:43:17 :Debug: ini signature: speeduino 202210-dev
+04/05/23 11:43:17 :Info: Loading Trigger Wheels
+04/05/23 11:43:17 :Info: Loading Depricated ini section [UserDefined], use [UiDialogs]
+04/05/23 11:43:17 :Info: Loaded All known ini sections
+04/05/23 11:43:17 :Info: Parsed and validated ini "mainController.ini" in : 87ms.
+04/05/23 11:43:17 :Info: Not Loading default Tools because they were already loaded from the project ini(s)
+04/05/23 11:43:17 :Info: Time to load primary config: 165.44621ms. used cached config: false
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+04/05/23 11:43:17 :Debug: set baud to 115200
+04/05/23 11:43:17 :Debug: Adding Configuration: Dirt
+04/05/23 11:43:17 :Debug: controllerOnline = 0.0
+04/05/23 11:43:17 :Debug: Activating Event Trigger: TriggeredPage0 Refresh:  vssRefresh > 0 
+04/05/23 11:43:17 :Debug: Fill Constants: 4
+04/05/23 11:43:17 :Info: Tune opened, 3295 bytes updated. File:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt\Dirt\CurrentTune.msq
+04/05/23 11:43:17 :Info: Tune opened, 3295 bytes updated. File:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt\Dirt\CurrentTune.msq
+04/05/23 11:43:17 :Info: dirtyData.size(): 0
+04/05/23 11:43:17 :Info: dirtyData.size(): 0
+04/05/23 11:43:17 :Debug: Flush lasted: 75ms.
+04/05/23 11:43:17 :Info: dirtyData.size(): 0
+04/05/23 11:43:18 :Info: dirtyData.size(): 0
+04/05/23 11:43:18 :Debug: Flush lasted: 77ms.
+04/05/23 11:43:18 :Debug: Skip Burn, last write page: -2
+04/05/23 11:43:18 :Info: !!! Loaded config in 430
+04/05/23 11:43:18 :Info: !!! Activated Project 485
+04/05/23 11:43:18 :Info: Opening Gauge Cluster..
+04/05/23 11:43:18 :Debug: High Speed Paint: true
+04/05/23 11:43:18 :Info: 
+04/05/23 11:43:18 :Info: Com Thread created: COMM Thread3814.2990787827234
+04/05/23 11:43:18 :Info: endModalBlock called, but Root Pane is not a ProgressPane.
+04/05/23 11:43:18 :Debug: !!! Opened Dash 537
+04/05/23 11:43:18 :Info: Comm Manager for Dirt Started, thread ID: COMM Thread3814.2990787827234
+04/05/23 11:43:18 :Info: Dirt Prêt
+04/05/23 11:43:18 :Debug: Port not valid: Unable to open port: COM6
+Please check your Communications Settings. 
+04/05/23 11:43:18 :Debug: Tuning View Files loaded in 0.1449ms.
+04/05/23 11:43:18 :Info: Tune opened, 0 bytes updated. File:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt\Dirt\CurrentTune.msq
+04/05/23 11:43:18 :Info: Tune opened, 0 bytes updated. File:C:\ProgramPerso\GitHub\013-Amesis-DirtBike-Speeduino\TunerStudio\Dirt\Dirt\CurrentTune.msq
+04/05/23 11:43:18 :Info: dirtyData.size(): 0
+04/05/23 11:43:18 :Info: dirtyData.size(): 0
+04/05/23 11:43:18 :Debug: Flush lasted: 85ms.
+04/05/23 11:43:18 :Info: dirtyData.size(): 0
+04/05/23 11:43:18 :Info: dirtyData.size(): 0
+04/05/23 11:43:18 :Debug: Flush lasted: 79ms.
+04/05/23 11:43:18 :Debug: Skip Burn, last write page: -2
+04/05/23 11:43:19 :Info: No Persistor set, not activating persisted triggers.
+04/05/23 11:43:40 :Info: file:CurrentTune.msq is not Monitored, cannot pause Monitoring of it.
+04/05/23 11:43:40 :Info: Time to save msq: 63.8302
+04/05/23 11:43:40 :Info: file:CurrentTune.msq is not Monitored, cannot unpause Monitoring of it.
+04/05/23 11:43:40 :Info: closeApp Called
+04/05/23 11:43:40 :Debug: TuneLog Editor set text
+04/05/23 11:43:40 :Info: file:CurrentTune.msq is not Monitored, cannot pause Monitoring of it.
+04/05/23 11:43:40 :Info: Time to save msq: 6.564
+04/05/23 11:43:40 :Info: file:CurrentTune.msq is not Monitored, cannot unpause Monitoring of it.
+04/05/23 11:43:40 :Debug: goOffline Starting, Time:0
+04/05/23 11:43:40 :Info: Deactivated Turbo Baud, goOffline
+04/05/23 11:43:40 :Debug: goOffline about to stopProcessing, Time:0
+04/05/23 11:43:40 :Debug: goOffline closed port, Time:0
+04/05/23 11:43:40 :Info: Dirt ComThread stopped COMM Thread3814.2990787827234
+04/05/23 11:43:40 :Debug: goOffline comm thread stopped, Time:315
+04/05/23 11:43:40 :Debug: No Remaining Queue Write instructions
+04/05/23 11:43:40 :Debug: removing Configuration: Dirt
+04/05/23 11:43:40 :Info: No Persistor set, not saving active triggers.
+04/05/23 11:43:40 :Debug: ############################################# Save Project Backup ##########################################
+04/05/23 11:43:40 :Info: Finalizing Sensors
+Saved user properties successfully
