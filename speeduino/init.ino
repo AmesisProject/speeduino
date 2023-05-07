@@ -2188,12 +2188,9 @@ void setPinMapping(byte boardID)
       //CS pin number is now set in a compile flag. 
       // #ifdef USE_SPI_EEPROM
       //   pinSPIFlash_CS = 6;
-      // #endif
-
-      #endif
+       #endif
       break;
-    
- 
+
     case 60:
         #if defined(STM32F407xx)
         //Pin definitions for experimental board Tjeerd 
@@ -2518,6 +2515,83 @@ void setPinMapping(byte boardID)
         #endif
       #endif  
       break;
+
+//AmesisProjet MegaSpeedo_MiniSMD Broards      
+    case 70:
+        #ifndef SMALL_FLASH_MODE //No support for bluepill here anyway
+        //Pin mappings for the MegaSpeedo_MiniSMD by AmesisProject
+        pinInjector1 = 8; //Output pin injector 1 is on
+        pinInjector2 = 9; //Output pin injector 2 is on
+        pinInjector3 = 10; //Output pin injector 3 is on NOT USED
+        pinInjector4 = 11; //Output pin injector 4 is on NOT USED
+        pinCoil1 = 40; //Pin for coil 1
+        pinCoil2 = 38; //Pin for coil 2
+        pinCoil3 = 52; //Pin for coil 3 NOT USED
+        pinCoil4 = 50; //Pin for coil 4NOT USED
+        pinTrigger = 19; //The CAS pin
+        pinTPS = A2;//TPS input pin
+        pinMAP = A3; //MAP sensor pin
+        pinIAT = A0; //IAT sensor pin
+        pinCLT = A1; //CLS sensor pin
+        pinO2 = A8; //O2 Sensor pin
+        pinBat = A4; //Battery reference voltage pin
+        pinBoost = 5; //Boost control (Aux 2)
+        pinFuelPump = 4; //Fuel pump output  (Aux 1)
+        pinLaunch = 51; //Can be overwritten below
+        #endif
+      break;
+
+//AmesisProjet MegaSpeedo_6Zyl_THT Broards 
+    case 71:
+        #ifndef SMALL_FLASH_MODE //No support for bluepill here anyway
+        //Pin mappings for the MegaSpeedo_6Zyl_THT by AmesisProject.
+        //This is the regular MEGA2560 pin mapping
+        pinInjector1 = 8; //Output pin injector 1
+        pinInjector2 = 9; //Output pin injector 2
+        pinInjector3 = 10; //Output pin injector 3
+        pinInjector4 = 11; //Output pin injector 4
+        pinInjector5 = 50; //Output pin injector 5
+        pinInjector6 = 12; //Output pin injector 6
+        //pinInjector7 = 39; //Output pin injector 7 (placeholder)
+        //pinInjector8 = 42; //Output pin injector 8 (placeholder)
+        pinCoil1 = 40; //Pin for coil 1
+        pinCoil2 = 38; //Pin for coil 2
+        pinCoil3 = 52; //Pin for coil 3
+        pinCoil4 = 48; //Pin for coil 4
+        pinCoil5 = 34; //Pin for coil 5
+        pinCoil6 = 36; //Pin for coil 6
+        //pinCoil7 = 46; //Pin for coil 7 (placeholder)
+        //pinCoil8 = 53; //Pin for coil 8 (placeholder)
+        pinTrigger = 19; //The CAS pin
+        pinTrigger2 = 18; //The Cam Sensor pin
+        //pinTrigger3 = 20; //The Cam sensor 2 pin
+        pinTPS = A2;//TPS input pin
+        pinMAP = A3; //MAP sensor pin
+        pinIAT = A0; //IAT sensor pin
+        pinCLT = A1; //CLT sensor pin
+        pinO2 = A8; //O2 Sensor pin
+        pinBat = A4; //Battery reference voltage pin
+        pinBaro = A5; //Baro sensor pin
+        //pinDisplayReset = 41; // OLED reset pin
+        pinTachOut = 49; //Tacho output pin  (Goes to ULN2003)
+        pinIdle1 = 5; //Single wire idle control
+        pinIdle2 = 6; //2 wire idle control
+        pinBoost = 7; //Boost control
+        pinVVT_1 = 4; //VVT1 output 
+        //pinVVT_2 = 26; //VVT2 output
+        pinFuelPump = 45; //Fuel pump output  (Goes to ULN2003)
+        pinStepperDir = 16; //Stepper valve isn't used with these
+        pinStepperStep = 17; //Stepper valve isn't used with these
+        pinStepperEnable = 24; //Stepper valve isn't used with these
+        pinFan = 47; //Pin for the fan output (Goes to ULN2003)
+        pinLaunch = 51; //Launch control pin
+        pinFlex = 2; // Flex sensor
+        pinResetControl = 43; //Reset control output
+        pinVSS = 20; //VSS input pin
+        #endif
+      break;
+    
+ 
   }
 
   //Setup any devices that are using selectable pins

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <msq xmlns="http://www.msefi.com/:msq">
-<bibliography author="TunerStudio MS Lite! 3.1.08 - EFI Analytics, Inc." tuneComment="" writeDate="Thu May 04 08:50:46 CEST 2023"/>
-<versionInfo fileFormat="5.0" firmwareInfo="Speeduino+202202" nPages="14" signature="speeduino 202109-dev"/>
+<bibliography author="TunerStudio MS Lite! 3.1.08 - EFI Analytics, Inc." tuneComment="" writeDate="Sun May 07 15:35:45 CEST 2023"/>
+<versionInfo fileFormat="5.0" firmwareInfo="Speeduino+2021.09-dev" nPages="14" signature="speeduino 202109-dev"/>
 <page>
 <pcVariable name="tsCanId">"0"</pcVariable>
 <pcVariable name="tsCanId">"CAN ID 0"</pcVariable>
@@ -107,7 +107,7 @@
          4.0 
          4.0 
          4.0 
-         4.0 
+         6.0 
          4.0 
          4.0 
          4.0 
@@ -237,7 +237,7 @@
          4.0 
          4.0 
          4.0 
-         4.0 
+         6.0 
          4.0 
          4.0 
          4.0 
@@ -465,6 +465,7 @@
          100.0 
       </constant>
 <constant digits="0" name="crankingPct" units="%">20.0</constant>
+<constant name="pinLayout">"MegaSpeedo_6Zyl_THT"</constant>
 <constant name="tachoPin">"Board Default"</constant>
 <constant name="tachoDiv">"Normal"</constant>
 <constant digits="0" name="tachoDuration" units="ms">3.0</constant>
@@ -814,13 +815,13 @@
 <constant name="ignBypassEnable">"Off"</constant>
 <constant name="ignBypassPin">"3"</constant>
 <constant name="ignBypassHiLo">"LOW"</constant>
-<constant digits="0" name="ADCFILTER_TPS" units="%">50.0</constant>
-<constant digits="0" name="ADCFILTER_CLT" units="%">180.0</constant>
-<constant digits="0" name="ADCFILTER_IAT" units="%">180.0</constant>
-<constant digits="0" name="ADCFILTER_O2" units="%">128.0</constant>
-<constant digits="0" name="ADCFILTER_BAT" units="%">128.0</constant>
-<constant digits="0" name="ADCFILTER_MAP" units="%">20.0</constant>
-<constant digits="0" name="ADCFILTER_BARO" units="%">64.0</constant>
+<constant digits="0" name="ADCFILTER_TPS" units="%">0.0</constant>
+<constant digits="0" name="ADCFILTER_CLT" units="%">0.0</constant>
+<constant digits="0" name="ADCFILTER_IAT" units="%">0.0</constant>
+<constant digits="0" name="ADCFILTER_O2" units="%">0.0</constant>
+<constant digits="0" name="ADCFILTER_BAT" units="%">0.0</constant>
+<constant digits="0" name="ADCFILTER_MAP" units="%">0.0</constant>
+<constant digits="0" name="ADCFILTER_BARO" units="%">0.0</constant>
 <constant cols="1" digits="0" name="cltAdvBins" rows="6" units="C">
          0.0 
          20.0 
@@ -891,7 +892,7 @@
 <constant name="vvt2PWMdir">"Advance"</constant>
 <constant name="unusedBits4_123">"0"</constant>
 <constant digits="0" name="ANGLEFILTER_VVT" units="%">0.0</constant>
-<constant digits="0" name="FILTER_FLEX" units="%">8.0</constant>
+<constant digits="0" name="FILTER_FLEX" units="%">75.0</constant>
 <constant digits="0" name="vvtMinClt" units="C">-40.0</constant>
 <constant digits="0" name="vvtDelay" units="S">0.0</constant>
 </page>
@@ -2208,9 +2209,32 @@
          45493.0 
          43950.0 
       </constant>
+<constant name="APthrottleBodyEnable">"On"</constant>
+<constant name="PedalPositionPin1">"A5"</constant>
+<constant name="PedalPositionPin2">"A2"</constant>
+<constant digits="1" name="APpedal1Min" units="U">0.0</constant>
+<constant digits="1" name="APpedal1Max" units="U">100.0</constant>
+<constant digits="1" name="APpedal2Min" units="U">0.0</constant>
+<constant digits="1" name="APpedal2Max" units="U">0.0</constant>
+<constant digits="0" name="pps1Min" units="ADC">0.0</constant>
+<constant digits="0" name="pps1Max" units="ADC">0.0</constant>
+<constant digits="0" name="ADCFILTER_PPS1" units="%">0.0</constant>
+<constant digits="0" name="pps2Min" units="ADC">254.0</constant>
+<constant digits="0" name="pps2Max" units="ADC">0.0</constant>
+<constant digits="0" name="ADCFILTER_PPS2" units="%">0.0</constant>
+<constant name="TBPositionPin1">"A0"</constant>
+<constant digits="0" name="tbs1Min" units="ADC">0.0</constant>
+<constant digits="0" name="tbs1Max" units="ADC">0.0</constant>
+<constant digits="0" name="ADCFILTER_TBS1" units="%">0.0</constant>
+<constant name="TBMotorPin1">"3"</constant>
+<constant name="TBMotorPin2">"3"</constant>
+<constant name="TBMotorPinENA">"3"</constant>
 <constant cols="1" digits="0" name="unused12_125_127" rows="2" units="%">
          137.0 
          136.0 
+      </constant>
+<constant digits="0" name="UNALLOCATED_TOP_12" units="RAW">
+         0.0 
       </constant>
 </page>
 <page number="13" size="288">
