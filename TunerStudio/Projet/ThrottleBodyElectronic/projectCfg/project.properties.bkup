@@ -1,7 +1,7 @@
 #Project Attributes.
 #TunerStudio by EFI Analytics, Inc
-#Last Saved on: Sun May 07 15:33:14 CEST 2023
-#Sun May 07 15:33:14 CEST 2023
+#Last Saved on: Sun May 07 15:33:16 CEST 2023
+#Sun May 07 15:33:16 CEST 2023
 CommSettingMSCommDriver.RS232\ Serial\ InterfaceBaud\ Rate=115200
 idleSettingsIdle\ Settings_Y=165
 idleSettingsIdle\ Settings_X=676

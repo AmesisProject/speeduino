@@ -190,3 +190,206 @@ Please check your Communications Settings.
 04/05/23 11:43:40 :Debug: ############################################# Save Project Backup ##########################################
 04/05/23 11:43:40 :Info: Finalizing Sensors
 Saved user properties successfully
+Starting on DESKTOP-JHT857A
+TunerStudio 3.1.08 started on Mon Jun 19 23:41:09 CEST 2023
+JRE 1.8.0_66, Windows 10 10.0, x86
+java.library.path=./lib
+TunerStudioMS.jar
+Look:Metal, ClassName:'javax.swing.plaf.metal.MetalLookAndFeel'
+Look:Nimbus, ClassName:'javax.swing.plaf.nimbus.NimbusLookAndFeel'
+Look:CDE/Motif, ClassName:'com.sun.java.swing.plaf.motif.MotifLookAndFeel'
+Look:Windows, ClassName:'com.sun.java.swing.plaf.windows.WindowsLookAndFeel'
+Look:Windows Classic, ClassName:'com.sun.java.swing.plaf.windows.WindowsClassicLookAndFeel'
+Look:Night Shade, ClassName:'de.muntjak.tinylookandfeel.TinyLookAndFeel'
+Setting Look & Feel to:javax.swing.plaf.metal.MetalLookAndFeel
+ScrollBar.width
+19/06/23 23:41:09 :Debug: no update:defaultFont
+19/06/23 23:41:10 :Debug: hid: 817.7952
+19/06/23 23:41:10 :Info: Initializing File Dialogs.
+19/06/23 23:41:10 :Info: Loading Language Content.
+19/06/23 23:41:13 :Debug: Command Non-VolatileBytes for F resolved to: x46                                                                   F
+19/06/23 23:41:13 :Debug: Command Non-VolatileBytes for I resolved to: x49                                                                   I
+19/06/23 23:41:13 :Debug: Command Non-VolatileBytes for f resolved to: x66                                                                   f
+19/06/23 23:41:13 :Info: Initializing Help.
+19/06/23 23:41:13 :Info: Initializing Edition Features.
+19/06/23 23:41:13 :Info: Initializing App Events.
+19/06/23 23:41:13 :Debug: App Name:TunerStudio, appEdition:MS Lite!
+19/06/23 23:41:13 :Debug: Dummy Function Factory Created.
+19/06/23 23:41:13 :Info: Initializing User Interface
+19/06/23 23:41:14 :Info: Vérification des mises à jour
+19/06/23 23:41:15 :Info: Loading Font list.
+19/06/23 23:41:15 :Debug: Time to retreive font name list: 31 ms.
+19/06/23 23:41:15 :Info: 
+19/06/23 23:41:15 :Info: Initializing UI Components.
+19/06/23 23:41:15 :Info: Ready
+Saved user properties successfully
+Saved user properties successfully
+19/06/23 23:41:18 :Info: Update Check Completed
+Saved user properties successfully
+19/06/23 23:41:21 :Debug: Delete Results addInfo.properties true
+19/06/23 23:41:21 :Debug: Delete Results BTS4504C1H_a_sm.jpg true
+19/06/23 23:41:21 :Debug: Delete Results Histogram-250px.png true
+19/06/23 23:41:21 :Debug: Delete Results whatsNew.jpg true
+19/06/23 23:41:21 :Debug: Delete Results images true
+19/06/23 23:41:21 :Debug: Delete Results index.html true
+19/06/23 23:41:21 :Debug: Delete Results index1.html true
+19/06/23 23:41:21 :Debug: Delete Results prepped_index.html true
+19/06/23 23:41:21 :Debug: Delete Results prepped_index1.html true
+19/06/23 23:41:21 :Debug: Delete Results ad true
+19/06/23 23:41:23 :Warning: Download of: ad.zip, succeeded! File size: 152588 bytes
+19/06/23 23:41:23 :Info: Updating Start Screen.
+19/06/23 23:41:23 :Info: Updated Start Screen: MSad
+Saved user properties successfully
+MSad: No check, last update check=Mon Jun 19 23:41:23 CEST 2023
+19/06/23 23:41:58 :Debug: No Config File found, prompting user.
+19/06/23 23:42:07 :Debug: Reading translation file as plain text
+19/06/23 23:42:07 :Info: Supported iniSpecVersion=3.71
+19/06/23 23:42:07 :Info: Read file Matzs Avril 2022.ini: 4.5039ms
+19/06/23 23:42:07 :Info: Filtered ini: 3.5376ms
+19/06/23 23:42:07 :Info: No iniVersion defined
+19/06/23 23:42:07 :Debug: ini signature: speeduino 202204-1
+19/06/23 23:42:07 :Info: Loading Trigger Wheels
+19/06/23 23:42:07 :Info: Loading Depricated ini section [UserDefined], use [UiDialogs]
+19/06/23 23:42:07 :Warning: [UserDefined] field assigned to invalid Constant 'afrProtEnbl'., Problem at:
+[Matzs Avril 2022.ini]:[Line:2554]: 	  field = "protection AFR"       afrProtEnbl,         { egoType && (egoAlgorithm < 3) }
+
+19/06/23 23:42:07 :Warning: [UserDefined] field assigned to invalid Constant 'hardRevLim'., Problem at:
+[Matzs Avril 2022.ini]:[Line:2806]:         field = "regime rupteur coupure",            hardRevLim,     { hardRevMode == 1 }
+
+19/06/23 23:42:07 :Warning: Wrong number of values?, Problem at:
+[Matzs Avril 2022.ini]:[Line:1681]:     defaultValue = boardFuelOutputs,                4             4          4          4          4           4         4                 4         4                 4               4             4          4          4         4           4         4           4         4           4         4          4           4         4           4          4          4         4           4         4           4            6            4               6                4         4           4         4           4          4          4         4          4           4         4           4                    4           4           4           4         6            6               4          4          4          8           4            4           4           4         8              4            4          8                  4                 4                       
+
+19/06/23 23:42:07 :Warning: Wrong number of values?, Problem at:
+[Matzs Avril 2022.ini]:[Line:1682]:     defaultValue = boardIgnOutputs,                 4             4          4          4          4           4         4                 4         4                 4               4             4          4          4         4           4         4           4         4           4         4          4           4         4           4          4          4         4           4         4           4            6            4               6                4         4           4         4           4          4          4         4          4           4         4           4                    4           4           4           4         6            6               4          4          4          8           4            4           4           4         8              4            4          8                  4                 4                        
+
+19/06/23 23:42:07 :Warning: Wrong number of values?, Problem at:
+[Matzs Avril 2022.ini]:[Line:1683]:     defaultValue = boardHasRTC,                     0             0          0          0          0           0         0                 0         0                 0               0             0          0          0         0           0         0           0         0           0         0          0           0         0           0          0          0         0           0         0           0            0            0               0                0         0           0         0           0          0          0         0          0           0         0           0                    0           0           0           0         8            8               0          0          0          8           0            0           0           0         8              0            0          8                  0                 0                   
+
+19/06/23 23:42:07 :Info: Loaded All known ini sections
+19/06/23 23:42:07 :Info: Parsed and validated ini "Matzs Avril 2022.ini" in : 101ms.
+19/06/23 23:42:07 :Info: Time to load non-cached dashboard: 81.50751 ms. file:dashboard.dash
+19/06/23 23:42:07 :Debug: ############################################# Save Project Backup ##########################################
+19/06/23 23:42:07 :Info: Ouverture d’un projet ...
+19/06/23 23:42:07 :Debug: Opening project: C:\ProgramPerso\GitHub\Speeduino_AmesisProject_CustomFirmeWare\TunerStudio\Projet\Temp\
+19/06/23 23:42:07 :Info: Supported iniSpecVersion=3.71
+19/06/23 23:42:07 :Debug: Filtered ConfigurationOptionGroup in 4ms.
+19/06/23 23:42:07 :Info: Supported iniSpecVersion=3.71
+19/06/23 23:42:07 :Info: Read file canPcVariables.ini: 6.3402ms
+19/06/23 23:42:07 :Info: Filtered ini: 0.0031ms
+19/06/23 23:42:07 :Info: No iniVersion defined
+19/06/23 23:42:07 :Info: Loading Trigger Wheels
+19/06/23 23:42:07 :Info: Loaded All known ini sections
+19/06/23 23:42:07 :Info: Parsed and validated ini "canPcVariables.ini" in : 7ms.
+19/06/23 23:42:07 :Info: Read file Matzs Avril 2022.ini: 2.5608ms
+19/06/23 23:42:07 :Info: Filtered ini: 2.2486ms
+19/06/23 23:42:07 :Info: No iniVersion defined
+19/06/23 23:42:07 :Debug: ini signature: speeduino 202204-1
+19/06/23 23:42:07 :Info: Loading Trigger Wheels
+19/06/23 23:42:07 :Info: Loading Depricated ini section [UserDefined], use [UiDialogs]
+19/06/23 23:42:07 :Warning: [UserDefined] field assigned to invalid Constant 'afrProtEnbl'., Problem at:
+[Matzs Avril 2022.ini]:[Line:2554]: 	  field = "protection AFR"       afrProtEnbl,         { egoType && (egoAlgorithm < 3) }
+
+19/06/23 23:42:07 :Warning: [UserDefined] field assigned to invalid Constant 'hardRevLim'., Problem at:
+[Matzs Avril 2022.ini]:[Line:2806]:         field = "regime rupteur coupure",            hardRevLim,     { hardRevMode == 1 }
+
+19/06/23 23:42:07 :Warning: Wrong number of values?, Problem at:
+[Matzs Avril 2022.ini]:[Line:1681]:     defaultValue = boardFuelOutputs,                4             4          4          4          4           4         4                 4         4                 4               4             4          4          4         4           4         4           4         4           4         4          4           4         4           4          4          4         4           4         4           4            6            4               6                4         4           4         4           4          4          4         4          4           4         4           4                    4           4           4           4         6            6               4          4          4          8           4            4           4           4         8              4            4          8                  4                 4                       
+
+19/06/23 23:42:07 :Warning: Wrong number of values?, Problem at:
+[Matzs Avril 2022.ini]:[Line:1682]:     defaultValue = boardIgnOutputs,                 4             4          4          4          4           4         4                 4         4                 4               4             4          4          4         4           4         4           4         4           4         4          4           4         4           4          4          4         4           4         4           4            6            4               6                4         4           4         4           4          4          4         4          4           4         4           4                    4           4           4           4         6            6               4          4          4          8           4            4           4           4         8              4            4          8                  4                 4                        
+
+19/06/23 23:42:07 :Warning: Wrong number of values?, Problem at:
+[Matzs Avril 2022.ini]:[Line:1683]:     defaultValue = boardHasRTC,                     0             0          0          0          0           0         0                 0         0                 0               0             0          0          0         0           0         0           0         0           0         0          0           0         0           0          0          0         0           0         0           0            0            0               0                0         0           0         0           0          0          0         0          0           0         0           0                    0           0           0           0         8            8               0          0          0          8           0            0           0           0         8              0            0          8                  0                 0                   
+
+19/06/23 23:42:07 :Info: Loaded All known ini sections
+19/06/23 23:42:07 :Info: Parsed and validated ini "Matzs Avril 2022.ini" in : 44ms.
+19/06/23 23:42:07 :Info: Not Loading default Tools because they were already loaded from the project ini(s)
+19/06/23 23:42:07 :Info: Time to load primary config: 69.5553ms. used cached config: false
+19/06/23 23:42:07 :Debug: Adding Configuration: Temp
+19/06/23 23:42:07 :Debug: controllerOnline = 0.0
+19/06/23 23:42:07 :Debug: Activating Event Trigger: TriggeredPage0 Refresh:  vssRefresh > 0 
+19/06/23 23:42:07 :Debug: Deactivating Event Trigger: TriggeredPage0 Refresh:  vssRefresh > 0 
+19/06/23 23:42:07 :Debug: Activating Event Trigger: TriggeredPage0 Refresh:  vssRefresh > 0 
+19/06/23 23:42:07 :Info: !!! Loaded config in 96
+19/06/23 23:42:07 :Info: !!! Activated Project 135
+19/06/23 23:42:07 :Info: Opening Gauge Cluster..
+19/06/23 23:42:07 :Debug: High Speed Paint: true
+19/06/23 23:42:07 :Info: 
+19/06/23 23:42:07 :Info: endModalBlock called, but Root Pane is not a ProgressPane.
+19/06/23 23:42:07 :Debug: !!! Opened Dash 162
+19/06/23 23:42:07 :Info: Temp Prêt
+19/06/23 23:42:07 :Debug: Tuning View Files loaded in 219.4591ms.
+19/06/23 23:42:07 :Debug: Fill Constants: 5
+19/06/23 23:42:07 :Info: Tune opened, 3091 bytes updated. File:C:\ProgramPerso\GitHub\Amesis_FreakDoctor_Project\Amesis_Project\Electronique\Megasquirt By matz\20vt_base tune OEM.msq
+19/06/23 23:42:07 :Info: Tune opened, 3091 bytes updated. File:C:\ProgramPerso\GitHub\Amesis_FreakDoctor_Project\Amesis_Project\Electronique\Megasquirt By matz\20vt_base tune OEM.msq
+19/06/23 23:42:07 :Info: dirtyData.size(): 0
+19/06/23 23:42:07 :Info: dirtyData.size(): 0
+19/06/23 23:42:07 :Debug: Flush lasted: 81ms.
+19/06/23 23:42:07 :Info: dirtyData.size(): 0
+19/06/23 23:42:08 :Info: dirtyData.size(): 0
+19/06/23 23:42:08 :Debug: Flush lasted: 77ms.
+19/06/23 23:42:08 :Debug: Skip Burn, last write page: -2
+19/06/23 23:42:08 :Info: No Persistor set, not activating persisted triggers.
+19/06/23 23:42:22 :Debug: Received Instruction: Read Chunk 9, Page: 9
+19/06/23 23:42:22 :Info: Initiating read page 9 : 160:12
+19/06/23 23:43:15 :Info: dirtyData.size(): 0
+19/06/23 23:43:15 :Info: dirtyData.size(): 0
+19/06/23 23:43:15 :Debug: Flush lasted: 76ms.
+19/06/23 23:43:15 :Debug: Skip Burn, last write page: -2
+19/06/23 23:44:49 :Debug: Received Instruction: Read Chunk 9, Page: 9
+19/06/23 23:44:49 :Info: Initiating read page 9 : 160:12
+19/06/23 23:46:11 :Info: dirtyData.size(): 0
+19/06/23 23:46:11 :Info: dirtyData.size(): 0
+19/06/23 23:46:11 :Debug: Flush lasted: 78ms.
+19/06/23 23:46:11 :Debug: Skip Burn, last write page: -2
+19/06/23 23:47:06 :Debug: Received Instruction: Read Chunk 13, Page: 13
+19/06/23 23:47:06 :Info: Initiating read page 13 : 106:10
+19/06/23 23:47:07 :Info: dirtyData.size(): 0
+19/06/23 23:47:08 :Info: dirtyData.size(): 0
+19/06/23 23:47:08 :Debug: Flush lasted: 74ms.
+19/06/23 23:47:08 :Debug: Skip Burn, last write page: -2
+19/06/23 23:47:13 :Debug: Received Instruction: Read Chunk 1, Page: 1
+19/06/23 23:47:13 :Info: Initiating read page 1 : 57:62
+19/06/23 23:47:15 :Info: dirtyData.size(): 0
+19/06/23 23:47:15 :Info: dirtyData.size(): 0
+19/06/23 23:47:15 :Debug: Flush lasted: 76ms.
+19/06/23 23:47:15 :Debug: Skip Burn, last write page: -2
+19/06/23 23:47:19 :Warning: helpTopic https://wiki.matzs.com/en/configuration/Launch_Flatshift is set for dialog, but not found in ini.
+19/06/23 23:47:19 :Debug: Received Instruction: Read Chunk 6, Page: 6
+19/06/23 23:47:19 :Info: Initiating read page 6 : 48:16
+19/06/23 23:47:19 :Debug: Received Instruction: Read Chunk 10, Page: 10
+19/06/23 23:47:19 :Info: Initiating read page 10 : 32:1
+19/06/23 23:47:22 :Info: dirtyData.size(): 0
+19/06/23 23:47:22 :Info: dirtyData.size(): 0
+19/06/23 23:47:22 :Debug: Flush lasted: 76ms.
+19/06/23 23:47:22 :Debug: Skip Burn, last write page: -2
+19/06/23 23:48:56 :Warning: helpTopic https://wiki.matzs.com/en/Hardware_testing_page is set for dialog, but not found in ini.
+19/06/23 23:48:58 :Debug: Received Instruction: , Page: 0
+19/06/23 23:48:58 :Info: dirtyData.size(): 0
+19/06/23 23:48:59 :Info: dirtyData.size(): 0
+19/06/23 23:48:59 :Debug: Flush lasted: 78ms.
+19/06/23 23:48:59 :Debug: Skip Burn, last write page: -2
+19/06/23 23:49:02 :Info: dirtyData.size(): 0
+19/06/23 23:49:02 :Info: dirtyData.size(): 0
+19/06/23 23:49:02 :Debug: Flush lasted: 76ms.
+19/06/23 23:49:02 :Debug: Skip Burn, last write page: -2
+19/06/23 23:50:11 :Warning: helpTopic https://wiki.matzs.com/en/configuration/Sensor_Calibration is set for dialog, but not found in ini.
+19/06/23 23:50:11 :Debug: Received Instruction: Read Chunk 4, Page: 4
+19/06/23 23:50:11 :Info: Initiating read page 4 : 91:1
+19/06/23 23:50:19 :Info: dirtyData.size(): 0
+19/06/23 23:50:19 :Info: dirtyData.size(): 0
+19/06/23 23:50:19 :Debug: Flush lasted: 77ms.
+19/06/23 23:50:19 :Debug: Skip Burn, last write page: -2
+20/06/23 08:55:17 :Info: closeApp Called
+20/06/23 08:55:17 :Debug: TuneLog Editor set text
+20/06/23 08:55:17 :Debug: goOffline Starting, Time:0
+20/06/23 08:55:17 :Info: Deactivated Turbo Baud, goOffline
+20/06/23 08:55:17 :Debug: goOffline about to stopProcessing, Time:0
+20/06/23 08:55:17 :Debug: goOffline closed port, Time:0
+20/06/23 08:55:17 :Debug: goOffline comm thread stopped, Time:503
+20/06/23 08:55:17 :Debug: No Remaining Queue Write instructions
+20/06/23 08:55:17 :Debug: removing Configuration: Temp
+20/06/23 08:55:17 :Info: No Persistor set, not saving active triggers.
+20/06/23 08:55:17 :Debug: ############################################# Save Project Backup ##########################################
+20/06/23 08:55:17 :Info: Finalizing Sensors
+Saved user properties successfully

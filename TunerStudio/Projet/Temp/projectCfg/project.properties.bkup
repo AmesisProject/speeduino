@@ -1,0 +1,10 @@
+#Project Attributes.
+#TunerStudio by EFI Analytics, Inc
+#Last Saved on: Mon Jun 19 23:42:07 CEST 2023
+#Mon Jun 19 23:42:07 CEST 2023
+useCommonDashboardDir=false
+ecuSettings=AFR|CAN_COMMANDS|CELSIUS|NEW_COMMS|enablehardware_test|resetcontrol_adv|
+projectName=Temp
+dashBoardFile=\\dashboard\\\\dashboard.dash
+ecuConfigFile=Matzs Avril 2022.ini
+projectDescription=Temporary Project for viewing msq files
